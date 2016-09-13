@@ -1,0 +1,32 @@
+{
+  "name": "breathing-with-kitty",
+  "version": "1.0.0",
+  "description": "App for kids to help reduce anxiety",
+  "main": "service-worker.js",
+  "scripts": {
+    "test": "-"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC8/breathing-with-kitty.git"
+  },
+  "keywords": [
+    "kids",
+    "pwa",
+    "animation"
+  ],
+  "author": "Sofia Pohjalainen, Bradley Reeder, Noga Inbar, Kara de la Marc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC8/breathing-with-kitty/issues"
+  },
+  "homepage": "https://github.com/FAC8/breathing-with-kitty#readme",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "sw-precache": "^3.2.0",
+    "sw-toolbox": "^3.2.1"
+  }
+}
