@@ -14,7 +14,11 @@ const breatheIn =  {
 
 const breathe = TweenMax.fromTo('.demo', 5, breatheOut, breatheIn);
 const start = function() {
-  TweenMax.fromTo('#landing-button', 0.2, {scale: 1}, {scale: 15, ease: Power1.easeIn});
+  TweenMax.fromTo('#landing-button', 0.5, {scale: 1}, {scale: 100, ease: Power1.easeIn});
 }
 
 landingButton.addEventListener('click', start);
+
+const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {y:420, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
+TweenMax.to('#landing-button', 0.5, {css:{opacity:1}})
+} })

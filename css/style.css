@@ -5,18 +5,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../public/assets/backgroundLanding.png");
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column; }
+  text-align: center; }
 
 .landing-cat-round {
-  margin: 1em; }
+  margin-top: -500px;
+  width: 80%;
+  display: inline-block; }
   .landing-cat-round button {
-    position: 'absolute';
-    margin-top: 56.161971831vh;
-    margin-top: 2em;
+    opacity: 0;
     background-color: #5CA1C2; }
   .landing-cat-round img {
-    height: 49%;
-    width: 88%; }
+    height: 100%;
+    width: 100%; }
+
+/*# sourceMappingURL=style.css.map */

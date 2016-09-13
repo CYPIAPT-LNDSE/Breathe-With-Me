@@ -7,23 +7,24 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('../public/assets/backgroundLanding.png');
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
+  // display: flex;
+  // justify-content: space-between;
+  // flex-direction: column;
+  text-align: center;
 
 }
 
 .landing-cat-round {
-
-  margin: 1em;
+  margin-top: -500px;
+  width: 80%;
+  display: inline-block;
 
   button {
-    margin-top: 2em;
+    opacity: 0;
     background-color: $buttons;
   }
   img {
-    height: 49%;
-    width: 88%;
+    height: 100%;
+    width: 100%;
   }
 }
