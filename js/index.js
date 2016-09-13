@@ -1,3 +1,4 @@
+const landingButton = document.getElementById('landing-button');
 const breatheOut = {
                      visible: true,
                      scale: 0.8,
@@ -12,3 +13,8 @@ const breatheIn =  {
                    };
 
 const breathe = TweenMax.fromTo('.demo', 5, breatheOut, breatheIn);
+const start = function() {
+  TweenMax.fromTo('#landing-button', 0.2, {scale: 1}, {scale: 15, ease: Power1.easeIn});
+}
+
+landingButton.addEventListener('click', start);

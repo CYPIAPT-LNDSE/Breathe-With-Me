@@ -13,10 +13,10 @@
 .landing-cat-round {
   margin: 1em; }
   .landing-cat-round button {
+    position: 'absolute';
+    margin-top: 56.161971831vh;
     margin-top: 2em;
     background-color: #5CA1C2; }
   .landing-cat-round img {
     height: 49%;
     width: 88%; }
-
-/*# sourceMappingURL=style.css.map */
