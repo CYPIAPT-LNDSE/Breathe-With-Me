@@ -146,18 +146,17 @@
   border-radius: 21px;
   opacity: 0.67; }
 
-.button_wide {
-  border: 2px solid #1C6C89;
-  background-color: transparent;
-  border-radius: 23px;
-  /* START: */
-  width: 34%;
-  height: 20%;
-  font-family: Lato-Regular;
-  font-size: 13px;
-  color: #1C6C89;
-  letter-spacing: 0.5px;
-  line-height: 17px; }
+.speechBubble p {
+  margin-top: 10%; }
+
+.btn-flat {
+  border-radius: 23px !important;
+  border: 2px solid #1C6C89 !important;
+  color: #1C6C89 !important;
+  margin-top: 10%; }
+
+.btn, .btn-large, .btn-flat {
+  line-height: 30px !important; }
 
 .start {
   height: 100vh;
