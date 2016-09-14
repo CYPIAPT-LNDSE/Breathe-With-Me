@@ -1,4 +1,10 @@
+body {
+  font-family: 'Lato', sans-serif; }
+
 .landing {
+  color: #407592;
+  font-size: 1em;
+  position: absolute;
   height: 100vh;
   width: 100vw;
   background-color: #CEF7F0;
@@ -18,6 +24,8 @@
   .landing-cat-round img {
     height: 100%;
     width: 100%; }
+  .landing-cat-round h3 {
+    opacity: 0; }
 
 .wrapperCat {
   width: 100%;
@@ -67,7 +75,7 @@
   width: 100%; }
 
 .welcome {
-  display: none;
+  visibility: hidden;
   height: 100vh;
   width: 100vw;
   background-color: #5CA1C2;
@@ -108,5 +116,3 @@
   position: absolute;
   z-index: 1;
   margin-top: 10%; }
-
-/*# sourceMappingURL=style.css.map */

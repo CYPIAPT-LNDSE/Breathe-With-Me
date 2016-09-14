@@ -1,8 +1,14 @@
 @import './partials/_colors';
 
+body {
+  font-family: 'Lato', sans-serif;
+}
 // Landing-page
 
 .landing {
+  color: $main-text;
+  font-size: 1em;
+  position: absolute;
   height: 100vh;
   width: 100vw;
   background-color: $background-landing;
@@ -27,6 +33,11 @@
     height: 100%;
     width: 100%;
   }
+
+  h3 {
+    opacity: 0;
+  }
+
 }
 
 //Intro page
@@ -52,6 +63,7 @@ margin-bottom: 7vh;
   background-color: #FFFFFE;
   border-radius: 21px;
   opacity: 0.67;
+
 }
 
 //input_field_speachBubble
@@ -87,7 +99,7 @@ margin-bottom: 7vh;
 }
 
 .welcome {
-  display: none;
+  visibility: hidden;
   height: 100vh;
   width: 100vw;
   background-color: $background-intro;
@@ -96,8 +108,6 @@ margin-bottom: 7vh;
   background-image: url('../public/assets/breathingBG.png');
   text-align: center;
 }
-
-
 
 //Breathing
 
