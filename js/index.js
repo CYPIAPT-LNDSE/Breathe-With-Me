@@ -1,8 +1,10 @@
 const landingButton = document.getElementById('landing-button');
 
-const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {y:420, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
+landingButton.addEventListener('click', start);
+
+const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css:{'margin-top':'15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
 TweenMax.to('#landing-button', 0.5, {css:{opacity:1}})
-} });
+} })
 
 const start = function() {
   const tl = new TimelineMax();
@@ -25,5 +27,3 @@ const breatheIn =  {
                    };
 
 const breathe = TweenMax.fromTo('.demo', 5, breatheOut, breatheIn);
-
-landingButton.addEventListener('click', start);
