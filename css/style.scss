@@ -3,8 +3,11 @@
 @import './partials/_intro';
 @import './partials/_breathing';
 @import './partials/_gifinfo';
+@import './partials/_start';
+
 
 body {
   font-family: 'Lato', sans-serif;
   color: $main-text;
+  letter-spacing: 1.4px;
 }

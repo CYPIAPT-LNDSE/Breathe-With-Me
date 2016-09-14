@@ -1,0 +1,49 @@
+//start page
+
+.wrapperCat {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.kitty_helloName{
+  height: 55vh;
+  margin-bottom: 7vh;
+}
+
+.speechBubble {
+  height: 30vh;
+  width: 50vh;
+  margin-top: 3vh;
+  background-color: #FFFFFE;
+  border-radius: 21px;
+  opacity: 0.67;
+}
+
+.button_wide {
+border: 2px solid #1C6C89;
+background-color: transparent;
+border-radius: 23px;
+/* START: */
+width: 34%;
+height: 20%;
+font-family: Lato-Regular;
+font-size: 13px;
+color: #1C6C89;
+letter-spacing: 0.5px;
+line-height: 17px;
+}
+
+.start {
+  // visibility: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-start;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../public/assets/breathingBG.png');
+  text-align: center;
+}

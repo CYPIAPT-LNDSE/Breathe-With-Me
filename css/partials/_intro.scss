@@ -1,4 +1,5 @@
 //Intro page
+
 .wrapperCat {
   width: 100%;
   height: 100%;
@@ -9,18 +10,17 @@
 }
 
 .intro-cat-round {
-  height: 58vh;
+  height: 55vh;
   margin-bottom: 7vh;
 }
 
 .speechBubble {
   height: 30vh;
-  width: 47vh;
-  margin-top: 1vh;
+  width: 50vh;
+  margin-top: 3vh;
   background-color: #FFFFFE;
   border-radius: 21px;
   opacity: 0.67;
-
 }
 
 //inputField
@@ -28,26 +28,29 @@
 
   .inputContainer {
       width: 100%;
-      color: #0c5127;
+      color: $main-text;
+      margin: 0;
+
   }
 
   .inputField {
       border: 0;
       outline: 0;
       background: transparent;
+      border-bottom: 1px solid $main-text;
       width: 40%;
       font-size: 16px;
       font-family: 'Lato', sans-serif;
-      color: #0c5127;
+      color: $main-text;
       margin: 0;
   }
 
   .bottomLine {
       width: 0%;
       max-width: 40%;
-      border-bottom: 4px solid;
-      border-color: hsl(160, 100%, 50%);
-      transition: width 0.2s;
+      border-bottom: 2px solid;
+      border-color: $main-text;
+      transition: width 0.3s;
       margin:auto;
   }
 
@@ -55,6 +58,7 @@
       width: 100%;
   }
 }
+
 .welcome {
   visibility: hidden;
   height: 100vh;
@@ -62,6 +66,6 @@
   background-color: $background-intro;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('../public/assets/background-white.png');
+  background-image: url('../public/assets/breathingBG.png');
   text-align: center;
 }
