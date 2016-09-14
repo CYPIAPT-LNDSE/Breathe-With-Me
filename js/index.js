@@ -11,7 +11,7 @@ const start = function() {
   tl.add(TweenMax.to('.material-icons', 0.2, {css:{visibility: 'hidden'}} ))
   tl.add( TweenMax.fromTo('#landing-button', 0.4, {scale: 1}, {scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn}) );
   tl.add( TweenMax.to('.landing', 0.2, {css:{visibility: 'hidden'}}) );
-  tl.add( TweenMax.to('.welcome', 0.2, {css:{visibility: 'visible' }}) );
+  tl.add( TweenMax.fromTo('.welcome', 1, { css:{ autoAlpha:0, visibility: 'hidden' } }, { css:{ autoAlpha:1, visibility: 'visible' }}));
 };
 
 const breatheOut = {

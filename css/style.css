@@ -1,6 +1,3 @@
-body {
-  font-family: 'Lato', sans-serif; }
-
 .landing {
   color: #407592;
   font-size: 1em;
@@ -88,5 +85,8 @@ body {
   position: absolute;
   z-index: 1;
   margin-top: 10%; }
+
+body {
+  font-family: 'Lato', sans-serif; }
 
 /*# sourceMappingURL=style.css.map */
