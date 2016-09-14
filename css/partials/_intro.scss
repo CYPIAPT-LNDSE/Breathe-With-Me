@@ -1,0 +1,35 @@
+//Intro page
+.wrapperCat {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: space-around;
+}
+
+.intro-cat-round {
+height: 60vh;
+}
+
+.speechBubble {
+  height: 30vh;
+  width: 47vh;
+  margin-top: 1vh;
+  background-color: #FFFFFE;
+  border-radius: 21px;
+  opacity: 0.67;
+
+}
+
+.welcome {
+  visibility: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-intro;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../public/assets/background-white.png');
+  text-align: center;
+}
