@@ -9,9 +9,13 @@ const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-t
 const start = function() {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.material-icons', 0.2, {css:{visibility: 'hidden'}} ))
-  tl.add( TweenMax.fromTo('#landing-button', 0.4, {scale: 1}, {scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn}) );
-  tl.add( TweenMax.to('.landing', 0.2, {css:{visibility: 'hidden'}}) );
-  tl.add( TweenMax.fromTo('.welcome', 1, { css:{ autoAlpha:0, visibility: 'hidden' } }, { css:{ autoAlpha:1, visibility: 'visible' }}));
+  tl.add( TweenMax.fromTo('#landing-button', 0.4, {scale: 1, backgroundColor: '#5CA1C2'}, {scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn}) );
+  tl.add( TweenMax.fromTo('.alt-intro', 0.5, { css:{ visibility: 'hidden' } }, { css:{ visibility: 'visible' }}));
+  tl.add( TweenMax.to('.landing', 0.1, {css:{visibility: 'hidden'}}) );
+  tl.add( TweenMax.to('.mountain1', 0.5, {y: -170}));
+  tl.add( TweenMax.to('.mountain2', 0.5, {y: -300}));
+  tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 400, opacity:1}));
+
 };
 
 const breatheOut = {
