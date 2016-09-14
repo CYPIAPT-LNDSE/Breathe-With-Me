@@ -1,8 +1,14 @@
 @import './partials/_colors';
 
+body {
+  font-family: 'Lato', sans-serif;
+}
 // Landing-page
 
 .landing {
+  color: $main-text;
+  font-size: 1em;
+  position: absolute;
   height: 100vh;
   width: 100vw;
   background-color: $background-landing;
@@ -26,6 +32,10 @@
   img {
     height: 100%;
     width: 100%;
+  }
+
+  h3 {
+    opacity: 0;
   }
 }
 
@@ -54,7 +64,7 @@ height: 60vh;
 }
 
 .welcome {
-  display: none;
+  visibility: hidden;
   height: 100vh;
   width: 100vw;
   background-color: $background-intro;
@@ -63,8 +73,6 @@ height: 60vh;
   background-image: url('../public/assets/background-white.png');
   text-align: center;
 }
-
-
 
 //Breathing
 
