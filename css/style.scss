@@ -7,9 +7,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('../public/assets/backgroundLanding.png');
-  // display: flex;
-  // justify-content: space-between;
-  // flex-direction: column;
   text-align: center;
 
 }
@@ -39,4 +36,8 @@
   background-repeat: no-repeat;
   background-image: url('../public/assets/background-white.png');
   text-align: center;
+}
+
+.test {
+  background-color: currentColor;
 }
