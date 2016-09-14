@@ -46,10 +46,11 @@
   align-items: center; }
 
 #head {
-  z-index: 999; }
+  z-index: 999;
+  margin-top: -4%; }
 
 #belly {
-  margin-top: -3.5%;
+  margin-top: -8%;
   z-index: 0;
   width: 160px; }
 
@@ -60,10 +61,5 @@
   position: absolute;
   z-index: 1;
   margin-top: 10%; }
-
-#collar {
-  position: relative;
-  z-index: 1;
-  margin-top: -1%; }
 
 /*# sourceMappingURL=style.css.map */
