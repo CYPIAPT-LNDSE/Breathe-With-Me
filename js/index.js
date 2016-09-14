@@ -25,4 +25,6 @@ const breatheIn = {
 };
 
 const breathe = TweenMax.fromTo('#belly', 5, breatheOut, breatheIn);
-const headMovement = TweenMax.fromTo('#head', 5, {y:-0, delay: 2}, {y:-19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true});
+const headMovement = TweenMax.fromTo('#head', 5, {y: -0, delay: 2}, {y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true});
+
+landingButton.addEventListener('click', start);

@@ -29,6 +29,30 @@
   }
 }
 
+//Intro page
+.wrapperCat {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: space-around;
+}
+
+.intro-cat-round {
+height: 60vh;
+}
+
+.speechBubble {
+  height: 30vh;
+  width: 47vh;
+  margin-top: 1vh;
+  background-color: #FFFFFE;
+  border-radius: 21px;
+  opacity: 0.67;
+}
+
 .welcome {
   display: none;
   height: 100vh;
@@ -39,6 +63,8 @@
   background-image: url('../public/assets/background-white.png');
   text-align: center;
 }
+
+
 
 //Breathing
 
