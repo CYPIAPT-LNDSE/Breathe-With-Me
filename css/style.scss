@@ -2,7 +2,9 @@
 @import './partials/_landing';
 @import './partials/_intro';
 @import './partials/_breathing';
+@import './partials/_gifinfo';
 
 body {
   font-family: 'Lato', sans-serif;
+  color: $main-text;
 }

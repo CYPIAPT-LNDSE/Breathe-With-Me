@@ -1,0 +1,15 @@
+.fractal {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../../public/assets/bgGIF.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  img {
+    height: 30%;
+    width: 50%;
+  }
+}
