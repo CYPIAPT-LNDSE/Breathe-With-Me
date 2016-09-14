@@ -1,13 +1,41 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@import './partials/_colors';
+
+.landing {
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-landing;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../public/assets/backgroundLanding.png');
+  // display: flex;
+  // justify-content: space-between;
+  // flex-direction: column;
+  text-align: center;
+
 }
-.test {
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: blue;
+
+.landing-cat-round {
+  margin-top: -500px;
+  width: 80%;
+  display: inline-block;
+
+  button {
+    opacity: 0;
+    background-color: $buttons;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.welcome {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-intro;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../public/assets/background-white.png');
+  text-align: center;
 }

@@ -1,1 +1,1 @@
-.test,body{display:flex}body{justify-content:center;align-items:center}.test{width:150px;height:150px;justify-content:center;align-items:center;background-color:#00f}
+.landing{height:100vh;width:100vw;background-color:#CEF7F0;background-size:cover;background-repeat:no-repeat;background-image:url(../public/assets/backgroundLanding.png);text-align:center}.landing-cat-round{margin-top:-500px;width:80%;display:inline-block}.landing-cat-round button{opacity:0;background-color:#5CA1C2}.landing-cat-round img{height:100%;width:100%}
