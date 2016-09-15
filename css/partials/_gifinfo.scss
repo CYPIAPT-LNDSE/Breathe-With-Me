@@ -4,12 +4,26 @@
   background-image: url('../../public/assets/bgGIF.png');
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
-  img {
-    height: 30%;
-    width: 50%;
+  text-align: center;
+  // z-index: 0;
+   .wrapperGIF {
+     height: 95.7746478873vh;
+     width: 100vw;
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     flex-direction: column;
+    //  z-index: 1;
+      img {
+        height: 32%;
+      }
+  }
+  .material-icons {
+    color: rgba(255, 255, 255, 1);
+    float: left;
+    font-size: 36px;
+  }
+  .material-icons .md-light .md-inactive {
+    color: rgba(255, 255, 255, 0.3);
   }
 }
