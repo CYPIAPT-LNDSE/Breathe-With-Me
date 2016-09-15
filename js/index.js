@@ -26,12 +26,11 @@ const start = function() {
 const infoSwitch = function() {
   console.log('button pressed');
   const tl = new TimelineMax();
-  tl.add( TweenMax.to('.alt-info-box', 0.2, {css:{ visibility: 'hidden', opacity: 0 }}));
-  // tl.add( TweenMax.to('.name', {text:{value: "OK", delimiter: " "}} ));
-  tl.add( TweenMax.to('.breathing-information', 0.2, {css:{visibility: 'visible', opacity: 1 }}));
-  tl.add( TweenMax.to('.name', 0.1, {text:{value: `Hi ${document.cookie}`, delimiter: " "}, ease:Linear.easeNone} ));
-  tl.add( TweenMax.to('.alt-info-box', 0.2, {css:{ visibility: 'hidden', opacity: 0 }}));
-  tl.add( TweenMax.to('.breathing-information', 0.2, {css:{visibility: 'visible', opacity: 1 }}));
+  tl.add( TweenMax.to('.alt-info-box', 0.2, {css: { visibility: 'hidden', opacity: 0 }}));
+  tl.add( TweenMax.to('.breathing-information', 0.2, {css: {visibility: 'visible', opacity: 1 }}));
+  tl.add( TweenMax.to('.name', 0.1, {text: {value: `Hi ${document.cookie}`, delimiter: ' '}, ease: Linear.easeNone} ));
+  tl.add( TweenMax.to('.alt-info-box', 0.2, {css: { visibility: 'hidden', opacity: 0 }}));
+  tl.add( TweenMax.to('.breathing-information', 0.2, {css: {visibility: 'visible', opacity: 1 }}));
 };
 
 const breathingCat = function() {
