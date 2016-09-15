@@ -55,6 +55,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 0; }
+  .breathing p {
+    text-align: center;
+    margin-bottom: 0px; }
 
 .mountain3 {
   z-index: 0;
@@ -67,9 +70,6 @@
     color: #1C6C89;
     float: left;
     font-size: 24px; }
-  .mountain3 p {
-    text-align: center;
-    margin-bottom: 0px; }
 
 .cat {
   height: inherit;
