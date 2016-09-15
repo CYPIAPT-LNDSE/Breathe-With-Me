@@ -1,37 +1,12 @@
-//start page
 
-.wrapperCat {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.kitty_helloName{
-  height: 55vh;
-  margin-bottom: 7vh;
-}
-
-.speechBubble {
-  height: 30vh;
-  width: 50vh;
-  margin-top: 3vh;
-  background-color: #FFFFFE;
-  border-radius: 21px;
-  opacity: 0.67;
-}
-.speechBubble p {
-margin-top: 10%;
-}
-//buttons
+//actually it buttons style not start
 
 .btn-flat{
   border-radius: 23px!important;
-  border: 2px solid $main-text!important;
-  color: $main-text!important;
+  border: 2px solid white!important;
+  color: white!important;
   margin-top: 10%;
+  font-size: 16px!important;
 }
 
 .btn, .btn-large, .btn-flat {
@@ -39,9 +14,7 @@ line-height: 30px!important;
 }
 
 .start {
-  position: absolute;
-  // visibility: collapse;
-  display: none;
+  // visibility: hidden;
   height: 100vh;
   width: 100vw;
   background-color: $background-start;
