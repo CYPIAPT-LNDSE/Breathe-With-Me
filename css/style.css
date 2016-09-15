@@ -123,15 +123,17 @@
 
 .alt-info-box {
   display: inline-block;
-  background-color: white;
+  color: white;
   height: 30%;
   width: 60%;
-  border-radius: 5%;
   text-align: center;
   position: absolute;
   bottom: 100%;
   left: 20%;
-  font-size: 1.5em; }
+  font-size: 2em; }
+
+#input-focus {
+  border-bottom: 2px solid #ffffff; }
 
 body {
   font-family: 'Lato', sans-serif;

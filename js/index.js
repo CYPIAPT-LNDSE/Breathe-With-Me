@@ -1,4 +1,5 @@
 const landingButton = document.getElementById('landing-button');
+const inputField = document.getElementById('input-focus').focus();
 
 const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-top': '15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
@@ -14,8 +15,7 @@ const start = function() {
   tl.add( TweenMax.to('.landing', 0.1, {css:{visibility: 'hidden'}}) );
   tl.add( TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add( TweenMax.to('.mountain2', 0.5, {y: -300}));
-  tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 400, opacity:1}));
-
+  tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 300 , opacity:1}));
 };
 
 const breatheOut = {
