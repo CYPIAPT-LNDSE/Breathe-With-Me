@@ -71,8 +71,9 @@ const goToWellDone = function() {
 
 const bellyOfTheWhale = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.breathing', 0.2, {css: { display: 'none'}}));
-  tl.add(TweenMax.to('.fractal', 0.2, {css: { display: 'block'}}));
+  // tl.add(TweenMax.to('.breathing', 0.2, {'-webkit-filter':'blur(10px)'}));
+  tl.add(TweenMax.to('.breathing', 0.1, { css: { display: 'none' } }));
+  tl.add(TweenMax.fromTo('.fractal', 0.5, { scale: 0.8, css: {'-webkit-filter':'blur(10px)', opacity: 0 } }, { scale: 1, css: { '-webkit-filter':'blur(0px)', display: 'block', opacity: 1 }}));
 };
 
 const breatheOut = {
