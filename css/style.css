@@ -138,12 +138,12 @@
     padding-top: 1em; }
 
 .mountain1 {
-  z-index: 2;
+  z-index: 0;
   top: 100%;
   position: absolute; }
 
 .mountain2 {
-  z-index: 1;
+  z-index: -1;
   top: 100%;
   position: absolute; }
 
@@ -156,7 +156,28 @@
   position: absolute;
   bottom: 100%;
   left: 20%;
-  font-size: 2em; }
+  font-size: 1.5em; }
+
+.breathing-information {
+  margin-top: 2em;
+  padding: 0.5em;
+  height: 100vh;
+  width: 100vw;
+  visibility: hidden;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  opacity: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 5; }
+
+.breathing-start {
+  margin-top: 1em;
+  font-size: 1em; }
 
 #input-focus {
   border-bottom: 2px solid #ffffff; }
@@ -192,6 +213,40 @@
 
 .btn, .btn-large, .btn-flat {
   line-height: 30px !important; }
+
+.noga-button:hover, .noga-button-large:hover {
+  background-color: transparent;
+  border-radius: 23px;
+  border: 2px solid #1C6C89;
+  color: #1C6C89; }
+
+.btn, .btn-large {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer; }
+
+.button_wide {
+  border: 2px solid #1C6C89;
+  background-color: transparent;
+  border-radius: 23px;
+  /* START: */
+  width: 34%;
+  height: 20%;
+  font-family: Lato-Regular;
+  font-size: 13px;
+  text-align: center;
+  color: #1C6C89;
+  letter-spacing: 0.5px;
+  line-height: 17px;
+  transition-duration: 0.4s;
+  cursor: pointer; }
+
+.button_wide:hover {
+  background-color: #D8D8D8;
+  color: #1C6C89; }
 
 .start {
   height: 100vh;
