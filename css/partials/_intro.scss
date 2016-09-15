@@ -14,50 +14,50 @@
   margin-bottom: 7vh;
 }
 
-.speechBubble {
-  height: 30vh;
-  width: 50vh;
-  margin-top: 3vh;
-  background-color: #FFFFFE;
-  border-radius: 21px;
-  opacity: 0.67;
-}
-
-//inputField
-.speechBubble {
-
-  .inputContainer {
-      width: 100%;
-      color: $main-text;
-      margin: 0;
-
-  }
-
-  .inputField {
-      border: 0;
-      outline: 0;
-      background: transparent;
-      border-bottom: 1px solid $main-text;
-      width: 40%;
-      font-size: 16px;
-      font-family: 'Lato', sans-serif;
-      color: $main-text;
-      margin: 0;
-  }
-
-  .bottomLine {
-      width: 0%;
-      max-width: 40%;
-      border-bottom: 2px solid;
-      border-color: $main-text;
-      transition: width 0.3s;
-      margin:auto;
-  }
-
-  .inputField:focus + div {
-      width: 100%;
-  }
-}
+// .speechBubble {
+//   height: 30vh;
+//   width: 50vh;
+//   margin-top: 3vh;
+//   background-color: #FFFFFE;
+//   border-radius: 21px;
+//   opacity: 0.67;
+// }
+//
+// //inputField
+// .speechBubble {
+//
+//   .inputContainer {
+//       width: 100%;
+//       color: $main-text;
+//       margin: 0;
+//
+//   }
+//
+//   .inputField {
+//       border: 0;
+//       outline: 0;
+//       background: transparent;
+//       border-bottom: 1px solid $main-text;
+//       width: 40%;
+//       font-size: 16px;
+//       font-family: 'Lato', sans-serif;
+//       color: $main-text;
+//       margin: 0;
+//   }
+//
+//   .bottomLine {
+//       width: 0%;
+//       max-width: 40%;
+//       border-bottom: 2px solid;
+//       border-color: $main-text;
+//       transition: width 0.3s;
+//       margin:auto;
+//   }
+//
+//   .inputField:focus + div {
+//       width: 100%;
+//   }
+// }
 
 .welcome {
   visibility: hidden;

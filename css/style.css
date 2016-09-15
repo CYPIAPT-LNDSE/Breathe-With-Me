@@ -36,38 +36,6 @@
   height: 55vh;
   margin-bottom: 7vh; }
 
-.speechBubble {
-  height: 30vh;
-  width: 50vh;
-  margin-top: 3vh;
-  background-color: #FFFFFE;
-  border-radius: 21px;
-  opacity: 0.67; }
-
-.speechBubble .inputContainer {
-  width: 100%;
-  color: #1C6C89;
-  margin: 0; }
-.speechBubble .inputField {
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 1px solid #1C6C89;
-  width: 40%;
-  font-size: 16px;
-  font-family: 'Lato', sans-serif;
-  color: #1C6C89;
-  margin: 0; }
-.speechBubble .bottomLine {
-  width: 0%;
-  max-width: 40%;
-  border-bottom: 2px solid;
-  border-color: #1C6C89;
-  transition: width 0.3s;
-  margin: auto; }
-.speechBubble .inputField:focus + div {
-  width: 100%; }
-
 .welcome {
   visibility: hidden;
   height: 100vh;
@@ -79,12 +47,19 @@
   text-align: center; }
 
 .breathing {
-  height: 100vh;
+  height: 92vh;
   width: 100vw;
   background-image: url("../public/assets/breathingBG.png");
   background-color: #A5E2DA;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  text-align: center; }
+  .breathing .material-icons {
+    color: #1C6C89;
+    float: left;
+    font-size: 24px; }
+  .breathing p {
+    margin-bottom: 0px; }
 
 .cat {
   height: inherit;
@@ -109,9 +84,10 @@
 #hands {
   position: absolute;
   z-index: 1;
-  margin-top: 10%; }
+  margin-top: 3%; }
 
 .fractal {
+  visibility: hidden;
   height: 100vh;
   width: 100vw;
   background-image: url("../../public/assets/bgGIF.png");
@@ -212,7 +188,7 @@
   text-align: center; }
 
 .welldone {
-  visibility: visible;
+  visibility: hidden;
   height: 100vh;
   width: 100vw;
   text-align: center; }
