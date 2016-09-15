@@ -38,9 +38,10 @@ margin-top: 10%;
 line-height: 30px!important;
 }
 
-
 .start {
-  // visibility: hidden;
+  position: absolute;
+  // visibility: collapse;
+  display: none;
   height: 100vh;
   width: 100vw;
   background-color: $background-start;

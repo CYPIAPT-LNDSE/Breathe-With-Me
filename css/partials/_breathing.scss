@@ -1,12 +1,19 @@
 //Breathing
 
 .breathing {
+<<<<<<< HEAD
   height: 92vh;
+=======
+  display: none;
+  position: absolute;
+  height: 100vh;
+>>>>>>> master
   width: 100vw;
   background-image: url('../public/assets/breathingBG.png');
   background-color: #A5E2DA;
   background-size: cover;
   background-repeat: no-repeat;
+<<<<<<< HEAD
   text-align: center;
 
   .material-icons {
