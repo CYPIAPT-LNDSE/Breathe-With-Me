@@ -10,6 +10,24 @@
   // background-image: url('../public/assets/background-white.png');
   text-align: center;
 
+  // .gradient {
+  //   display: none;
+  //   height: 100%;
+  //   width: 100%;
+  //   overflow-x: hidden;
+  //   overflow-y: hidden;
+  //   position: absolute;
+  //   z-index: 0;
+  //   /* can be treated like a fallback */
+  //     background-color: #494A97;
+  //   /* will be "on top", if browser supports it */
+  //   background-image: linear-gradient(#494A97, #091A3E);
+  //
+  //   span {
+  //     padding-top: 1em;
+  //   }
+  // }
+
   #start-again {
     border-radius: 21px;
     background-color: transparent;
