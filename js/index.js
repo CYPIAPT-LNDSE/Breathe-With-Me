@@ -39,7 +39,7 @@ const breathingCat = function() {
   tl.add( TweenMax.to('.mountain2', 0.3, {y: 0}));
   tl.add( TweenMax.to('.mountain1', 0.3, {y: 0}));
   tl.add( TweenMax.to('.breathing-information', 0.5, {css: {visibility: 'hidden', opacity: 0}}));
-  tl.add( TweenMax.fromTo('.alt-intro', 0.2, {css: {'background': '#5CA1C2'}}, {css: {'background': '#A5E2DA'}} ));
+  tl.add( TweenMax.fromTo('.alt-intro', 0.5, { backgroundColor: '#5CA1C2'}, {backgroundColor: '#A5E2DA'} ));
   tl.add( TweenMax.fromTo('.breathing', 0.5, {css: {display: 'none'}}, {css: {display: 'block' }}));
   tl.add( TweenMax.to('.mountain3', 0.5, {y: -370, ease: Power2.easeOut}));
   tl.add( TweenMax.fromTo('.cat', 0.75, {css: {opacity: 0}}, {css: {opacity: 1}}));
@@ -50,6 +50,8 @@ const exit = function() {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.fractal', 0.2, {css: { display: 'none'}}));
   tl.add(TweenMax.to('.breathing', 0.2, {css: { display: 'block'}}));
+  tl.add( TweenMax.fromTo('.cat', 0.5, {css: {opacity: 0}}, {css: {opacity: 1}}));
+  tl.add( TweenMax.to('.mountain3', 0.5, {y: -370, ease: Power2.easeOut}));
 };
 
 const exitToIntro = function() {
@@ -64,14 +66,17 @@ const exitToIntro = function() {
 
 const goToWellDone = function() {
   const tl = new TimelineMax();
+  tl.add(TweenMax.to('.cat', 0.5, {opacity:0}));
+  tl.add(TweenMax.to('.mountain3', 0.5, {y:500}));
+  tl.add(TweenMax.fromTo('.breathing', 0.5, {backgroundColor: '#A5E2DA'}, {backgroundColor: '#494A97'}));
+  tl.add(TweenMax.to('.alt-intro', 0.2, {css: { display: 'none'}}));
   tl.add(TweenMax.to('.breathing', 0.2, {css: { display: 'none'}}));
-  tl.add( TweenMax.fromTo('.alt-intro', 0.1, {backgroundColor: '#A5E2DA'}, {css: {'background': 'linear-gradient(#494A97, #091A3E)'}}));
   tl.add(TweenMax.to('.welldone', 0.2, {css: { display: 'block'}}));
+  tl.add(TweenMax.set('.breathing', 0, {backgroundColor: '#A5E2DA'}));
 };
 
 const bellyOfTheWhale = function() {
   const tl = new TimelineMax();
-  // tl.add(TweenMax.to('.breathing', 0.2, {'-webkit-filter':'blur(10px)'}));
   tl.add(TweenMax.to('.breathing', 0.1, { css: { display: 'none' } }));
   tl.add(TweenMax.fromTo('.fractal', 0.5, { scale: 0.8, css: {'-webkit-filter':'blur(10px)', opacity: 0 } }, { scale: 1, css: { '-webkit-filter':'blur(0px)', display: 'block', opacity: 1 }}));
 };
