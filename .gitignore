@@ -39,3 +39,7 @@ jspm_packages
 .sass-cache
 
 style.css.map
+
+css/style.css
+
+css/style.min.css

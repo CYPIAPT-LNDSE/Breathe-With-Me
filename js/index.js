@@ -2,12 +2,10 @@ const landingButton = document.getElementById('landing-button');
 const nameSubmitButton = document.getElementById('name-question-button');
 const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
 const exitFractal = document.getElementById('exit-fractal');
-
-// const nameButton = document.getElementById('name-question-button');
-// const userName = document.getElementById('input-focus');
-// const hiName = document.getElementById('name');
-//
-// hiName.textContent = `Hi ${document.cookie}`;
+const exitBreathing = document.getElementById('exit-breathing');
+const FeelingBetterBtn = document.getElementById('feelGoodBtn');
+const belly = document.getElementById('belly');
+const hands = document.getElementById('hands');
 
 const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-top': '15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
@@ -48,11 +46,29 @@ const breathingCat = function() {
 };
 
 
-
+//toRefactor
 const exit = function() {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.fractal', 0.2, {css:{ display: 'none'}}));
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'inline-block'}}));
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'block'}}));
+}
+
+const exitToIntro = function() {
+  const tl = new TimelineMax();
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'none'}}));
+  tl.add(TweenMax.to('.alt-intro', 0.2, {css:{ display: 'block'}}));
+}
+
+const goToWellDone = function() {
+  const tl = new TimelineMax();
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'none'}}));
+  tl.add(TweenMax.to('.welldone', 0.2, {css:{ display: 'block'}}));
+}
+
+const bellyOfTheWhale = function() {
+  const tl = new TimelineMax();
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'none'}}));
+  tl.add(TweenMax.to('.fractal', 0.2, {css:{ display: 'block'}}));
 }
 
 const breatheOut = {
@@ -68,9 +84,14 @@ const breatheIn = {
   repeat: -1
 };
 
+
 const breathe = TweenMax.fromTo('#belly', 5, breatheOut, breatheIn);
 const headMovement = TweenMax.fromTo('#head', 5, {y: -0, delay: 2}, {y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true});
 
+hands.addEventListener('click', bellyOfTheWhale);
+belly.addEventListener('click', bellyOfTheWhale);
+exitBreathing.addEventListener('click', exitToIntro);
+FeelingBetterBtn.addEventListener('click', goToWellDone);
 exitFractal.addEventListener('click', exit);
 landingButton.addEventListener('click', start);
 nameSubmitButton.addEventListener('click', infoSwitch);
