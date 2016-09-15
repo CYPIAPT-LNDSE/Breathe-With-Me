@@ -7,31 +7,27 @@ const FeelingBetterBtn = document.getElementById('feelGoodBtn');
 const belly = document.getElementById('belly');
 const hands = document.getElementById('hands');
 
-
-
-
 const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-top': '15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
   TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
 } });
 
-
 const start = function() {
   const tl = new TimelineMax();
-  tl.add( TweenMax.to('.material-icons', 0.2, {css:{display: 'none'}} ))
+  tl.add( TweenMax.to('#landing-material-icon', 0.2, {css: {display: 'none'}} ));
   tl.add( TweenMax.fromTo('#landing-button', 0.4, {scale: 1, backgroundColor: '#5CA1C2'}, {scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn}) );
-  tl.add( TweenMax.fromTo('.alt-intro', 0.5, { css:{ display: 'none' } }, { css:{ display: 'inline-block' }}));
-  tl.add( TweenMax.to('.landing', 0.1, {css:{display: 'none'}}) );
+  tl.add( TweenMax.fromTo('.alt-intro', 0.5, { css: { display: 'none' } }, { css: { display: 'inline-block' }}));
+  tl.add( TweenMax.to('.landing', 0.1, {css: {display: 'none'}}) );
   tl.add( TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add( TweenMax.to('.mountain2', 0.5, {y: -300}));
-  tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 300 , opacity:1}));
+  tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 300 , opacity: 1}));
 };
 
 const infoSwitch = function() {
   console.log('button pressed');
   const tl = new TimelineMax();
-  tl.add( TweenMax.to('.alt-info-box', 0.2, {css:{ visibility: 'hidden', opacity: 0 }}));
-  tl.add( TweenMax.to('.breathing-information', 0.2, {css:{visibility: 'visible', opacity: 1 }}));
+  tl.add( TweenMax.to('.alt-info-box', 0.2, {css: { visibility: 'hidden', opacity: 0 }}));
+  tl.add( TweenMax.to('.breathing-information', 0.2, {css: {visibility: 'visible', opacity: 1 }}));
 };
 
 const breathingCat = function() {
@@ -39,39 +35,37 @@ const breathingCat = function() {
   const tl = new TimelineMax();
   tl.add( TweenMax.to('.mountain2', 0.3, {y: 0}));
   tl.add( TweenMax.to('.mountain1', 0.3, {y: 0}));
-  tl.add( TweenMax.to('.breathing-information', 0.5, {css:{visibility: 'hidden', opacity: 0}}));
+  tl.add( TweenMax.to('.breathing-information', 0.5, {css: {visibility: 'hidden', opacity: 0}}));
   tl.add( TweenMax.fromTo('.alt-intro', 0.2, {backgroundColor: '#5CA1C2'}, {backgroundColor: '#A5E2DA'}));
-  tl.add( TweenMax.fromTo('.breathing', 0.5, {css:{display: 'none'}}, {css:{display:'block' }}));
+  tl.add( TweenMax.fromTo('.breathing', 0.5, {css: {display: 'none'}}, {css: {display: 'block' }}));
   tl.add( TweenMax.to('.mountain3', 0.5, {y: -370, ease: Power2.easeOut}));
-  tl.add( TweenMax.fromTo('.cat', 0.75, {css:{opacity: 0}}, {css:{opacity: 1}}));
+  tl.add( TweenMax.fromTo('.cat', 0.75, {css: {opacity: 0}}, {css: {opacity: 1}}));
 };
-
-
 
 //toRefactor
 const exit = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.fractal', 0.2, {css:{ display: 'none'}}));
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'block'}}));
-}
+  tl.add(TweenMax.to('.fractal', 0.2, {css: { display: 'none'}}));
+  tl.add(TweenMax.to('.breathing', 0.2, {css: { display: 'block'}}));
+};
 
 const exitToIntro = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'none'}}));
-  tl.add(TweenMax.to('.alt-intro', 0.2, {css:{ display: 'block'}}));
-}
+  tl.add(TweenMax.to('.breathing', 0.2, {css: { display: 'none'}}));
+  tl.add(TweenMax.to('.alt-intro', 0.2, {css: { display: 'block'}}));
+};
 
 const goToWellDone = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'none'}}));
-  tl.add(TweenMax.to('.welldone', 0.2, {css:{ display: 'block'}}));
-}
+  tl.add(TweenMax.to('.breathing', 0.2, {css: { display: 'none'}}));
+  tl.add(TweenMax.to('.welldone', 0.2, {css: { display: 'block'}}));
+};
 
 const bellyOfTheWhale = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'none'}}));
-  tl.add(TweenMax.to('.fractal', 0.2, {css:{ display: 'block'}}));
-}
+  tl.add(TweenMax.to('.breathing', 0.2, {css: { display: 'none'}}));
+  tl.add(TweenMax.to('.fractal', 0.2, {css: { display: 'block'}}));
+};
 
 const breatheOut = {
   visibility: true,
@@ -85,7 +79,6 @@ const breatheIn = {
   yoyo: true,
   repeat: -1
 };
-
 
 const breathe = TweenMax.fromTo('#belly', 5, breatheOut, breatheIn);
 const headMovement = TweenMax.fromTo('#head', 5, {y: -0, delay: 2}, {y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true});
