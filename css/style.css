@@ -117,13 +117,22 @@
   background-image: url("../../public/assets/bgGIF.png");
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column; }
-  .fractal img {
-    height: 30%;
-    width: 50%; }
+  text-align: center; }
+  .fractal .wrapperGIF {
+    height: 95.7746478873vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column; }
+    .fractal .wrapperGIF img {
+      height: 32%; }
+  .fractal .material-icons {
+    color: white;
+    float: left;
+    font-size: 36px; }
+  .fractal .material-icons .md-light .md-inactive {
+    color: rgba(255, 255, 255, 0.3); }
 
 .alt-intro {
   visibility: hidden;
@@ -221,7 +230,6 @@
 body {
   font-family: 'Lato', sans-serif;
   color: #1C6C89;
-  overflow: hidden;
   height: 100%;
   width: 100%;
   letter-spacing: 1.4px; }

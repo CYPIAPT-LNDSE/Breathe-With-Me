@@ -1,5 +1,6 @@
 const landingButton = document.getElementById('landing-button');
 const nameSubmitButton = document.getElementById('name-question-button');
+const exitFractal = document.getElementById('exit-fractal');
 
 const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-top': '15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
@@ -23,6 +24,12 @@ const infoSwitch = function() {
   tl.add( TweenMax.to('alt-info-box', 0.2, {css:{ visibility: 'hidden', opacity: 0 }}) )
 }
 
+const exit = function() {
+  const tl = new TimelineMax();
+  tl.add(TweenMax.to('.fractal', 0.2, {css:{ visibility: 'hidden'}}));
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ visibility: 'visible'}}));
+}
+
 const breatheOut = {
   visible: true,
   scale: 1,
@@ -39,6 +46,6 @@ const breatheIn = {
 const breathe = TweenMax.fromTo('#belly', 5, breatheOut, breatheIn);
 const headMovement = TweenMax.fromTo('#head', 5, {y: -0, delay: 2}, {y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true});
 
-
+exitFractal.addEventListener('click', exit);
 landingButton.addEventListener('click', start);
 nameSubmitButton.addEventListener('click', infoSwitch )
