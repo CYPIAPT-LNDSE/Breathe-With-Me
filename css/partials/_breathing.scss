@@ -9,6 +9,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 0;
+  p {
+    text-align: center;
+    margin-bottom: 0px;
+  }
 }
 
 .mountain3 {
@@ -24,12 +28,6 @@
     float: left;
     font-size: 24px;
   }
-
-  p {
-    text-align: center;
-    margin-bottom: 0px;
-  }
-
 }
 
 .cat {
