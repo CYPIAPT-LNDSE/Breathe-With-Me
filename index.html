@@ -31,7 +31,8 @@
           <button class="waves-effect waves-light btn-flat" id="name-question-button" type="button" name="button">Submit</button>
         </div>
         <div class="breathing-information">
-          <span>Hi name.  When Kitty is feeling worried or upset, she takes slow, deep breaths to make her belly move up and down.  This helps her to feel more calm and relaxed.</span>
+          <span class="name">Hi</span>
+          <span>When Kitty is feeling worried or upset, she takes slow, deep breaths to make her belly move up and down.  This helps her to feel more calm and relaxed.</span>
           <button class="breathing-start waves-effect waves-light btn-flat" id="start-breathing-cat-button" type="button">Start</button>
         </div>
     </div>
@@ -60,7 +61,6 @@
         <img class="kitty_helloName" src="./public/assets/kitty_helloName.png" alt="Intro page cat says hello" />
       </div>
     </div>
-    <script src="js/cookie.js"></script>
     <!-- Breathing -->
     <div class="breathing">
       <i id="exit-breathing" class="material-icons">keyboard_backspace</i><br>
@@ -165,11 +165,16 @@
       <button type="button" id="start-again">START AGAIN</button>
       <img class="intro-cat-round" src="./public/assets/kitty_intro.png" alt="Intro page cat says hello" />
     </div>
-
-
+    <div class="fractal">
+      <i id="exit-fractal" class="material-icons md-light">clear</i>
+      <!-- <br> -->
+      <div class="wrapperGIF">
+        <img src="./public/assets/ezgif.com-gif-maker.gif" alt="Breathing cat gif" />
+      </div>
+    </div>
+    <script src="js/cookie.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/TextPlugin.min.js"></script>
     <script src="js/vendors/greensock-js/src/minified/TweenMax.min.js"></script>
     <script src="js/index.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   </body>
 </html>
