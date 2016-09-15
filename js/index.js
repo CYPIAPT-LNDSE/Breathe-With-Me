@@ -18,6 +18,11 @@ const start = function() {
   tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 300 , opacity:1}));
 };
 
+const infoSwitch = function() {
+  const tl = new TimelineMax();
+  tl.add( TweenMax.to('alt-info-box', 0.2, {css:{ visibility: 'hidden', opacity: 0 }}) )
+}
+
 const breatheOut = {
   visible: true,
   scale: 1,
@@ -36,4 +41,4 @@ const headMovement = TweenMax.fromTo('#head', 5, {y: -0, delay: 2}, {y: -19, del
 
 
 landingButton.addEventListener('click', start);
-nameSubmitButton.addEventListener('click', )
+nameSubmitButton.addEventListener('click', infoSwitch )
