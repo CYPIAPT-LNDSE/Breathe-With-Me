@@ -44,6 +44,15 @@
   // }
 }
 
+.feelGoodBtn {
+    border-radius: 23px!important;
+    background-color: transparent!important;
+    border: 2px solid $main-text!important;
+    color: $main-text!important;
+    margin-top: 10%;
+  line-height: 30px!important;
+}
+
 #head {
   z-index: 4;
   margin-top: -4%;

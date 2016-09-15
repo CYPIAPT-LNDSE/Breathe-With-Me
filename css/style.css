@@ -80,6 +80,14 @@
   justify-content: center;
   align-items: center; }
 
+.feelGoodBtn {
+  border-radius: 23px !important;
+  background-color: transparent !important;
+  border: 2px solid #1C6C89 !important;
+  color: #1C6C89 !important;
+  margin-top: 10%;
+  line-height: 30px !important; }
+
 #head {
   z-index: 4;
   margin-top: -4%; }
