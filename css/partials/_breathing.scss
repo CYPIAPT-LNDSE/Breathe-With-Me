@@ -1,19 +1,20 @@
 //Breathing
 
 .breathing {
-<<<<<<< HEAD
   height: 92vh;
-=======
   display: none;
   position: absolute;
-  height: 100vh;
->>>>>>> master
   width: 100vw;
-  background-image: url('../public/assets/breathingBG.png');
   background-color: #A5E2DA;
   background-size: cover;
   background-repeat: no-repeat;
-<<<<<<< HEAD
+  z-index: 0;
+}
+
+.mountain3 {
+  z-index: 0;
+  top: 100%;
+  position: absolute;
   text-align: center;
 
   .material-icons {
@@ -23,14 +24,16 @@
   }
 
   p {
+    text-align: center;
     margin-bottom: 0px;
   }
+
 }
 
 .cat {
   height: inherit;
   width: inherit;
-
+  opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,22 +45,24 @@
 }
 
 #head {
-  z-index: 999;
+  z-index: 4;
   margin-top: -4%;
 
 }
 #belly {
   margin-top: -8%;
-  z-index: 0;
+  z-index: 2;
   width: 160px;
 }
 
 #legs {
   margin-top: -6%;
+  z-index: 1;
 }
 
 #hands {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   margin-top: 3%;
+
 }

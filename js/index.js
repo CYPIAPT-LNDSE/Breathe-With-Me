@@ -37,11 +37,13 @@ const infoSwitch = function() {
 const breathingCat = function() {
   console.log('Start button pressed');
   const tl = new TimelineMax();
-  tl.add( TweenMax.to('.mountain2', 0.5, {y: 0}));
-  tl.add( TweenMax.to('.mountain1', 0.5, {y: 0}));
+  tl.add( TweenMax.to('.mountain2', 0.3, {y: 0}));
+  tl.add( TweenMax.to('.mountain1', 0.3, {y: 0}));
   tl.add( TweenMax.to('.breathing-information', 0.5, {css:{visibility: 'hidden', opacity: 0}}));
   tl.add( TweenMax.fromTo('.alt-intro', 0.2, {backgroundColor: '#5CA1C2'}, {backgroundColor: '#A5E2DA'}));
   tl.add( TweenMax.fromTo('.breathing', 0.5, {css:{display: 'none'}}, {css:{display:'block' }}));
+  tl.add( TweenMax.to('.mountain3', 0.5, {y: -370, ease: Power2.easeOut}));
+  tl.add( TweenMax.fromTo('.cat', 0.75, {css:{opacity: 0}}, {css:{opacity: 1}}));
 };
 
 
