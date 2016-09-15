@@ -12,14 +12,18 @@
   <body>
     <!-- <div class="fractal">
       <img src="./public/assets/ezgif.com-gif-maker.gif" alt="" />
+<<<<<<< HEAD
     </div> -->
+    </div>
+    <!-- Landing -->
     <div class="landing">
       <div class="landing-cat-round">
         <img  src="./public/assets/catLanding.png" alt="Landing page cat says hello" />
         <button id="landing-button" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></button>
-        <h3 id="landing-text">Hello this is cat</h1>
+        <h6 id="landing-text">BREATH WITH KITTEN!</h6>
       </div>
     </div>
+
     <div class="alt-intro">
         <img class="mountain1" src="./public/assets/mountain1.png" alt="" />
         <img class="mountain2" src="./public/assets/mountain2.png" alt="" />
@@ -31,11 +35,34 @@
 
     </div>
     <!-- <div class="welcome">
+    <!-- Welcome (intro)-->
+    <div class="welcome">
       <div class="wrapperCat">
-        <div class="speechBubble"> Hello</div>
+        <div class="speechBubble">
+          <p>Hello!<br> Wellcome to Breathe With Me!<br>What's your name?</p>
+          <div class="wrapperInput">
+              <div class="inputContainer">
+              			<input type="text" name="text-field" class="inputField"  autocomplete="off" id="input"/>
+                    <div class="bottomLine"></div>
+              </div>
+          </div>
+        </div>
         <img class="intro-cat-round" src="./public/assets/kitty_intro.png" alt="Intro page cat says hello" />
       </div>
     </div>
+    <!-- Start -->
+    <div class="start">
+      <div class="wrapperCat">
+        <div class="speechBubble">
+          <p>Hi Charlotte!<br>Let's breath together!</p>
+          <a class="waves-effect waves-teal btn-flat">START</a>
+        </div>
+        <img class="kitty_helloName" src="./public/assets/kitty_helloName.png" alt="Intro page cat says hello" />
+      </div>
+    </div>
+
+    <script src="js/cookie.js"></script>
+    <!-- Breathing -->
     <div class="breathing">
       <div class="cat">
         <svg id="head" width="169px" height="170px" viewBox="0 0 169 170" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -121,7 +148,14 @@
             </g>
         </svg>
       </div>
-    </div> -->
+    </div>
+    </div>
+    <div class="welldone">
+      <i class="material-icons">clear</i><br><br>
+      <button type="button" id="start-again">START AGAIN</button>
+      <img class="intro-cat-round" src="./public/assets/kitty_intro.png" alt="Intro page cat says hello" />
+    </div>
+
     <script src="js/vendors/greensock-js/src/minified/TweenMax.min.js"></script>
     <script src="js/index.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

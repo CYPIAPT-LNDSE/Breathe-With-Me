@@ -1,5 +1,5 @@
 const landingButton = document.getElementById('landing-button');
-const inputField = document.getElementById('input-focus').focus();
+const nameSubmitButton = document.getElementById('name-question-button');
 
 const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-top': '15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
@@ -36,3 +36,4 @@ const headMovement = TweenMax.fromTo('#head', 5, {y: -0, delay: 2}, {y: -19, del
 
 
 landingButton.addEventListener('click', start);
+nameSubmitButton.addEventListener('click', )
