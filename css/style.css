@@ -36,38 +36,6 @@
   height: 55vh;
   margin-bottom: 7vh; }
 
-.speechBubble {
-  height: 30vh;
-  width: 50vh;
-  margin-top: 3vh;
-  background-color: #FFFFFE;
-  border-radius: 21px;
-  opacity: 0.67; }
-
-.speechBubble .inputContainer {
-  width: 100%;
-  color: #1C6C89;
-  margin: 0; }
-.speechBubble .inputField {
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 1px solid #1C6C89;
-  width: 40%;
-  font-size: 16px;
-  font-family: 'Lato', sans-serif;
-  color: #1C6C89;
-  margin: 0; }
-.speechBubble .bottomLine {
-  width: 0%;
-  max-width: 40%;
-  border-bottom: 2px solid;
-  border-color: #1C6C89;
-  transition: width 0.3s;
-  margin: auto; }
-.speechBubble .inputField:focus + div {
-  width: 100%; }
-
 .welcome {
   display: none;
   height: 100vh;
@@ -79,15 +47,19 @@
   text-align: center; }
 
 .breathing {
-  display: none;
-  position: absolute;
-  height: 100vh;
+  height: 92vh;
   width: 100vw;
   background-image: url("../public/assets/breathingBG.png");
   background-color: #A5E2DA;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: 9; }
+  text-align: center; }
+  .breathing .material-icons {
+    color: #1C6C89;
+    float: left;
+    font-size: 24px; }
+  .breathing p {
+    margin-bottom: 0px; }
 
 .cat {
   height: inherit;
@@ -112,7 +84,7 @@
 #hands {
   position: absolute;
   z-index: 1;
-  margin-top: 10%; }
+  margin-top: 3%; }
 
 .fractal {
   position: absolute;
@@ -228,40 +200,6 @@
 
 .btn, .btn-large, .btn-flat {
   line-height: 30px !important; }
-
-.noga-button:hover, .noga-button-large:hover {
-  background-color: transparent;
-  border-radius: 23px;
-  border: 2px solid #1C6C89;
-  color: #1C6C89; }
-
-.btn, .btn-large {
-  text-decoration: none;
-  color: #fff;
-  text-align: center;
-  letter-spacing: .5px;
-  transition: .2s ease-out;
-  cursor: pointer; }
-
-.button_wide {
-  border: 2px solid #1C6C89;
-  background-color: transparent;
-  border-radius: 23px;
-  /* START: */
-  width: 34%;
-  height: 20%;
-  font-family: Lato-Regular;
-  font-size: 13px;
-  text-align: center;
-  color: #1C6C89;
-  letter-spacing: 0.5px;
-  line-height: 17px;
-  transition-duration: 0.4s;
-  cursor: pointer; }
-
-.button_wide:hover {
-  background-color: #D8D8D8;
-  color: #1C6C89; }
 
 .start {
   position: absolute;

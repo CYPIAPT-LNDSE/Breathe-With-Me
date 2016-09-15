@@ -1,15 +1,23 @@
 //Breathing
 
 .breathing {
-  display: none;
-  position: absolute;
-  height: 100vh;
+  height: 92vh;
   width: 100vw;
   background-image: url('../public/assets/breathingBG.png');
   background-color: #A5E2DA;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: 9;
+  text-align: center;
+
+  .material-icons {
+    color: #1C6C89;
+    float: left;
+    font-size: 24px;
+  }
+
+  p {
+    margin-bottom: 0px;
+  }
 }
 
 .cat {
@@ -20,6 +28,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  // .btn-flat{
+  //   margin: 3vh;
+  // }
 }
 
 #head {
@@ -40,5 +52,5 @@
 #hands {
   position: absolute;
   z-index: 1;
-  margin-top: 10%;
+  margin-top: 3%;
 }
