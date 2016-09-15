@@ -12,10 +12,10 @@ const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-t
 
 const start = function() {
   const tl = new TimelineMax();
-  tl.add( TweenMax.to('.material-icons', 0.2, {css:{visibility: 'hidden'}} ))
+  tl.add( TweenMax.to('.material-icons', 0.2, {css:{display: 'none'}} ))
   tl.add( TweenMax.fromTo('#landing-button', 0.4, {scale: 1, backgroundColor: '#5CA1C2'}, {scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn}) );
-  tl.add( TweenMax.fromTo('.alt-intro', 0.5, { css:{ visibility: 'hidden' } }, { css:{ visibility: 'visible' }}));
-  tl.add( TweenMax.to('.landing', 0.1, {css:{visibility: 'hidden'}}) );
+  tl.add( TweenMax.fromTo('.alt-intro', 0.5, { css:{ display: 'none' } }, { css:{ display: 'inline-block' }}));
+  tl.add( TweenMax.to('.landing', 0.1, {css:{display: 'none'}}) );
   tl.add( TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add( TweenMax.to('.mountain2', 0.5, {y: -300}));
   tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 300 , opacity:1}));
@@ -25,7 +25,7 @@ const infoSwitch = function() {
   console.log('button pressed');
   const tl = new TimelineMax();
   tl.add( TweenMax.to('.alt-info-box', 0.2, {css:{ visibility: 'hidden', opacity: 0 }}));
-  tl.add( TweenMax.to('.breathing-information', 0.2, {css:{visibility: 'visible', opacity: 1}}));
+  tl.add( TweenMax.to('.breathing-information', 0.2, {css:{visibility: 'visible', opacity: 1 }}));
 };
 
 const breathingCat = function() {
@@ -34,20 +34,20 @@ const breathingCat = function() {
   tl.add( TweenMax.to('.mountain2', 0.5, {y: 0}));
   tl.add( TweenMax.to('.mountain1', 0.5, {y: 0}));
   tl.add( TweenMax.to('.breathing-information', 0.5, {css:{visibility: 'hidden', opacity: 0}}));
-  tl.add( TweenMax.fromTo('.alt-intro', 0.2, {backgroundColor: '#5CA1C2'}, {backgroundColor: '#CEF7F0'}));
-  tl.add( TweenMax.to('.breathing', 0.5))
+  tl.add( TweenMax.fromTo('.alt-intro', 0.2, {backgroundColor: '#5CA1C2'}, {backgroundColor: '#A5E2DA'}));
+  tl.add( TweenMax.fromTo('.breathing', 0.5, {css:{display: 'none'}}, {css:{display:'block' }}));
 };
 
 
 
 const exit = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.fractal', 0.2, {css:{ visibility: 'hidden'}}));
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ visibility: 'visible'}}));
+  tl.add(TweenMax.to('.fractal', 0.2, {css:{ display: 'none'}}));
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'inline-block'}}));
 }
 
 const breatheOut = {
-  visible: true,
+  visibility: true,
   scale: 1,
   delay: 2
 };

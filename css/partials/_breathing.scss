@@ -1,12 +1,15 @@
 //Breathing
 
 .breathing {
+  display: none;
+  position: absolute;
   height: 100vh;
   width: 100vw;
   background-image: url('../public/assets/breathingBG.png');
   background-color: #A5E2DA;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 9;
 }
 
 .cat {
