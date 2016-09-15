@@ -6,8 +6,7 @@ const exitBreathing = document.getElementById('exit-breathing');
 const FeelingBetterBtn = document.getElementById('feelGoodBtn');
 const belly = document.getElementById('belly');
 const hands = document.getElementById('hands');
-
-
+const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
 
 
 const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-top': '15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
