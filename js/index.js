@@ -46,13 +46,6 @@ const breathingCat = function() {
   tl.add( TweenMax.fromTo('.cat', 0.75, {css: {opacity: 0}}, {css: {opacity: 1}}));
 };
 
-<<<<<<< HEAD
-
-||||||| merged common ancestors
-
-
-=======
->>>>>>> 426ce77b9faebde14ba34a1dd876dac976c1abfa
 //toRefactor
 const exit = function() {
   const tl = new TimelineMax();
