@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="320px" height="50px" viewBox="0 0 320 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 24 + Path 272 + Path 272</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle-24-+-Path-272-+-Path-272">
+            <polyline id="Path-272" fill="#A5E2DA" points="41.2040579 9.66810967 2.0602029 0.360750361 18.5418261 22.0779221 0 39.1414141 55.6254782 50 32.9632463 34.4877345"></polyline>
+            <polygon id="Path-276" fill="#12214B" points="31.4612265 34.3137255 55.5290648 50 58.203269 33.3333333"></polygon>
+            <polyline id="Path-272" fill="#A5E2DA" transform="translate(291.518710, 25.180375) scale(-1, 1) translate(-291.518710, -25.180375) " points="304.910029 9.66810967 265.766174 0.360750361 282.247797 22.0779221 263.705971 39.1414141 319.331449 50 296.669217 34.4877345"></polyline>
+            <polygon id="Path-276" fill="#12214B" transform="translate(274.499201, 41.666667) scale(-1, 1) translate(-274.499201, -41.666667) " points="261.12818 34.3137255 285.196018 50 287.870222 33.3333333"></polygon>
+            <path d="M42.7409642,0 C42.7409642,0 118.352535,5.33389137 159.142425,5.33389137 C201.447385,5.33389137 275.543892,0 275.543892,0 L287.905109,35.6765136 C287.905109,35.6765136 267.529066,40.0002159 242.580645,43.4322774 C216.802114,46.9785341 180.933956,47.7250599 159.142425,47.7250599 C138.759543,47.7250599 122.078727,48.6472628 94.9287975,45.3441075 C64.8555582,41.6852922 30.3797468,35.6765136 30.3797468,35.6765136 L42.7409642,0 Z" id="Rectangle-24" fill="#808FBE"></path>
+        </g>
+    </g>
+</svg>
