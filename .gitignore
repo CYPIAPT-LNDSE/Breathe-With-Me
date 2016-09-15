@@ -41,3 +41,5 @@ jspm_packages
 style.css.map
 
 css/style.css
+
+css/style.min.css
