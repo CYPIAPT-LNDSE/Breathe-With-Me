@@ -3,12 +3,15 @@
 @import './partials/_intro';
 @import './partials/_breathing';
 @import './partials/_gifinfo';
+@import './partials/_altintro';
 @import './partials/_start';
 @import './partials/_welldone.scss';
-
 
 body {
   font-family: 'Lato', sans-serif;
   color: $main-text;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
   letter-spacing: 1.4px;
 }
