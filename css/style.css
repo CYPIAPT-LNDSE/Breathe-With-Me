@@ -62,6 +62,8 @@
   position: absolute;
   text-align: center; }
   .mountain3 .material-icons {
+    position: absolute;
+    z-index: 10;
     color: #1C6C89;
     float: left;
     font-size: 24px; }
