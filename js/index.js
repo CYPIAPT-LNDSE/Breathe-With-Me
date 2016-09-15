@@ -26,8 +26,12 @@ const start = function() {
 const infoSwitch = function() {
   console.log('button pressed');
   const tl = new TimelineMax();
-  tl.add( TweenMax.to('.alt-info-box', 0.2, {css: { visibility: 'hidden', opacity: 0 }}));
-  tl.add( TweenMax.to('.breathing-information', 0.2, {css: {visibility: 'visible', opacity: 1 }}));
+  tl.add( TweenMax.to('.alt-info-box', 0.2, {css:{ visibility: 'hidden', opacity: 0 }}));
+  // tl.add( TweenMax.to('.name', {text:{value: "OK", delimiter: " "}} ));
+  tl.add( TweenMax.to('.breathing-information', 0.2, {css:{visibility: 'visible', opacity: 1 }}));
+  tl.add( TweenMax.to('.name', 0.1, {text:{value: `Hi ${document.cookie}`, delimiter: " "}, ease:Linear.easeNone} ));
+  tl.add( TweenMax.to('.alt-info-box', 0.2, {css:{ visibility: 'hidden', opacity: 0 }}));
+  tl.add( TweenMax.to('.breathing-information', 0.2, {css:{visibility: 'visible', opacity: 1 }}));
 };
 
 const breathingCat = function() {
@@ -42,6 +46,13 @@ const breathingCat = function() {
   tl.add( TweenMax.fromTo('.cat', 0.75, {css: {opacity: 0}}, {css: {opacity: 1}}));
 };
 
+<<<<<<< HEAD
+
+||||||| merged common ancestors
+
+
+=======
+>>>>>>> 426ce77b9faebde14ba34a1dd876dac976c1abfa
 //toRefactor
 const exit = function() {
   const tl = new TimelineMax();
