@@ -52,25 +52,25 @@ const breathingCat = function() {
 const exit = function() {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.fractal', 0.2, {css:{ display: 'none'}}));
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'inline-block'}}));
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'block'}}));
 }
 
 const exitToIntro = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ visibility: 'hidden'}}));
-  tl.add(TweenMax.to('.alt-intro', 0.2, {css:{ visibility: 'visible'}}));
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'none'}}));
+  tl.add(TweenMax.to('.alt-intro', 0.2, {css:{ display: 'block'}}));
 }
 
 const goToWellDone = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ visibility: 'hidden'}}));
-  tl.add(TweenMax.to('.welldone', 0.2, {css:{ visibility: 'visible'}}));
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'none'}}));
+  tl.add(TweenMax.to('.welldone', 0.2, {css:{ display: 'block'}}));
 }
 
 const bellyOfTheWhale = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.breathing', 0.2, {css:{ visibility: 'hidden'}}));
-  tl.add(TweenMax.to('.fractal', 0.2, {css:{ visibility: 'visible'}}));
+  tl.add(TweenMax.to('.breathing', 0.2, {css:{ display: 'none'}}));
+  tl.add(TweenMax.to('.fractal', 0.2, {css:{ display: 'block'}}));
 }
 
 const breatheOut = {
