@@ -3,11 +3,11 @@ const nameSubmitButton = document.getElementById('name-question-button');
 const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
 const exitFractal = document.getElementById('exit-fractal');
 
-const nameButton = document.getElementById('name-question-button');
-const name = document.getElementById('input-focus');
-const hiName = document.getElementById('name');
-
-hiName.textContent = `Hi ${}`;
+// const nameButton = document.getElementById('name-question-button');
+// const userName = document.getElementById('input-focus');
+// const hiName = document.getElementById('name');
+//
+// hiName.textContent = `Hi ${document.cookie}`;
 
 const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-top': '15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
@@ -30,7 +30,9 @@ const infoSwitch = function() {
   console.log('button pressed');
   const tl = new TimelineMax();
   tl.add( TweenMax.to('.alt-info-box', 0.2, {css:{ visibility: 'hidden', opacity: 0 }}));
+  // tl.add( TweenMax.to('.name', {text:{value: "OK", delimiter: " "}} ));
   tl.add( TweenMax.to('.breathing-information', 0.2, {css:{visibility: 'visible', opacity: 1 }}));
+  tl.add( TweenMax.to('.name', 0.1, {text:{value: `Hi ${document.cookie}`, delimiter: " "}, ease:Linear.easeNone} ));
 };
 
 const breathingCat = function() {
