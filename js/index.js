@@ -3,6 +3,11 @@ const nameSubmitButton = document.getElementById('name-question-button');
 const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
 const exitFractal = document.getElementById('exit-fractal');
 
+const nameButton = document.getElementById('name-question-button');
+const name = document.getElementById('input-focus');
+const hiName = document.getElementById('name');
+
+hiName.textContent = `Hi ${}`;
 
 const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-top': '15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
