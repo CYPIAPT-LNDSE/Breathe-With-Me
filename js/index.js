@@ -21,7 +21,7 @@ const start = function() {
   tl.add( TweenMax.to('.landing', 0.1, {css: {display: 'none'}}) );
   tl.add( TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add( TweenMax.to('.mountain2', 0.5, {y: -300}));
-  tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 300 , opacity: 1}));
+  tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 400 , opacity: 1}));
 };
 
 const infoSwitch = function() {
