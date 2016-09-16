@@ -74,7 +74,7 @@ const exitToIntro = function() {
 const goToWellDone = function() {
   const tl = new TimelineMax();
   tl.add( TweenMax.to('.bellyPressText', 0, {css: {visibility: 'hidden', opacity: 0 }}));
-  tl.add(TweenMax.to('.cat', 0.7, {opacity: 0}));
+  tl.add(TweenMax.to('.cat', 0.5, {opacity: 0}));
   tl.add(TweenMax.to('.mountain3', 1, {y: 500}));
   tl.add(TweenMax.to('.alt-intro', 0.1, {css: { display: 'none'}}));
   tl.add(TweenMax.to('.breathing', 0.1, {css: { display: 'none'}}));
