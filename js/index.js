@@ -48,6 +48,7 @@ const breathingCat = function() {
   tl.add( TweenMax.fromTo('.breathing', 0.5, {css: {display: 'none'}}, {css: {display: 'block' }}));
   tl.add( TweenMax.to('.mountain3', 0.5, {y: -370, ease: Power2.easeOut}));
   tl.add( TweenMax.fromTo('.cat', 0.75, {css: {opacity: 0}}, {css: {opacity: 1}}));
+  tl.add( TweenMax.to('.bellyPressText', 0.5, {css: {visibility: 'visible', opacity: 1 }}));
 };
 
 //toRefactor
@@ -67,18 +68,24 @@ const exitToIntro = function() {
   tl.add( TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add( TweenMax.to('.mountain2', 0.5, {y: -300}));
   tl.add( TweenMax.to('.mountain4', 0.5, {y: -300}));
-  tl.add(TweenMax.to('.breathing-information', 0.2, {css: { display: 'block', opacity: 1, visibility: 'visible'}}));
+  tl.add(TweenMax.to('.breathing-information', 0.2, {css: { display: 'flex', opacity: 1, visibility: 'visible'}}));
 };
 
 const goToWellDone = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.cat', 0.5, {opacity: 0}));
-  tl.add(TweenMax.to('.mountain3', 0.5, {y: 500}));
+  tl.add( TweenMax.to('.bellyPressText', 0, {css: {visibility: 'hidden', opacity: 0 }}));
+  tl.add(TweenMax.to('.cat', 0.7, {opacity: 0}));
+  tl.add(TweenMax.to('.mountain3', 1, {y: 500}));
   tl.add(TweenMax.to('.alt-intro', 0.2, {css: { display: 'none'}}));
   tl.add(TweenMax.to('.breathing', 0.2, {css: { display: 'none'}}));
   tl.add(TweenMax.to('.welldone', 0.2, {css: { display: 'flex'}}));
-  tl.add( TweenMax.to('.welldone-mountain1', 0.5, {y: -170}));
-  tl.add( TweenMax.to('.welldone-mountain2', 0.5, {y: -300}));
+  tl.add(TweenMax.fromTo('.welldone', 0.2, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
+  tl.add( TweenMax.to('.welldone-mountain1', 0.5, {y: -100}));
+  tl.add( TweenMax.to('.welldone-mountain2', 0.5, {y: -150}));
+  tl.add( TweenMax.to('.welldone-mountain3', 0.5, {y: -170}));
+  tl.add( TweenMax.to('#start-again', 0.3, { opacity: 1}));
+  tl.add( TweenMax.to('#welldone-banner', 0.3, { y: 150 }));
+  tl.add( TweenMax.to('#welldone-stars', 0.3, { opacity: 1}));
   tl.add(TweenMax.set('.breathing', 0, {backgroundColor: '#A5E2DA'}));
 };
 
@@ -92,7 +99,7 @@ const goToStart = function() {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.welldone', 0.2, {css: { display: 'none'}}));
   tl.add(TweenMax.to('.alt-intro', 0.2, {css: { display: 'block'}}));
-  tl.add(TweenMax.fromTo('.alt-intro', 0.5, {css: {'background': 'linear-gradient(#494A97, #091A3E)'}}, {css: {background: '', backgroundColor: '#5CA1C2'}}));
+  tl.add(TweenMax.fromTo('.alt-intro', 0.5, {backgroundColor: '#494A97'}, { backgroundColor: '#5CA1C2'}));
   tl.add(TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add(TweenMax.to('.mountain2', 0.5, {y: -300}));
   tl.add(TweenMax.to('.mountain4', 0.5, {y: -300}));
