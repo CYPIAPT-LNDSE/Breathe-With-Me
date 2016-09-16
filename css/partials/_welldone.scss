@@ -19,6 +19,18 @@
     line-height: 30px!important;
   }
 
+  .welldoneUser {
+    z-index: 10;
+    color: white;
+    height: 30%;
+    width: 60%;
+    text-align: center;
+    position: absolute;
+    bottom: 50%;
+    left: 20%;
+    font-size: 2em;
+  }
+
   .material-icons {
     position: absolute;
     color: white;
