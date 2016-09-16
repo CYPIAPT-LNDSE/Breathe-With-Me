@@ -7,23 +7,36 @@
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+
    .wrapper-gif {
-     height: 95.7746478873vh;
+     position: absolute;
+     height: 100vh;
      width: 100vw;
      display: flex;
      justify-content: flex-end;
      align-items: center;
      flex-direction: column;
       img {
-        height: 32%;
+        height: 36%;
+        z-index: 1;
       }
   }
   .material-icons {
     color: rgba(255, 255, 255, 1);
     float: left;
     font-size: 24px;
+    z-index: 4;
+    position: absolute;
   }
   .material-icons .md-light .md-inactive {
     color: rgba(255, 255, 255, 0.3);
   }
+}
+
+#fractal-background {
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  z-index: 0;
+
 }
