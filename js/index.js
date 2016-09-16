@@ -102,7 +102,7 @@ const goToStart = function() {
   tl.add(TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add(TweenMax.to('.mountain2', 0.5, {y: -300}));
   tl.add(TweenMax.to('.mountain4', 0.5, {y: -300}));
-  tl.add(TweenMax.to('.breathing-information', 0.2, {css: { display: 'block', opacity: 1, visibility: 'visible'}}));
+  tl.add(TweenMax.to('.breathing-information', 0.2, {css: { display: 'flex', opacity: 1, visibility: 'visible'}}));
 };
 
 const breatheOut = {
