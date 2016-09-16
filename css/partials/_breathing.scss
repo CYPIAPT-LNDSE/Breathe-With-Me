@@ -9,12 +9,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 0;
-
-  p {
-    text-align: center;
-    margin-bottom: 0px;
-    visibility: hidden;
-  }
 }
 
 .mountain3 {
@@ -52,6 +46,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.belly-press-text {
+ position: absolute;
+ top: 3%;
+ bottom: 90%;
+ margin: 0px;
+ text-align: center;
+ visibility: hidden;
 }
 
 #head {
