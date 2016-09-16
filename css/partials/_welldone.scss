@@ -10,7 +10,7 @@
   #start-again {
     border-radius: 21px;
     background-color: transparent;
-    margin-top: 15vh;
+    margin-top: 27vh;
     margin-bottom: 8vh;
     padding: 0.5vh 6vw 0.5vh 6vw;
   }
@@ -19,5 +19,22 @@
     float: left;
     margin-left: 1.5vw;
     margin-top: 1vh;
+  }
+}
+
+.welldone-svg-wrapper {
+  position: relative;
+  text-align: center;
+  #welldone-banner, #welldone-stars {
+    position: absolute;
+  }
+  #welldone-banner {
+    top: 11.2vh;
+    left: 18.28125vw;
+  }
+  #welldone-stars {
+    z-index: 10;
+    top: 0px;
+    left: 10.9375vw;
   }
 }
