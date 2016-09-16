@@ -32,7 +32,7 @@
   right: 20%;
   width: 60%; }
 
-.wrapperCat {
+.wrapper-cat {
   width: 100%;
   height: 100%;
   display: flex;
@@ -81,16 +81,7 @@
     float: left;
     font-size: 24px; }
 
-.cat {
-  height: inherit;
-  width: inherit;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.feelGoodBtn {
+.feel-good-button {
   padding-left: 28px;
   padding-right: 28px;
   border-radius: 23px !important;
@@ -99,6 +90,15 @@
   color: #1C6C89 !important;
   margin-top: 10%;
   line-height: 30px !important; }
+
+.cat {
+  height: inherit;
+  width: inherit;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 #head {
   z-index: 4;
@@ -127,14 +127,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center; }
-  .fractal .wrapperGIF {
+  .fractal .wrapper-gif {
     height: 95.7746478873vh;
     width: 100vw;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: column; }
-    .fractal .wrapperGIF img {
+    .fractal .wrapper-gif img {
       height: 32%; }
   .fractal .material-icons {
     color: white;
@@ -210,12 +210,10 @@
   border: 2px solid white !important;
   color: white !important;
   margin-top: 10%;
-  font-size: 16px !important;
-}
+  font-size: 16px !important; }
 
 .btn, .btn-large, .btn-flat {
-  line-height: 30px !important;
-}
+  line-height: 30px !important; }
 
 .start {
   height: 100vh;
@@ -224,8 +222,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../public/assets/breathingBG.png");
-  text-align: center;
-}
+  text-align: center; }
 
 .welldone {
   display: none;
@@ -244,7 +241,7 @@
     color: white !important;
     margin-bottom: 8vh;
     line-height: 30px !important; }
-  .welldone .welldoneUser {
+  .welldone .welldone-user {
     z-index: 10;
     color: white;
     height: 30%;
