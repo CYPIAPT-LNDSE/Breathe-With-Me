@@ -46,6 +46,7 @@ const breathingCat = function() {
   tl.add( TweenMax.fromTo('.breathing', 0.5, {css: {display: 'none'}}, {css: {display: 'block' }}));
   tl.add( TweenMax.to('.mountain3', 0.5, {y: -370, ease: Power2.easeOut}));
   tl.add( TweenMax.fromTo('.cat', 0.75, {css: {opacity: 0}}, {css: {opacity: 1}}));
+  tl.add( TweenMax.to('.bellyPressText', 0.5, {css: {visibility: 'visible', opacity: 1 }}));
 };
 
 //toRefactor
@@ -69,8 +70,9 @@ const exitToIntro = function() {
 
 const goToWellDone = function() {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.cat', 0.5, {opacity:0}));
-  tl.add(TweenMax.to('.mountain3', 0.5, {y:500}));
+  tl.add( TweenMax.to('.bellyPressText', 0, {css: {visibility: 'hidden', opacity: 0 }}));
+  tl.add(TweenMax.to('.cat', 0.7, {opacity:0}));
+  tl.add(TweenMax.to('.mountain3', 1, {y:500}));
   tl.add(TweenMax.to('.alt-intro', 0.2, {css: { display: 'none'}}));
   tl.add(TweenMax.to('.breathing', 0.2, {css: { display: 'none'}}));
   tl.add(TweenMax.to('.welldone', 0.2, {css: { display: 'flex'}}));
