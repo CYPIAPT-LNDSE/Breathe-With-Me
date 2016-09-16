@@ -3,7 +3,12 @@
   display: none;
   height: 100vh;
   width: 100vw;
-   .wrapperGIF {
+  background-image: url('../public/assets/bggif.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+
+   .wrapper-gif {
      position: absolute;
      height: 100vh;
      width: 100vw;
@@ -28,7 +33,7 @@
   }
 }
 
-#fractalBG {
+#fractal-background {
   width: 100%;
   height: 120%;
   position: absolute;

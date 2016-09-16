@@ -9,6 +9,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 0;
+
   p {
     text-align: center;
     margin-bottom: 0px;
@@ -32,17 +33,7 @@
   }
 }
 
-.cat {
-  height: inherit;
-  width: inherit;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.feelGoodBtn {
+.feel-good-button {
     padding-left: 28px;
     padding-right: 28px;
     border-radius: 23px!important;
@@ -51,6 +42,16 @@
     color: $main-text!important;
     margin-top: 10%;
   line-height: 30px!important;
+}
+
+.cat {
+  height: inherit;
+  width: inherit;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #head {

@@ -32,7 +32,7 @@
   right: 20%;
   width: 60%; }
 
-.wrapperCat {
+.wrapper-cat {
   width: 100%;
   height: 100%;
   display: flex;
@@ -81,16 +81,7 @@
     float: left;
     font-size: 24px; }
 
-.cat {
-  height: inherit;
-  width: inherit;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.feelGoodBtn {
+.feel-good-button {
   padding-left: 28px;
   padding-right: 28px;
   border-radius: 23px !important;
@@ -99,6 +90,15 @@
   color: #1C6C89 !important;
   margin-top: 10%;
   line-height: 30px !important; }
+
+.cat {
+  height: inherit;
+  width: inherit;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 #head {
   z-index: 4;
@@ -122,8 +122,12 @@
   position: absolute;
   display: none;
   height: 100vh;
-  width: 100vw; }
-  .fractal .wrapperGIF {
+  width: 100vw;
+  background-image: url("../public/assets/bggif.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center; }
+  .fractal .wrapper-gif {
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -131,7 +135,7 @@
     justify-content: flex-end;
     align-items: center;
     flex-direction: column; }
-    .fractal .wrapperGIF img {
+    .fractal .wrapper-gif img {
       height: 36%;
       z-index: 1; }
   .fractal .material-icons {
@@ -143,7 +147,7 @@
   .fractal .material-icons .md-light .md-inactive {
     color: rgba(255, 255, 255, 0.3); }
 
-#fractalBG {
+#fractal-background {
   width: 100%;
   height: 120%;
   position: absolute;
@@ -247,7 +251,7 @@
     color: white !important;
     margin-bottom: 8vh;
     line-height: 30px !important; }
-  .welldone .welldoneUser {
+  .welldone .welldone-user {
     z-index: 10;
     color: white;
     height: 30%;
