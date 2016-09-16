@@ -1,0 +1,290 @@
+.landing {
+  font-size: 1em;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: #CEF7F0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../public/assets/backgroundLanding.png");
+  text-align: center; }
+
+.landing-cat-round {
+  margin-top: -100%;
+  opacity: 0;
+  width: 80%;
+  display: inline-block; }
+  .landing-cat-round button {
+    opacity: 0;
+    background-color: #5CA1C2; }
+  .landing-cat-round img {
+    height: 100%;
+    width: 100%; }
+  .landing-cat-round h6 {
+    padding-top: 10vh;
+    opacity: 0; }
+
+#landing-stars {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  right: 20%;
+  width: 60%; }
+
+.wrapperCat {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; }
+
+.intro-cat-round {
+  height: 55vh;
+  margin-bottom: 7vh; }
+
+.welcome {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: #5CA1C2;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../public/assets/breathingBG.png");
+  text-align: center; }
+
+.breathing {
+  height: 100vh;
+  display: none;
+  position: absolute;
+  width: 100vw;
+  background-color: #A5E2DA;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0; }
+  .breathing p {
+    text-align: center;
+    margin-bottom: 0px;
+    visibility: hidden; }
+
+.mountain3 {
+  z-index: 0;
+  top: 100%;
+  position: absolute;
+  text-align: center;
+  width: 100vw; }
+  .mountain3 .material-icons {
+    position: absolute;
+    z-index: 10;
+    color: #1C6C89;
+    float: left;
+    font-size: 24px; }
+
+.cat {
+  height: inherit;
+  width: inherit;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.feelGoodBtn {
+  padding-left: 28px;
+  padding-right: 28px;
+  border-radius: 23px !important;
+  background-color: transparent !important;
+  border: 2px solid #1C6C89 !important;
+  color: #1C6C89 !important;
+  margin-top: 10%;
+  line-height: 30px !important; }
+
+#head {
+  z-index: 4;
+  margin-top: -4%; }
+
+#belly {
+  margin-top: -8%;
+  z-index: 2;
+  width: 160px; }
+
+#legs {
+  margin-top: -6%;
+  z-index: 1; }
+
+#hands {
+  position: absolute;
+  z-index: 3;
+  margin-top: 3%; }
+
+.fractal {
+  position: absolute;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../public/assets/bgGIF.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center; }
+  .fractal .wrapperGIF {
+    height: 95.7746478873vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column; }
+    .fractal .wrapperGIF img {
+      height: 32%; }
+  .fractal .material-icons {
+    color: white;
+    float: left;
+    font-size: 24px; }
+  .fractal .material-icons .md-light .md-inactive {
+    color: rgba(255, 255, 255, 0.3); }
+
+.alt-intro {
+  display: none;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: #5CA1C2;
+  position: absolute;
+  z-index: 0; }
+  .alt-intro span {
+    padding-top: 1em; }
+
+.mountain1 {
+  z-index: 0;
+  top: 100%;
+  position: absolute; }
+
+.mountain2 {
+  z-index: -1;
+  top: 100%;
+  position: absolute; }
+
+.mountain4 {
+  z-index: -3;
+  top: 100%;
+  position: absolute; }
+
+.alt-info-box {
+  display: inline-block;
+  color: white;
+  height: 30%;
+  width: 60%;
+  text-align: center;
+  position: absolute;
+  bottom: 110%;
+  left: 20%;
+  font-size: 1.5em; }
+
+.breathing-information {
+  visibility: hidden;
+  margin-top: 2em;
+  padding: 0.5em;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+  opacity: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 5; }
+
+.breathing-start {
+  margin-top: 1em;
+  font-size: 1em; }
+
+#input-focus {
+  border-bottom: 2px solid #ffffff; }
+
+.btn-flat {
+  border-radius: 23px !important;
+  border: 2px solid white !important;
+  color: white !important;
+  margin-top: 10%;
+  font-size: 16px !important; }
+
+.btn, .btn-large, .btn-flat {
+  line-height: 30px !important; }
+
+.start {
+  height: 100vh;
+  width: 100vw;
+  background-color: #CADFFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../public/assets/breathingBG.png");
+  text-align: center; }
+
+.welldone {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: #494A97;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .welldone #start-again {
+    padding-left: 28px;
+    padding-right: 28px;
+    border-radius: 23px !important;
+    border: 2px solid white !important;
+    color: white !important;
+    margin-bottom: 8vh;
+    line-height: 30px !important; }
+  .welldone .material-icons {
+    position: absolute;
+    color: white;
+    bottom: 95%;
+    right: 90%;
+    margin-left: 1.5vw;
+    margin-top: 1vh; }
+  .welldone .welldone-mountain1 {
+    width: 101%;
+    z-index: 10;
+    top: 100%;
+    position: absolute; }
+  .welldone .welldone-mountain2 {
+    width: 101%;
+    z-index: 5;
+    top: 100%;
+    position: absolute; }
+  .welldone .welldone-mountain3 {
+    width: 101%;
+    z-index: 2;
+    top: 100%;
+    position: absolute; }
+
+.welldone-svg-wrapper {
+  text-align: center; }
+  .welldone-svg-wrapper #welldone-banner {
+    position: absolute;
+    bottom: 100%;
+    left: 20%;
+    width: 60%; }
+  .welldone-svg-wrapper #welldone-stars {
+    opacity: 0;
+    position: absolute;
+    z-index: 10;
+    top: 5.5vh;
+    left: 10%;
+    width: 80%; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #1C6C89;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  letter-spacing: 1.4px; }
+
+/*# sourceMappingURL=style.css.map */
