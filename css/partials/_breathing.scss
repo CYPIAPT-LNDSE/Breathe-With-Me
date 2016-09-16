@@ -40,10 +40,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  // .btn-flat{
-  //   margin: 3vh;
-  // }
 }
 
 .feelGoodBtn {
@@ -60,8 +56,8 @@
 #head {
   z-index: 4;
   margin-top: -4%;
-
 }
+
 #belly {
   margin-top: -8%;
   z-index: 2;
@@ -77,5 +73,4 @@
   position: absolute;
   z-index: 3;
   margin-top: 3%;
-
 }

@@ -1,6 +1,5 @@
 .fractal {
   position: absolute;
-  // visibility: collapse;
   display: none;
   height: 100vh;
   width: 100vw;
@@ -8,7 +7,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-  // z-index: 0;
    .wrapperGIF {
      height: 95.7746478873vh;
      width: 100vw;
@@ -16,7 +14,6 @@
      justify-content: flex-end;
      align-items: center;
      flex-direction: column;
-    //  z-index: 1;
       img {
         height: 32%;
       }

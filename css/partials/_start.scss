@@ -10,11 +10,10 @@
 }
 
 .btn, .btn-large, .btn-flat {
-line-height: 30px!important;
+  line-height: 30px!important;
 }
 
 .start {
-  // visibility: hidden;
   height: 100vh;
   width: 100vw;
   background-color: $background-start;
