@@ -79,9 +79,9 @@ const goToWellDone = function() {
   tl.add(TweenMax.fromTo('.welldone', 0.2, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
   tl.add( TweenMax.to('#welldone-banner', 0.3, { y: 150 }));
   tl.add( TweenMax.to('#welldone-stars', 0.3, { opacity: 1}));
-  tl.add( TweenMax.to('.welldone-mountain1', 0.5, {y: -170}));
-  tl.add( TweenMax.to('.welldone-mountain2', 0.5, {y: -250}));
-  tl.add( TweenMax.to('.welldone-mountain3', 0.5, {y: -270}));
+  tl.add( TweenMax.to('.welldone-mountain1', 0.5, {y: -100}));
+  tl.add( TweenMax.to('.welldone-mountain2', 0.5, {y: -150}));
+  tl.add( TweenMax.to('.welldone-mountain3', 0.5, {y: -170}));
   tl.add( TweenMax.to('#start-again', 0.3, { opacity: 1}));
   // tl.add( TweenMax.to('#welldone-banner', 0.3, { y: 150 }));
   // tl.add( TweenMax.to('#welldone-stars', 0.3, { opacity: 1}));
