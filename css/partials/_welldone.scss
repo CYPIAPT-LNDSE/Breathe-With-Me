@@ -10,13 +10,13 @@
   flex-direction: column;
 
   #start-again {
-    opacity: 0;
-    border-radius: 21px;
-    background-color: transparent;
+    padding-left: 28px;
+    padding-right: 28px;
+    border-radius: 23px!important;
+    border: 2px solid white!important;
+    color: white!important;
     margin-bottom: 8vh;
-    padding: 0.5vh 6vw 0.5vh 6vw;
-    color: white;
-    border: 2px solid white;
+    line-height: 30px!important;
   }
 
   .material-icons {
