@@ -11,10 +11,12 @@ const startAgain = document.getElementById('start-again');
 const landingCatReveal = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-top': '15%', opacity: 1}, ease: Elastic.easeInOut.config(0.5, 0.2), onComplete: function() {
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
   TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
+  TweenMax.to('#landing-stars', 0.6, { opacity: 1});
 } });
 
 const start = function() {
   const tl = new TimelineMax();
+  tl.add(TweenMax.to('#landing-stars', 0.2, { opacity: 0, display: 'none'}));
   tl.add( TweenMax.to('#landing-material-icon', 0.2, {css: {display: 'none'}} ));
   tl.add( TweenMax.fromTo('#landing-button', 0.4, {scale: 1, backgroundColor: '#5CA1C2'}, {scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn}) );
   tl.add( TweenMax.fromTo('.alt-intro', 0.5, { css: { display: 'none' } }, { css: { display: 'inline-block' }}));
