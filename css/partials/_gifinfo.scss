@@ -3,10 +3,6 @@
   display: none;
   height: 100vh;
   width: 100vw;
-  // background-image: url('../public/assets/bggif.png');
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // text-align: center;
    .wrapperGIF {
      position: absolute;
      height: 100vh;
@@ -16,7 +12,6 @@
      align-items: center;
      flex-direction: column;
       img {
-        // position: absolute;
         height: 36%;
         z-index: 1;
       }
