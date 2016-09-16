@@ -51,7 +51,6 @@ const breathingCat = function() {
   tl.add( TweenMax.to('.bellyPressText', 0.5, {css: {visibility: 'visible', opacity: 1 }}));
 };
 
-//toRefactor
 const exit = function() {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.fractal', 0.2, {css: { display: 'none'}}));
@@ -81,7 +80,6 @@ const goToWellDone = function() {
   tl.add(TweenMax.to('.welldone', 0.1, {css: { display: 'flex'}}));
   tl.add(TweenMax.fromTo('.welldone', 0.2, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
   tl.add( TweenMax.to('.welldoneUser', 0, {text: {value: `Well Done ${document.cookie}!`, delimiter: ' '}, ease: Linear.easeNone} ));
-  // tl.add( TweenMax.to('#welldone-banner', 0.3, { y: 150 }));
   tl.add( TweenMax.to('#welldone-stars', 0.3, { opacity: 1}));
   tl.add( TweenMax.to('.welldone-mountain1', 0.5, {y: -100}));
   tl.add( TweenMax.to('.welldone-mountain2', 0.5, {y: -150}));
