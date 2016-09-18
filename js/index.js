@@ -12,7 +12,7 @@ const landingPageView = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-to
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
   TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
   TweenMax.to('#landing-stars', 0.6, { opacity: 1});
-} });
+  } });
 
 const landingToInfo = function() {
   const tl = new TimelineMax();
@@ -24,7 +24,12 @@ const landingToInfo = function() {
   tl.add( TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add( TweenMax.to('.mountain2', 0.5, {y: -300}));
   tl.add( TweenMax.to('.mountain4', 0.5, {y: -350}));
-  tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 400 , opacity: 1}));
+  if (!document.cookie) {
+    tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 400 , opacity: 1}));
+  } else {
+    tl.add( TweenMax.to('.breathing-information', 0.2, {css: {visibility: 'visible', opacity: 1 }}));
+    tl.add( TweenMax.to('.name', 0, {text: {value: `Hi ${document.cookie}`, delimiter: ' '}, ease: Linear.easeNone} ));
+  }
 };
 
 const nameToInfoSwitch = function() {
@@ -34,7 +39,6 @@ const nameToInfoSwitch = function() {
   tl.add( TweenMax.to('.breathing-information', 0.2, {css: {visibility: 'visible', opacity: 1 }}));
   tl.add( TweenMax.to('.name', 0, {text: {value: `Hi ${document.cookie}`, delimiter: ' '}, ease: Linear.easeNone} ));
   tl.add( TweenMax.to('.alt-info-box', 0.2, {css: { visibility: 'hidden', opacity: 0 }}));
-  tl.add( TweenMax.to('.breathing-information', 0.2, {css: {visibility: 'visible', opacity: 1 }}));
 };
 
 const infoToCatView = function() {
