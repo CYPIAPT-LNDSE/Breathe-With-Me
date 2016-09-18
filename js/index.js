@@ -12,7 +12,7 @@ const landingPageView = TweenMax.to('.landing-cat-round', 2.5, {css: {'margin-to
   TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
   TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
   TweenMax.to('#landing-stars', 0.6, { opacity: 1});
-  } });
+} });
 
 const landingToInfo = function() {
   const tl = new TimelineMax();
