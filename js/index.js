@@ -27,7 +27,7 @@ const landingToInfo = function() {
   if (!document.cookie) {
     tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 400 , opacity: 1}));
   } else {
-    tl.add( TweenMax.to('.breathing-information', 0.2, {css: {visibility: 'visible', opacity: 1 }}));
+    tl.add( TweenMax.to('.breathing-information', 1, {css: {visibility: 'visible', opacity: 1 }}));
     tl.add( TweenMax.to('.name', 0, {text: {value: `Hi ${document.cookie}`, delimiter: ' '}, ease: Linear.easeNone} ));
   }
 };
