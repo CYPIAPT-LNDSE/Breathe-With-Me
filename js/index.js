@@ -52,7 +52,7 @@ const infoToCatView = function() {
   tl.add( TweenMax.fromTo('.breathing', 0.5, {css: {display: 'none'}}, {css: {display: 'block' }}));
   tl.add( TweenMax.to('.mountain3', 0.5, {y: -370, ease: Power2.easeOut}));
   tl.add( TweenMax.fromTo('.cat', 0.75, {css: {opacity: 0}}, {css: {opacity: 1}}));
-  tl.add( TweenMax.to('.belly-press-text', 0.5, {css: {visibility: 'visible', opacity: 1 }}));
+  tl.add( TweenMax.to('.sync-breath-text', 0.5, {css: {visibility: 'visible', opacity: 1 }}));
 };
 
 const fromBreathingToIntro = function() {
@@ -82,7 +82,7 @@ const exitFractalView = function() {
 
 const breathingToWelldone = function() {
   const tl = new TimelineMax();
-  tl.add( TweenMax.to('.belly-press-text', 0, {css: {visibility: 'hidden', opacity: 0 }}));
+  tl.add( TweenMax.to('.sync-breath-text', 0, {css: {visibility: 'hidden', opacity: 0 }}));
   tl.add(TweenMax.to('.cat', 0.5, {opacity: 0}));
   tl.add(TweenMax.to('.mountain3', 1, {y: 500}));
   tl.add(TweenMax.to('.alt-intro', 0.1, {css: { display: 'none'}}));

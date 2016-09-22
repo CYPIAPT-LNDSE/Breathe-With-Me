@@ -96,7 +96,7 @@
   justify-content: center;
   align-items: center; }
 
-.belly-press-text {
+.sync-breath-text {
   position: absolute;
   top: 3%;
   bottom: 90%;
@@ -309,3 +309,5 @@ body {
   height: 100%;
   width: 100%;
   letter-spacing: 1.4px; }
+
+/*# sourceMappingURL=style.css.map */
