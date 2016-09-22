@@ -35,7 +35,12 @@
     border: 2px solid $main-text!important;
     color: $main-text!important;
     margin-top: 10%;
-  line-height: 30px!important;
+    line-height: 30px!important;
+}
+
+
+#feel-good-button {
+  margin-bottom: -5%;
 }
 
 .cat {
@@ -61,7 +66,7 @@
   display: none;
 }
 
-@media screen and (min-width: 350px) {
+@media screen and (min-height: 600px) {
   #extra-breathing-instructions {
     display: block;
   }

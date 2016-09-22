@@ -87,6 +87,9 @@
   margin-top: 10%;
   line-height: 30px !important; }
 
+#feel-good-button {
+  margin-bottom: -5%; }
+
 .cat {
   height: inherit;
   width: inherit;
@@ -107,7 +110,7 @@
 #extra-breathing-instructions {
   display: none; }
 
-@media screen and (min-width: 350px) {
+@media screen and (min-height: 600px) {
   #extra-breathing-instructions {
     display: block; } }
 #head {
