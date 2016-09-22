@@ -57,6 +57,16 @@
  visibility: hidden;
 }
 
+#extra-breathing-instructions {
+  display: none;
+}
+
+@media screen and (min-width: 350px) {
+  #extra-breathing-instructions {
+    display: block;
+  }
+}
+
 #head {
   z-index: 4;
   margin-top: -4%;
