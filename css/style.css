@@ -166,16 +166,19 @@
     padding-top: 1em; }
 
 .mountain1 {
+  width: 101%;
   z-index: 0;
   top: 100%;
   position: absolute; }
 
 .mountain2 {
+  width: 101%;
   z-index: -1;
   top: 100%;
   position: absolute; }
 
 .mountain4 {
+  width: 101%;
   z-index: -3;
   top: 100%;
   position: absolute; }
