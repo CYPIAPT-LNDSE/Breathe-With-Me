@@ -23,7 +23,7 @@ const landingToInfo = function() {
   tl.add( TweenMax.to('.landing', 0.1, {css: {display: 'none'}}) );
   tl.add( TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add( TweenMax.to('.mountain2', 0.5, {y: -300}));
-  tl.add( TweenMax.to('.mountain4', 0.5, {y: -350}));
+  // tl.add( TweenMax.to('.mountain4', 0.5, {y: -350}));
   if (!document.cookie) {
     tl.add( TweenMax.to('.alt-info-box', 0.5, {y: 400 , opacity: 1}));
   } else {
@@ -43,7 +43,7 @@ const nameToInfoSwitch = function() {
 
 const infoToCatView = function() {
   const tl = new TimelineMax();
-  tl.add( TweenMax.to('.mountain4', 0.3, {y: 0}));
+  // tl.add( TweenMax.to('.mountain4', 0.3, {y: 0}));
   tl.add( TweenMax.to('.mountain2', 0.3, {y: 0}));
   tl.add( TweenMax.to('.mountain1', 0.3, {y: 0}));
   tl.add( TweenMax.to('.breathing-information', 0.5, {css: {visibility: 'hidden', opacity: 0}}));
@@ -52,7 +52,7 @@ const infoToCatView = function() {
   tl.add( TweenMax.fromTo('.breathing', 0.5, {css: {display: 'none'}}, {css: {display: 'block' }}));
   tl.add( TweenMax.to('.mountain3', 0.5, {y: -370, ease: Power2.easeOut}));
   tl.add( TweenMax.fromTo('.cat', 0.75, {css: {opacity: 0}}, {css: {opacity: 1}}));
-  tl.add( TweenMax.to('.belly-press-text', 0.5, {css: {visibility: 'visible', opacity: 1 }}));
+  tl.add( TweenMax.to('.sync-breath-text', 0.5, {css: {visibility: 'visible', opacity: 1 }}));
 };
 
 const fromBreathingToIntro = function() {
@@ -62,7 +62,7 @@ const fromBreathingToIntro = function() {
   tl.add( TweenMax.fromTo('.alt-intro', 0.5, {backgroundColor: '#A5E2DA'}, {backgroundColor: '#5CA1C2'}));
   tl.add( TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add( TweenMax.to('.mountain2', 0.5, {y: -300}));
-  tl.add( TweenMax.to('.mountain4', 0.5, {y: -300}));
+  // tl.add( TweenMax.to('.mountain4', 0.5, {y: -300}));
   tl.add(TweenMax.to('.breathing-information', 0.2, {css: { display: 'flex', opacity: 1, visibility: 'visible'}}));
 };
 
@@ -82,7 +82,7 @@ const exitFractalView = function() {
 
 const breathingToWelldone = function() {
   const tl = new TimelineMax();
-  tl.add( TweenMax.to('.belly-press-text', 0, {css: {visibility: 'hidden', opacity: 0 }}));
+  tl.add( TweenMax.to('.sync-breath-text', 0, {css: {visibility: 'hidden', opacity: 0 }}));
   tl.add(TweenMax.to('.cat', 0.5, {opacity: 0}));
   tl.add(TweenMax.to('.mountain3', 1, {y: 500}));
   tl.add(TweenMax.to('.alt-intro', 0.1, {css: { display: 'none'}}));
@@ -107,7 +107,7 @@ const welldoneToIntro = function() {
   tl.add(TweenMax.to('.alt-intro', 0.2, {css: { display: 'flex'}}));
   tl.add(TweenMax.to('.mountain1', 0.5, {y: -170}));
   tl.add(TweenMax.to('.mountain2', 0.5, {y: -300}));
-  tl.add(TweenMax.to('.mountain4', 0.5, {y: -300}));
+  // tl.add(TweenMax.to('.mountain4', 0.5, {y: -300}));
   tl.add(TweenMax.fromTo('.alt-intro', 0.3, {backgroundColor: '#494A97'}, { backgroundColor: '#5CA1C2'}));
   tl.add(TweenMax.to('.breathing-information', 0.2, {css: { display: 'flex', opacity: 1, visibility: 'visible'}}));
 };
