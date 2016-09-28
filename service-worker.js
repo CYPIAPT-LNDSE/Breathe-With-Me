@@ -1,4 +1,4 @@
-importScripts('/cache-polyfill.js');
+importScripts('js/cache-polyfill.js');
 
 const filesToCache = [
   '/',
