@@ -1,1 +1,1 @@
- 
+importScripts('/cache-polyfill.js');
