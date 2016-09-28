@@ -193,5 +193,13 @@
     <script src="js/vendors/greensock-js/src/minified/TweenMax.min.js"></script>
     <script src="js/cookie.js"></script>
     <script src="js/index.js"></script>
+    //Note to see the service worker registered you need to run a server on another terminal tab; just open one and paste: python -m SimpleHTTPServer 3000
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                 .register('/sw.js')
+                 .then(function() { console.log("Service Worker Registered"); });
+      }
+    </script>
   </body>
   </html>
