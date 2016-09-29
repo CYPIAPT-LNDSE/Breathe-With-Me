@@ -193,20 +193,25 @@
     <script src="js/vendors/greensock-js/src/minified/TweenMax.min.js"></script>
     <script src="js/cookie.js"></script>
     <script src="js/index.js"></script>
+    
     //Note to see the service worker registered you need to run a server on another terminal tab; just open one and paste: python -m SimpleHTTPServer 3000
     <script>
-    (function(){
-      if ('serviceWorker' in navigator) {
+      (function() {
+        'use strict';
+
+        if(!('serviceWorker' in navigator)) {
+          console.log('ServiceWorker not supported');
+          return;
+        }
         navigator.serviceWorker.register('service-worker.js')
-          .then(function(registration) {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          }).catch(function(err) {
-            console.log('ServiceWorker registration failed: ', err);
-          });
-      } else {
-        console.log('ServiceWorker not supported')
-      }
-    })();
+        .then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        })
+        .catch(function(error) {
+          console.log('ServiceWorker registration failed:', error);
+        });
+
+      })();
     </script>
   </body>
   </html>
