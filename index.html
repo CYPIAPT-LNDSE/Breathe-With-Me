@@ -195,11 +195,18 @@
     <script src="js/index.js"></script>
     //Note to see the service worker registered you need to run a server on another terminal tab; just open one and paste: python -m SimpleHTTPServer 3000
     <script>
-      if('serviceWorker' in navigator) {
-        navigator.serviceWorker
-                 .register('/service-worker.js')
-                 .then(function() { console.log("Service Worker Registered"); });
+    (function(){
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      } else {
+        console.log('ServiceWorker not supported')
       }
+    })();
     </script>
   </body>
   </html>
