@@ -54,9 +54,9 @@ gulp.task('browser-sync', function() {
 /* Watch scss, js and html files, doing different things with each. */
 gulp.task('default', ['sass', 'browser-sync'], function () {
     /* Watch scss, run the sass task on change. */
-    gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['sass'])
+    gulp.watch(['css/**/*.scss'], ['sass']);
     /* Watch app.js file, run the scripts task on change. */
-    gulp.watch(['js/app.js'], ['scripts'])
+    gulp.watch(['js/**/*.js'], ['scripts']);
     /* Watch .html files, run the bs-reload task on change. */
     gulp.watch(['*.html'], ['bs-reload']);
 });
