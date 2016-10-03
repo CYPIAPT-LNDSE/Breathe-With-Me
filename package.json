@@ -2,8 +2,9 @@
   "name": "breathing-with-kitty",
   "version": "1.0.0",
   "description": "App for kids to help reduce anxiety",
-  "main": "service-worker.js",
+  "main": "gulpfile.js",
   "scripts": {
+    "start": "gulp",
     "test": "-"
   },
   "repository": {

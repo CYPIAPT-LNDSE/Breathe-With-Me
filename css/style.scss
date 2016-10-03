@@ -7,6 +7,10 @@
 @import './partials/_buttons.scss';
 @import './partials/_welldone.scss';
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   color: $main-text;
@@ -14,4 +18,13 @@ body {
   height: 100%;
   width: 100%;
   letter-spacing: 1.4px;
+}
+
+@media screen and (min-width: 1000px) {
+  .desktop-wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 414px;
+    margin: 0 auto;
+  }
 }
