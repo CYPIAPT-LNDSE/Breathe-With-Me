@@ -1,6 +1,11 @@
 importScripts('js/cache-polyfill.js');
 
 const filesToCache = [
+  '/breathing-with-kitty/',
+  '/breathing-with-kitty/index.html'
+];
+
+const filesToCacheLocal = [
   '/',
   '/index.html'
 ];
@@ -15,7 +20,13 @@ self.addEventListener('install', function(event) {
       return cache.addAll(filesToCache);
     })
     .catch(function(error) {
-      console.log('Installation failed, ', error);
+      caches.open(staticCacheName)
+      .then(function(cache) {
+        return cache.addAll(filesToCacheLocal)
+      })
+      .catch(function(error) {
+        console.log('Installation failed, ', error);
+      })
     })
   );
 });
