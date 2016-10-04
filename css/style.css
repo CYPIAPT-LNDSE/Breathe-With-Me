@@ -5,7 +5,7 @@
   background-color: #CEF7F0;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../public/assets/backgroundLanding.png");
+  background-image: url("../../public/assets/backgroundLanding.png");
   text-align: center; }
 
 .landing-cat-round {
@@ -50,7 +50,7 @@
   background-color: #5CA1C2;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../public/assets/breathingBG.png");
+  background-image: url("../../public/assets/breathingBG.png");
   text-align: center; }
 
 .breathing {
@@ -243,7 +243,7 @@
   background-color: #CADFFF;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../public/assets/breathingBG.png");
+  background-image: url("../../public/assets/breathingBG.png");
   text-align: center; }
 
 .welldone {
