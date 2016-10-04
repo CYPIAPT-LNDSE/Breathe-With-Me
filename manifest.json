@@ -4,7 +4,7 @@
   "description": "Help to relieve anxiety with the help of kitty",
   "short_name": "Breathe With Me",
   "name": "Breathe With Me",
-  "start_url": "/",
+  "start_url": "/breathing-with-kitty/",
   "icons": [{
         "src": "public/assets/catLanding.png",
         "sizes": "128x128",
