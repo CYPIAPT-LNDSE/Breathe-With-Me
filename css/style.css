@@ -113,6 +113,7 @@
 @media screen and (min-height: 600px) {
   #extra-breathing-instructions {
     display: block; } }
+
 #head {
   z-index: 4;
   margin-top: -4%; }
@@ -318,5 +319,3 @@ body {
   height: 100%;
   width: 100%;
   letter-spacing: 1.4px; }
-
-/*# sourceMappingURL=style.css.map */
