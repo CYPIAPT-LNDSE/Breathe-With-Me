@@ -2,7 +2,10 @@ require('materialize-css/dist/js/materialize');
 require('materialize-css/dist/css/materialize.css');
 require('./cookie.js');
 
-const TweenMax = require('gsap');
+const TweenMax = require('gsap/src/uncompressed/TweenMax.js');
+const TweenLite = require('gsap/src/uncompressed/TweenLite.js');
+const TextPlugin = require('gsap/src/uncompressed/plugins/TextPlugin.js');
+const TimelineMax = require('gsap/src/uncompressed/TimelineMax.js');
 
 const landingTemplate = require('./templates/landing.html');
 const altIntroTemplate = require('./templates/alt-intro.html');
