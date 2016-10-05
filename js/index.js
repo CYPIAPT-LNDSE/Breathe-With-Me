@@ -1,50 +1,179 @@
 require('materialize-loader');
-require('./cookie.js');
 
 import { TweenMax, TimelineMax, Linear, Power1, Power2, Elastic } from 'gsap';
 
-const landingTemplate = require('./templates/landing.html');
-const altIntroTemplate = require('./templates/alt-intro.html');
-const breathingTemplate = require('./templates/breathing.html');
-const fractalTemplate = require('./templates/fractal.html');
-const welldoneTemplate = require('./templates/welldone.html');
+const landingTmpl = require('./templates/landing.html');
+const infoTmpl = require('./templates/alt-intro.html');
+const breatheTmpl = require('./templates/breathing.html');
+const fractalTmpl = require('./templates/fractal.html');
+const welldoneTmpl = require('./templates/welldone.html');
 
-const kittyPages = [
-  landingTemplate(),
-  altIntroTemplate(),
-  breathingTemplate(),
-  fractalTemplate(),
-  welldoneTemplate(),
-];
+const views = {
+  landingTmpl,
+  infoTmpl,
+  breatheTmpl,
+  fractalTmpl,
+  welldoneTmpl,
+  default: landingTmpl,
+};
+
+const controllers = {
+  landingCtrl: () => {
+    const landingButton = document.getElementById('landing-button');
+    landingButton.addEventListener('click', landingToInfo);
+
+    const landingToInfo = () => {
+      const tl = new TimelineMax();
+      tl.add(TweenMax.to('#landing-stars', 0.2, { opacity: 0, display: 'none' }));
+      tl.add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }));
+      tl.add(TweenMax.fromTo('#landing-button', 0.4, { scale: 1, backgroundColor: '#5CA1C2' }, { scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn }));
+    };
+
+    TweenMax.to('.landing-cat-round', 2.5, {
+      css: { 'margin-top': '15%', opacity: 1 },
+      ease: Elastic.easeInOut.config(0.5, 0.2),
+      onComplete: () => {
+        TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
+        TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
+        TweenMax.to('#landing-stars', 0.6, { opacity: 1 });
+      },
+    });
+  },
+  infoCtrl: () => {
+    const nameSubmitButton = document.getElementById('name-question-button');
+    const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
+    nameSubmitButton.addEventListener('click', nameToInfoSwitch);
+    startBreathingCatButton.addEventListener('click', infoToCatView);
+
+    const nameButton = document.getElementById('name-question-button');
+    const name = document.getElementById('input-focus');
+
+    function storeName() {
+      const array = name.value.split(' ');
+      const lastNameEntered = array[array.length - 1];
+      document.cookie = lastNameEntered;
+    }
+
+    nameButton.addEventListener('click', storeName);
+
+    const tl = new TimelineMax();
+    tl.add(TweenMax.to('#mountain1', 0.5, { y: -250 }));
+    tl.add(TweenMax.to('#mountain2', 0.5, { y: -300 }));
+    tl.add(TweenMax.to('#mountain4', 0.5, { y: -350 }));
+    if (!document.cookie) {
+      tl.add(TweenMax.to('.alt-info-box', 0.5, { y: 400, opacity: 1 }));
+    } else {
+      tl.add(TweenMax.to('.breathing-information', 1, { css: { visibility: 'visible', opacity: 1 } }));
+      tl.add(TweenMax.to('.name', 0, { text: { value: `Hi ${document.cookie}`, delimiter: ' ' }, ease: Linear.easeNone }));
+    }
+    const nameToInfoSwitch = () => {
+      const tl = new TimelineMax();
+      tl.add(TweenMax.to('.alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }));
+      tl.add(TweenMax.to('.breathing-information', 0.2, { css: { visibility: 'visible', opacity: 1 } }));
+      tl.add(TweenMax.to('.name', 0, { text: { value: `Hi ${document.cookie}`, delimiter: ' ' }, ease: Linear.easeNone} ));
+      tl.add(TweenMax.to('.alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }));
+    };
+    const infoToCatView = () => {
+      const tl = new TimelineMax();
+      tl.add(TweenMax.to('.mountain2', 0.3, { y: 0 }));
+      tl.add(TweenMax.to('.mountain1', 0.3, { y: 0 }));
+    }
+  },
+  breatheCtrl: () => {
+    const belly = document.getElementById('belly');
+    const hands = document.getElementById('hands');
+    const exitBreathing = document.getElementById('exit-breathing');
+    const FeelingBetterBtn = document.getElementById('feel-good-button');
+    hands.addEventListener('click', changeToFractalView);
+    belly.addEventListener('click', changeToFractalView);
+    exitBreathing.addEventListener('click', fromBreathingToIntro);
+    FeelingBetterBtn.addEventListener('click', breathingToWelldone);
+
+    const tl = new TimelineMax();
+    tl.add(TweenMax.to('.mountain3', 0.5, { y: -370, ease: Power2.easeOut }));
+    tl.add(TweenMax.fromTo('.cat', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }));
+    tl.add(TweenMax.to('.sync-breath-text', 0.5, { css: { visibility: 'visible', opacity: 1 } }));
+
+    const breatheOut = {
+      visibility: true,
+      scale: 1,
+      delay: 2,
+    };
+
+    const breatheIn = {
+      scale: 1.3,
+      delay: 2,
+      ease: Power1.easeInOut,
+      yoyo: true,
+      repeat: -1,
+    };
+
+    const breathe = TweenMax.fromTo('#belly', 5, breatheOut, breatheIn);
+    const headMovement = TweenMax.fromTo('#head', 5, { y: -0, delay: 2 }, { y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true });
+  },
+  fractalCtrl: () => {
+    const exitFractal = document.getElementById('exit-fractal');
+    exitFractal.addEventListener('click', exitFractalView);
+    TweenMax.fromTo('.fractal', 0.5, { scale: 0.8, css: { '-webkit-filter': 'blur(10px)', opacity: 0 } }, { scale: 1, css: { '-webkit-filter': 'blur(0px)', display: 'block', opacity: 1 } });
+  },
+  welldoneCtrl: () => {
+    const startAgain = document.getElementById('start-again');
+    startAgain.addEventListener('click', welldoneToIntro);
+
+    const tl = new TimelineMax();
+    tl.add(TweenMax.fromTo('.welldone', 0.2, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
+    tl.add(TweenMax.to('.welldone-user', 0, { text: { value: `Well Done ${document.cookie}!`, delimiter: ' ' }, ease: Linear.easeNone }));
+    tl.add(TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }));
+    tl.add(TweenMax.to('.welldone-mountain1', 0.5, { y: -100 }));
+    tl.add(TweenMax.to('.welldone-mountain2', 0.5, { y: -150 }));
+    tl.add(TweenMax.to('.welldone-mountain3', 0.5, { y: -170 }));
+    tl.add(TweenMax.to('#start-again', 0.3, { opacity: 1 }));
+    tl.add(TweenMax.set('.breathing', 0, { backgroundColor: '#A5E2DA' }));
+  },
+  default: () => controllers.landingCtrl(),
+};
 
 const App = document.getElementById('app');
 
-App.innerHTML = kittyPages.join('');
+const getTemplate = (name) => {
+  const tmplName = `${name}Tmpl`;
 
-const landingButton = document.getElementById('landing-button');
-const nameSubmitButton = document.getElementById('name-question-button');
-const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
-const exitFractal = document.getElementById('exit-fractal');
-const exitBreathing = document.getElementById('exit-breathing');
-const FeelingBetterBtn = document.getElementById('feel-good-button');
-const belly = document.getElementById('belly');
-const hands = document.getElementById('hands');
-const startAgain = document.getElementById('start-again');
+  if (views[tmplName]) {
+    return views[tmplName]();
+  }
 
-const landingPageView =
- TweenMax.to('.landing-cat-round', 2.5, { css: { 'margin-top': '15%', opacity: 1 },
-  ease: Elastic.easeInOut.config(0.5, 0.2),
-  onComplete: () => {
-    TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
-    TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
-    TweenMax.to('#landing-stars', 0.6, { opacity: 1 });
-  } });
+  return views.default();
+};
+
+const bindListeners = (name) => {
+  const ctrlName = `${name}Ctrl`;
+
+  if (controllers[ctrlName]) {
+    return controllers[ctrlName]();
+  }
+
+  return controllers.default();
+};
+
+const changeView = () => {
+  const { hash } = location;
+  const viewName = hash.replace('#', '');
+
+  App.innerHTML = getTemplate(viewName);
+  bindListeners(viewName);
+};
+
+window.addEventListener('hashchange', changeView);
+window.addEventListener('load', changeView);
+
+
+
 
 const landingToInfo = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('#landing-stars', 0.2, { opacity: 0, display: 'none' }));
   tl.add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }));
-  tl.add(TweenMax.fromTo('#landing-button', 0.4, { scale: 1, backgroundColor: '#5CA1C2' }, { scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn }) );
+  tl.add(TweenMax.fromTo('#landing-button', 0.4, { scale: 1, backgroundColor: '#5CA1C2' }, { scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn }));
   tl.add(TweenMax.fromTo('.alt-intro', 0.5, { css: { display: 'none' } }, { css: { display: 'inline-block' } }));
   tl.add(TweenMax.to('.landing', 0.1, { css: { display: 'none' } }));
   tl.add(TweenMax.to('#mountain1', 0.5, { y: -250 }));
@@ -152,13 +281,3 @@ const breatheIn = {
 
 const breathe = TweenMax.fromTo('#belly', 5, breatheOut, breatheIn);
 const headMovement = TweenMax.fromTo('#head', 5, { y: -0, delay: 2 }, { y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true });
-
-hands.addEventListener('click', changeToFractalView);
-belly.addEventListener('click', changeToFractalView);
-exitBreathing.addEventListener('click', fromBreathingToIntro);
-FeelingBetterBtn.addEventListener('click', breathingToWelldone);
-exitFractal.addEventListener('click', exitFractalView);
-landingButton.addEventListener('click', landingToInfo);
-nameSubmitButton.addEventListener('click', nameToInfoSwitch);
-startBreathingCatButton.addEventListener('click', infoToCatView);
-startAgain.addEventListener('click', welldoneToIntro);
