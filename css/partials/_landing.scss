@@ -11,13 +11,13 @@
 }
 
 .landing-cat-round {
-  // margin-top: -100%;
-  opacity: 1;
+  margin-top: -100%;
+  opacity: 0;
   width: 80%;
   display: inline-block;
 
   button {
-    opacity: 1;
+    opacity: 0;
     background-color: $buttons;
     }
   img {
@@ -27,12 +27,12 @@
 
   h6 {
     padding-top: 10vh;
-    opacity: 1;
+    opacity: 0;
   }
 }
 
 #landing-stars {
-  opacity: 1;
+  opacity: 0;
   position: absolute;
   z-index: 2;
   top: 10%;
