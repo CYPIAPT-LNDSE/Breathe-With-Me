@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="203px" height="43px" viewBox="0 0 203 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17248) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 24 + Path 272 + Path 272</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Rectangle-24-+-Path-272-+-Path-272" sketch:type="MSLayerGroup">
+            <path d="M26.1935484,9.12121212 L1.30967742,1.3030303 L11.7870968,19.5454545 L0,33.8787879 L35.3612903,43 L20.9548387,29.969697" id="Path-272" fill="#A5E2DA" sketch:type="MSShapeGroup"></path>
+            <path d="M20,29.8235294 L35.3,43 L37,29 L20,29.8235294 Z" id="Path-276" fill="#12214B" sketch:type="MSShapeGroup"></path>
+            <path d="M193.832258,9.12121212 L168.948387,1.3030303 L179.425806,19.5454545 L167.63871,33.8787879 L203,43 L188.593548,29.969697" id="Path-272" fill="#A5E2DA" sketch:type="MSShapeGroup" transform="translate(185.319355, 22.151515) scale(-1, 1) translate(-185.319355, -22.151515) "></path>
+            <path d="M166,29.8235294 L181.3,43 L183,29 L166,29.8235294 Z" id="Path-276" fill="#12214B" sketch:type="MSShapeGroup" transform="translate(174.500000, 36.000000) scale(-1, 1) translate(-174.500000, -36.000000) "></path>
+            <path d="M27.5032258,0 C27.5032258,0 74.9149007,7.81818182 100.845161,7.81818182 C127.738557,7.81818182 175.496774,0 175.496774,0 L183.354839,29.969697 C183.354839,29.969697 170.401725,33.6017797 154.541935,36.4848485 C138.154443,39.4638458 118.627138,41.6969697 104.774194,41.6969697 C91.8167314,41.6969697 70.9560694,41.8656915 53.6967742,39.0909091 C34.579122,36.017358 19.6451613,29.969697 19.6451613,29.969697 L27.5032258,0 Z" id="Rectangle-24" fill="#808FBE" sketch:type="MSShapeGroup"></path>
+            <text id="Well-Done!" sketch:type="MSTextLayer" font-family="Lato" font-size="20" font-weight="normal" sketch:alignment="middle" letter-spacing="1.74999988">
+                <tspan x="47.119616" y="32" fill="#FFFFFF">Well </tspan>
+                <tspan x="100.509615" y="32" letter-spacing="1.34615374" fill="#FFFFFE">Done</tspan>
+                <tspan x="153.67423" y="32" letter-spacing="1.34615374" fill="#FFFFFF">!</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

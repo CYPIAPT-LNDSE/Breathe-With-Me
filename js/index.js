@@ -110,8 +110,9 @@ const landingToInfo = () => {
   tl.add(TweenMax.fromTo('#landing-button', 0.4, { scale: 1, backgroundColor: '#5CA1C2' }, { scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn }));
   tl.add(TweenMax.fromTo('.alt-intro', 0.5, { css: { display: 'none' } }, { css: { display: 'inline-block' } }));
   tl.add(TweenMax.to('.landing', 0.1, { css: { display: 'none' } }));
-  tl.add(TweenMax.to('.mountain1', 0.5, { y: -170 }));
-  tl.add(TweenMax.to('.mountain2', 0.5, { y: -300 }));
+  tl.add(TweenMax.to('#mountain1', 0.5, { y: -250 }));
+  tl.add(TweenMax.to('#mountain2', 0.5, { y: -300 }));
+  tl.add(TweenMax.to('#mountain4', 0.5, { y: -350 }));
   if (!document.cookie) {
     tl.add(TweenMax.to('.alt-info-box', 0.5, { y: 400, opacity: 1 }));
   } else {
