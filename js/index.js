@@ -68,8 +68,9 @@ const nameToInfoSwitch = () => {
 
 const infoToCatView = () => {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.mountain2', 0.3, { y: 0 }));
-  tl.add(TweenMax.to('.mountain1', 0.3, { y: 0 }));
+  tl.add(TweenMax.to('#mountain4', 0.3, { y: 0 }));
+  tl.add(TweenMax.to('#mountain2', 0.3, { y: 0 }));
+  tl.add(TweenMax.to('#mountain1', 0.3, { y: 0 }));
   tl.add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }));
   tl.add(TweenMax.fromTo('.alt-intro', 0.5, { backgroundColor: '#5CA1C2' }, { backgroundColor: '#A5E2DA'}));
   tl.add(TweenMax.set('.breathing', 0, { backgroundColor: '#A5E2DA' }));
@@ -84,8 +85,8 @@ const fromBreathingToIntro = () => {
   tl.add(TweenMax.to('.breathing', 0.2, { css: { display: 'none' } }));
   tl.add(TweenMax.to('.alt-intro', 0.2, { css: { display: 'block' } }));
   tl.add(TweenMax.fromTo('.alt-intro', 0.5, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#5CA1C2' }));
-  tl.add(TweenMax.to('.mountain1', 0.5, { y: -170 }));
-  tl.add(TweenMax.to('.mountain2', 0.5, { y: -300 }));
+  tl.add(TweenMax.to('#mountain1', 0.5, { y: -170 }));
+  tl.add(TweenMax.to('#mountain2', 0.5, { y: -300 }));
   tl.add(TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
 };
 
@@ -128,8 +129,8 @@ const welldoneToIntro = () => {
   tl.add(TweenMax.to('.welldone-mountain1', 0.3, { y: 0 }));
   tl.add(TweenMax.to('.welldone', 0.2, { css: { display: 'none' } }));
   tl.add(TweenMax.to('.alt-intro', 0.2, { css: { display: 'flex' } }));
-  tl.add(TweenMax.to('.mountain1', 0.5, { y: -170 }));
-  tl.add(TweenMax.to('.mountain2', 0.5, { y: -300 }));
+  tl.add(TweenMax.to('#mountain1', 0.5, { y: -170 }));
+  tl.add(TweenMax.to('#mountain2', 0.5, { y: -300 }));
   tl.add(TweenMax.fromTo('.alt-intro', 0.3, { backgroundColor: '#494A97' }, { backgroundColor: '#5CA1C2' }));
   tl.add(TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
 };
