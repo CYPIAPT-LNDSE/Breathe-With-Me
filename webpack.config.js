@@ -1,8 +1,6 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const jquery = require('jquery');
-
 const entrypoints = [
   './js/index.js',
   './css/style.scss',
@@ -32,15 +30,18 @@ module.exports = {
       test: /\.css$/,
       loader: 'style-loader!css-loader',
     }, {
-      test: /\.(ttf|woff|woff2|eot|svg|png|jpg|jpeg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'file-loader',
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'url?limit=10000&mimetype=application/font-woff',
+    }, {
+      test: /\.(jpg|jpeg|png|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'file',
     }],
   },
   plugins: [
-    new ExtractTextPlugin('css/bundle.css'),
     new webpack.ProvidePlugin({
-      $: jquery,
-      jQuery: jquery,
+      $: 'jquery',
+      jQuery: 'jquery',
     }),
+    new ExtractTextPlugin('css/bundle.css'),
   ],
 };

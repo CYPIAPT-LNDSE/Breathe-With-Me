@@ -1,8 +1,7 @@
-require('materialize-css/dist/js/materialize');
-require('materialize-css/dist/css/materialize.css');
+require('materialize-loader');
 require('./cookie.js');
 
-const TweenMax = require('gsap');
+import { TweenMax, TimelineMax, Linear, Power1, Power2, Elastic } from 'gsap';
 
 const landingTemplate = require('./templates/landing.html');
 const altIntroTemplate = require('./templates/alt-intro.html');
