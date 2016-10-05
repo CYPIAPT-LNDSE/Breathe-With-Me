@@ -1,13 +1,10 @@
 .fractal {
   position: absolute;
-  display: none;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
 
    .wrapper-gif {
      position: absolute;
-     height: 100vh;
-     width: 100vw;
+     height: 100%;
      display: flex;
      justify-content: flex-end;
      align-items: center;

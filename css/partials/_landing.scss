@@ -1,7 +1,7 @@
 .landing {
   font-size: 1em;
   position: absolute;
-  height: 100vh;
+  height: 100%;
   background-color: $background-landing;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,13 +11,13 @@
 }
 
 .landing-cat-round {
-  margin-top: -100%;
-  opacity: 0;
+  // margin-top: -100%;
+  opacity: 1;
   width: 80%;
   display: inline-block;
 
   button {
-    opacity: 0;
+    opacity: 1;
     background-color: $buttons;
     }
   img {
@@ -27,12 +27,12 @@
 
   h6 {
     padding-top: 10vh;
-    opacity: 0;
+    opacity: 1;
   }
 }
 
 #landing-stars {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   z-index: 2;
   top: 10%;

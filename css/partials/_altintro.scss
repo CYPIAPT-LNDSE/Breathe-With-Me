@@ -1,5 +1,4 @@
 .alt-intro {
-  display: none;
   height: 100%;
   width: 100%;
   overflow-x: hidden;
@@ -41,7 +40,7 @@
   width: 60%;
   text-align: center;
   position: absolute;
-  bottom: 110%;
+  // bottom: 110%;
   left: 20%;
   font-size: 1.5em;
 }
