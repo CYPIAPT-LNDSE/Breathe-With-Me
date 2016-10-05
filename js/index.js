@@ -1,35 +1,98 @@
 require('materialize-loader');
-require('./cookie.js');
 
 import { TweenMax, TimelineMax, Linear, Power1, Power2, Elastic } from 'gsap';
 
-const landingTemplate = require('./templates/landing.html');
-const altIntroTemplate = require('./templates/alt-intro.html');
-const breathingTemplate = require('./templates/breathing.html');
-const fractalTemplate = require('./templates/fractal.html');
-const welldoneTemplate = require('./templates/welldone.html');
+const landingTmpl = require('./templates/landing.html');
+const infoTmpl = require('./templates/alt-intro.html');
+const breatheTmpl = require('./templates/breathing.html');
+const fractalTmpl = require('./templates/fractal.html');
+const welldoneTmpl = require('./templates/welldone.html');
 
-const kittyPages = [
-  landingTemplate(),
-  altIntroTemplate(),
-  breathingTemplate(),
-  fractalTemplate(),
-  welldoneTemplate(),
-];
+const views = {
+  landingTmpl,
+  infoTmpl,
+  breatheTmpl,
+  fractalTmpl,
+  welldoneTmpl,
+  default: landingTmpl,
+};
+
+const controllers = {
+  landingCtrl: () => {
+    const landingButton = document.getElementById('landing-button');
+    landingButton.addEventListener('click', landingToInfo);
+  },
+  infoCtrl: () => {
+    const nameSubmitButton = document.getElementById('name-question-button');
+    const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
+    nameSubmitButton.addEventListener('click', nameToInfoSwitch);
+    startBreathingCatButton.addEventListener('click', infoToCatView);
+
+    const nameButton = document.getElementById('name-question-button');
+    const name = document.getElementById('input-focus');
+
+    function storeName() {
+      const array = name.value.split(' ');
+      const lastNameEntered = array[array.length - 1];
+      document.cookie = lastNameEntered;
+    }
+
+    nameButton.addEventListener('click', storeName);
+  },
+  breatheCtrl: () => {
+    const belly = document.getElementById('belly');
+    const hands = document.getElementById('hands');
+    const exitBreathing = document.getElementById('exit-breathing');
+    const FeelingBetterBtn = document.getElementById('feel-good-button');
+    hands.addEventListener('click', changeToFractalView);
+    belly.addEventListener('click', changeToFractalView);
+    exitBreathing.addEventListener('click', fromBreathingToIntro);
+    FeelingBetterBtn.addEventListener('click', breathingToWelldone);
+  },
+  fractalCtrl: () => {
+    const exitFractal = document.getElementById('exit-fractal');
+    exitFractal.addEventListener('click', exitFractalView);
+  },
+  welldoneCtrl: () => {
+    const startAgain = document.getElementById('start-again');
+    startAgain.addEventListener('click', welldoneToIntro);
+  },
+  default: () => controllers.landingCtrl(),
+};
 
 const App = document.getElementById('app');
 
-App.innerHTML = kittyPages.join('');
+const getTemplate = (name) => {
+  const tmplName = `${name}Tmpl`;
 
-const landingButton = document.getElementById('landing-button');
-const nameSubmitButton = document.getElementById('name-question-button');
-const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
-const exitFractal = document.getElementById('exit-fractal');
-const exitBreathing = document.getElementById('exit-breathing');
-const FeelingBetterBtn = document.getElementById('feel-good-button');
-const belly = document.getElementById('belly');
-const hands = document.getElementById('hands');
-const startAgain = document.getElementById('start-again');
+  if (views[tmplName]) {
+    return views[tmplName]();
+  }
+
+  return views.default();
+};
+
+const bindListeners = (name) => {
+  const ctrlName = `${name}Ctrl`;
+
+  if (controllers[ctrlName]) {
+    return controllers[ctrlName]();
+  }
+
+  return controllers.default();
+};
+
+const changeView = () => {
+  const { hash } = location;
+  const viewName = hash.replace('#', '');
+
+  App.innerHTML = getTemplate(viewName);
+  bindListeners(viewName);
+};
+
+window.addEventListener('hashchange', changeView);
+window.addEventListener('load', changeView);
+
 
 const landingPageView =
  TweenMax.to('.landing-cat-round', 2.5, { css: { 'margin-top': '15%', opacity: 1 },
@@ -44,7 +107,7 @@ const landingToInfo = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('#landing-stars', 0.2, { opacity: 0, display: 'none' }));
   tl.add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }));
-  tl.add(TweenMax.fromTo('#landing-button', 0.4, { scale: 1, backgroundColor: '#5CA1C2' }, { scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn }) );
+  tl.add(TweenMax.fromTo('#landing-button', 0.4, { scale: 1, backgroundColor: '#5CA1C2' }, { scale: 30, backgroundColor: '#5CA1C2', ease: Power1.easeIn }));
   tl.add(TweenMax.fromTo('.alt-intro', 0.5, { css: { display: 'none' } }, { css: { display: 'inline-block' } }));
   tl.add(TweenMax.to('.landing', 0.1, { css: { display: 'none' } }));
   tl.add(TweenMax.to('#mountain1', 0.5, { y: -250 }));
@@ -151,13 +214,3 @@ const breatheIn = {
 
 const breathe = TweenMax.fromTo('#belly', 5, breatheOut, breatheIn);
 const headMovement = TweenMax.fromTo('#head', 5, { y: -0, delay: 2 }, { y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true });
-
-hands.addEventListener('click', changeToFractalView);
-belly.addEventListener('click', changeToFractalView);
-exitBreathing.addEventListener('click', fromBreathingToIntro);
-FeelingBetterBtn.addEventListener('click', breathingToWelldone);
-exitFractal.addEventListener('click', exitFractalView);
-landingButton.addEventListener('click', landingToInfo);
-nameSubmitButton.addEventListener('click', nameToInfoSwitch);
-startBreathingCatButton.addEventListener('click', infoToCatView);
-startAgain.addEventListener('click', welldoneToIntro);
