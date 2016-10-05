@@ -1,11 +1,15 @@
-@import './partials/_colors';
-@import './partials/_landing';
-@import './partials/_intro';
-@import './partials/_breathing';
-@import './partials/_gifinfo';
-@import './partials/_altintro';
-@import './partials/_buttons.scss';
-@import './partials/_welldone.scss';
+@import 'partials/_colors.scss';
+@import 'partials/_landing.scss';
+@import 'partials/_intro.scss';
+@import 'partials/_breathing.scss';
+@import 'partials/_gifinfo.scss';
+@import 'partials/_altintro.scss';
+@import 'partials/_buttons.scss';
+@import 'partials/_welldone.scss';
+
+html, body {
+  height: 100%;
+}
 
 body {
   font-family: 'Lato', sans-serif;
@@ -14,4 +18,19 @@ body {
   height: 100%;
   width: 100%;
   letter-spacing: 1.4px;
+}
+
+@media screen and (min-width: 1000px) {
+  .desktop-wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 414px;
+    margin: 0 auto;
+  }
+}
+
+#app {
+  height: 100%;
+  max-width: 414px;
+  margin: 0 auto;
 }

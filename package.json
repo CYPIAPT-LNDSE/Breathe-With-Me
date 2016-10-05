@@ -2,8 +2,9 @@
   "name": "breathing-with-kitty",
   "version": "1.0.0",
   "description": "App for kids to help reduce anxiety",
-  "main": "service-worker.js",
+  "main": "gulpfile.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "test": "-"
   },
   "repository": {
@@ -22,7 +23,20 @@
   },
   "homepage": "https://github.com/FAC8/breathing-with-kitty#readme",
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
     "browser-sync": "^2.15.0",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "gsap": "^1.19.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
@@ -34,8 +48,18 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
+    "jquery": "^3.1.1",
+    "materialize-css": "^0.97.7",
+    "materialize-loader": "^1.1.1",
     "node-neat": "^1.7.2",
+    "resolve-url-loader": "^1.6.0",
+    "style-loader": "^0.13.1",
     "sw-precache": "^3.2.0",
-    "sw-toolbox": "^3.2.1"
+    "sw-toolbox": "^3.2.1",
+    "template-string-loader": "0.0.3",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1",
+    "webpack-sass-loader": "^2.1.1"
   }
 }
