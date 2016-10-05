@@ -24,11 +24,8 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
-        'style', 'css', 'sass', 'resolve-url'
+        'style', ['css-loader', 'sass'] , { publicPath: '/' }
       ),
-    }, {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader',
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: 'url?limit=10000&mimetype=application/font-woff',
