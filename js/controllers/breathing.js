@@ -1,5 +1,4 @@
 import { outOfBreathing,
-  infoToCatView,
    breathe,
    headMovement,
    fromBreathingToIntro,
@@ -16,8 +15,6 @@ const breatheCtrl = () => {
   belly.addEventListener('click', changeToFractalView);
   exitBreathing.addEventListener('click', fromBreathingToIntro);
   FeelingBetterBtn.addEventListener('click', outOfBreathing);
-
-  infoToCatView();
 
   breathe();
   headMovement();

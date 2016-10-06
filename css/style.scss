@@ -34,3 +34,7 @@ body {
   max-width: 414px;
   margin: 0 auto;
 }
+
+.page:last-child {
+    z-index: 10000;
+}
