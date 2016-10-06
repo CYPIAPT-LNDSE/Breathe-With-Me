@@ -33,7 +33,6 @@ const viewTransition = (view) => {
   const animatein = $(view).data('animate-in');
   const transition = Promise.resolve();
 
-  debugger;
   return transition
     // Before add new page
     .then(() => {
