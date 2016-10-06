@@ -1,4 +1,5 @@
-import { outOfLanding,
+import {
+  outOfLanding,
   landingAnimation,
   landingToInfo,
   outOfInfo,
@@ -9,18 +10,27 @@ import { outOfLanding,
   outOfBreathing,
   breathingToWelldone,
   welldoneToIntro,
-  } from './animations/';
+} from './animations/';
 
 const App = $('#app');
 
 const animations = {
-
+  outOfLanding,
+  landingAnimation,
+  landingToInfo,
+  outOfInfo,
+  infoToCatView,
+  fromBreathingToIntro,
+  changeToFractalView,
+  exitFractalView,
+  outOfBreathing,
+  breathingToWelldone,
+  welldoneToIntro,
 };
 
 const viewTransition = (view) => {
   const animateout = $(App).find('.page').data('animate-out');
   const animatein = $(view).data('animate-in');
-
   const transition = Promise.resolve();
 
   return transition
