@@ -1,72 +1,20 @@
-require('materialize-loader');
 
 import { TweenMax, TimelineMax, Linear, Power1, Power2, Elastic } from 'gsap';
 
-const landingTmpl = require('./templates/landing.html');
-const infoTmpl = require('./templates/alt-intro.html');
-const breatheTmpl = require('./templates/breathing.html');
-const fractalTmpl = require('./templates/fractal.html');
-const welldoneTmpl = require('./templates/welldone.html');
 
-const landingCtrl = require('./controllers/landing.js');
-const infoCtrl = require('./controllers/alt-intro.js');
-const breatheCtrl = require('./controllers/breathing.js');
-const fractalCtrl = require('./controllers/fractal.js');
-const welldoneCtrl = require('./controllers/welldone.js');
-
-const views = {
-  landingTmpl,
-  infoTmpl,
-  breatheTmpl,
-  fractalTmpl,
-  welldoneTmpl,
-  default: landingTmpl,
+export const landingAnimation = () => {
+  TweenMax.to('.landing-cat-round', 2.5, {
+    css: { 'margin-top': '15%', opacity: 1 },
+    ease: Elastic.easeInOut.config(0.5, 0.2),
+    onComplete: () => {
+      TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
+      TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
+      TweenMax.to('#landing-stars', 0.6, { opacity: 1 });
+    },
+  });
 };
 
-const controllers = {
-  landingCtrl,
-  infoCtrl,
-  breatheCtrl,
-  fractalCtrl,
-  welldoneCtrl,
-  default: () => controllers.landingCtrl(),
-};
-
-const App = document.getElementById('app');
-
-const getTemplate = (name) => {
-  const tmplName = `${name}Tmpl`;
-
-  if (views[tmplName]) {
-    return views[tmplName]();
-  }
-
-  return views.default();
-};
-
-const bindListeners = (name) => {
-  const ctrlName = `${name}Ctrl`;
-
-  if (controllers[ctrlName]) {
-    return controllers[ctrlName]();
-  }
-
-  return controllers.default();
-};
-
-const changeView = () => {
-  const { hash } = location;
-  const viewName = hash.replace('#', '');
-
-  App.innerHTML = getTemplate(viewName);
-  bindListeners(viewName);
-};
-
-window.addEventListener('hashchange', changeView);
-window.addEventListener('load', changeView);
-
-
-const landingToInfo = () => {
+export const landingToInfo = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('#landing-stars', 0.2, { opacity: 0, display: 'none' }));
   tl.add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }));
@@ -84,20 +32,20 @@ const landingToInfo = () => {
   }
 };
 
-const nameToInfoSwitch = () => {
+export const nameToInfoSwitch = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }));
   tl.add(TweenMax.to('.breathing-information', 0.2, { css: { visibility: 'visible', opacity: 1 } }));
-  tl.add(TweenMax.to('.name', 0, { text: { value: `Hi ${document.cookie}`, delimiter: ' ' }, ease: Linear.easeNone} ));
+  tl.add(TweenMax.to('.name', 0, { text: { value: `Hi ${document.cookie}`, delimiter: ' ' }, ease: Linear.easeNone }));
   tl.add(TweenMax.to('.alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }));
 };
 
-const infoToCatView = () => {
+export const infoToCatView = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.mountain2', 0.3, { y: 0 }));
   tl.add(TweenMax.to('.mountain1', 0.3, { y: 0 }));
   tl.add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }));
-  tl.add(TweenMax.fromTo('.alt-intro', 0.5, { backgroundColor: '#5CA1C2' }, { backgroundColor: '#A5E2DA'}));
+  tl.add(TweenMax.fromTo('.alt-intro', 0.5, { backgroundColor: '#5CA1C2' }, { backgroundColor: '#A5E2DA' }));
   tl.add(TweenMax.set('.breathing', 0, { backgroundColor: '#A5E2DA' }));
   tl.add(TweenMax.fromTo('.breathing', 0.5, { css: { display: 'none' } }, { css: { display: 'block' } }));
   tl.add(TweenMax.to('.mountain3', 0.5, { y: -370, ease: Power2.easeOut }));
@@ -105,7 +53,7 @@ const infoToCatView = () => {
   tl.add(TweenMax.to('.sync-breath-text', 0.5, { css: { visibility: 'visible', opacity: 1 } }));
 };
 
-const fromBreathingToIntro = () => {
+export const fromBreathingToIntro = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.breathing', 0.2, { css: { display: 'none' } }));
   tl.add(TweenMax.to('.alt-intro', 0.2, { css: { display: 'block' } }));
@@ -115,13 +63,13 @@ const fromBreathingToIntro = () => {
   tl.add(TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
 };
 
-const changeToFractalView = () => {
+export const changeToFractalView = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.breathing', 0.1, { css: { display: 'none' } }));
   tl.add(TweenMax.fromTo('.fractal', 0.5, { scale: 0.8, css: { '-webkit-filter': 'blur(10px)', opacity: 0 } }, { scale: 1, css: { '-webkit-filter': 'blur(0px)', display: 'block', opacity: 1 } }));
 };
 
-const exitFractalView = () => {
+export const exitFractalView = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.fractal', 0.2, { css: { display: 'none' } }));
   tl.add(TweenMax.to('.breathing', 0.2, { css: { display: 'block' } }));
@@ -129,7 +77,7 @@ const exitFractalView = () => {
   tl.add(TweenMax.to('.mountain3', 0.5, { y: -370, ease: Power2.easeOut }));
 };
 
-const breathingToWelldone = () => {
+export const breathingToWelldone = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.sync-breath-text', 0, { css: { visibility: 'hidden', opacity: 0 } }));
   tl.add(TweenMax.to('.cat', 0.5, { opacity: 0 }));
@@ -147,7 +95,7 @@ const breathingToWelldone = () => {
   tl.add(TweenMax.set('.breathing', 0, { backgroundColor: '#A5E2DA' }));
 };
 
-const welldoneToIntro = () => {
+export const welldoneToIntro = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.welldone-mountain3', 0.3, { y: 0 }));
   tl.add(TweenMax.to('.welldone-mountain2', 0.3, { y: 0 }));
@@ -160,13 +108,13 @@ const welldoneToIntro = () => {
   tl.add(TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
 };
 
-const breatheOut = {
+export const breatheOut = {
   visibility: true,
   scale: 1,
   delay: 2,
 };
 
-const breatheIn = {
+export const breatheIn = {
   scale: 1.3,
   delay: 2,
   ease: Power1.easeInOut,
@@ -175,5 +123,5 @@ const breatheIn = {
 };
 
 
-const breathe = TweenMax.fromTo('#belly', 5, breatheOut, breatheIn);
-const headMovement = TweenMax.fromTo('#head', 5, { y: -0, delay: 2 }, { y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true });
+export const breathe = () => { TweenMax.fromTo('#belly', 5, breatheOut, breatheIn); };
+export const headMovement = () => { TweenMax.fromTo('#head', 5, { y: -0, delay: 2 }, { y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true }); };
