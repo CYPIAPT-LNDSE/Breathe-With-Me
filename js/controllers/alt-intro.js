@@ -1,4 +1,4 @@
-import { landingToInfo, nameToInfoSwitch, outOfInfo } from '../animations';
+import { nameToInfoSwitch, outOfInfo } from '../animations';
 
 const infoCtrl = () => {
   const nameSubmitButton = document.getElementById('name-question-button');
@@ -8,8 +8,6 @@ const infoCtrl = () => {
 
   const nameButton = document.getElementById('name-question-button');
   const name = document.getElementById('input-focus');
-
-  landingToInfo();
 
   function storeName() {
     const array = name.value.split(' ');

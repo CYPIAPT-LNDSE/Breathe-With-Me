@@ -67,18 +67,21 @@
   left: 0;
   right: 0;
   width: 100%;
-  bottom: -280px;
+  bottom: -300px;
   position: absolute;
 }
 
 .welldone-mountain1 {
   z-index: 10;
+  opacity: 0;
 }
 
 .welldone-mountain2 {
   z-index: 5;
+  opacity: 0;
 }
 
 .welldone-mountain3 {
   z-index: 2;
+  opacity: 0;
 }

@@ -11,7 +11,7 @@
 }
 
 #mountain3 {
-  z-index: 0;
+  z-index: -1;
   top: 100%;
   position: absolute;
   text-align: center;
@@ -79,13 +79,14 @@
 
   #belly {
     margin-top: -8%;
-    z-index: 2;
+    z-index: 3;
     width: 160px;
   }
 
   #legs {
     margin-top: -6%;
-    z-index: 1;
+    z-index: 0;
+
   }
 
   #hands {

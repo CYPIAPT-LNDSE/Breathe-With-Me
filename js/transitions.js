@@ -32,8 +32,8 @@ const viewTransition = (view) => {
   const animateout = $(App).find('.page').data('animate-out');
   const animatein = $(view).data('animate-in');
   const transition = Promise.resolve();
-
-  debugger;
+  //
+  // debugger;
   return transition
     // Before add new page
     .then(() => {

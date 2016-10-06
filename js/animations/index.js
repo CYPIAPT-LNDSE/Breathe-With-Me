@@ -75,7 +75,7 @@ export const outOfInfo = () => {
   tl.add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }));
   tl.add(TweenMax.fromTo('.alt-intro', 0.5, { backgroundColor: '#5CA1C2' }, { backgroundColor: '#A5E2DA' }));
   return promisify(tl);
-}
+};
 
 export const infoToCatView = () => {
   const tl = new TimelineMax();
@@ -124,30 +124,30 @@ export const outOfBreathing = () => {
 
 export const breathingToWelldone = () => {
   const tl = new TimelineMax();
-  tl.add(TweenMax.fromTo('.welldone', 0.2,
-    { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
+  tl.add(TweenMax.to('.breathing', 0.3, { backgroundColor: '#494A97' }));
   tl.add(TweenMax.to('.welldone-user', 0,
     { text: { value: `Well Done ${document.cookie}!`, delimiter: ' ' }, ease: Linear.easeNone }));
   tl.add(TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }));
-  tl.add(TweenMax.to('.welldone-mountain1', 0.5, { y: -100 }));
-  tl.add(TweenMax.to('.welldone-mountain2', 0.5, { y: -150 }));
-  tl.add(TweenMax.to('.welldone-mountain3', 0.5, { y: -170 }));
+  tl.add(TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -115 }));
+  tl.add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -120 }));
+  tl.add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -150 }));
   tl.add(TweenMax.to('#start-again', 0.3, { opacity: 1 }));
-  tl.add(TweenMax.set('.breathing', 0, { backgroundColor: '#A5E2DA' }));
+  // tl.add(TweenMax.set('.breathing', 0, { backgroundColor: '#5CA1C2' }));
   return promisify(tl);
 };
 
 export const welldoneToIntro = () => {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.welldone-mountain3', 0.3, { y: 0 }));
-  tl.add(TweenMax.to('.welldone-mountain2', 0.3, { y: 0 }));
-  tl.add(TweenMax.to('.welldone-mountain1', 0.3, { y: 0 }));
-  tl.add(TweenMax.to('.welldone', 0.2, { css: { display: 'none' } }));
+  tl.add(TweenMax.to('.welldone', 0.3, { backgroundColor: '#5CA1C2' }));
+  tl.add(TweenMax.to('.welldone-mountain3', 0.3, { y: 300 }));
+  tl.add(TweenMax.to('.welldone-mountain2', 0.3, { y: 300 }));
+  tl.add(TweenMax.to('.welldone-mountain1', 0.3, { y: 300 }));
+  tl.add(TweenMax.to('.welldone', 0.2, { visibility: 'hidden' }));
   tl.add(TweenMax.to('.alt-intro', 0.2, { css: { display: 'flex' } }));
   tl.add(TweenMax.to('.mountain1', 0.5, { y: -170 }));
   tl.add(TweenMax.to('.mountain2', 0.5, { y: -300 }));
-  tl.add(TweenMax.fromTo('.alt-intro', 0.3,
-    { backgroundColor: '#494A97' }, { backgroundColor: '#5CA1C2' }));
+  // tl.add(TweenMax.fromTo('.alt-intro', 0.3,
+  //   { backgroundColor: '#494A97' }, { backgroundColor: '#5CA1C2' }));
   tl.add(TweenMax.to('.breathing-information', 0.2,
     { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
   return promisify(tl);
@@ -173,4 +173,3 @@ export const breathe = () =>
 export const headMovement = () =>
   TweenMax.fromTo('#head', 5, { y: -0, delay: 2 },
     { y: -19, delay: 2, ease: Power1.easeInOut, repeat: -1, yoyo: true });
-
