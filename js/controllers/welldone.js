@@ -1,8 +1,8 @@
-import { welldoneToIntro } from '../animations';
+import { welldoneToIntro, breathingToWelldone } from '../animations';
 
 const welldoneCtrl = () => {
   const startAgain = document.getElementById('start-again');
   startAgain.addEventListener('click', welldoneToIntro);
 };
 
-module.exports = welldoneCtrl;
+export default welldoneCtrl;
