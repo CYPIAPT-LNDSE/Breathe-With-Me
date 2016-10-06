@@ -1,4 +1,4 @@
-importScripts('js/cache-polyfill.js');
+importScripts('./cache-polyfill.js');
 
 const filesToCache = [
   '/breathing-with-kitty/',
