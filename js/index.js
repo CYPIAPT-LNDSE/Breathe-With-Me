@@ -32,8 +32,6 @@ const controllers = {
   default: () => controllers.landingCtrl(),
 };
 
-const App = document.getElementById('app');
-
 const getTemplate = (name) => {
   const tmplName = `${name}Tmpl`;
 
