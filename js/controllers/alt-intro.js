@@ -1,13 +1,15 @@
-import { nameToInfoSwitch, infoToCatView } from '../animations';
+import { landingToInfo, nameToInfoSwitch, outOfInfo } from '../animations';
 
 const infoCtrl = () => {
   const nameSubmitButton = document.getElementById('name-question-button');
   const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
   nameSubmitButton.addEventListener('click', nameToInfoSwitch);
-  startBreathingCatButton.addEventListener('click', infoToCatView);
+  startBreathingCatButton.addEventListener('click', outOfInfo);
 
   const nameButton = document.getElementById('name-question-button');
   const name = document.getElementById('input-focus');
+
+  landingToInfo();
 
   function storeName() {
     const array = name.value.split(' ');
@@ -17,4 +19,4 @@ const infoCtrl = () => {
   nameButton.addEventListener('click', storeName);
 };
 
-module.exports = infoCtrl;
+export default infoCtrl;

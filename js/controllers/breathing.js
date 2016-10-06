@@ -1,8 +1,9 @@
-import { breathingToWelldone,
+import { outOfBreathing,
+  infoToCatView,
    breathe,
    headMovement,
    fromBreathingToIntro,
-   changeToFractalView
+   changeToFractalView,
   } from '../animations';
 
 const breatheCtrl = () => {
@@ -14,10 +15,12 @@ const breatheCtrl = () => {
   hands.addEventListener('click', changeToFractalView);
   belly.addEventListener('click', changeToFractalView);
   exitBreathing.addEventListener('click', fromBreathingToIntro);
-  FeelingBetterBtn.addEventListener('click', breathingToWelldone);
+  FeelingBetterBtn.addEventListener('click', outOfBreathing);
+
+  infoToCatView();
 
   breathe();
   headMovement();
 };
 
-module.exports = breatheCtrl;
+export default breatheCtrl;

@@ -1,9 +1,9 @@
-import { landingToInfo, landingAnimation } from '../animations';
+import { outOfLanding, landingAnimation } from '../animations';
 const landingCtrl = () => {
   const landingButton = document.getElementById('landing-button');
-  landingButton.addEventListener('click', landingToInfo);
+  landingButton.addEventListener('click', outOfLanding);
 
   landingAnimation();
 };
 
-module.exports = landingCtrl;
+export default landingCtrl;
