@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -9,7 +10,8 @@ const entrypoints = [
 module.exports = {
   entry: entrypoints,
   output: {
-    filename: 'js/bundle.js',
+    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
   },
   module: {
     loaders: [{
@@ -24,7 +26,7 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
-        'style', ['css-loader', 'sass'] , { publicPath: '/' }
+        'style', ['css-loader', 'sass'], { publicPath: '/' }
       ),
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -39,6 +41,6 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    new ExtractTextPlugin('css/bundle.css'),
+    new ExtractTextPlugin('bundle.css'),
   ],
 };
