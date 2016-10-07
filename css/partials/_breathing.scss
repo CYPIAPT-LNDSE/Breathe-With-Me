@@ -24,8 +24,13 @@
   }
 }
 
+#exit-breathing {
+  opacity: 0;
+  margin-right: -20px;
+}
 
 #feel-good-button {
+  opacity: 0;
   position: absolute;
   left: 20%;
   right: 20%;
@@ -58,7 +63,7 @@
 .sync-breath-text {
   margin: 0px 1em;
   text-align: center;
-  visibility: hidden;
+  opacity: 0;
 }
 
 #extra-breathing-instructions {
