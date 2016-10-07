@@ -172,7 +172,7 @@
 	  var tl = new _gsap.TimelineMax();
 	  tl.add(_gsap.TweenMax.to('.sync-breath-text', 0, { css: { visibility: 'hidden', opacity: 0 } }));
 	  tl.add(_gsap.TweenMax.to('.cat', 0.5, { opacity: 0 }));
-	  tl.add(_gsap.TweenMax.to('#mountain3', 1, { y: 500 }));
+	  tl.add(_gsap.TweenMax.to('#mountain3', 1, { opacity: 0, y: 500 }));
 	  return promisify(tl);
 	};
 	
@@ -181,27 +181,25 @@
 	  document.querySelector('.welldone-user').innerText = 'Well Done ' + document.cookie + '!';
 	
 	  var tl = new _gsap.TimelineMax();
-	  tl.add(_gsap.TweenMax.fromTo('.welldone', 0.8, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
+	  tl.add(_gsap.TweenMax.to('.breathing', 0.3, { backgroundColor: '#494A97' }));
 	  tl.add(_gsap.TweenMax.to('.welldone-user', 0, { text: { value: 'Well Done ' + document.cookie + '!', delimiter: ' ' }, ease: _gsap.Linear.easeNone }));
 	  tl.add(_gsap.TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain1', 0.5, { y: -300 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain2', 0.5, { y: -350 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain3', 0.5, { y: -370 }));
-	  tl.add(_gsap.TweenMax.to('#start-again', 0.3, { opacity: 1 }));
-	  tl.add(_gsap.TweenMax.set('.breathing', 0, { backgroundColor: '#A5E2DA' }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -300 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -350 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -370 }));
+	
 	  return promisify(tl);
 	};
 	
 	var welldoneToIntro = exports.welldoneToIntro = function welldoneToIntro() {
 	  var tl = new _gsap.TimelineMax();
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain3', 0.3, { y: 0 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain2', 0.3, { y: 0 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain1', 0.3, { y: 0 }));
-	  tl.add(_gsap.TweenMax.to('.welldone', 0.2, { css: { display: 'none' } }));
-	  tl.add(_gsap.TweenMax.to('.alt-intro', 0.2, { css: { display: 'flex' } }));
+	  tl.add(_gsap.TweenMax.to('.welldone', 0.3, { backgroundColor: '#5CA1C2' }));
+	  tl.add(_gsap.TweenMax.to('#start-again', 0.2, { opacity: 0 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain3', 0.3, { opacity: 0, y: 300 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain2', 0.3, { opacity: 0, y: 300 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain1', 0.3, { opacity: 0, y: 300 }));
 	  tl.add(_gsap.TweenMax.to('.mountain1', 0.5, { y: -170 }));
 	  tl.add(_gsap.TweenMax.to('.mountain2', 0.5, { y: -300 }));
-	  tl.add(_gsap.TweenMax.fromTo('.alt-intro', 0.3, { backgroundColor: '#494A97' }, { backgroundColor: '#5CA1C2' }));
 	  tl.add(_gsap.TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
 	  return promisify(tl);
 	};
@@ -225,7 +223,7 @@
 	};
 	
 	var headMovement = exports.headMovement = function headMovement() {
-	  return _gsap.TweenMax.fromTo('#head', 5, { y: -0, delay: 2 }, { y: -19, delay: 2, ease: _gsap.Power1.easeInOut, repeat: -1, yoyo: true });
+	  return _gsap.TweenMax.fromTo('#head', 5, { y: -0, delay: 2 }, { y: -20, delay: 2, ease: _gsap.Power1.easeInOut, repeat: -1, yoyo: true });
 	};
 
 /***/ },
@@ -1356,7 +1354,8 @@
 /***/ function(module, exports) {
 
 	module.exports = function (scope) {
-	  return `<div class="container">
+	  return `
+	<div class="container">
 	  <div class="landing page" data-animate-in="landingAnimation" data-animate-out="outOfLanding">
 	    <div class="landing-cat-round">
 	      <div class="row">
@@ -1467,8 +1466,6 @@
 	
 	  var nameButton = document.getElementById('name-question-button');
 	  var name = document.getElementById('input-focus');
-	
-	  (0, _animations.landingToInfo)();
 	
 	  function storeName() {
 	    var array = name.value.split(' ');
