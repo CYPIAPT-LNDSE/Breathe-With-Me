@@ -52,12 +52,14 @@ const bindListeners = (name) => {
   return controllers.default();
 };
 
+const App = document.querySelector('#app');
+
 const changeView = () => {
   const { hash } = location;
   const viewName = hash.replace('#', '');
   const template = getTemplate(viewName);
 
-  viewTransition(template)
+  viewTransition(App, template)
     .then(() => {
       bindListeners(viewName);
     });

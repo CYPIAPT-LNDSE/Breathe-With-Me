@@ -6,6 +6,7 @@
 @import 'partials/_altintro.scss';
 @import 'partials/_buttons.scss';
 @import 'partials/_welldone.scss';
+@import 'partials/_page.scss';
 
 html, body {
   height: 100%;
@@ -35,6 +36,4 @@ body {
   margin: 0 auto;
 }
 
-.page:last-child {
-    z-index: 10000;
-}
+
