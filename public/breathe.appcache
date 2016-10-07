@@ -1,0 +1,15 @@
+CACHE MANIFEST
+#2016-10-17 v1.0.0
+
+CACHE:
+/index.html
+/public/bundle.css
+/public/index.html
+/public/bundle.js
+/public/bc540e50b175a23a39a1b3bffc6e0785.png
+/public/2897524e0ca760dceb7501ca3833505f.svg
+
+NETWORK:
+*
+
+FALLBACK:

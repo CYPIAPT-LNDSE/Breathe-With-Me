@@ -83,11 +83,11 @@ export const outOfInfo = () => {
 export const infoToCatView = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.set('.breathing', 0, { backgroundColor: '#A5E2DA' }));
-  tl.add(TweenMax.fromTo('.breathing', 0.5, { css: { display: 'none' } }, { css: { display: 'block' } }));
   tl.add(TweenMax.to('#mountain3', 0.5, { y: -550, ease: Power2.easeOut }));
   tl.add(TweenMax.fromTo('.cat', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }));
-  tl.add(TweenMax.to('.sync-breath-text', 0.5, { opacity: 1, visibility: 'visible' }));
   tl.add(TweenMax.to('#feel-good-button', 1, { opacity: 1 }));
+  tl.add(TweenMax.to('.sync-breath-text', 0.5, { opacity: 1 }));
+  tl.add(TweenMax.to('#exit-breathing', 0.5, { opacity: 1 }));
 
   return promisify(tl);
 };
@@ -95,8 +95,8 @@ export const infoToCatView = () => {
 export const fromBreathingToIntro = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.alt-intro', 0.2, { css: { display: 'block' } }));
-  tl.add(TweenMax.to('#exit-breathing', 0.2, { visibility: 'hidden' }));
-  tl.add(TweenMax.to('#feel-good-button', 0.2, { visibility: 'hidden' }));
+  tl.add(TweenMax.to('#exit-breathing', 0.2, { opacity: 0 }));
+  tl.add(TweenMax.to('#feel-good-button', 0.2, { opacity: 0 }));
   tl.add(TweenMax.to('.breathing', 0.2, { css: { backgroundColor: '#5CA1C2' } }));
   tl.add(TweenMax.to('.mountain1', 0.5, { y: -170 }));
   tl.add(TweenMax.to('.mountain2', 0.5, { y: -300 }));

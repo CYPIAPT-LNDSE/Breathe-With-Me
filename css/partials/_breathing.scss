@@ -25,6 +25,7 @@
 }
 
 #exit-breathing {
+  opacity: 0;
   margin-right: -20px;
 }
 
@@ -62,7 +63,7 @@
 .sync-breath-text {
   margin: 0px 1em;
   text-align: center;
-  visibility: hidden;
+  opacity: 0;
 }
 
 #extra-breathing-instructions {
