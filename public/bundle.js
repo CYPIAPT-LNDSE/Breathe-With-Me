@@ -1300,7 +1300,7 @@
 	                </g>
 	              </g>
 	            </svg>
-	            <a href="#fractal"><svg id="belly" width="154px" height="201px" viewBox="0 0 154 201" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	            <svg id="belly" width="154px" height="201px" viewBox="0 0 154 201" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 	                <g id="belliSVG">
 	                  <g id="Page-1">
@@ -1313,7 +1313,7 @@
 	                  </g>
 	                </g>
 	              </g>
-	            </svg></a>
+	            </svg>
 	            <svg id="legs" width="105px" height="49px" viewBox="0 0 105 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 	              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
 	                <g id="Group" sketch:type="MSLayerGroup" transform="translate(-34.000000, -283.000000)">
@@ -1495,8 +1495,8 @@
 	  var exitBreathing = document.getElementById('exit-breathing');
 	  var FeelingBetterBtn = document.getElementById('feel-good-button');
 	
-	  hands.addEventListener('click', _animations.changeToFractalView);
-	  belly.addEventListener('click', _animations.changeToFractalView);
+	  // hands.addEventListener('click', changeToFractalView);
+	  // belly.addEventListener('click', changeToFractalView);
 	  exitBreathing.addEventListener('click', _animations.fromBreathingToIntro);
 	  FeelingBetterBtn.addEventListener('click', _animations.outOfBreathing);
 	
