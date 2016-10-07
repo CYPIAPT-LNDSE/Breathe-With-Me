@@ -32,6 +32,9 @@ export const outOfLanding = () => {
 };
 
 export const landingToInfo = () => {
+  // FIXME
+  document.querySelector('.name').innerText = document.cookie || '';
+
   const tl = new TimelineMax();
   tl.add(TweenMax.to('#mountain1', 0.5, { y: -250 }));
   tl.add(TweenMax.to('#mountain2', 0.5, { y: -300 }));
@@ -123,14 +126,27 @@ export const outOfBreathing = () => {
 };
 
 export const breathingToWelldone = () => {
+  // FIXME
+  document.querySelector('.welldone-user').innerText = `Well Done ${document.cookie}!`;
+
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.breathing', 0.3, { backgroundColor: '#494A97' }));
+// <<<<<<< HEAD
+//   tl.add(TweenMax.to('.breathing', 0.3, { backgroundColor: '#494A97' }));
+//   tl.add(TweenMax.to('.welldone-user', 0,
+//     { text: { value: `Well Done ${document.cookie}!`, delimiter: ' ' }, ease: Linear.easeNone }));
+//   tl.add(TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }));
+//   tl.add(TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -115 }));
+//   tl.add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -120 }));
+//   tl.add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -150 }));
+// =======
+  tl.add(TweenMax.fromTo('.welldone', 0.8,
+    { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
   tl.add(TweenMax.to('.welldone-user', 0,
     { text: { value: `Well Done ${document.cookie}!`, delimiter: ' ' }, ease: Linear.easeNone }));
   tl.add(TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }));
-  tl.add(TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -115 }));
-  tl.add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -120 }));
-  tl.add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -150 }));
+  tl.add(TweenMax.to('.welldone-mountain1', 0.5, { y: -300 }));
+  tl.add(TweenMax.to('.welldone-mountain2', 0.5, { y: -350 }));
+  tl.add(TweenMax.to('.welldone-mountain3', 0.5, { y: -370 }));
   tl.add(TweenMax.to('#start-again', 0.3, { opacity: 1 }));
   // tl.add(TweenMax.set('.breathing', 0, { backgroundColor: '#5CA1C2' }));
   return promisify(tl);

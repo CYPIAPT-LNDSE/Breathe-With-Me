@@ -1,0 +1,8 @@
+.page {
+  max-width: inherit;
+  overflow: hidden;
+}
+
+.page:last-child {
+    z-index: 10000;
+}

@@ -2,8 +2,6 @@
 
 .breathing {
   height: 100%;
-  min-width: 100%;
-  position: absolute;
   background-color: #A5E2DA;
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,8 +12,8 @@
   z-index: -1;
   top: 100%;
   position: absolute;
+  max-width: inherit;
   text-align: center;
-  width: 100vw;
 
   .material-icons {
     position: absolute;
@@ -26,39 +24,40 @@
   }
 }
 
-.feel-good-button {
-    padding-left: 28px;
-    padding-right: 28px;
-    border-radius: 23px!important;
-    background-color: transparent!important;
-    border: 2px solid $main-text!important;
-    color: $main-text!important;
-    margin-top: 10%;
-    line-height: 30px!important;
-}
-
 
 #feel-good-button {
-  margin-bottom: -5%;
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+  bottom: 20px;
+  border-radius: 23px!important;
+  background-color: transparent!important;
+  border: 2px solid $main-text!important;
+  color: $main-text!important;
+  margin: 0 auto;
+  line-height: 30px!important;
 }
 
 .cat {
-  height: inherit;
-  width: inherit;
-  opacity: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  max-width: inherit;
+  margin: 0 auto;
+
+  svg {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    max-width: inherit;
+    margin: 0 auto;
+  }
 }
 
 .sync-breath-text {
- position: absolute;
- top: 3%;
- bottom: 90%;
- margin: 0px;
- text-align: center;
- visibility: hidden;
+  margin: 0px 1em;
+  text-align: center;
+  visibility: hidden;
 }
 
 #extra-breathing-instructions {
@@ -71,26 +70,26 @@
   }
 }
 
-
   #head {
-    z-index: 4;
-    margin-top: -4%;
+    z-index: 10;
+    top: 50px;
   }
 
   #belly {
-    margin-top: -8%;
-    z-index: 3;
+
+    top: 170px;
+    z-index: 2;
     width: 160px;
   }
 
   #legs {
-    margin-top: -6%;
-    z-index: 0;
+
+    top: 354px;
+    z-index: 1;
 
   }
 
   #hands {
-    position: absolute;
-    z-index: 3;
-    margin-top: 2%;
+    top: 210px;
+    z-index: 30;
   }
