@@ -30,6 +30,7 @@
 
 #start-again {
   border: 2px solid white !important;
+  border-radius: 23px;
   color: white !important;
   left: 0;
   right: 0;
@@ -75,12 +76,15 @@
 
 .welldone-mountain1 {
   z-index: 10;
+  opacity: 0;
 }
 
 .welldone-mountain2 {
   z-index: 5;
+  opacity: 0;
 }
 
 .welldone-mountain3 {
   z-index: 2;
+  opacity: 0;
 }
