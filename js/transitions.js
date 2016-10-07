@@ -3,9 +3,6 @@ import * as animations from './animations/';
 const viewTransition = (container, view) => {
   const animateout = $(container).find('.page').data('animate-out');
   const animatein = $(view).data('animate-in');
-  const transition = Promise.resolve();
-
-  return transition
   const resolve = Promise.resolve.bind(Promise);
 
   return resolve()
