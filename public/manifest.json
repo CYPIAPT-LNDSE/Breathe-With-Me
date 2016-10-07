@@ -4,25 +4,25 @@
   "description": "Help to relieve anxiety with the help of kitty",
   "short_name": "Breathe With Me",
   "name": "Breathe With Me",
-  "start_url": "/breathing-with-kitty/public/index.html",
+  "start_url": "/public/index.html",
   "icons": [{
-        "src": "assets/catLanding.png",
+        "src": "newSVG/icons/cat_icon_round_big_no_border.svg",
         "sizes": "128x128",
         "type": "image/png"
       }, {
-        "src": "assets/catLanding.png",
+        "src": "newSVG/icons/cat_icon_round_big_no_border.svg",
         "sizes": "152x152",
         "type": "image/png"
       }, {
-        "src": "assets/catLanding.png",
+        "src": "newSVG/icons/cat_icon_round_big_no_border.svg",
         "sizes": "144x144",
         "type": "image/png"
       }, {
-        "src": "assets/catLanding.png",
+        "src": "newSVG/icons/cat_icon_round_big_no_border.svg",
         "sizes": "192x192",
         "type": "image/png"
       },{
-        "src": "assets/catLanding.png",
+        "src": "newSVG/icons/cat_icon_round_big_no_border.svg",
         "sizes": "384x384",
         "type": "image/png"
       }],
