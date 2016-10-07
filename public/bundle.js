@@ -90,6 +90,9 @@
 	};
 	
 	var landingToInfo = exports.landingToInfo = function landingToInfo() {
+	  // FIXME
+	  document.querySelector('.name').innerText = document.cookie || '';
+	
 	  var tl = new _gsap.TimelineMax();
 	  tl.add(_gsap.TweenMax.to('#mountain1', 0.5, { y: -250 }));
 	  tl.add(_gsap.TweenMax.to('#mountain2', 0.5, { y: -300 }));
@@ -174,13 +177,16 @@
 	};
 	
 	var breathingToWelldone = exports.breathingToWelldone = function breathingToWelldone() {
+	  // FIXME
+	  document.querySelector('.welldone-user').innerText = 'Well Done ' + document.cookie + '!';
+	
 	  var tl = new _gsap.TimelineMax();
-	  tl.add(_gsap.TweenMax.fromTo('.welldone', 0.2, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
+	  tl.add(_gsap.TweenMax.fromTo('.welldone', 0.8, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
 	  tl.add(_gsap.TweenMax.to('.welldone-user', 0, { text: { value: 'Well Done ' + document.cookie + '!', delimiter: ' ' }, ease: _gsap.Linear.easeNone }));
 	  tl.add(_gsap.TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain1', 0.5, { y: -100 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain2', 0.5, { y: -150 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain3', 0.5, { y: -170 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain1', 0.5, { y: -300 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain2', 0.5, { y: -350 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain3', 0.5, { y: -370 }));
 	  tl.add(_gsap.TweenMax.to('#start-again', 0.3, { opacity: 1 }));
 	  tl.add(_gsap.TweenMax.set('.breathing', 0, { backgroundColor: '#A5E2DA' }));
 	  return promisify(tl);
@@ -1175,37 +1181,35 @@
 /***/ function(module, exports) {
 
 	module.exports = function (scope) {
-	  return `<!-- <div class="container"> -->
-	  <div class="alt-intro page" data-animate-in="landingToInfo" data-animate-out="outOfInfo">
-	    <!-- <div class="row">
-	      <div class="col s12"> -->
-	        <a name="info"></a>
-	        <img id="mountain1" src="./newSVG/blueMountains/mountainFront2.svg" alt="" />
-	        <img id="mountain2" src="./newSVG/blueMountains/mountainMiddle.svg" alt="" />
-	        <img id="mountain4" src="./newSVG/blueMountains/mountainBack.svg" alt="" />
-	      <!-- </div>
-	    </div> -->
-	    <!-- <div class="row">
-	      <div class="col s12"> -->
-	        <div class="alt-info-box">
-	          <span>Hello, What is your name?</span>
-	          <input id="input-focus" type="text" name="name" value="" autocomplete="off">
-	          <button class="waves-effect waves-light btn-flat" id="name-question-button" type="button" name="button">Submit</button>
-	        </div>
-	      <!-- </div>
-	    </div> -->
-	    <!-- <div class="row">
-	      <div class="col s12"> -->
-	        <div class="breathing-information">
-	          <span class="name">Hi</span><br>
-	          <span>When I feel worried or upset, I take slow, deep breaths to make my belly move up and down.  This helps me to feel more calm and relaxed. <br><br>
-	          Whenever you're feeling anxious, find a place you can stand, sit or lie down comfortably. Place your hands on your belly and breathe with me. </span>
-	          <a href="#breathe"><button class="breathing-start waves-effect waves-light btn-flat" id="start-breathing-cat-button" type="button">Start</button></a>
-	        </div>
-	      <!-- </div>
-	    </div> -->
+	  return `<div class="container alt-intro page" data-animate-in="landingToInfo" data-animate-out="outOfInfo">
+	  <div class="row">
+	    <div class="col s12">
+	      <a name="info"></a>
+	      <img id="mountain1" src="./newSVG/blueMountains/mountainFront2.svg" alt="" />
+	      <img id="mountain2" src="./newSVG/blueMountains/mountainMiddle.svg" alt="" />
+	      <img id="mountain4" src="./newSVG/blueMountains/mountainBack.svg" alt="" />
+	    </div>
 	  </div>
-	<!-- </div> -->
+	  <div class="row">
+	    <div class="col s12">
+	      <div class="alt-info-box">
+	        <span>Hello, What is your name?</span>
+	        <input id="input-focus" type="text" name="name" value="" autocomplete="off">
+	        <button class="waves-effect waves-light btn-flat" id="name-question-button" type="button" name="button">Submit</button>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col s12">
+	      <div class="breathing-information">
+	        <span class="name">Hi</span><br>
+	        <span>When I feel worried or upset, I take slow, deep breaths to make my belly move up and down.  This helps me to feel more calm and relaxed. <br><br>
+	        Whenever you're feeling anxious, find a place you can stand, sit or lie down comfortably. Place your hands on your belly and breathe with me. </span>
+	        <a href="#breathe"><button class="breathing-start waves-effect waves-light btn-flat" id="start-breathing-cat-button" type="button">Start</button></a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 	`;
 	};
 
@@ -1216,14 +1220,28 @@
 	module.exports = function (scope) {
 	  return `<div class="breathing page" data-animate-in="infoToCatView" data-animate-out="outOfBreathing">
 	  <a name="breathe"></a>
-	  <a href="#info"><i id="exit-breathing" class="material-icons">keyboard_backspace</i><br></a>
+	  <!-- <div class="row">
+	    <div class="col s1"> -->
+	      <a href="#info"><i id="exit-breathing" class="material-icons">keyboard_backspace</i><br></a>
+	    <!-- </div>
+	  </div> -->
 	  <!-- //change to 550 and ID -->
-	  <img id="mountain3" src="./newSVG/breathingPage/breathing-background.svg" />
-	  <div class="cat">
-	    <div class="sync-breath-text">
-	      <p>If you like, you can sync your breath with mine!</p>
-	      <p id="extra-breathing-instructions">Keep repeating this for 2-5 minutes or until you feel better and then press the button below.</p>
-	    </div>
+	  <!-- <div class="row">
+	    <div class="col s12"> -->
+	      <img id="mountain3" src="./newSVG/breathingPage/breathing-background.svg" />
+	    <!-- </div>
+	  </div> -->
+	  <!-- <div class="row">
+	    <div class="col s12"> -->
+	      <div class="sync-breath-text">
+	        <p>If you like, you can sync your breath with mine!</p>
+	        <p id="extra-breathing-instructions">Keep repeating this for 2-5 minutes or until you feel better and then press the button below.</p>
+	      <!-- </div>
+	    </div> -->
+	  </div>
+	  <!-- <div class="row">
+	    <div class="col s12"> -->
+	      <div class="cat">
 	        <svg id="head" width="169px" height="170px" viewBox="0 0 169 170" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 	                <g id="Group">
@@ -1306,9 +1324,15 @@
 	                </g>
 	              </g>
 	        </svg>
-	    <a href="#welldone" id="feel-good-button" class="feel-good-button waves-effect waves-teal">I'M FEELING BETTER</a>
-	  </div>
-	</div>
+	      </div>
+	    <!-- </div>
+	  </div> -->
+	  <!-- <div class="row">
+	    <div class="col s12"> -->
+	      <a href="#welldone" id="feel-good-button" class="feel-good-button waves-effect waves-teal">I'M FEELING BETTER</a>
+	    </div>
+	  <!-- </div>
+	</div> -->
 	`;
 	};
 
@@ -1373,45 +1397,52 @@
 /***/ function(module, exports) {
 
 	module.exports = function (scope) {
-	  return `<div class="welldone page" data-animate-in="breathingToWelldone" data-animate-out="welldoneToIntro">
-	  <a name="welldone"></a>
+	  return `<div class="container welldone page" data-animate-in="breathingToWelldone" data-animate-out="welldoneToIntro">
 	  <span class="welldone-user">Hi</span><br>
-	  <div class="welldone-svg-wrapper">
-	    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	    <svg id="welldone-stars" width="250px" height="149px" viewBox="0 0 250 149" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-	      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-	        <g id="Group" sketch:type="MSLayerGroup" fill="#F2F3F6">
-	          <path d="M57.6397022,65.5996066 C57.6397022,63.8459437 56.0289287,60.0512958 56.0289287,60.0512958 C56.0289287,60.0512958 59.4680698,61.942838 60.9756608,61.942838 C62.60721,61.942838 65.2403945,60.3814199 65.2403945,60.3814199 C65.2403945,60.3814199 63.9751088,63.2273645 63.9751088,64.760006 C63.9751088,66.3665047 65.9213075,69.9010444 65.9213075,69.9010444 C65.9213075,69.9010444 62.0803204,68.3276001 60.5651168,68.3276001 C58.9411802,68.3276001 56.0289287,69.5555578 56.0289287,69.5555578 C56.0289287,69.5555578 57.6397022,66.9850839 57.6397022,65.5996066 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(60.975118, 64.976170) rotate(-47.000000) translate(-60.975118, -64.976170) "></path>
-	          <path d="M2.36586222,144.939861 C2.36586222,143.799953 1.31883478,141.333374 1.31883478,141.333374 C1.31883478,141.333374 3.55432923,142.562905 4.53428647,142.562905 C5.59481848,142.562905 7.30642885,141.547959 7.30642885,141.547959 C7.30642885,141.547959 6.48397372,143.397867 6.48397372,144.394108 C6.48397372,145.438356 7.74903272,147.735861 7.74903272,147.735861 C7.74903272,147.735861 5.25233217,146.713098 4.26742663,146.713098 C3.21184293,146.713098 1.31883478,147.51129 1.31883478,147.51129 C1.31883478,147.51129 2.36586222,145.840442 2.36586222,144.939861 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(4.533934, 144.534618) rotate(-47.000000) translate(-4.533934, -144.534618) "></path>
-	          <path d="M244.695734,121.54065 C244.695734,120.72362 243.945276,118.955697 243.945276,118.955697 C243.945276,118.955697 245.547569,119.836965 246.249954,119.836965 C247.010092,119.836965 248.23689,119.109502 248.23689,119.109502 C248.23689,119.109502 247.647395,120.435425 247.647395,121.149481 C247.647395,121.897947 248.554127,123.544687 248.554127,123.544687 C248.554127,123.544687 246.764614,122.81162 246.058682,122.81162 C245.302092,122.81162 243.945276,123.383725 243.945276,123.383725 C243.945276,123.383725 244.695734,122.186143 244.695734,121.54065 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(246.249702, 121.250192) rotate(-47.000000) translate(-246.249702, -121.250192) "></path>
-	          <path d="M221.695734,14.5406503 C221.695734,13.7236203 220.945276,11.955697 220.945276,11.955697 C220.945276,11.955697 222.547569,12.8369649 223.249954,12.8369649 C224.010092,12.8369649 225.23689,12.1095015 225.23689,12.1095015 C225.23689,12.1095015 224.647395,13.4354247 224.647395,14.1494811 C224.647395,14.8979475 225.554127,16.5446866 225.554127,16.5446866 C225.554127,16.5446866 223.764614,15.8116202 223.058682,15.8116202 C222.302092,15.8116202 220.945276,16.3837246 220.945276,16.3837246 C220.945276,16.3837246 221.695734,15.186143 221.695734,14.5406503 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(223.249702, 14.250192) rotate(-47.000000) translate(-223.249702, -14.250192) "></path>
-	          <path d="M123.726387,1.51667873 C123.726387,1.16669441 123.40492,0.409383921 123.40492,0.409383921 C123.40492,0.409383921 124.091281,0.786885281 124.392156,0.786885281 C124.717769,0.786885281 125.243283,0.475267881 125.243283,0.475267881 C125.243283,0.475267881 124.990766,1.0432425 124.990766,1.34911686 C124.990766,1.66973113 125.379175,2.37513097 125.379175,2.37513097 C125.379175,2.37513097 124.612616,2.06111345 124.310222,2.06111345 C123.986128,2.06111345 123.40492,2.30618105 123.40492,2.30618105 C123.40492,2.30618105 123.726387,1.79318304 123.726387,1.51667873 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(124.392047, 1.392257) rotate(-47.000000) translate(-124.392047, -1.392257) "></path>
-	          <path d="M15.6957342,32.5406503 C15.6957342,31.7236203 14.9452762,29.955697 14.9452762,29.955697 C14.9452762,29.955697 16.5475691,30.8369649 17.2499545,30.8369649 C18.0100919,30.8369649 19.2368904,30.1095015 19.2368904,30.1095015 C19.2368904,30.1095015 18.6473948,31.4354247 18.6473948,32.1494811 C18.6473948,32.8979475 19.5541271,34.5446866 19.5541271,34.5446866 C19.5541271,34.5446866 17.7646145,33.8116202 17.0586824,33.8116202 C16.3020917,33.8116202 14.9452762,34.3837246 14.9452762,34.3837246 C14.9452762,34.3837246 15.6957342,33.186143 15.6957342,32.5406503 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(17.249702, 32.250192) rotate(-47.000000) translate(-17.249702, -32.250192) "></path>
-	        </g>
-	      </g>
-	    </svg>
-	    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	    <svg id="welldone-banner" width="203px" height="43px" viewBox="0 0 203 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-	      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-	        <g id="Rectangle-24-+-Path-272-+-Path-272" sketch:type="MSLayerGroup">
-	          <path d="M26.1935484,9.12121212 L1.30967742,1.3030303 L11.7870968,19.5454545 L0,33.8787879 L35.3612903,43 L20.9548387,29.969697" id="Path-272" fill="#A5E2DA" sketch:type="MSShapeGroup"></path>
-	          <path d="M20,29.8235294 L35.3,43 L37,29 L20,29.8235294 Z" id="Path-276" fill="#12214B" sketch:type="MSShapeGroup"></path>
-	          <path d="M193.832258,9.12121212 L168.948387,1.3030303 L179.425806,19.5454545 L167.63871,33.8787879 L203,43 L188.593548,29.969697" id="Path-272" fill="#A5E2DA" sketch:type="MSShapeGroup" transform="translate(185.319355, 22.151515) scale(-1, 1) translate(-185.319355, -22.151515) "></path>
-	          <path d="M166,29.8235294 L181.3,43 L183,29 L166,29.8235294 Z" id="Path-276" fill="#12214B" sketch:type="MSShapeGroup" transform="translate(174.500000, 36.000000) scale(-1, 1) translate(-174.500000, -36.000000) "></path>
-	          <path d="M27.5032258,0 C27.5032258,0 74.9149007,7.81818182 100.845161,7.81818182 C127.738557,7.81818182 175.496774,0 175.496774,0 L183.354839,29.969697 C183.354839,29.969697 170.401725,33.6017797 154.541935,36.4848485 C138.154443,39.4638458 118.627138,41.6969697 104.774194,41.6969697 C91.8167314,41.6969697 70.9560694,41.8656915 53.6967742,39.0909091 C34.579122,36.017358 19.6451613,29.969697 19.6451613,29.969697 L27.5032258,0 Z" id="Rectangle-24" fill="#808FBE" sketch:type="MSShapeGroup"></path>
-	          <text id="Well-Done!" sketch:type="MSTextLayer" font-family="Lato" font-size="20" font-weight="normal" sketch:alignment="middle" letter-spacing="1.74999988">
-	            <tspan x="47.119616" y="32" fill="#FFFFFF">Well </tspan>
-	            <tspan x="100.509615" y="32" letter-spacing="1.34615374" fill="#FFFFFE">Done</tspan>
-	            <tspan x="153.67423" y="32" letter-spacing="1.34615374" fill="#FFFFFF">!</tspan>
-	          </text>
-	        </g>
-	      </g>
-	    </svg>
+	  <div class="row">
+	    <div class="col s12">
+	      <div class="welldone-svg-wrapper">
+	        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	        <svg id="welldone-stars" width="250px" height="149px" viewBox="0 0 250 149" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+	          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+	            <g id="Group" sketch:type="MSLayerGroup" fill="#F2F3F6">
+	              <path d="M57.6397022,65.5996066 C57.6397022,63.8459437 56.0289287,60.0512958 56.0289287,60.0512958 C56.0289287,60.0512958 59.4680698,61.942838 60.9756608,61.942838 C62.60721,61.942838 65.2403945,60.3814199 65.2403945,60.3814199 C65.2403945,60.3814199 63.9751088,63.2273645 63.9751088,64.760006 C63.9751088,66.3665047 65.9213075,69.9010444 65.9213075,69.9010444 C65.9213075,69.9010444 62.0803204,68.3276001 60.5651168,68.3276001 C58.9411802,68.3276001 56.0289287,69.5555578 56.0289287,69.5555578 C56.0289287,69.5555578 57.6397022,66.9850839 57.6397022,65.5996066 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(60.975118, 64.976170) rotate(-47.000000) translate(-60.975118, -64.976170) "></path>
+	              <path d="M2.36586222,144.939861 C2.36586222,143.799953 1.31883478,141.333374 1.31883478,141.333374 C1.31883478,141.333374 3.55432923,142.562905 4.53428647,142.562905 C5.59481848,142.562905 7.30642885,141.547959 7.30642885,141.547959 C7.30642885,141.547959 6.48397372,143.397867 6.48397372,144.394108 C6.48397372,145.438356 7.74903272,147.735861 7.74903272,147.735861 C7.74903272,147.735861 5.25233217,146.713098 4.26742663,146.713098 C3.21184293,146.713098 1.31883478,147.51129 1.31883478,147.51129 C1.31883478,147.51129 2.36586222,145.840442 2.36586222,144.939861 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(4.533934, 144.534618) rotate(-47.000000) translate(-4.533934, -144.534618) "></path>
+	              <path d="M244.695734,121.54065 C244.695734,120.72362 243.945276,118.955697 243.945276,118.955697 C243.945276,118.955697 245.547569,119.836965 246.249954,119.836965 C247.010092,119.836965 248.23689,119.109502 248.23689,119.109502 C248.23689,119.109502 247.647395,120.435425 247.647395,121.149481 C247.647395,121.897947 248.554127,123.544687 248.554127,123.544687 C248.554127,123.544687 246.764614,122.81162 246.058682,122.81162 C245.302092,122.81162 243.945276,123.383725 243.945276,123.383725 C243.945276,123.383725 244.695734,122.186143 244.695734,121.54065 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(246.249702, 121.250192) rotate(-47.000000) translate(-246.249702, -121.250192) "></path>
+	              <path d="M221.695734,14.5406503 C221.695734,13.7236203 220.945276,11.955697 220.945276,11.955697 C220.945276,11.955697 222.547569,12.8369649 223.249954,12.8369649 C224.010092,12.8369649 225.23689,12.1095015 225.23689,12.1095015 C225.23689,12.1095015 224.647395,13.4354247 224.647395,14.1494811 C224.647395,14.8979475 225.554127,16.5446866 225.554127,16.5446866 C225.554127,16.5446866 223.764614,15.8116202 223.058682,15.8116202 C222.302092,15.8116202 220.945276,16.3837246 220.945276,16.3837246 C220.945276,16.3837246 221.695734,15.186143 221.695734,14.5406503 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(223.249702, 14.250192) rotate(-47.000000) translate(-223.249702, -14.250192) "></path>
+	              <path d="M123.726387,1.51667873 C123.726387,1.16669441 123.40492,0.409383921 123.40492,0.409383921 C123.40492,0.409383921 124.091281,0.786885281 124.392156,0.786885281 C124.717769,0.786885281 125.243283,0.475267881 125.243283,0.475267881 C125.243283,0.475267881 124.990766,1.0432425 124.990766,1.34911686 C124.990766,1.66973113 125.379175,2.37513097 125.379175,2.37513097 C125.379175,2.37513097 124.612616,2.06111345 124.310222,2.06111345 C123.986128,2.06111345 123.40492,2.30618105 123.40492,2.30618105 C123.40492,2.30618105 123.726387,1.79318304 123.726387,1.51667873 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(124.392047, 1.392257) rotate(-47.000000) translate(-124.392047, -1.392257) "></path>
+	              <path d="M15.6957342,32.5406503 C15.6957342,31.7236203 14.9452762,29.955697 14.9452762,29.955697 C14.9452762,29.955697 16.5475691,30.8369649 17.2499545,30.8369649 C18.0100919,30.8369649 19.2368904,30.1095015 19.2368904,30.1095015 C19.2368904,30.1095015 18.6473948,31.4354247 18.6473948,32.1494811 C18.6473948,32.8979475 19.5541271,34.5446866 19.5541271,34.5446866 C19.5541271,34.5446866 17.7646145,33.8116202 17.0586824,33.8116202 C16.3020917,33.8116202 14.9452762,34.3837246 14.9452762,34.3837246 C14.9452762,34.3837246 15.6957342,33.186143 15.6957342,32.5406503 Z" id="Rectangle-25" sketch:type="MSShapeGroup" transform="translate(17.249702, 32.250192) rotate(-47.000000) translate(-17.249702, -32.250192) "></path>
+	            </g>
+	          </g>
+	        </svg>
+	        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	        <svg id="welldone-banner" width="203px" height="43px" viewBox="0 0 203 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+	          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+	            <g id="Rectangle-24-+-Path-272-+-Path-272" sketch:type="MSLayerGroup">
+	              <path d="M26.1935484,9.12121212 L1.30967742,1.3030303 L11.7870968,19.5454545 L0,33.8787879 L35.3612903,43 L20.9548387,29.969697" id="Path-272" fill="#A5E2DA" sketch:type="MSShapeGroup"></path>
+	              <path d="M20,29.8235294 L35.3,43 L37,29 L20,29.8235294 Z" id="Path-276" fill="#12214B" sketch:type="MSShapeGroup"></path>
+	              <path d="M193.832258,9.12121212 L168.948387,1.3030303 L179.425806,19.5454545 L167.63871,33.8787879 L203,43 L188.593548,29.969697" id="Path-272" fill="#A5E2DA" sketch:type="MSShapeGroup" transform="translate(185.319355, 22.151515) scale(-1, 1) translate(-185.319355, -22.151515) "></path>
+	              <path d="M166,29.8235294 L181.3,43 L183,29 L166,29.8235294 Z" id="Path-276" fill="#12214B" sketch:type="MSShapeGroup" transform="translate(174.500000, 36.000000) scale(-1, 1) translate(-174.500000, -36.000000) "></path>
+	              <path d="M27.5032258,0 C27.5032258,0 74.9149007,7.81818182 100.845161,7.81818182 C127.738557,7.81818182 175.496774,0 175.496774,0 L183.354839,29.969697 C183.354839,29.969697 170.401725,33.6017797 154.541935,36.4848485 C138.154443,39.4638458 118.627138,41.6969697 104.774194,41.6969697 C91.8167314,41.6969697 70.9560694,41.8656915 53.6967742,39.0909091 C34.579122,36.017358 19.6451613,29.969697 19.6451613,29.969697 L27.5032258,0 Z" id="Rectangle-24" fill="#808FBE" sketch:type="MSShapeGroup"></path>
+	              <text id="Well-Done!" sketch:type="MSTextLayer" font-family="Lato" font-size="20" font-weight="normal" sketch:alignment="middle" letter-spacing="1.74999988">
+	                <tspan x="47.119616" y="32" fill="#FFFFFF">Well </tspan>
+	                <tspan x="100.509615" y="32" letter-spacing="1.34615374" fill="#FFFFFE">Done</tspan>
+	                <tspan x="153.67423" y="32" letter-spacing="1.34615374" fill="#FFFFFF">!</tspan>
+	              </text>
+	            </g>
+	          </g>
+	        </svg>
+	      </div>
+	    </div>
 	  </div>
-	  <a href="#info" id="start-again" class="feel-good-button waves-effect waves-teal">START AGAIN</a>
-	  <img class="welldone-mountain1" src="./newSVG/redMountains/mountainWelldoneFront.svg" alt="" />
-	  <img class="welldone-mountain2" src="./newSVG/redMountains/mountainWelldoneMiddle.svg" alt="" />
-	  <img class="welldone-mountain3" src="./newSVG/redMountains/mountainWelldoneBack.svg" alt="" />
+	  <div class="row">
+	    <div class="col s12">
+	      <a href="#info" id="start-again" class="feel-good-button waves-effect waves-teal">START AGAIN</a>
+	      <img class="welldone-mountain1" src="./newSVG/redMountains/mountainWelldoneFront.svg" alt="" />
+	      <img class="welldone-mountain2" src="./newSVG/redMountains/mountainWelldoneMiddle.svg" alt="" />
+	      <img class="welldone-mountain3" src="./newSVG/redMountains/mountainWelldoneBack.svg" alt="" />
+	    </div>
+	  </div>
 	</div>
 	`;
 	};
@@ -1616,6 +1647,8 @@
 	  return controllers.default();
 	};
 	
+	var App = document.querySelector('#app');
+	
 	var changeView = function changeView() {
 	  var _location = location;
 	  var hash = _location.hash;
@@ -1623,7 +1656,7 @@
 	  var viewName = hash.replace('#', '');
 	  var template = getTemplate(viewName);
 	
-	  (0, _transitions2.default)(template).then(function () {
+	  (0, _transitions2.default)(App, template).then(function () {
 	    bindListeners(viewName);
 	  });
 	};
@@ -1643,50 +1676,27 @@
 	
 	var _animations = __webpack_require__(1);
 	
-	var animations = {
-	  outOfLanding: _animations.outOfLanding,
-	  landingAnimation: _animations.landingAnimation,
-	  landingToInfo: _animations.landingToInfo,
-	  outOfInfo: _animations.outOfInfo,
-	  infoToCatView: _animations.infoToCatView,
-	  fromBreathingToIntro: _animations.fromBreathingToIntro,
-	  changeToFractalView: _animations.changeToFractalView,
-	  exitFractalView: _animations.exitFractalView,
-	  outOfBreathing: _animations.outOfBreathing,
-	  breathingToWelldone: _animations.breathingToWelldone,
-	  welldoneToIntro: _animations.welldoneToIntro
-	};
+	var animations = _interopRequireWildcard(_animations);
 	
-	var App = $('#app');
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
-	var viewTransition = function viewTransition(view) {
-	  var animateout = $(App).find('.page').data('animate-out');
+	var viewTransition = function viewTransition(container, view) {
+	  var animateout = $(container).find('.page').data('animate-out');
 	  var animatein = $(view).data('animate-in');
-	  var transition = Promise.resolve();
+	  var resolve = Promise.resolve.bind(Promise);
 	
-	  debugger;
-	  return transition
+	  return resolve()
 	  // Before add new page
 	  .then(function () {
-	    if (animateout && typeof animations[animateout] === 'function') {
-	      return animations[animateout]().then(function () {
-	        $(App).append(view);
-	      });
-	    } else {
-	      $(App).append(view);
-	      return Promise.resolve();
-	    }
+	    return (animations[animateout] || resolve)().then(function () {
+	      return $(container).append(view);
+	    });
 	  })
 	  // Before remove the old view
 	  .then(function () {
-	    if (animatein && typeof animations[animatein] === 'function') {
-	      return animations[animatein]().then(function () {
-	        $(App).find('.page').length > 1 ? $(App).find('.page').first().remove() : null;
-	      });
-	    } else {
-	      $(App).find('.page').length > 1 ? $(App).find('.page').first().remove() : null;
-	      return Promise.resolve();
-	    }
+	    return (animations[animatein] || resolve)().then(function () {
+	      return $(container).html($(container).find('.page').last());
+	    });
 	  });
 	};
 	
