@@ -86,15 +86,18 @@ export const infoToCatView = () => {
   tl.add(TweenMax.fromTo('.breathing', 0.5, { css: { display: 'none' } }, { css: { display: 'block' } }));
   tl.add(TweenMax.to('#mountain3', 0.5, { y: -550, ease: Power2.easeOut }));
   tl.add(TweenMax.fromTo('.cat', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }));
-  tl.add(TweenMax.to('.sync-breath-text', 0.5, { css: { visibility: 'visible', opacity: 1 } }));
+  tl.add(TweenMax.to('.sync-breath-text', 0.5, { opacity: 1, visibility: 'visible' }));
+  tl.add(TweenMax.to('#feel-good-button', 1, { opacity: 1 }));
+
   return promisify(tl);
 };
 
 export const fromBreathingToIntro = () => {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.breathing', 0.2, { css: { display: 'none' } }));
   tl.add(TweenMax.to('.alt-intro', 0.2, { css: { display: 'block' } }));
-  tl.add(TweenMax.fromTo('.alt-intro', 0.5, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#5CA1C2' }));
+  tl.add(TweenMax.to('#exit-breathing', 0.2, { visibility: 'hidden' }));
+  tl.add(TweenMax.to('#feel-good-button', 0.2, { visibility: 'hidden' }));
+  tl.add(TweenMax.to('.breathing', 0.2, { css: { backgroundColor: '#5CA1C2' } }));
   tl.add(TweenMax.to('.mountain1', 0.5, { y: -170 }));
   tl.add(TweenMax.to('.mountain2', 0.5, { y: -300 }));
   tl.add(TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
@@ -119,7 +122,8 @@ export const exitFractalView = () => {
 
 export const outOfBreathing = () => {
   const tl = new TimelineMax();
-  tl.add(TweenMax.to('.sync-breath-text', 0, { css: { visibility: 'hidden', opacity: 0 } }));
+  tl.add(TweenMax.to('#feel-good-button', 1, { opacity: 0 }));
+  tl.add(TweenMax.to('.sync-breath-text', 0.3, { css: { visibility: 'hidden', opacity: 0 } }));
   tl.add(TweenMax.to('.cat', 0.5, { opacity: 0 }));
   tl.add(TweenMax.to('#mountain3', 1, { opacity: 0, y: 500 }));
   return promisify(tl);
@@ -127,7 +131,7 @@ export const outOfBreathing = () => {
 
 export const breathingToWelldone = () => {
   // FIXME
-  document.querySelector('.welldone-user').innerText = `Well Done ${document.cookie}!`;
+  document.querySelector('.welldone-user').innerText = `${document.cookie}`;
 
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.breathing', 0.3, { backgroundColor: '#494A97' }));
@@ -148,10 +152,13 @@ export const welldoneToIntro = () => {
   tl.add(TweenMax.to('.welldone-mountain3', 0.3, { opacity: 0, y: 300 }));
   tl.add(TweenMax.to('.welldone-mountain2', 0.3, { opacity: 0, y: 300 }));
   tl.add(TweenMax.to('.welldone-mountain1', 0.3, { opacity: 0, y: 300 }));
+  tl.add(TweenMax.to('.welldone', 0.3, { opacity: 0 }));
+  tl.add(TweenMax.to('#alt-intro', 0.3, { display: 'flex' }));
   tl.add(TweenMax.to('.mountain1', 0.5, { y: -170 }));
   tl.add(TweenMax.to('.mountain2', 0.5, { y: -300 }));
   tl.add(TweenMax.to('.breathing-information', 0.2,
     { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
+
   return promisify(tl);
 };
 
