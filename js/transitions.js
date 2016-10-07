@@ -5,7 +5,11 @@ const viewTransition = (container, view) => {
   const animatein = $(view).data('animate-in');
   const resolve = Promise.resolve.bind(Promise);
 
+
+  return transition
+  debugger;
   return resolve()
+
     // Before add new page
     .then(() => (animations[animateout] || resolve)()
       .then(() => $(container).append(view)))
