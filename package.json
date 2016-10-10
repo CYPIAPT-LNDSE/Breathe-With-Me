@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "webpack-dev-server --inline --content-base public",
-    "build": "webpack -p",
+    "build": "webpack -p --optimize-minimize",
     "test": "-"
   },
   "repository": {
