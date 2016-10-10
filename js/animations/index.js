@@ -12,6 +12,7 @@ export const landingAnimation = () => {
       onComplete: () => {
         TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
         TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
+        TweenMax.to('#audio-controls', 0.5, { opacity: 1 });
         TweenMax.to('#landing-stars', 0.6, { opacity: 1 });
       },
     })
@@ -23,6 +24,7 @@ export const outOfLanding = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('#landing-stars', 0.2, { opacity: 0, display: 'none' }));
   tl.add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }));
+  tl.add(TweenMax.to('#audio-controls', 0.2, { opacity: 0 }));
   tl.add(TweenMax.fromTo(
     '#landing-button', 0.4,
     { scale: 1, backgroundColor: '#5CA1C2' },
@@ -40,10 +42,12 @@ export const landingToInfo = () => {
   tl.add(TweenMax.to('#mountain2', 0.5, { y: -300 }));
   tl.add(TweenMax.to('#mountain4', 0.5, { y: -350 }));
   if (!document.cookie) {
+    tl.add(TweenMax.to('#audio-controls', 0.5, { opacity: 1 }));
     tl.add(TweenMax.to('.alt-info-box', 0.5, { y: 400, opacity: 1 }));
     return promisify(tl);
   }
 
+  tl.add(TweenMax.to('#audio-controls', 1, { opacity: 1 }));
   tl.add(TweenMax.to(
     '.breathing-information', 1,
     { css: { visibility: 'visible', opacity: 1 } }
@@ -76,6 +80,7 @@ export const outOfInfo = () => {
   tl.add(TweenMax.to('#mountain2', 0.3, { y: 0 }));
   tl.add(TweenMax.to('#mountain1', 0.3, { y: 0 }));
   tl.add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }));
+  tl.add(TweenMax.to('#audio-controls', 0.5, { opacity: 0 }));
   tl.add(TweenMax.fromTo('.alt-intro', 0.5, { backgroundColor: '#5CA1C2' }, { backgroundColor: '#A5E2DA' }));
   return promisify(tl);
 };
@@ -86,14 +91,16 @@ export const infoToCatView = () => {
   tl.add(TweenMax.fromTo('.cat', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }));
   tl.add(TweenMax.to('#feel-good-button', 1, { opacity: 1 }));
   tl.add(TweenMax.to('.sync-breath-text', 0.5, { opacity: 1 }));
-  tl.add(TweenMax.to('.icon-menu', 0.5, { opacity: 1 }));
+  tl.add(TweenMax.to('#audio-controls', 0.2, { opacity: 1 }));
+  tl.add(TweenMax.to('#exit-breathing', 0.2, { opacity: 1 }));
   return promisify(tl);
 };
 
 export const fromBreathingToIntro = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('.alt-intro', 0.2, { css: { display: 'block' } }));
-  tl.add(TweenMax.to('.icon-menu', 0.2, { opacity: 0 }));
+  tl.add(TweenMax.to('#exit-breathing', 0.2, { opacity: 0 }));
+  tl.add(TweenMax.to('#audio-controls', 0.2, { opacity: 0 }));
   tl.add(TweenMax.to('#feel-good-button', 0.2, { opacity: 0 }));
   tl.add(TweenMax.to('.breathing', 0.2, { css: { backgroundColor: '#5CA1C2' } }));
   tl.add(TweenMax.to('.mountain1', 0.5, { y: -170 }));
@@ -121,7 +128,8 @@ export const exitFractalView = () => {
 export const outOfBreathing = () => {
   const tl = new TimelineMax();
   tl.add(TweenMax.to('#feel-good-button', 1, { opacity: 0 }));
-  tl.add(TweenMax.to('.icon-menu', 0.2, { opacity: 0 }));
+  tl.add(TweenMax.to('#audio-controls', 0.2, { opacity: 0 }));
+  tl.add(TweenMax.to('#exit-breathing', 0.2, { opacity: 0 }));
   tl.add(TweenMax.to('.sync-breath-text', 0.3, { css: { visibility: 'hidden', opacity: 0 } }));
   tl.add(TweenMax.to('.cat', 0.5, { opacity: 0 }));
 
@@ -140,6 +148,7 @@ export const breathingToWelldone = () => {
   tl.add(TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -300 }));
   tl.add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -350 }));
   tl.add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -370 }));
+  tl.add(TweenMax.to('#audio-controls', 0.2, { opacity: 1 }));
 
   return promisify(tl);
 };
@@ -149,6 +158,7 @@ export const welldoneToIntro = () => {
   tl.add(TweenMax.to('.welldone', 0.3, { backgroundColor: '#5CA1C2' }));
   tl.add(TweenMax.to('#start-again', 0.2, { opacity: 0 }));
   tl.add(TweenMax.to('#welldone-stars', 0.3, { opacity: 0 }));
+  tl.add(TweenMax.to('#audio-controls', 0.2, { opacity: 0 }));
   tl.add(TweenMax.to('#welldone-banner', 0.3, { y: -200 }))
   tl.add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 0, y: 300 }));
   tl.add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 0, y: 300 }));
