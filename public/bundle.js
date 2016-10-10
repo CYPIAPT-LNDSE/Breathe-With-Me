@@ -138,20 +138,21 @@
 	  tl.add(_gsap.TweenMax.fromTo('.cat', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }));
 	  tl.add(_gsap.TweenMax.to('#feel-good-button', 1, { opacity: 1 }));
 	  tl.add(_gsap.TweenMax.to('.sync-breath-text', 0.5, { opacity: 1 }));
-	  tl.add(_gsap.TweenMax.to('#exit-breathing', 0.5, { opacity: 1 }));
-	
+	  tl.add(_gsap.TweenMax.to('.icon-menu', 0.5, { opacity: 1 }));
 	  return promisify(tl);
 	};
 	
 	var fromBreathingToIntro = exports.fromBreathingToIntro = function fromBreathingToIntro() {
 	  var tl = new _gsap.TimelineMax();
 	  tl.add(_gsap.TweenMax.to('.alt-intro', 0.2, { css: { display: 'block' } }));
-	  tl.add(_gsap.TweenMax.to('#exit-breathing', 0.2, { opacity: 0 }));
+	  tl.add(_gsap.TweenMax.to('.icon-menu', 0.2, { opacity: 0 }));
 	  tl.add(_gsap.TweenMax.to('#feel-good-button', 0.2, { opacity: 0 }));
 	  tl.add(_gsap.TweenMax.to('.breathing', 0.2, { css: { backgroundColor: '#5CA1C2' } }));
 	  tl.add(_gsap.TweenMax.to('.mountain1', 0.5, { y: -170 }));
 	  tl.add(_gsap.TweenMax.to('.mountain2', 0.5, { y: -300 }));
 	  tl.add(_gsap.TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
+	  audio.pause();
+	
 	  return promisify(tl);
 	};
 	
@@ -174,9 +175,12 @@
 	var outOfBreathing = exports.outOfBreathing = function outOfBreathing() {
 	  var tl = new _gsap.TimelineMax();
 	  tl.add(_gsap.TweenMax.to('#feel-good-button', 1, { opacity: 0 }));
+	  tl.add(_gsap.TweenMax.to('.icon-menu', 0.2, { opacity: 0 }));
 	  tl.add(_gsap.TweenMax.to('.sync-breath-text', 0.3, { css: { visibility: 'hidden', opacity: 0 } }));
 	  tl.add(_gsap.TweenMax.to('.cat', 0.5, { opacity: 0 }));
 	  tl.add(_gsap.TweenMax.to('#mountain3', 1, { opacity: 0, y: 500 }));
+	  audio.pause();
+	
 	  return promisify(tl);
 	};
 	
@@ -1216,10 +1220,6 @@
 	module.exports = function (scope) {
 	  return `<div class="breathing page" data-animate-in="infoToCatView" data-animate-out="outOfBreathing">
 	  <a name="breathe"></a>
-	
-	  <audio id="audio" src="./assets/2386_cello-suite-no1-in-g-major-bwv-1007-a002e337-ca9c-4da7-9a2c-9cd0caf149d4.mp3">
-	  Your browser does not support the <code>audio</code> element.
-	  </audio>
 	
 	  <div class="icon-menu">
 	    <a href="#info"><i id="exit-breathing" class="material-icons">keyboard_backspace</i><br></a>
