@@ -1217,7 +1217,14 @@
 	  return `<div class="breathing page" data-animate-in="infoToCatView" data-animate-out="outOfBreathing">
 	  <a name="breathe"></a>
 	
-	  <a href="#info"><i id="exit-breathing" class="material-icons">keyboard_backspace</i><br></a>
+	  <audio id="audio" src="./assets/2386_cello-suite-no1-in-g-major-bwv-1007-a002e337-ca9c-4da7-9a2c-9cd0caf149d4.mp3">
+	  Your browser does not support the <code>audio</code> element.
+	  </audio>
+	
+	  <div class="icon-menu">
+	    <a href="#info"><i id="exit-breathing" class="material-icons">keyboard_backspace</i><br></a>
+	    <i id="audio-controls" class="material-icons">volume_up</i>
+	  </div>
 	
 	  <img id="mountain3" src="./newSVG/breathingPage/breathing-background.svg" />
 	
@@ -1444,7 +1451,7 @@
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -1452,14 +1459,27 @@
 	
 	var _animations = __webpack_require__(1);
 	
+	var toggleAudio = function toggleAudio(e) {
+	  if (e.target.textContent === "volume_up") {
+	    e.target.textContent = "volume_off";
+	    audio.play();
+	  } else {
+	    e.target.textContent = "volume_up";
+	    audio.pause();
+	  }
+	};
+	
 	var breatheCtrl = function breatheCtrl() {
 	  var belly = document.getElementById('belly');
 	  var hands = document.getElementById('hands');
 	  var exitBreathing = document.getElementById('exit-breathing');
 	  var FeelingBetterBtn = document.getElementById('feel-good-button');
+	  var audioControl = document.getElementById('audio-controls');
+	  var audio = document.getElementById('audio');
 	
 	  // hands.addEventListener('click', changeToFractalView);
 	  // belly.addEventListener('click', changeToFractalView);
+	  audioControl.addEventListener('click', toggleAudio);
 	  exitBreathing.addEventListener('click', _animations.fromBreathingToIntro);
 	  FeelingBetterBtn.addEventListener('click', _animations.outOfBreathing);
 	
