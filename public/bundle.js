@@ -138,20 +138,21 @@
 	  tl.add(_gsap.TweenMax.fromTo('.cat', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }));
 	  tl.add(_gsap.TweenMax.to('#feel-good-button', 1, { opacity: 1 }));
 	  tl.add(_gsap.TweenMax.to('.sync-breath-text', 0.5, { opacity: 1 }));
-	  tl.add(_gsap.TweenMax.to('#exit-breathing', 0.5, { opacity: 1 }));
-	
+	  tl.add(_gsap.TweenMax.to('.icon-menu', 0.5, { opacity: 1 }));
 	  return promisify(tl);
 	};
 	
 	var fromBreathingToIntro = exports.fromBreathingToIntro = function fromBreathingToIntro() {
 	  var tl = new _gsap.TimelineMax();
 	  tl.add(_gsap.TweenMax.to('.alt-intro', 0.2, { css: { display: 'block' } }));
-	  tl.add(_gsap.TweenMax.to('#exit-breathing', 0.2, { opacity: 0 }));
+	  tl.add(_gsap.TweenMax.to('.icon-menu', 0.2, { opacity: 0 }));
 	  tl.add(_gsap.TweenMax.to('#feel-good-button', 0.2, { opacity: 0 }));
 	  tl.add(_gsap.TweenMax.to('.breathing', 0.2, { css: { backgroundColor: '#5CA1C2' } }));
 	  tl.add(_gsap.TweenMax.to('.mountain1', 0.5, { y: -170 }));
 	  tl.add(_gsap.TweenMax.to('.mountain2', 0.5, { y: -300 }));
 	  tl.add(_gsap.TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
+	  audio.pause();
+	
 	  return promisify(tl);
 	};
 	
@@ -174,9 +175,12 @@
 	var outOfBreathing = exports.outOfBreathing = function outOfBreathing() {
 	  var tl = new _gsap.TimelineMax();
 	  tl.add(_gsap.TweenMax.to('#feel-good-button', 1, { opacity: 0 }));
+	  tl.add(_gsap.TweenMax.to('.icon-menu', 0.2, { opacity: 0 }));
 	  tl.add(_gsap.TweenMax.to('.sync-breath-text', 0.3, { css: { visibility: 'hidden', opacity: 0 } }));
 	  tl.add(_gsap.TweenMax.to('.cat', 0.5, { opacity: 0 }));
 	  tl.add(_gsap.TweenMax.to('#mountain3', 1, { opacity: 0, y: 500 }));
+	  audio.pause();
+	
 	  return promisify(tl);
 	};
 	
@@ -1217,7 +1221,10 @@
 	  return `<div class="breathing page" data-animate-in="infoToCatView" data-animate-out="outOfBreathing">
 	  <a name="breathe"></a>
 	
-	  <a href="#info"><i id="exit-breathing" class="material-icons">keyboard_backspace</i><br></a>
+	  <div class="icon-menu">
+	    <a href="#info"><i id="exit-breathing" class="material-icons">keyboard_backspace</i><br></a>
+	    <i id="audio-controls" class="material-icons">volume_up</i>
+	  </div>
 	
 	  <img id="mountain3" src="./newSVG/breathingPage/breathing-background.svg" />
 	
@@ -1438,7 +1445,7 @@
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -1446,14 +1453,27 @@
 	
 	var _animations = __webpack_require__(1);
 	
+	var toggleAudio = function toggleAudio(e) {
+	  if (e.target.textContent === "volume_up") {
+	    e.target.textContent = "volume_off";
+	    audio.play();
+	  } else {
+	    e.target.textContent = "volume_up";
+	    audio.pause();
+	  }
+	};
+	
 	var breatheCtrl = function breatheCtrl() {
 	  var belly = document.getElementById('belly');
 	  var hands = document.getElementById('hands');
 	  var exitBreathing = document.getElementById('exit-breathing');
 	  var FeelingBetterBtn = document.getElementById('feel-good-button');
+	  var audioControl = document.getElementById('audio-controls');
+	  var audio = document.getElementById('audio');
 	
 	  // hands.addEventListener('click', changeToFractalView);
 	  // belly.addEventListener('click', changeToFractalView);
+	  audioControl.addEventListener('click', toggleAudio);
 	  exitBreathing.addEventListener('click', _animations.fromBreathingToIntro);
 	  FeelingBetterBtn.addEventListener('click', _animations.outOfBreathing);
 	
