@@ -50,7 +50,7 @@
   max-width: inherit;
   margin: 0 auto;
 
-  svg {
+  svg, a {
     display: block;
     position: absolute;
     left: 0;
@@ -66,9 +66,6 @@
   opacity: 0;
 }
 
-#extra-breathing-instructions {
-  display: none;
-}
 
 @media screen and (min-height: 600px) {
   #extra-breathing-instructions {
@@ -82,17 +79,13 @@
   }
 
   #belly {
-
     top: 170px;
     z-index: 2;
-    width: 160px;
   }
 
   #legs {
-
     top: 349px;
     z-index: 1;
-
   }
 
   #hands {

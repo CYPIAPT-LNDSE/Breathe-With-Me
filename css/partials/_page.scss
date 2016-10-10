@@ -1,6 +1,12 @@
 .page {
+  width: 100%;
   max-width: inherit;
   overflow: hidden;
+  position: absolute;
+
+  //* {
+    //position: relative;
+  //}
 }
 
 .page:last-child {

@@ -10,6 +10,8 @@
 
 html, body {
   height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -19,6 +21,7 @@ body {
   height: 100%;
   width: 100%;
   letter-spacing: 1.4px;
+  background-color: $background-landing;
 }
 
 @media screen and (min-width: 1000px) {
@@ -34,4 +37,7 @@ body {
   height: 100%;
   max-width: 414px;
   margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../public/newSVG/landing/landing_BG.svg');
 }
