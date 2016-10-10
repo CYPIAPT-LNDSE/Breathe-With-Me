@@ -1,10 +1,8 @@
-import { nameToInfoSwitch, outOfInfo } from '../animations';
+import { nameToInfoSwitch } from '../animations';
 
 const infoCtrl = () => {
   const nameSubmitButton = document.getElementById('name-question-button');
-  const startBreathingCatButton = document.getElementById('start-breathing-cat-button');
   nameSubmitButton.addEventListener('click', nameToInfoSwitch);
-  startBreathingCatButton.addEventListener('click', outOfInfo);
 
   const nameButton = document.getElementById('name-question-button');
   const name = document.getElementById('input-focus');
