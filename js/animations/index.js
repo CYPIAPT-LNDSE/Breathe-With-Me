@@ -81,7 +81,6 @@ export const outOfInfo = () => {
 };
 
 export const infoToCatView = () => {
-  console.log('infoToCatView')
   const tl = new TimelineMax();
   tl.add(TweenMax.set('.breathing', 0, { backgroundColor: '#A5E2DA' }));
   tl.add(TweenMax.to('#mountain3', 0.5, { y: -550, ease: Power2.easeOut }));

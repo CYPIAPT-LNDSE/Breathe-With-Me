@@ -189,7 +189,7 @@
 	  document.querySelector('.welldone-user').innerText = '' + document.cookie;
 	
 	  var tl = new _gsap.TimelineMax();
-	  tl.add(_gsap.TweenMax.to('.breathing', 0.3, { backgroundColor: '#494A97' }));
+	  tl.add(_gsap.TweenMax.fromTo('.welldone', 0.5, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }));
 	  tl.add(_gsap.TweenMax.to('.welldone-user', 0, { text: { value: 'Well Done ' + document.cookie + '!', delimiter: ' ' }, ease: _gsap.Linear.easeNone }));
 	  tl.add(_gsap.TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }));
 	  tl.add(_gsap.TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -300 }));
@@ -203,11 +203,11 @@
 	  var tl = new _gsap.TimelineMax();
 	  tl.add(_gsap.TweenMax.to('.welldone', 0.3, { backgroundColor: '#5CA1C2' }));
 	  tl.add(_gsap.TweenMax.to('#start-again', 0.2, { opacity: 0 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain3', 0.3, { opacity: 0, y: 300 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain2', 0.3, { opacity: 0, y: 300 }));
-	  tl.add(_gsap.TweenMax.to('.welldone-mountain1', 0.3, { opacity: 0, y: 300 }));
-	  tl.add(_gsap.TweenMax.to('.welldone', 0.3, { opacity: 0 }));
-	  tl.add(_gsap.TweenMax.to('#alt-intro', 0.3, { display: 'flex' }));
+	  tl.add(_gsap.TweenMax.to('#welldone-stars', 0.3, { opacity: 0 }));
+	  tl.add(_gsap.TweenMax.to('#welldone-banner', 0.3, { y: -200 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain3', 0.5, { opacity: 0, y: 300 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain2', 0.5, { opacity: 0, y: 300 }));
+	  tl.add(_gsap.TweenMax.to('.welldone-mountain1', 0.5, { opacity: 0, y: 300 }));
 	  tl.add(_gsap.TweenMax.to('.mountain1', 0.5, { y: -170 }));
 	  tl.add(_gsap.TweenMax.to('.mountain2', 0.5, { y: -300 }));
 	  tl.add(_gsap.TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
@@ -1228,10 +1228,6 @@
 	
 	  <img id="mountain3" src="./newSVG/breathingPage/breathing-background.svg" />
 	
-	  <div class="sync-breath-text">
-	    <p>If you like, you can sync your breath with mine!</p>
-	    <p id="extra-breathing-instructions">Keep repeating this for 2-5 minutes or until you feel better and then press the button below.</p>
-	  </div>
 	  <div class="cat">
 	    <svg id="head" width="169px" height="170px" viewBox="0 0 169 170" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -1430,9 +1426,7 @@
 	
 	var infoCtrl = function infoCtrl() {
 	  var nameSubmitButton = document.getElementById('name-question-button');
-	  var startBreathingCatButton = document.getElementById('start-breathing-cat-button');
 	  nameSubmitButton.addEventListener('click', _animations.nameToInfoSwitch);
-	  startBreathingCatButton.addEventListener('click', _animations.outOfInfo);
 	
 	  var nameButton = document.getElementById('name-question-button');
 	  var name = document.getElementById('input-focus');
@@ -1668,15 +1662,15 @@
 	  return resolve()
 	  // Before add new page
 	  .then(function () {
-	    return (animations[animateout] || resolve)().then(function () {
-	      return $(container).append(view);
-	    });
+	    return (animations[animateout] || resolve)();
+	  }).then(function () {
+	    return $(container).append(view);
 	  })
 	  // Before remove the old view
 	  .then(function () {
-	    return (animations[animatein] || resolve)().then(function () {
-	      return $(container).html($(container).find('.page').last());
-	    });
+	    return (animations[animatein] || resolve)();
+	  }).then(function () {
+	    return $(container).html($(container).find('.page').last());
 	  });
 	};
 	
