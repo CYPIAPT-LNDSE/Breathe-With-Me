@@ -24,17 +24,8 @@
   }
 }
 
-.icon-menu {
-  display: flex;
-  align-items: flex-start;
-  opacity: 0;
-}
-
-#audio-controls {
-  padding-left: 20px;
-}
-
 #exit-breathing {
+  position: absolute;
   margin-right: -20px;
 }
 
