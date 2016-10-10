@@ -17,6 +17,7 @@
   z-index: 0;
   top: 100%;
   position: absolute;
+  will-change: transform;
 }
 
 #mountain2 {
@@ -24,6 +25,7 @@
   z-index: -1;
   top: 100%;
   position: absolute;
+  will-change: transform;
 }
 
 #mountain4 {
@@ -31,6 +33,7 @@
   z-index: -3;
   top: 100%;
   position: absolute;
+  will-change: transform;
 }
 
 .alt-info-box {
@@ -59,6 +62,7 @@
   align-items: center;
   justify-content: flex-start;
   z-index: 5;
+  will-change: transform;
 }
 #instructions {
   z-index: -1;
