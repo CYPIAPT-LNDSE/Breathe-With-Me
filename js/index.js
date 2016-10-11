@@ -1,10 +1,14 @@
 import { TweenMax, TimelineMax, Linear, Power1, Power2 } from 'gsap';
-import viewTransition from './transitions';
+
+import viewTransition from './lib/transitions';
 import landingCtrl from './controllers/landing';
 import infoCtrl from './controllers/alt-intro';
 import breatheCtrl from './controllers/breathing';
 import fractalCtrl from './controllers/fractal';
 import welldoneCtrl from './controllers/welldone';
+
+// FIXME
+import { resizeCanvas, granimInstance } from './lib/background.js';
 
 require('materialize-loader');
 
@@ -60,10 +64,14 @@ const changeView = () => {
   const template = getTemplate(viewName);
 
   viewTransition(App, template)
-    .then(() => {
-      bindListeners(viewName);
-    });
+  .then(() => {
+    bindListeners(viewName);
+  });
 };
 
 window.addEventListener('hashchange', changeView);
-window.addEventListener('load', changeView);
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('load', () => {
+  changeView();
+  resizeCanvas();
+});
