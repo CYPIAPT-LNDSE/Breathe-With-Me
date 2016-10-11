@@ -22,7 +22,6 @@ body {
   height: 100%;
   width: 100%;
   letter-spacing: 1.4px;
-  // background-color: $background-landing;
   background-color: transparent;
 }
 
@@ -33,7 +32,6 @@ body {
   margin: 0 auto;
   background-size: cover;
   background-repeat: no-repeat;
-  // background-image: url('../public/newSVG/landing/landing_BG.svg');
 }
 
 #bg {
@@ -53,13 +51,12 @@ body {
   opacity: 0;
 }
 
-@media screen and (orientation:portrait) {
-  #landscape {
-    display: none;
-  }
+#landscape {
+  display: none;
+  position: absolute;
 }
 
-@media screen and (orientation:landscape) {
+@media screen and (orientation: landscape) and (max-width: 768px) {
   #app {
     display: none;
   }
@@ -87,3 +84,4 @@ body {
     margin-top: 100px;
   }
 }
+
