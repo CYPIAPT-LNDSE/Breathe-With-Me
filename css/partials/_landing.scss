@@ -10,10 +10,12 @@
   opacity: 0;
   width: 80%;
   display: inline-block;
+  will-change: transform;
 
   button {
     opacity: 0;
     background-color: $buttons;
+    will-change: transform;
     }
   img {
     height: 100%;
@@ -33,4 +35,5 @@
   top: 10%;
   right: 20%;
   width: 60%;
+  will-change: transform;
 }

@@ -14,6 +14,7 @@
   position: absolute;
   max-width: inherit;
   text-align: center;
+  will-change: transform;
 
   .material-icons {
     position: absolute;
@@ -44,12 +45,14 @@
   margin: 0 auto;
   line-height: 30px!important;
   width: 200px;
+  will-change: transform;
 }
 
 .cat {
   position: relative;
   max-width: inherit;
   margin: 0 auto;
+  will-change: transform;
 
   svg, a {
     display: block;
@@ -77,16 +80,19 @@
   #head {
     z-index: 10;
     top: 41px;
+    will-change: transform;
   }
 
   #belly {
     top: 170px;
     z-index: 2;
+    will-change: transform;
   }
 
   #legs {
     top: 349px;
     z-index: 1;
+
   }
 
   #hands {
