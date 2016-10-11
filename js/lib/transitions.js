@@ -1,4 +1,4 @@
-import * as animations from './animations/';
+import * as animations from '../animations/';
 
 const viewTransition = (container, view) => {
   const animateout = $(container).find('.page').data('animate-out');
