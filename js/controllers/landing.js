@@ -1,6 +1,24 @@
 import { outOfLanding, landingAnimation } from '../animations';
+
+const audioControl = document.getElementById('audio-controls');
+const audio = document.getElementById('audio');
+
+const toggleAudio = (e) => {
+  if (e.target.textContent === 'volume_off') {
+    e.target.textContent = 'volume_up';
+    audio.play();
+  } else {
+    e.target.textContent = 'volume_off';
+    audio.pause();
+  }
+};
+
+audioControl.addEventListener('click', toggleAudio);
+audio.volume = 0.3;
+
 const landingCtrl = () => {
   const landingButton = document.getElementById('landing-button');
+
   landingButton.addEventListener('click', outOfLanding);
 
   landingAnimation();
