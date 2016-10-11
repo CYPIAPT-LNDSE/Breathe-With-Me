@@ -146,9 +146,9 @@ export const breathingToWelldone = () => {
     // .add(TweenMax.fromTo('.welldone', 0.5, { backgroundColor: '#A5E2DA' }, { backgroundColor: '#494A97' }))
     .add(TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }))
     .add(TweenMax.to('#audio-controls', 0.2, { opacity: 1 }))
-    .add(TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -300 }))
-    .add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -350 }))
-    .add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -370 }));
+    .add(TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -370 }))
+    .add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -390 }))
+    .add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -410 }));
 
   return promisify(tl);
 };

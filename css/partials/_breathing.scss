@@ -44,8 +44,11 @@
   border: 2px solid $main-text!important;
   color: $main-text!important;
   margin: 0 auto;
-  line-height: 30px!important;
+  line-height: 37px!important;
   width: 200px;
+  height: 40px;
+  text-align: center;
+  font-family: $Raleway;
   will-change: transform;
 }
 
