@@ -2,24 +2,18 @@ import { askNameToBreathingInfo, nameToInfoSwitch } from '../animations';
 
 const infoCtrl = () => {
   const nameSubmitButton = document.getElementById('name-question-button');
-  const name = document.getElementById('input-focus');
+  const username = localStorage.getItem('username');
 
-  function storeName() {
-    const array = name.value.split(' ');
-    const lastNameEntered = array[array.length - 1];
-    document.cookie = lastNameEntered;
-  }
-
-  nameSubmitButton.addEventListener('click', function(){
-    storeName();
+  nameSubmitButton.addEventListener('click', () => {
+    const name = document.getElementById('input-focus').value;
+    localStorage.setItem('username', name);
     nameToInfoSwitch();
   });
 
-  if (!document.cookie) {
+  if (!username) {
     askNameToBreathingInfo();
   } else {
-    const name = document.cookie;
-    document.querySelector('.name').innerText = `Hi ${name}`;
+    document.querySelector('.name').innerText = `Hi ${username}`;
     nameToInfoSwitch();
   }
 };

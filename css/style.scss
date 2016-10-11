@@ -21,25 +21,27 @@ body {
   height: 100%;
   width: 100%;
   letter-spacing: 1.4px;
-  background-color: $background-landing;
-}
-
-@media screen and (min-width: 1000px) {
-  .desktop-wrapper {
-    height: 100%;
-    width: 100%;
-    max-width: 414px;
-    margin: 0 auto;
-  }
+  // background-color: $background-landing;
+  background-color: transparent;
 }
 
 #app {
   height: 100%;
+  max-height: 700px;
   max-width: 414px;
   margin: 0 auto;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('../public/newSVG/landing/landing_BG.svg');
+  // background-image: url('../public/newSVG/landing/landing_BG.svg');
+}
+
+#bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  will-change: transform;
 }
 
 #audio-controls {
@@ -74,8 +76,13 @@ body {
 
   #rotate-message {
     font-size: 20px;
-    text-align: center;
     margin: auto;
     margin-top: 40vh;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  #app {
+    margin-top: 100px;
   }
 }
