@@ -49,3 +49,33 @@ body {
   top: 0px;
   opacity: 0;
 }
+
+@media screen and (orientation:portrait) {
+  #landscape {
+    display: none;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  #app {
+    display: none;
+  }
+
+  #audio-controls {
+    display: none;
+  }
+
+  #landscape {
+    display: block;
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+  }
+
+  #rotate-message {
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 40vh;
+  }
+}
