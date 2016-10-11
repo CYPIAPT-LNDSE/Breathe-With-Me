@@ -8,7 +8,7 @@ import fractalCtrl from './controllers/fractal';
 import welldoneCtrl from './controllers/welldone';
 
 // FIXME
-import { resizeCanvas, granimInstance } from './lib/background.js';
+import { resizeCanvas, granimInstance } from './lib/background';
 
 require('materialize-loader');
 
