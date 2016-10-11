@@ -54,6 +54,7 @@
   max-width: inherit;
   margin: 0 auto;
   will-change: transform;
+  top: 35px;
 
   svg, a {
     display: block;
@@ -80,7 +81,7 @@
 
   #head {
     z-index: 10;
-    top: 41px;
+    top: 33px;
     will-change: transform;
   }
 
@@ -91,12 +92,12 @@
   }
 
   #legs {
-    top: 349px;
+    top: 390px;
     z-index: 1;
 
   }
 
   #hands {
-    top: 210px;
+    top: 220px;
     z-index: 30;
   }
