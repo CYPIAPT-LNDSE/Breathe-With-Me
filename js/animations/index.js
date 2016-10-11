@@ -180,7 +180,7 @@ export const breatheOut = {
 };
 
 export const breatheIn = {
-  scale: 1.3,
+  scale: 1.2,
   ease: Power1.easeInOut,
   yoyo: true,
   repeat: -1,
