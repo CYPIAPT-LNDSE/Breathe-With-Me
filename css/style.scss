@@ -41,3 +41,11 @@ body {
   background-repeat: no-repeat;
   background-image: url('../public/newSVG/landing/landing_BG.svg');
 }
+
+#audio-controls {
+  z-index: 99999;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  opacity: 0;
+}

@@ -25,19 +25,10 @@
   }
 }
 
-.icon-menu {
-  display: flex;
-  align-items: flex-start;
-  opacity: 0;
-}
-
-#audio-controls {
-  padding-left: 20px;
-  will-change: transform;
-}
-
 #exit-breathing {
+  position: absolute;
   margin-right: -20px;
+  opacity: 0;
 }
 
 #feel-good-button {
@@ -101,7 +92,7 @@
   #legs {
     top: 349px;
     z-index: 1;
-    
+
   }
 
   #hands {
