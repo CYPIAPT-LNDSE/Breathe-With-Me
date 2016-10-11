@@ -6,23 +6,23 @@
   "name": "Breathe With Me",
   "start_url": "/public/index.html",
   "icons": [{
-        "src": "./assets/cat_icon_round_big_no_border.png",
+        "src": "./newSVG/icons/cat_icon_square.png",
         "sizes": "128x128",
         "type": "image/png"
       }, {
-        "src": "./assets/cat_icon_round_big_no_border.png",
+        "src": "./newSVG/icons/cat_icon_square.png",
         "sizes": "152x152",
         "type": "image/png"
       }, {
-        "src": "./assets/cat_icon_round_big_no_border.png",
+        "src": "./newSVG/icons/cat_icon_square.png",
         "sizes": "144x144",
         "type": "image/png"
       }, {
-        "src": "./assets/cat_icon_round_big_no_border.png",
+        "src": "./newSVG/icons/cat_icon_square.png",
         "sizes": "192x192",
         "type": "image/png"
       },{
-        "src": "./assets/cat_icon_round_big_no_border.png",
+        "src": "./newSVG/icons/cat_icon_square.png",
         "sizes": "384x384",
         "type": "image/png"
       }],
