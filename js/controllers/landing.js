@@ -1,27 +1,21 @@
-import { outOfLanding, landingAnimation } from '../animations';
-
-const audioControl = document.getElementById('audio-controls');
-const audio = document.getElementById('audio');
-
-const toggleAudio = (e) => {
-  if (e.target.textContent === 'volume_off') {
-    e.target.textContent = 'volume_up';
-    audio.play();
-  } else {
-    e.target.textContent = 'volume_off';
-    audio.pause();
-  }
-};
-
-audioControl.addEventListener('click', toggleAudio);
-audio.volume = 0.3;
+import { askNameToBreathingInfo, nameToInfoSwitch } from '../animations';
 
 const landingCtrl = () => {
-  const landingButton = document.getElementById('landing-button');
+  const nameSubmitButton = document.getElementById('name-question-button');
+  const username = localStorage.getItem('username');
 
-  landingButton.addEventListener('click', outOfLanding);
+  nameSubmitButton.addEventListener('click', () => {
+    const name = document.getElementById('input-focus').value;
+    localStorage.setItem('username', name);
+    nameToInfoSwitch();
+  });
 
-  landingAnimation();
+  if (!username) {
+    askNameToBreathingInfo();
+  } else {
+    document.querySelector('.name').innerText = `Hi ${username}`;
+    nameToInfoSwitch();
+  }
 };
 
 export default landingCtrl;

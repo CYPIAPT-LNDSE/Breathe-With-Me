@@ -31,7 +31,7 @@ export const outOfLanding = () => {
       { scale: 1, backgroundColor: '#5CA1C2' },
       { scale: 30, backgroundColor: 'transparent', ease: Power1.easeIn }
     ))
-    .add(TweenMax.to('.landing', 1, { visibility: 'hidden' }));
+    .add(TweenMax.to('.avatar', 1, { visibility: 'hidden' }));
 
   return promisify(tl);
 };
