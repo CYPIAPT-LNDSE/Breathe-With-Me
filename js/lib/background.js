@@ -4,7 +4,7 @@ import Granim from 'granim';
 const canvas = document.getElementById('bg');
 
 export const granimInstance = new Granim({
-  element: canvas,
+  element: '#bg',
   name: 'granim',
   elToSetClassOn: 'body',
   direction: 'diagonal',
