@@ -30,39 +30,38 @@
   height: 7%;
   width: 100%;
   z-index: 10;
-  opacity: 0.8;
-
-    #audio-controls {
-      z-index: 99999;
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      opacity: 0;
-      background: transparent;
-      transform: translateY(50%);
-      padding-left: 3%;
-    }
-
-    #settings {
-      background: transparent;
-      right: 0px;
-      top: 0px;
-      position: absolute;
-      transform: translateY(50%);
-      padding-right: 3%;
-    }
-
-    #info {
-      background: transparent;
-      text-align: center;
-      margin: auto;
-      display: block;
-      // top: 50%;
-      position: relative;
-      transform: translateY(50%);
-    }
+  opacity: 0;
 }
 
+#audio-controls {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: transparent;
+  transform: translateY(50%);
+  padding-left: 3%;
+  z-index: 15;
+}
+
+#settings {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background: transparent;
+  transform: translateY(50%);
+  padding-right: 3%;
+  z-index: 15;
+}
+
+#info {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: auto;
+  background: transparent;
+  transform: translateY(50%);
+  z-index: 15;
+}
 
 // #exit-breathing {
 //   position: absolute;

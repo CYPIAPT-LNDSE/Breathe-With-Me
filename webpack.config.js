@@ -22,7 +22,7 @@ module.exports = {
       loader: 'babel-loader',
     }, {
       test: /\.html$/,
-      loaders: ['html'],
+      loaders: ['babel-loader', 'html'],
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
@@ -46,6 +46,8 @@ module.exports = {
       cache: [
         'breathe.appcache',
         'manifest.json',
+        'catLanding.png',
+        'music.mp3',
         'https://fonts.googleapis.com/css?family=Lato',
         'https://fonts.googleapis.com/icon?family=Material+Icons',
       ],
