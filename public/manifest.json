@@ -4,7 +4,7 @@
   "description": "Help to relieve anxiety with the help of kitty",
   "short_name": "Breathe With Me",
   "name": "Breathe With Me",
-  "start_url": "/public/index.html",
+  "start_url": "/",
   "icons": [{
         "src": "./newSVG/icons/cat_icon_square.png",
         "sizes": "128x128",

@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const AppCachePlugin = require('appcache-webpack-plugin');
 
 const entrypoints = [
@@ -64,7 +65,18 @@ module.exports = {
       { from: 'src/assets/images/catLanding.png' },
       { from: 'src/assets/sounds/music.mp3' },
       { from: 'src/manifest.json' },
-      { from: 'src/service-worker.js' },
     ]),
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'pages-cache-v1',
+      filename: 'service-worker.js',
+      maximumFileSizeToCacheInBytes: 10000000,
+      runtimeCaching: [{
+        handler: 'cacheFirst',
+        urlPattern: /[.](mp3|json|png|js)$/,
+      }, {
+        handler: 'cacheFirst',
+        urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+      }],
+    }),
   ],
 };
