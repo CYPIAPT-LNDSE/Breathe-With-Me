@@ -1,3 +1,4 @@
+import { outOfLanding, landingAnimation } from '../animations';
 import { askNameToBreathingInfo, nameToInfoSwitch } from '../animations';
 
 const landingCtrl = () => {
