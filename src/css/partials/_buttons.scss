@@ -1,0 +1,25 @@
+
+.btn-flat{
+  border-radius: 23px!important;
+  border: 2px solid white!important;
+  color: white!important;
+  margin-top: 10%;
+  font-size: 16px!important;
+  height: 40px;
+  // font-family: $Open-sans;
+  font-family: $Raleway;
+}
+
+.btn, .btn-large, .btn-flat {
+  line-height: 30px!important;
+}
+
+.start {
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-start;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../assets/images/breathingBG.png');
+  text-align: center;
+}

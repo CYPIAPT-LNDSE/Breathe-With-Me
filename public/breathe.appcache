@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 114a958d1cadfe98141e
+# e82bfb5b0c84ff4b7109
 
 bc540e50b175a23a39a1b3bffc6e0785.png
 ecdd509cadbf1ea78b8d2e31ec52328c.eot
@@ -12,6 +12,15 @@ e31fcf1885e371e19f5786c2bdfeae1b.ttf
 894a2ede85a483bf9bedefd4db45cdb9.ttf
 df7b648ce5356ea1ebce435b3459fd60.ttf
 94998475f6aea65f558494802416c1cf.ttf
+7ad07142b51dd9b7c1b6347603383c6a.svg
+a858b276f999917b0698761ffcf428aa.gif
+ea463d8bf1904b3cece6052283b04971.svg
+3c546bf7e955aeaf180bca3d2743e204.svg
+7ef525e40bfdaf62100e47dd4be50351.svg
+a0e808d38c78ec1022d2f3eae5c5d980.svg
+0bffba416891219267efcf4e59c3c015.svg
+7ef9009b51f2e3ced613809250f98a30.svg
+f079d603854bcd795eaabf2ef7ae723b.svg
 dc81817def276b4f21395f7ea5e88dcd.woff
 39b2c3031be6b4ea96e2e3e95d307814.woff2
 3b813c2ae0d04909a33a18d792912ee7.woff
@@ -30,17 +39,6 @@ breathe.appcache
 manifest.json
 https://fonts.googleapis.com/css?family=Lato
 https://fonts.googleapis.com/icon?family=Material+Icons
-assets/catLanding.png
-newSVG/landing/catLanding2.svg
-newSVG/blueMountains/mountainFront2.svg
-newSVG/blueMountains/mountainMiddle.svg
-newSVG/blueMountains/mountainBack.svg
-newSVG/redMountains/mountainWelldoneFront.svg
-newSVG/redMountains/mountainWelldoneMiddle.svg
-newSVG/redMountains/mountainWelldoneBack.svg
-newSVG/GIFpage/cat-GIF.svg
-assets/ezgif.com-gif-maker.gif
-assets/2386_cello-suite-no1-in-g-major-bwv-1007-a002e337-ca9c-4da7-9a2c-9cd0caf149d4.mp3
 
 NETWORK:
 *

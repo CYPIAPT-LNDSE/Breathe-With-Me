@@ -1,0 +1,75 @@
+@import 'partials/_colors.scss';
+@import 'partials/fonts.scss';
+@import 'partials/_avatar.scss';
+@import 'partials/_intro.scss';
+@import 'partials/_breathing.scss';
+@import 'partials/_gifinfo.scss';
+@import 'partials/_landing.scss';
+@import 'partials/_buttons.scss';
+@import 'partials/_welldone.scss';
+@import 'partials/_page.scss';
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $Lato;
+  color: $main-text;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  letter-spacing: 1.4px;
+  background-color: transparent;
+}
+
+#app {
+  height: 100%;
+  max-height: 700px;
+  max-width: 414px;
+  margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  will-change: transform;
+}
+
+
+#landscape {
+  display: none;
+  position: absolute;
+}
+
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  #app {
+    display: none;
+  }
+
+  #landscape {
+    display: block;
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+  }
+
+  #rotate-message {
+    font-size: 20px;
+    margin: auto;
+    margin-top: 40vh;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  #app {
+    margin-top: 100px;
+  }
+}
