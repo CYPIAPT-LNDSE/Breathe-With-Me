@@ -1,0 +1,88 @@
+.welldone {
+  height: 100%;
+  // background-color: #494A97;
+  background-color: transparent;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#welldone-banner {
+  position: absolute;
+  bottom: 80%;
+  left: 20%;
+  width: 60%;
+  z-index: 50;
+}
+
+#welldone-stars {
+  opacity: 0;
+  position: absolute;
+  z-index: 10;
+  top: 5.5vh;
+  left: 10%;
+  width: 80%;
+}
+
+#start-again {
+  border: 2px solid white !important;
+  border-radius: 23px;
+  color: white !important;
+  left: 0;
+  right: 0;
+  bottom: 52%;
+  width: 146px;
+  height: 40px;
+  text-align: center;
+  line-height: 37px;
+  font-family: $Raleway;
+  margin: 0 auto;
+  z-index: 50;
+  position: absolute;
+}
+
+.welldone-user {
+  z-index: 10;
+  color: white;
+  height: 30%;
+  width: 60%;
+  text-align: center;
+  position: absolute;
+  bottom: 45%;
+  left: 20%;
+  font-size: 2.5em;
+  font-family: $Amatic;
+}
+
+.material-icons {
+  color: white;
+}
+
+.welldone-mountain1,
+.welldone-mountain2,
+.welldone-mountain3{
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: -480px;
+  position: absolute;
+  margin: 0 auto;
+  max-width: inherit;
+  will-change: transform;
+}
+
+.welldone-mountain1 {
+  z-index: 10;
+  opacity: 0;
+}
+
+.welldone-mountain2 {
+  z-index: 5;
+  opacity: 0;
+}
+
+.welldone-mountain3 {
+  z-index: 2;
+  opacity: 0;
+}

@@ -1,0 +1,39 @@
+.landing {
+  font-size: 1em;
+  position: absolute;
+  height: 100%;
+  text-align: center;
+}
+
+.landing-cat-round {
+  margin-top: -100%;
+  opacity: 0;
+  width: 80%;
+  display: inline-block;
+  will-change: transform;
+
+  button {
+    opacity: 0;
+    background-color: $buttons;
+    will-change: transform;
+    }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  h6 {
+    padding-top: 10vh;
+    opacity: 0;
+  }
+}
+
+#landing-stars {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  top: 5%;
+  right: 5%;
+  width: 80%;
+  will-change: transform;
+}
