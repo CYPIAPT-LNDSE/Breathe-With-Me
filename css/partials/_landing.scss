@@ -1,43 +1,87 @@
 .landing {
-  font-size: 1em;
-  position: absolute;
   height: 100%;
-  text-align: center;
-}
-
-.landing-cat-round {
-  margin-top: -100%;
-  opacity: 0;
-  width: 80%;
-  display: inline-block;
-  will-change: transform;
-
-  button {
-    opacity: 0;
-    background-color: $buttons;
-    will-change: transform;
-    }
-  img {
-    height: 100%;
-    width: 100%;
-  }
-
-  h6 {
-    padding-top: 10vh;
-    opacity: 0;
-  }
-}
-
-#landing-stars {
-  opacity: 0;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  // background-color: #5CA1C2;
+    background-color: transparent;
   position: absolute;
-  z-index: 2;
-  top: 5%;
-  right: 5%;
-  width: 80%;
+  z-index: 0;
+
+  span {
+    font-family: $Amatic;
+    padding-top: 0.8em;
+  }
+}
+
+#mountain1 {
+  width: 101%;
+  z-index: 0;
+  top: 100%;
+  position: absolute;
   will-change: transform;
 }
 
-#landing-material-icon {
-  font-size: 2.6rem!important;
+#mountain2 {
+  width: 101%;
+  z-index: -1;
+  top: 100%;
+  position: absolute;
+  will-change: transform;
+}
+
+#mountain4 {
+  width: 101%;
+  z-index: -3;
+  top: 100%;
+  position: absolute;
+  will-change: transform;
+}
+
+.alt-info-box {
+  display: inline-block;
+  color: white;
+  height: 30%;
+  width: 60%;
+  text-align: center;
+  position: absolute;
+  bottom: 128%;
+  left: 20%;
+  font-size: 2.5em;
+}
+
+.breathing-information {
+  visibility: hidden;
+  padding: 0.8em;
+  color: white;
+  text-align: center;
+  font-size: 1.1em;
+  opacity: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 5;
+  will-change: transform;
+}
+
+.name {
+  font-size: 2.5em;
+}
+
+#instructions {
+  z-index: -1;
+  font-family: $Raleway;
+  // font-family: $Open-sans;
+}
+
+.breathing-start{
+  margin-top: 1em;
+  font-size: 1em;
+  z-index: -1;
+
+}
+#input-focus {
+  border-bottom: 2px solid #ffffff;
 }
