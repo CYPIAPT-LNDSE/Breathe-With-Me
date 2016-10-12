@@ -88,6 +88,17 @@ export const infoToCatView = () => {
   return promisify(tl);
 };
 
+export const hideMenu = () => {
+  setTimeout(() => {
+    TweenMax.to('#breathing-menu', 0.5, { y: -50 });
+  }, 6000);
+};
+
+export const showMenu = () => {
+  TweenMax.to('#breathing-menu', 0.5, { y: 0 });
+  hideMenu();
+};
+
 export const fromBreathingToIntro = () => {
   const tl = new TimelineMax();
   tl
