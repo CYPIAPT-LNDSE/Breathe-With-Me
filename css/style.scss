@@ -43,13 +43,6 @@ body {
   will-change: transform;
 }
 
-#audio-controls {
-  z-index: 99999;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  opacity: 0;
-}
 
 #landscape {
   display: none;
@@ -58,10 +51,6 @@ body {
 
 @media screen and (orientation: landscape) and (max-width: 768px) {
   #app {
-    display: none;
-  }
-
-  #audio-controls {
     display: none;
   }
 
@@ -84,4 +73,3 @@ body {
     margin-top: 100px;
   }
 }
-
