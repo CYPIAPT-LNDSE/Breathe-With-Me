@@ -40,6 +40,7 @@
   background: transparent;
   transform: translateY(50%);
   padding-left: 3%;
+  z-index: 15;
 }
 
 #settings {
@@ -49,6 +50,7 @@
   background: transparent;
   transform: translateY(50%);
   padding-right: 3%;
+  z-index: 15;
 }
 
 #info {
@@ -58,6 +60,7 @@
   margin: auto;
   background: transparent;
   transform: translateY(50%);
+  z-index: 15;
 }
 
 // #exit-breathing {
