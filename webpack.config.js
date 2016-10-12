@@ -16,6 +16,17 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
+  resolve: {
+    root: path.resolve('./node_modules'),
+    alias: {
+      TweenLite: path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),
+      TweenMax: path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
+      TimelineLite: path.resolve('node_modules', 'gsap/src/uncompressed/TimelineLite.js'),
+      TimelineMax: path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
+      CSSPlugin: path.resolve('node_modules', 'gsap/src/uncompressed/plugins/CSSPlugin.js'),
+      Draggable: path.resolve('node_modules', 'gsap/src/uncompressed/utils/Draggable.js'),
+    },
+  },
   module: {
     loaders: [{
       test: /\.js$/,
