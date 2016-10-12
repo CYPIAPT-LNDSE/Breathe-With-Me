@@ -11,6 +11,17 @@ const breatheCtrl = () => {
   // const hands = document.getElementById('hands');
   const FeelingBetterBtn = document.getElementById('feel-good-button');
   const audio = document.getElementById('audio');
+  const audioControl = document.getElementById('audio-controls');
+
+  const toggleAudio = (e) => {
+    if (e.target.textContent === 'volume_off') {
+      e.target.textContent = 'volume_up';
+      audio.play();
+    } else {
+      e.target.textContent = 'volume_off';
+      audio.pause();
+    }
+  };
 
   // hands.addEventListener('click', changeToFractalView);
   // belly.addEventListener('click', changeToFractalView);
@@ -18,7 +29,7 @@ const breatheCtrl = () => {
   FeelingBetterBtn.addEventListener('click', () => {
     granimInstance.changeState('dark-state');
   });
-  audio.volume = 1;
+  audioControl.addEventListener('click', toggleAudio);
 
   breathe();
   headMovement();
