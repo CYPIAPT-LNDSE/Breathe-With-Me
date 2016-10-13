@@ -61,6 +61,7 @@
     "resolve-url-loader": "^1.6.0",
     "style-loader": "^0.13.1",
     "sw-precache": "^3.2.0",
+    "sw-precache-webpack-plugin": "^0.5.1",
     "sw-toolbox": "^3.2.1",
     "template-string-loader": "0.0.3",
     "url-loader": "^0.5.7",
