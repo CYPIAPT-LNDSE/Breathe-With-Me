@@ -159,7 +159,7 @@
   max-width: inherit;
   margin: 0 auto;
   will-change: transform;
-  top: 35px;
+  top: 60px;
 
   svg, a {
     display: block;
@@ -180,6 +180,12 @@
 @media screen and (min-height: 600px) {
   #extra-breathing-instructions {
     display: block;
+  }
+}
+
+@media screen and (max-height: 568px) {
+  .cat {
+    top: 10px;
   }
 }
 
