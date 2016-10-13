@@ -5,11 +5,17 @@ const promisify = tl =>
 
 export const landingAnimation = () => {
   const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('.avatar', 1, { opacity: 1 }))
-    .add(TweenMax.to('#landing-button', 1.3, { css: { opacity: 1 } }))
-    .add(TweenMax.to('#landing-text', 1.5, { css: { opacity: 1 } }));
 
+  tl.add(
+    TweenMax.to('.avatar', 2.5, {
+      css: { opacity: 1 },
+      onComplete: () => {
+        TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
+        TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
+        TweenMax.to('#landing-stars', 0.6, { opacity: 1 });
+      },
+    })
+  );
   return promisify(tl);
 };
 
@@ -18,7 +24,6 @@ export const outOfLanding = () => {
   tl
     .add(TweenMax.to('#landing-stars', 0.2, { opacity: 0, display: 'none' }))
     .add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }))
-    .add(TweenMax.to('#audio-controls', 0.2, { opacity: 0 }))
     .add(TweenMax.fromTo(
       '#landing-button', 0.4,
       { scale: 1, backgroundColor: '#5CA1C2' },
@@ -42,8 +47,7 @@ export const landingToInfo = () => {
 export const askNameToBreathingInfo = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('.alt-info-box', 0.5, { y: 400, opacity: 1 }))
-    .add(TweenMax.to('#audio-controls', 0.5, { opacity: 1 }));
+    .add(TweenMax.to('.alt-info-box', 0.5, { y: 400, opacity: 1 }));
 
   return promisify(tl);
 };
@@ -66,7 +70,6 @@ export const outOfInfo = () => {
     .add(TweenMax.to('#mountain2', 0.3, { y: 0 }))
     .add(TweenMax.to('#mountain1', 0.3, { y: 0 }))
     .add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
-    .add(TweenMax.to('#audio-controls', 0.5, { opacity: 0 }))
     .add(TweenMax.to('.alt-intro', 1, { visibility: 'hidden' }));
 
 
@@ -80,22 +83,47 @@ export const infoToCatView = () => {
     .add(TweenMax.fromTo('.cat', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }))
     .add(TweenMax.to('#feel-good-button', 1, { opacity: 1 }))
     .add(TweenMax.to('.sync-breath-text', 0.5, { opacity: 1 }))
-    .add(TweenMax.to('.icon-menu', 0.5, { opacity: 1 }))
-    .add(TweenMax.to('#audio-controls', 0.2, { opacity: 1 }));
+    .add(TweenMax.to('#breathing-menu', 0.5, { opacity: 0.8 }));
 
   return promisify(tl);
+};
+
+let bodyHasBeenClicked = false;
+let hideMenuTimer;
+
+export const hideMenu = () => {
+  hideMenuTimer = setTimeout(() => {
+    TweenMax.to('#breathing-menu', 0.5, { y: -50 });
+    bodyHasBeenClicked = false;
+  }, 6000);
+};
+
+const resetHideMenuTimer = () => {
+  clearTimeout(hideMenuTimer);
+  hideMenu();
+};
+
+export const showMenu = (e) => {
+  if (e.target.id === 'feel-good-button') {
+    return;
+  } else if (bodyHasBeenClicked === false) {
+    bodyHasBeenClicked = true;
+    TweenMax.to('#breathing-menu', 0.5, { y: 0 });
+    resetHideMenuTimer();
+  } else if (bodyHasBeenClicked === true) {
+    resetHideMenuTimer();
+  }
 };
 
 export const fromBreathingToIntro = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('.alt-intro', 0.2, { css: { display: 'block' } }))
-    .add(TweenMax.to('.icon-menu', 0.2, { opacity: 0 }))
+    .add(TweenMax.to('#breathing-menu', 0.2, { opacity: 0 }))
     .add(TweenMax.to('#feel-good-button', 0.2, { opacity: 0 }))
     .add(TweenMax.to('.mountain1', 0.5, { y: -170 }))
     .add(TweenMax.to('.mountain2', 0.5, { y: -300 }))
-    .add(TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }))
-    .add(TweenMax.to('#audio-controls', 0.2, { opacity: 0 }));
+    .add(TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
 
   return promisify(tl);
 };
@@ -123,8 +151,7 @@ export const outOfBreathing = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#feel-good-button', 1, { opacity: 0 }))
-    .add(TweenMax.to('#audio-controls', 0.2, { opacity: 0 }))
-    .add(TweenMax.to('.icon-menu', 0.2, { opacity: 0 }))
+    .add(TweenMax.to('#breathing-menu', 0.2, { opacity: 0 }))
     .add(TweenMax.to('.sync-breath-text', 0.3, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.cat', 0.5, { opacity: 0 }))
     .add(TweenMax.to('.breathing', 1, { visibility: 'hidden' }));
@@ -136,7 +163,7 @@ export const breathingToWelldone = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }))
-    .add(TweenMax.to('#audio-controls', 0.2, { opacity: 1 }))
+    .add(TweenMax.to('#breathing-menu', 0.2, { opacity: 1 }))
     .add(TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -370 }))
     .add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -390 }))
     .add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -410 }));
@@ -149,7 +176,6 @@ export const welldoneToIntro = () => {
   tl
     .add(TweenMax.to('#start-again', 0.2, { opacity: 0 }))
     .add(TweenMax.to('#welldone-stars', 0.3, { opacity: 0 }))
-    .add(TweenMax.to('#audio-controls', 0.2, { opacity: 0 }))
     .add(TweenMax.to('#welldone-banner', 0.3, { y: -200 }))
     .add(TweenMax.to('.welldone-user', 0.3, { opacity: 0 }))
     .add(TweenMax.to('.welldone-mountain3', 0.4, { y: 250 }))
