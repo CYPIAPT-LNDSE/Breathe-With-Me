@@ -5,6 +5,8 @@ import {
    headMovement,
    hideMenu,
    showMenu,
+   showModal,
+   hideModal,
   //  changeToFractalView,
   } from '../animations';
 
@@ -15,6 +17,8 @@ const breatheCtrl = () => {
   const body = document.getElementsByTagName('body')[0];
   const audio = document.getElementById('audio');
   const audioControl = document.getElementById('audio-controls');
+  const instructions = document.getElementById('info');
+  const exitModalButton = document.getElementById('exit-modal-button');
 
   // hands.addEventListener('click', changeToFractalView);
   // belly.addEventListener('click', changeToFractalView);
@@ -34,6 +38,8 @@ const breatheCtrl = () => {
   });
   audioControl.addEventListener('click', toggleAudio);
   body.addEventListener('click', showMenu);
+  instructions.addEventListener('click', showModal);
+  exitModalButton.addEventListener('click', hideModal);
 
   breathe();
   headMovement();
