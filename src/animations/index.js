@@ -86,6 +86,33 @@ export const infoToCatView = () => {
   return promisify(tl);
 };
 
+let bodyHasBeenClicked = false;
+let hideMenuTimer;
+
+export const hideMenu = () => {
+  hideMenuTimer = setTimeout(() => {
+    TweenMax.to('#breathing-menu', 0.5, { y: -50 });
+    bodyHasBeenClicked = false;
+  }, 6000);
+};
+
+const resetHideMenuTimer = () => {
+  clearTimeout(hideMenuTimer);
+  hideMenu();
+};
+
+export const showMenu = (e) => {
+  if (e.target.id === 'feel-good-button') {
+    return;
+  } else if (bodyHasBeenClicked === false) {
+    bodyHasBeenClicked = true;
+    TweenMax.to('#breathing-menu', 0.5, { y: 0 });
+    resetHideMenuTimer();
+  } else if (bodyHasBeenClicked === true) {
+    resetHideMenuTimer();
+  }
+};
+
 export const fromBreathingToIntro = () => {
   const tl = new TimelineMax();
   tl
