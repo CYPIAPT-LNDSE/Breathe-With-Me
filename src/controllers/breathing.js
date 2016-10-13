@@ -3,13 +3,16 @@ import { granimInstance } from '../lib/background.js';
 import {
    breathe,
    headMovement,
+   timeHasPassedNotification,
+  //  changeToFractalView,
+  } from '../animations';
+import {
    showMenu,
    hideMenu,
    showModal,
    hideModal,
-   timeHasPassedNotification,
-  //  changeToFractalView,
-  } from '../animations';
+   toggleAudio,
+} from '../lib/breathingPageMenu.js';
 
 let breathingPageVisited = false;
 
@@ -25,16 +28,6 @@ const breatheCtrl = () => {
 
   // hands.addEventListener('click', changeToFractalView);
   // belly.addEventListener('click', changeToFractalView);
-
-  const toggleAudio = (e) => {
-    if (e.target.textContent === 'volume_off') {
-      e.target.textContent = 'volume_up';
-      audio.play();
-    } else {
-      e.target.textContent = 'volume_off';
-      audio.pause();
-    }
-  };
 
   const startTimerFirstVisitOnly = () => {
     if (!breathingPageVisited) {
