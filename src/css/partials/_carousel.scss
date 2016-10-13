@@ -1,0 +1,83 @@
+
+.carousel-list {
+  padding: 0;
+  list-style-type: none;
+
+}
+.carousel_container {
+  text-align: center;
+  height: 100%;
+	position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 300px;
+	overflow: hidden;
+}
+
+.carousel_items {
+  position: absolute;
+  top: 40px;
+  width: 300px;
+  height: 300px;
+  opacity: 1;
+	position: relative;
+	cursor: default !important;
+}
+
+.carousel_item, .carousel_item img {
+	float:left;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 50px;
+}
+
+.nav_dot:hover {
+	cursor: pointer;
+}
+
+.item_next {
+	left: 900px;
+  top: 0px;
+  background-color: transparent;
+}
+
+.item_prev {
+  display: none;
+  left: 900px;
+  top: 66px;
+  background-color: transparent;
+}
+
+.nav_dots {
+	position: relative;
+	bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 5001;
+  padding: 5px;
+}
+
+.nav_dot {
+	width: 6px;
+	height: 6px;
+	float: left;
+	border: 1px solid $main-text;
+	background-color: $main-text;
+	margin-left: 15px;
+	border-radius: 50%;
+}
+
+
+.grab {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+
+.grabbing {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}
