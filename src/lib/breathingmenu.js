@@ -1,12 +1,12 @@
 import { TweenLite, TweenMax } from 'gsap';
 
 let menuIsDisplayed = true;
-let hideMenuTimer;
+let timer;
 const elementsThatWontTriggerMenu = ['feel-good-button', 'info', 'settings'];
 const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-options'];
 
-export const hideMenu = () => {
-  hideMenuTimer = setTimeout(() => {
+export const hideMenuTimer = () => {
+  timer = setTimeout(() => {
     TweenMax.to('#breathing-menu', 0.5, { y: -50 });
     menuIsDisplayed = false;
   }, 6000);
@@ -14,7 +14,17 @@ export const hideMenu = () => {
 
 const resetHideMenuTimer = () => {
   clearTimeout(hideMenuTimer);
-  hideMenu();
+  hideMenuTimer();
+};
+
+const displayMenu = () => {
+  TweenMax.to('#breathing-menu', 0.5, { y: 0 });
+  menuIsDisplayed = true;
+};
+
+const hideMenu = () => {
+  TweenMax.to('#breathing-menu', 0.5, { y: -50 });
+  menuIsDisplayed = false;
 };
 
 export const showMenu = (e) => {
@@ -23,14 +33,12 @@ export const showMenu = (e) => {
   } else if (document.getElementById('breathing-menu').style.height === '100%') {
     return;
   } else if (menuIsDisplayed === false) {
-    TweenMax.to('#breathing-menu', 0.5, { y: 0 });
-    menuIsDisplayed = true;
+    displayMenu();
     resetHideMenuTimer();
   } else if (menuIsDisplayed === true && (elementsThatResetTimer.includes(e.target.id))) {
     resetHideMenuTimer();
   } else if (menuIsDisplayed === true) {
-    menuIsDisplayed = false;
-    TweenMax.to('#breathing-menu', 0.5, { y: -50 });
+    hideMenu();
   }
 };
 
