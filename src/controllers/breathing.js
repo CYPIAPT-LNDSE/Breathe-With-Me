@@ -3,13 +3,15 @@ import { granimInstance } from '../lib/background.js';
 import {
    breathe,
    headMovement,
-   hideMenu,
    showMenu,
+   hideMenu,
    showModal,
    hideModal,
    timeHasPassedNotification,
   //  changeToFractalView,
   } from '../animations';
+
+let breathingPageVisited = false;
 
 const breatheCtrl = () => {
   // const belly = document.getElementById('belly');
@@ -34,6 +36,15 @@ const breatheCtrl = () => {
     }
   };
 
+  const startTimerFirstVisitOnly = () => {
+    if (!breathingPageVisited) {
+      breathingPageVisited = true;
+      timeHasPassedNotification(6000, '#first-msg');
+      timeHasPassedNotification(120000, '#after-two-min');
+      timeHasPassedNotification(300000, '#after-five-min');
+    }
+  };
+
   FeelingBetterBtn.addEventListener('click', () => {
     granimInstance.changeState('dark-state');
   });
@@ -41,15 +52,18 @@ const breatheCtrl = () => {
   body.addEventListener('click', showMenu);
   instructions.addEventListener('click', showModal);
   exitModalButton.addEventListener('click', hideModal);
+  exitModalButton.addEventListener('click', startTimerFirstVisitOnly);
 
   breathe();
   headMovement();
-  timeHasPassedNotification(8000, "#first-msg");
-  timeHasPassedNotification(120000, "#after-two-min");
-  timeHasPassedNotification(300000, "#after-five-min");
-  setTimeout(() => {
+  if (!breathingPageVisited) {
+    showModal();
+  } else {
     hideMenu();
-  }, 2000);
+    timeHasPassedNotification(8000, '#first-msg');
+    timeHasPassedNotification(120000, '#after-two-min');
+    timeHasPassedNotification(300000, '#after-five-min');
+  }
 };
 
 export default breatheCtrl;
