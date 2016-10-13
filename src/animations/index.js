@@ -72,7 +72,6 @@ export const outOfInfo = () => {
     .add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.alt-intro', 1, { visibility: 'hidden' }));
 
-
   return promisify(tl);
 };
 
@@ -121,7 +120,6 @@ export const showModal = () => {
     .add(TweenMax.to('#menu-options', 0.5, { opacity: 0, display: 'none' }))
     .add(TweenMax.to('#breathing-menu', 0.4, { css: { height: '100%' } }))
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'block', opacity: 1 }));
-  clearTimeout(hideMenuTimer);
 };
 
 export const hideModal = () => {
@@ -130,7 +128,6 @@ export const hideModal = () => {
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
     .add(TweenMax.to('#breathing-menu', 0.4, { css: { height: '7%' } }))
     .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }));
-  hideMenu();
 };
 
 export const fromBreathingToIntro = () => {
