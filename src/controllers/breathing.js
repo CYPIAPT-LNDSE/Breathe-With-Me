@@ -7,6 +7,7 @@ import {
    showMenu,
    showModal,
    hideModal,
+   timeHasPassedNotification,
   //  changeToFractalView,
   } from '../animations';
 
@@ -43,6 +44,8 @@ const breatheCtrl = () => {
 
   breathe();
   headMovement();
+  timeHasPassedNotification(120000, "#after-two-min");
+  timeHasPassedNotification(300000, "#after-five-min");
   setTimeout(() => {
     hideMenu();
   }, 2000);

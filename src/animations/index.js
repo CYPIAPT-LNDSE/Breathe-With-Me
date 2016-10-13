@@ -134,6 +134,17 @@ export const hideModal = () => {
   hideMenu();
 };
 
+export const timeHasPassedNotification = (time, targetEl) => {
+  const breathingTimer = setTimeout(() => {
+    const tl = new TimelineMax();
+    tl
+      .add(TweenMax.to(targetEl, 2, { display: 'block', opacity: 1 }))
+      .add(TweenMax.delayedCall(3, () => {
+      TweenMax.to(targetEl, 2, { display: 'none', opacity: 0 })
+    }));
+  }, time);
+};
+
 export const fromBreathingToIntro = () => {
   const tl = new TimelineMax();
   tl
