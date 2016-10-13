@@ -8,6 +8,7 @@ const landingCtrl = () => {
   nameSubmitButton.addEventListener('click', () => {
     const name = document.getElementById('input-focus').value;
     localStorage.setItem('username', name);
+    document.querySelector('.name').innerText = `Hi ${name}`;
     nameToInfoSwitch();
   });
 
