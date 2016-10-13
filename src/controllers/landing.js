@@ -1,4 +1,3 @@
-import { outOfLanding, landingAnimation } from '../animations';
 import { askNameToBreathingInfo, nameToInfoSwitch } from '../animations';
 
 const landingCtrl = () => {
@@ -6,15 +5,16 @@ const landingCtrl = () => {
   const username = localStorage.getItem('username');
 
   nameSubmitButton.addEventListener('click', () => {
-    const name = document.getElementById('input-focus').value;
+    const name = document.querySelector('#input-username').value;
     localStorage.setItem('username', name);
+    document.querySelector('#landing-username').innerText = `Hi ${name}`;
     nameToInfoSwitch();
   });
 
   if (!username) {
     askNameToBreathingInfo();
   } else {
-    document.querySelector('.name').innerText = `Hi ${username}`;
+    document.querySelector('#landing-username').innerText = `Hi ${username}`;
     nameToInfoSwitch();
   }
 };

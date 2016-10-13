@@ -37,9 +37,9 @@ export const outOfLanding = () => {
 export const landingToInfo = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.from('#mountain1', 0.5, { y: 280 }))
-    .add(TweenMax.from('#mountain2', 0.5, { y: 340 }))
-    .add(TweenMax.from('#mountain3', 0.5, { y: 380 }));
+    .add(TweenMax.from('#mountain1', 0.5, { y: 340 }))
+    .add(TweenMax.from('#mountain2', 0.5, { y: 400 }))
+    .add(TweenMax.from('#mountain3', 0.5, { y: 440 }));
 
   return promisify(tl);
 };
@@ -57,8 +57,7 @@ export const nameToInfoSwitch = () => {
   tl
     .add(TweenMax.to('.alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.breathing-information', 0.2,
-    { css: { visibility: 'visible', opacity: 1 } }))
-    .add(TweenMax.to('.alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }));
+    { css: { visibility: 'visible', opacity: 1 } }));
 
   return promisify(tl);
 };
@@ -66,9 +65,9 @@ export const nameToInfoSwitch = () => {
 export const outOfInfo = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('#mountain1', 0.5, { y: 280 }))
-    .add(TweenMax.to('#mountain2', 0.5, { y: 340 }))
-    .add(TweenMax.to('#mountain3', 0.5, { y: 380 }))
+    .add(TweenMax.to('#mountain1', 0.5, { y: 340 }))
+    .add(TweenMax.to('#mountain2', 0.5, { y: 400 }))
+    .add(TweenMax.to('#mountain3', 0.5, { y: 440 }))
     .add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.alt-intro', 1, { visibility: 'hidden' }));
 
