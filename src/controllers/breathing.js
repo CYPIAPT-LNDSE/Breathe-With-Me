@@ -8,13 +8,11 @@ import {
   } from '../animations';
 import {
    showMenu,
-   hideMenu,
+   hideMenuTimer,
    showModal,
    hideModal,
    toggleAudio,
-} from '../lib/breathingPageMenu.js';
-
-let breathingPageVisited = false;
+} from '../lib/breathingmenu.js';
 
 const breatheCtrl = () => {
   // const belly = document.getElementById('belly');
@@ -29,9 +27,11 @@ const breatheCtrl = () => {
   // hands.addEventListener('click', changeToFractalView);
   // belly.addEventListener('click', changeToFractalView);
 
+  let breathingPageVisited = localStorage.getItem('hasVisited');
+
   const startTimerFirstVisitOnly = () => {
     if (!breathingPageVisited) {
-      breathingPageVisited = true;
+      localStorage.setItem('hasVisited', true);
       timeHasPassedNotification(6000, '#first-msg');
       timeHasPassedNotification(120000, '#after-two-min');
       timeHasPassedNotification(300000, '#after-five-min');
@@ -52,7 +52,7 @@ const breatheCtrl = () => {
   if (!breathingPageVisited) {
     showModal();
   } else {
-    hideMenu();
+    hideMenuTimer();
     timeHasPassedNotification(8000, '#first-msg');
     timeHasPassedNotification(120000, '#after-two-min');
     timeHasPassedNotification(300000, '#after-five-min');

@@ -13,7 +13,7 @@ export const hideMenuTimer = () => {
 };
 
 const resetHideMenuTimer = () => {
-  clearTimeout(hideMenuTimer);
+  clearTimeout(timer);
   hideMenuTimer();
 };
 
@@ -48,7 +48,7 @@ export const showModal = () => {
     .add(TweenMax.to('#menu-options', 0.5, { opacity: 0, display: 'none' }))
     .add(TweenMax.to('#breathing-menu', 0.4, { css: { height: '100%' } }))
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'block', opacity: 1 }));
-  clearTimeout(hideMenuTimer);
+  clearTimeout(timer);
 };
 
 export const hideModal = () => {
@@ -57,7 +57,7 @@ export const hideModal = () => {
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
     .add(TweenMax.to('#breathing-menu', 0.4, { css: { height: '7%' } }))
     .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }));
-  hideMenu();
+  hideMenuTimer();
 };
 
 export const toggleAudio = (e) => {
