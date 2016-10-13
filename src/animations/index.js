@@ -105,6 +105,8 @@ const resetHideMenuTimer = () => {
 export const showMenu = (e) => {
   if (e.target.id === 'feel-good-button' || e.target.id === 'info') {
     return;
+  } else if (document.getElementById('breathing-menu').style.height === '100%') {
+    return;
   } else if (bodyHasBeenClicked === false) {
     bodyHasBeenClicked = true;
     TweenMax.to('#breathing-menu', 0.5, { y: 0 });
