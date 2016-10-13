@@ -98,6 +98,18 @@
   margin: auto;
 }
 
+#first-msg {
+  display: none;
+  color: #1C6C89;
+  position: fixed;
+  opacity: 0;
+  top: 7%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
 #after-two-min {
   display: none;
   color: #1C6C89;
@@ -173,23 +185,23 @@
 
   #head {
     z-index: 10;
-    top: 53px;
+    top: 63px;
     will-change: transform;
   }
 
   #belly {
-    top: 190px;
+    top: 200px;
     z-index: 2;
     will-change: transform;
   }
 
   #legs {
-    top: 410px;
+    top: 420px;
     z-index: 1;
 
   }
 
   #hands {
-    top: 240px;
+    top: 250px;
     z-index: 30;
   }

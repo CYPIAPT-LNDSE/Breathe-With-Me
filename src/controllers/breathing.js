@@ -44,6 +44,7 @@ const breatheCtrl = () => {
 
   breathe();
   headMovement();
+  timeHasPassedNotification(8000, "#first-msg");
   timeHasPassedNotification(120000, "#after-two-min");
   timeHasPassedNotification(300000, "#after-five-min");
   setTimeout(() => {
