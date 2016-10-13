@@ -49,12 +49,9 @@ const carousel = function () {
       onDrag: updateDirections,
       onThrowUpdate: updateDirections,
       throwProps: true,
-      onDragStart() {
-        $(this.target).removeClass('active');
-      },
+      onDragStart() {},
       onDragEnd() {
         let slideId = activeID;
-        $(this.target).addClass('active');
         if (swipeDir === 'left') {
           slideId++;
         } else if (swipeDir === 'right') {
