@@ -98,6 +98,42 @@
   margin: auto;
 }
 
+#first-msg {
+  display: none;
+  color: #1C6C89;
+  position: fixed;
+  opacity: 0;
+  top: 7%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+#after-two-min {
+  display: none;
+  color: #1C6C89;
+  position: fixed;
+  opacity: 0;
+  top: 7%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+#after-five-min {
+  display: none;
+  color: #1C6C89;
+  position: fixed;
+  opacity: 0;
+  top: 7%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
 #feel-good-button {
   opacity: 0;
   position: absolute;
@@ -123,7 +159,7 @@
   max-width: inherit;
   margin: 0 auto;
   will-change: transform;
-  top: 35px;
+  top: 60px;
 
   svg, a {
     display: block;
@@ -147,25 +183,31 @@
   }
 }
 
+@media screen and (max-height: 568px) {
+  .cat {
+    top: 10px;
+  }
+}
+
   #head {
     z-index: 10;
-    top: 33px;
+    top: 63px;
     will-change: transform;
   }
 
   #belly {
-    top: 170px;
+    top: 200px;
     z-index: 2;
     will-change: transform;
   }
 
   #legs {
-    top: 390px;
+    top: 420px;
     z-index: 1;
 
   }
 
   #hands {
-    top: 220px;
+    top: 250px;
     z-index: 30;
   }
