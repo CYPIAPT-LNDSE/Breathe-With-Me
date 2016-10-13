@@ -1,6 +1,7 @@
 /* global $ */
-/* eslint-disable no-plusplus, func-names, import/no-extraneous-dependencies, no-tabs  */
-import { TweenMax, Power2 } from 'gsap';
+/* eslint-disable no-plusplus, func-names, import/no-extraneous-dependencies  */
+import { TweenLite, TweenMax, Power2 } from 'gsap';
+import CSSPlugin from 'gsap/src/uncompressed/plugins/CSSPlugin';
 import Draggable from 'gsap/src/uncompressed/utils/Draggable';
 
 const carousel = function () {
@@ -8,6 +9,7 @@ const carousel = function () {
   const itemW = $('.carousel_item').width();
   const carouselCount = $('.carousel_item').length;
   const	$carouselItems = $('.carousel_items');
+  const	$carouselItem = $('.carousel_item');
   const $navDots = $('.nav_dots');
   const slideSpeed = 0.45;
   const slideMeth = Power2.EaseInOut;
