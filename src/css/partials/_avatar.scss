@@ -6,20 +6,22 @@
   margin: 0 auto;
   height: 100%;
   text-align: center;
+  opacity: 0;
 }
 
 #landing-button {
   position: absolute;
-  margin-top: 50px;
   left: 0;
   right: 0;
   margin: 0 auto;
-  opacity: 0;
-  background-color: $buttons;
-  will-change: transform;
+  top: 360px;
+  bottom: 0;
+  color: $main-text;
+
 }
 
 #landing-stars {
+  display: none;
   opacity: 0;
   position: absolute;
   z-index: 2;

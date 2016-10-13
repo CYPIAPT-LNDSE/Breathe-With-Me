@@ -5,8 +5,9 @@ const avatarCtrl = () => {
   const landingButton = document.getElementById('landing-button');
   landingButton.addEventListener('click', outOfLanding);
 
-  carousel();
-  landingAnimation();
+  const car = carousel();
+  car.init();
+
 };
 
 export default avatarCtrl;

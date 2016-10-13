@@ -5,18 +5,11 @@ const promisify = tl =>
 
 export const landingAnimation = () => {
   const tl = new TimelineMax();
-  tl.add(
-    TweenMax.to('.landing-cat-round', 2.5, {
-      css: { 'margin-top': '15%', opacity: 1 },
-      ease: Elastic.easeInOut.config(0.5, 0.2),
-      onComplete: () => {
-        TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
-        TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
-        TweenMax.to('#audio-controls', 0.5, { opacity: 1 });
-        TweenMax.to('#landing-stars', 0.6, { opacity: 1 });
-      },
-    })
-  );
+  tl
+    .add(TweenMax.to('.avatar', 1, { opacity: 1 }))
+    .add(TweenMax.to('#landing-button', 1.3, { css: { opacity: 1 } }))
+    .add(TweenMax.to('#landing-text', 1.5, { css: { opacity: 1 } }));
+
   return promisify(tl);
 };
 
