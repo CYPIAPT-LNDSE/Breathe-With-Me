@@ -11,8 +11,13 @@
 
 html, body {
   height: 100%;
+  min-height: 100%;
   padding: 0;
   margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $Amatic;
 }
 
 body {
@@ -25,8 +30,14 @@ body {
   background-color: transparent;
 }
 
+// helpers
+.hidden {
+  visibility: hidden;
+}
+
 #app {
   height: 100%;
+  min-height: 100%;
   max-height: 700px;
   max-width: 414px;
   margin: 0 auto;
@@ -41,31 +52,6 @@ body {
   top: 0;
   bottom: 0;
   will-change: transform;
-}
-
-
-#landscape {
-  display: none;
-  position: absolute;
-}
-
-@media screen and (orientation: landscape) and (max-width: 768px) {
-  #app {
-    display: none;
-  }
-
-  #landscape {
-    display: block;
-    height: 100%;
-    width: auto;
-    overflow: hidden;
-  }
-
-  #rotate-message {
-    font-size: 20px;
-    margin: auto;
-    margin-top: 40vh;
-  }
 }
 
 @media screen and (min-height: 900px) {

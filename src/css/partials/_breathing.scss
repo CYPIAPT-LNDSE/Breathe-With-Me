@@ -1,30 +1,3 @@
-//Breathing
-.breathing {
-  height: 100%;
-  background-color: transparent;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
-#mountain3 {
-  z-index: 0;
-  top: 100%;
-  position: absolute;
-  max-width: inherit;
-  text-align: center;
-  will-change: transform;
-
-  .material-icons {
-    position: absolute;
-    z-index: 10;
-    color: #1C6C89;
-    float: left;
-    font-size: 24px;
-  }
-}
-
-
 #breathing-menu {
   background-color: $modal-menu;
   height: 7%;
@@ -43,7 +16,7 @@
   z-index: 20;
 }
 
-#settings {
+#breathing-settings {
   position: absolute;
   right: 0px;
   top: 0px;
@@ -53,7 +26,7 @@
   z-index: 20;
 }
 
-#info {
+#breathing-info {
   position: relative;
   display: block;
   text-align: center;
@@ -62,12 +35,6 @@
   transform: translateY(50%);
   z-index: 15;
 }
-
-// #exit-breathing {
-//   position: absolute;
-//   margin-right: -20px;
-//   opacity: 0;
-// }
 
 #feel-good-button {
   opacity: 0;
@@ -119,25 +86,25 @@
   }
 }
 
-  #head {
-    z-index: 10;
-    top: 33px;
-    will-change: transform;
-  }
+#head {
+  z-index: 10;
+  top: 33px;
+  will-change: transform;
+}
 
-  #belly {
-    top: 170px;
-    z-index: 2;
-    will-change: transform;
-  }
+#belly {
+  top: 170px;
+  z-index: 2;
+  will-change: transform;
+}
 
-  #legs {
-    top: 390px;
-    z-index: 1;
+#legs {
+  top: 390px;
+  z-index: 1;
 
-  }
+}
 
-  #hands {
-    top: 220px;
-    z-index: 30;
-  }
+#hands {
+  top: 220px;
+  z-index: 30;
+}
