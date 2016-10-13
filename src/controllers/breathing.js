@@ -27,7 +27,7 @@ const breatheCtrl = () => {
   // hands.addEventListener('click', changeToFractalView);
   // belly.addEventListener('click', changeToFractalView);
 
-  let breathingPageVisited = localStorage.getItem('hasVisited');
+  const breathingPageVisited = localStorage.getItem('hasVisited');
 
   const startTimerFirstVisitOnly = () => {
     if (!breathingPageVisited) {
@@ -52,7 +52,9 @@ const breatheCtrl = () => {
   if (!breathingPageVisited) {
     showModal();
   } else {
-    hideMenuTimer();
+    setTimeout(() => {
+      hideMenuTimer();
+    }, 2000);
     timeHasPassedNotification(8000, '#first-msg');
     timeHasPassedNotification(120000, '#after-two-min');
     timeHasPassedNotification(300000, '#after-five-min');
