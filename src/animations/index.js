@@ -87,13 +87,13 @@ export const infoToCatView = () => {
   return promisify(tl);
 };
 
-let bodyHasBeenClicked = false;
+let menuIsDisplayed = true;
 let hideMenuTimer;
 
 export const hideMenu = () => {
   hideMenuTimer = setTimeout(() => {
     TweenMax.to('#breathing-menu', 0.5, { y: -50 });
-    bodyHasBeenClicked = false;
+    menuIsDisplayed = false;
   }, 6000);
 };
 
@@ -103,16 +103,20 @@ const resetHideMenuTimer = () => {
 };
 
 export const showMenu = (e) => {
-  if (e.target.id === 'feel-good-button' || e.target.id === 'info') {
+  if (e.target.id === 'feel-good-button' || e.target.id === 'info' || e.target.id === 'settings') {
     return;
   } else if (document.getElementById('breathing-menu').style.height === '100%') {
     return;
-  } else if (bodyHasBeenClicked === false) {
-    bodyHasBeenClicked = true;
+  } else if (menuIsDisplayed === false) {
+    menuIsDisplayed = true;
     TweenMax.to('#breathing-menu', 0.5, { y: 0 });
     resetHideMenuTimer();
-  } else if (bodyHasBeenClicked === true) {
+  } else if (menuIsDisplayed === true && (e.target.id === 'audio-controls'
+     || e.target.id === 'breathing-menu' || e.target.id === 'menu-options')) {
     resetHideMenuTimer();
+  } else if (menuIsDisplayed === true) {
+    menuIsDisplayed = false;
+    TweenMax.to('#breathing-menu', 0.5, { y: -50 });
   }
 };
 
