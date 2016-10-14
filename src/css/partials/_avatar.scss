@@ -9,15 +9,20 @@
   opacity: 0;
 }
 
+#avatar-header {
+font-family: $Amatic;
+font-size: 2.5em;
+}
+
 #landing-button {
   position: absolute;
   z-index: 9999;
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 380px;
+  top: 428px;
   bottom: 0;
-  color: $main-text;
+  background-color: $main-text;
 
 }
 
