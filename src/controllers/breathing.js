@@ -59,6 +59,7 @@ const breatheCtrl = () => {
 
   breathe();
   headMovement();
+  audio.play();
   if (!breathingPageVisited) {
     showModal();
   } else {
