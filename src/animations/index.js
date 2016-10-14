@@ -85,68 +85,6 @@ export const infoToCatView = () => {
   return promisify(tl);
 };
 
-let menuIsDisplayed = true;
-let hideMenuTimer;
-
-export const hideMenu = () => {
-  hideMenuTimer = setTimeout(() => {
-    TweenMax.to('#breathing-menu', 0.5, { y: -50 });
-    menuIsDisplayed = false;
-  }, 6000);
-};
-
-const resetHideMenuTimer = () => {
-  clearTimeout(hideMenuTimer);
-  hideMenu();
-};
-
-export const showMenu = (e) => {
-  if (e.target.id === 'feel-good-button' || e.target.id === 'info' || e.target.id === 'settings') {
-    return;
-  } else if (document.getElementById('breathing-menu').style.height === '100%') {
-    return;
-  } else if (menuIsDisplayed === false) {
-    menuIsDisplayed = true;
-    TweenMax.to('#breathing-menu', 0.5, { y: 0 });
-    resetHideMenuTimer();
-  } else if (menuIsDisplayed === true && (e.target.id === 'audio-controls'
-     || e.target.id === 'breathing-menu' || e.target.id === 'menu-options')) {
-    resetHideMenuTimer();
-  } else if (menuIsDisplayed === true) {
-    menuIsDisplayed = false;
-    TweenMax.to('#breathing-menu', 0.5, { y: -50 });
-  }
-};
-
-export const showModal = () => {
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0, display: 'none' }))
-    .add(TweenMax.to('#breathing-menu', 0.4, { css: { height: '100%' } }))
-    .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'block', opacity: 1 }));
-  clearTimeout(hideMenuTimer);
-};
-
-export const hideModal = () => {
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
-    .add(TweenMax.to('#breathing-menu', 0.4, { css: { height: '7%' } }))
-    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }));
-  hideMenu();
-};
-
-export const timeHasPassedNotification = (time, targetEl) => {
-  const breathingTimer = setTimeout(() => {
-    const tl = new TimelineMax();
-    tl
-      .add(TweenMax.to(targetEl, 2, { display: 'block', opacity: 1 }))
-      .add(TweenMax.delayedCall(3, () => {
-      TweenMax.to(targetEl, 2, { display: 'none', opacity: 0 })
-    }));
-  }, time);
-};
-
 export const fromBreathingToIntro = () => {
   const tl = new TimelineMax();
   tl
