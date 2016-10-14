@@ -20,6 +20,7 @@
 }
 
 .text-box {
+  color: white;
   position: absolute;
   left: 0;
   right: 0;
@@ -29,10 +30,11 @@
 }
 
 .breathing-information {
+  width: 95%;
   color: white;
-  margin: 30px auto 0;
+  margin: 5px auto 0;
   text-align: center;
-  font-size: 1.25em;
+  font-size: 1.2em;
 }
 
 .breathing-start{
@@ -43,9 +45,15 @@
 
 #start-breathing-cat-button {
   display: block;
+  width: 110px;
+  height: 36px;
   margin: 1.5em auto;
 }
 
-#input-focus {
+#alt-info-box {
+  margin-top: 100px;
+}
+
+#input-username {
   border-bottom: 2px solid #ffffff;
 }

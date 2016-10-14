@@ -29,7 +29,9 @@ const breatheCtrl = () => {
   const audioControl = document.getElementById('audio-controls');
   const instructions = document.getElementById('breathing-info');
   const exitModalButton = document.getElementById('exit-modal-button');
-  // const settings = document.getElementById('settings');
+
+  const settings = document.getElementById('breathing-settings');
+
 
   // hands.addEventListener('click', changeToFractalView);
   // belly.addEventListener('click', changeToFractalView);

@@ -167,23 +167,23 @@
 
 #head {
   z-index: 10;
-  top: 33px;
+  top: 63px;
   will-change: transform;
 }
 
 #belly {
-  top: 170px;
+  top: 200px;
   z-index: 2;
   will-change: transform;
 }
 
 #legs {
-  top: 390px;
+  top: 420px;
   z-index: 1;
 
 }
 
 #hands {
-  top: 220px;
+  top: 250px;
   z-index: 30;
 }

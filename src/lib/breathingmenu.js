@@ -4,7 +4,6 @@ let menuIsDisplayed = true;
 let timer;
 const elementsThatWontTriggerMenu = ['feel-good-button', 'info', 'settings'];
 const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-options'];
-// const audio = document.getElementById('audio');
 
 export const hideMenuTimer = () => {
   timer = setTimeout(() => {
@@ -79,7 +78,6 @@ export const fadeoutMusic = (int) => {
     if (vol >= 0.05) {
       vol -= 0.05;
       audio.volume = vol;
-      console.log(audio.vol);
     } else {
       clearInterval(fadeout);
     }

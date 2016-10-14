@@ -55,7 +55,7 @@ export const askNameToBreathingInfo = () => {
 export const nameToInfoSwitch = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('.alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }))
+    .add(TweenMax.to('#alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.breathing-information', 0.2,
     { css: { visibility: 'visible', opacity: 1 } }));
 
