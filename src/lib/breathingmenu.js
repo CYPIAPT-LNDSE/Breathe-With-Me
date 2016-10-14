@@ -80,6 +80,8 @@ export const fadeoutMusic = (int) => {
       audio.volume = vol;
     } else {
       clearInterval(fadeout);
+      audio.pause();
+      audio.volume = 1;
     }
   }, interval);
 };
