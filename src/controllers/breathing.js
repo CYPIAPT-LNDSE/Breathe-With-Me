@@ -21,15 +21,17 @@ import {
 } from '../lib/breathingmenu.js';
 
 const breatheCtrl = () => {
-  // const belly = document.getElementById('belly');
-  // const hands = document.getElementById('hands');
+  const hands = document.getElementById('hands');
+  const belly = document.getElementById('belly');
   const feelingBetterBtn = document.getElementById('feel-good-button');
   const body = document.getElementsByTagName('body')[0];
   const audio = document.getElementById('audio');
   const audioControl = document.getElementById('audio-controls');
-  const instructions = document.getElementById('info');
+  const instructions = document.getElementById('breathing-info');
   const exitModalButton = document.getElementById('exit-modal-button');
-  const settings = document.getElementById('settings');
+
+  const settings = document.getElementById('breathing-settings');
+
 
   // hands.addEventListener('click', changeToFractalView);
   // belly.addEventListener('click', changeToFractalView);

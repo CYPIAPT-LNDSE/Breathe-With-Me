@@ -1,10 +1,9 @@
-import { TweenLite, TweenMax } from 'gsap';
+import { TimelineMax, TweenMax } from 'gsap';
 
 let menuIsDisplayed = true;
 let timer;
 const elementsThatWontTriggerMenu = ['feel-good-button', 'info', 'settings'];
 const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-options'];
-// const audio = document.getElementById('audio');
 
 export const hideMenuTimer = () => {
   timer = setTimeout(() => {
@@ -47,7 +46,7 @@ export const showModal = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#menu-options', 0.5, { opacity: 0, display: 'none' }))
-    .add(TweenMax.to('#breathing-menu', 0.4, { css: { height: '100%' } }))
+    .add(TweenMax.to('#breathing-menu', 0.4, { css: { y: 0, height: '100%' } }))
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'block', opacity: 1 }));
   clearTimeout(timer);
 };
@@ -79,7 +78,6 @@ export const fadeoutMusic = (int) => {
     if (vol >= 0.05) {
       vol -= 0.05;
       audio.volume = vol;
-      console.log(audio.vol);
     } else {
       clearInterval(fadeout);
     }

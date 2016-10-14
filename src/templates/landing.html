@@ -1,19 +1,20 @@
-<div class="landing page" data-animate-in="landingToInfo" data-animate-out="outOfInfo">
-  <a name="info"></a>
-  <img id="mountain1" src="../assets/images/blueMountains/mountainFront2.svg" alt="" />
-  <img id="mountain2" src="../assets/images/blueMountains/mountainMiddle.svg" alt="" />
-  <img id="mountain4" src="../assets/images/blueMountains/mountainBack.svg" alt="" />
+<div id="landing" class="page" data-animate-in="landingToInfo" data-animate-out="outOfInfo">
+  <img id="mountain1" src="../assets/images/blueMountains/mountainFront2.svg" />
+  <img id="mountain2" src="../assets/images/blueMountains/mountainMiddle.svg" />
+  <img id="mountain3" src="../assets/images/blueMountains/mountainBack.svg" />
 
-  <div class="alt-info-box">
-    <span>Hello, What is your name?</span>
-    <input id="input-focus" type="text" name="name" value="" autocomplete="off">
+  <div id="alt-info-box" class="text-box">
+    <h3>Hello, What is your name?</h3>
+    <input id="input-username" type="text" autocomplete="off">
     <button class="waves-effect waves-light btn-flat" id="name-question-button" type="button" name="button">Submit</button>
   </div>
-  <div class="breathing-information">
-    <span class="name">Hi</span><br>
-    <span id="instructions">When I feel worried or upset, I take slow, deep breaths to make my belly move up and down.  This helps me to feel more calm and relaxed. <br><br>
-      Whenever you're feeling anxious, find a place you can stand, sit or lie down comfortably. Place your hands on your belly and breathe with me. </span>
-      <a href="#avatar"><button class="breathing-start waves-effect waves-light btn-flat" id="start-breathing-cat-button" type="button">Start</button></a>
 
-    </div>
+  <div class="breathing-information text-box hidden">
+    <h4 id="landing-username">Hi</h4>
+    <p>When I feel worried or upset, I take slow, deep breaths to make my belly move up and down.  This helps me to feel more calm and relaxed. <br><br>
+      Whenever you're feeling anxious, find a place you can stand, sit or lie down comfortably. Place your hands on your belly and breathe with me.
+    </p>
+    <a href="#avatar" class="breathing-start waves-effect waves-light btn-flat" id="start-breathing-cat-button">Start</a>
+ </div>
+
 </div>

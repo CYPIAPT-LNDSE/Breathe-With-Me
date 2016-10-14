@@ -4,7 +4,7 @@
   "description": "App for kids to help reduce anxiety",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --content-base public",
+    "start": "webpack-dev-server --inline --host 0.0.0.0 --content-base public",
     "prebuild": "rm -rf public/*",
     "build": "webpack -p --optimize-minimize",
     "test": "-"
