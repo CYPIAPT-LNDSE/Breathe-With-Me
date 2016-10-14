@@ -1,4 +1,4 @@
-# Breathing with Kitty
+# Breath With Me
 
 
 This app helps young people to manage anxiety, offers them support, and builds their resilience through the breathing techniques that appear as interactive animations. Children and young people will have the tools at their fingertips to reduce anxiety, monitor their wellbeing, and manage their mental state in between appointments and away from services.
@@ -25,13 +25,12 @@ The prototype of Breathing with Kitty will focus on providing a solution for GAD
 
 Features of the prototype will include:
 
-* User account with login and password
-* Storage of name so that user is greeted at each login
-* Instructions on how to practice deep abdominal breathing
-* Animation of a kitty breathing with long slow inhalations and exhalations to which users will be directed to sync their own breathing. This forms the core of the animated game Breathing with Kitty.
-* Rewards system via gold stars which users collect after each game
-
+* Storage of name so that user is greeted at each login.
+* Instructions on how to practice deep abdominal breathing.
+* Animations of animals taking long slow inhalations and exhalations to which users will be directed to sync their own breathing. This forms the core of the animated game Breath With Me.
+* The option to choose between multiple avatars - a cat, dog, and panda - for the breathing exercise.
+* Soothing background music, with option to turn it off and on.
 
 ## Built With
 
-The initial prototype will be developed as a PWA for full accessibility.
+The product will be developed as a PWA for full accessibility.
