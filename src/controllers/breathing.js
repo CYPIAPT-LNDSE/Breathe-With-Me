@@ -42,13 +42,13 @@ const breatheCtrl = () => {
     granimInstance.changeState('dark-state');
   });
   feelingBetterBtn.addEventListener('click', clearTimers);
-  // settings.addEventListener('click', clearTimers);
+  settings.addEventListener('click', clearTimers);
   feelingBetterBtn.addEventListener('click', () => {
     fadeoutMusic(260);
   });
-  // settings.addEventListener('click', () => {
-  //   fadeoutMusic(280);
-  // });
+  settings.addEventListener('click', () => {
+    fadeoutMusic(280);
+  });
   audioControl.addEventListener('click', toggleAudio);
   body.addEventListener('click', showMenu);
   instructions.addEventListener('click', showModal);
