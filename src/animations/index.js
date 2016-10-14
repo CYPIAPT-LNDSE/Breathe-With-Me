@@ -37,9 +37,9 @@ export const outOfLanding = () => {
 export const landingToInfo = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('#mountain1', 0.5, { y: -250 }))
-    .add(TweenMax.to('#mountain2', 0.5, { y: -300 }))
-    .add(TweenMax.to('#mountain4', 0.5, { y: -350 }));
+    .add(TweenMax.from('#mountain1', 0.5, { y: 340 }))
+    .add(TweenMax.from('#mountain2', 0.5, { y: 400 }))
+    .add(TweenMax.from('#mountain3', 0.5, { y: 440 }));
 
   return promisify(tl);
 };
@@ -47,7 +47,7 @@ export const landingToInfo = () => {
 export const askNameToBreathingInfo = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('.alt-info-box', 0.5, { y: 400, opacity: 1 }));
+    .add(TweenMax.from('.alt-info-box', 0.5, { y: -300, opacity: 1 }));
 
   return promisify(tl);
 };
@@ -57,8 +57,7 @@ export const nameToInfoSwitch = () => {
   tl
     .add(TweenMax.to('.alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.breathing-information', 0.2,
-    { css: { visibility: 'visible', opacity: 1 } }))
-    .add(TweenMax.to('.alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }));
+    { css: { visibility: 'visible', opacity: 1 } }));
 
   return promisify(tl);
 };
@@ -66,9 +65,9 @@ export const nameToInfoSwitch = () => {
 export const outOfInfo = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('#mountain4', 0.3, { y: 0 }))
-    .add(TweenMax.to('#mountain2', 0.3, { y: 0 }))
-    .add(TweenMax.to('#mountain1', 0.3, { y: 0 }))
+    .add(TweenMax.to('#mountain1', 0.5, { y: 340 }))
+    .add(TweenMax.to('#mountain2', 0.5, { y: 400 }))
+    .add(TweenMax.to('#mountain3', 0.5, { y: 440 }))
     .add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.alt-intro', 1, { visibility: 'hidden' }));
 
@@ -78,7 +77,6 @@ export const outOfInfo = () => {
 export const infoToCatView = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('#mountain3', 0.5, { y: -550, ease: Power2.easeOut }))
     .add(TweenMax.fromTo('.cat', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }))
     .add(TweenMax.to('#feel-good-button', 1, { opacity: 1 }))
     .add(TweenMax.to('.sync-breath-text', 0.5, { opacity: 1 }))

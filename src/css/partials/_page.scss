@@ -2,14 +2,15 @@
   width: 100%;
   max-width: inherit;
   max-height: inherit;
+  min-height: 100%;
   overflow: hidden;
-  position: absolute;
-
+  position: fixed;
   //* {
     //position: relative;
   //}
 }
 
-.page:last-child {
-    z-index: 10000;
+.page:last-child(1) {
+  z-index: 10000;
 }
+

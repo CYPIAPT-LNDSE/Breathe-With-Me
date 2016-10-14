@@ -18,7 +18,7 @@ const breatheCtrl = () => {
   const body = document.getElementsByTagName('body')[0];
   const audio = document.getElementById('audio');
   const audioControl = document.getElementById('audio-controls');
-  const instructions = document.getElementById('info');
+  const instructions = document.getElementById('breathing-info');
   const exitModalButton = document.getElementById('exit-modal-button');
 
   // hands.addEventListener('click', changeToFractalView);
