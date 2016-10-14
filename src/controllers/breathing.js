@@ -17,6 +17,7 @@ import {
    showModal,
    hideModal,
    toggleAudio,
+   fadeoutMusic,
 } from '../lib/breathingmenu.js';
 
 const breatheCtrl = () => {
@@ -40,6 +41,12 @@ const breatheCtrl = () => {
   });
   feelingBetterBtn.addEventListener('click', clearTimers);
   settings.addEventListener('click', clearTimers);
+  feelingBetterBtn.addEventListener('click', () => {
+    fadeoutMusic(260);
+  });
+  settings.addEventListener('click', () => {
+    fadeoutMusic(280);
+  });
   audioControl.addEventListener('click', toggleAudio);
   body.addEventListener('click', showMenu);
   instructions.addEventListener('click', showModal);
