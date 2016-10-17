@@ -4,6 +4,10 @@ import * as views from './templates';
 import viewTransition from './lib/transitions';
 import { resizeCanvas } from './lib/background.js';
 
+//Hack to hopefully autohide the browser bar on load
+
+window.scrollTo(0, 1);
+
 const router = route => {
   const view = views[route] || views.landing;
   const controller = controllers[route] || controllers.landing;
