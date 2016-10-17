@@ -7,7 +7,7 @@ export const landingAnimation = () => {
   const tl = new TimelineMax();
 
   tl.add(
-    TweenMax.to('.avatar', 2.5, {
+    TweenMax.to('.avatar', 1, {
       css: { opacity: 1 },
       onComplete: () => {
         TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
@@ -22,14 +22,23 @@ export const landingAnimation = () => {
 export const outOfLanding = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('#landing-stars', 0.2, { opacity: 0, display: 'none' }))
+    .add(TweenMax.to('.breathing-information', 0.2, { opacity: 0, display: 'none' }))
+    .add(TweenMax.to('#alt-info-box', 0.2, { opacity: 0, display: 'none' }))
+    .add(TweenMax.to('.page', 1, { visibility: 'hidden' }));
+
+  return promisify(tl);
+};
+
+export const outOfAvatar = () => {
+  const tl = new TimelineMax();
+  tl
     .add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }))
     .add(TweenMax.fromTo(
-      '#landing-button', 0.4,
+      '#landing-button', 0.3,
       { scale: 1, backgroundColor: '#5CA1C2' },
       { scale: 30, backgroundColor: 'transparent', ease: Power1.easeIn }
     ))
-    .add(TweenMax.to('.avatar', 1, { visibility: 'hidden' }));
+    .add(TweenMax.to('.carousel_list', 0.2, { opacity: 0 }));
 
   return promisify(tl);
 };
@@ -69,6 +78,7 @@ export const outOfInfo = () => {
     .add(TweenMax.to('#mountain2', 0.5, { y: 400 }))
     .add(TweenMax.to('#mountain3', 0.5, { y: 440 }))
     .add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
+    .add(TweenMax.to('#alt-info-box', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.alt-intro', 1, { visibility: 'hidden' }));
 
   return promisify(tl);

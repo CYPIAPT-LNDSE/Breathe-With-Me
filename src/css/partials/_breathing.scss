@@ -30,12 +30,14 @@
 
 #breathing-info {
   position: relative;
+  z-index: 999;
   display: block;
   text-align: center;
   margin: auto;
   background: transparent;
   transform: translateY(50%);
   z-index: 15;
+
 }
 
 #modal-breathing-instructions {
@@ -43,6 +45,7 @@
   opacity: 0;
   color: white;
   padding: 2.2em;
+  -webkit-transform: translate3d(0,0,0);
 
     p {
       font-family: $Raleway;
@@ -73,7 +76,7 @@
   margin: auto;
 }
 
-#first-msg {
+.fading-message {
   display: none;
   color: #1C6C89;
   position: fixed;
@@ -84,31 +87,6 @@
   margin: auto;
   text-align: center;
 }
-
-#after-two-min {
-  display: none;
-  color: #1C6C89;
-  position: fixed;
-  opacity: 0;
-  top: 7%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
-}
-
-#after-five-min {
-  display: none;
-  color: #1C6C89;
-  position: fixed;
-  opacity: 0;
-  top: 7%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
-}
-
 
 #feel-good-button {
   opacity: 0;
@@ -136,6 +114,7 @@
   margin: 0 auto;
   will-change: transform;
   top: 60px;
+  -webkit-transform: translate3d(0,0,0);
 
   svg, a {
     display: block;
@@ -159,7 +138,7 @@
   }
 }
 
-@media screen and (max-height: 580px) {
+@media screen and (max-height: 530px) {
   .cat {
     top: 20px;
   }
@@ -167,18 +146,18 @@
 
 #head {
   z-index: 10;
-  top: 63px;
+  top: 33px;
   will-change: transform;
 }
 
 #belly {
-  top: 200px;
+  top: 170px;
   z-index: 2;
   will-change: transform;
 }
 
 #legs {
-  top: 4px;
+  top: 390px;
   z-index: 1;
 
 }
