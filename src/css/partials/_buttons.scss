@@ -21,3 +21,14 @@
   background-image: url('../assets/images/breathingBG.png');
   text-align: center;
 }
+
+#landing-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 70%;
+  @media screen and (max-height: 600px) {
+    top: 80%;
+  }
+}
