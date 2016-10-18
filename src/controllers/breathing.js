@@ -1,11 +1,11 @@
 import Granim from 'granim';
-import { granimInstance } from '../lib/background.js';
+import { granimInstance } from '../lib/background';
 import {
   timeHasPassedNotification,
   clearTimers,
   timers,
   startTimerFirstVisitOnly,
-} from '../lib/breathingtimer.js';
+} from '../lib/breathingtimer';
 import {
    breathe,
    headMovement,
@@ -18,7 +18,7 @@ import {
    hideModal,
    toggleAudio,
    fadeoutMusic,
-} from '../lib/breathingmenu.js';
+} from '../lib/breathingmenu';
 
 const breatheCtrl = () => {
   const hands = document.getElementById('hands');
