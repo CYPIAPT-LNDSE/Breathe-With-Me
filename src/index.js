@@ -30,6 +30,12 @@ const changeView = () => {
 window.addEventListener('hashchange', changeView);
 window.addEventListener('resize', resizeCanvas);
 window.addEventListener('load', () => {
-  changeView();
+  const breathingPageVisited = localStorage.getItem('hasVisited');
+
+  if (breathingPageVisited && location.hash !== '#breathe') {
+    location.hash = '#breathe';
+  } else {
+    changeView();
+  }
   resizeCanvas();
 });

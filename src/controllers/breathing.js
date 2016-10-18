@@ -5,6 +5,7 @@ import {
   clearTimers,
   timers,
   startTimerFirstVisitOnly,
+  startNotificationSequence,
 } from '../lib/breathingtimer';
 import {
    breathe,
@@ -21,12 +22,12 @@ import {
 } from '../lib/breathingmenu';
 
 const breatheCtrl = () => {
-  const hands = document.getElementById('hands');
-  const belly = document.getElementById('belly');
+  // const hands = document.getElementById('hands');
+  // const belly = document.getElementById('belly');
   const feelingBetterBtn = document.getElementById('feel-good-button');
   const body = document.getElementsByTagName('body')[0];
   // const audio = document.getElementById('audio');
-  const audioControl = document.getElementById('audio-controls');
+  // const audioControl = document.getElementById('audio-controls');
   const instructions = document.getElementById('breathing-info');
   const exitModalButton = document.getElementById('exit-modal-button');
 
@@ -66,9 +67,7 @@ const breatheCtrl = () => {
     setTimeout(() => {
       hideMenuTimer();
     }, 2000);
-    timeHasPassedNotification(8000, '#first-msg', 0);
-    timeHasPassedNotification(120000, '#after-two-min', 1);
-    timeHasPassedNotification(300000, '#after-five-min', 2);
+    startNotificationSequence();
   }
 };
 
