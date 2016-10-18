@@ -1,10 +1,11 @@
 import carousel from '../lib/carousel';
-
+import { expandButton } from '../animations'
 import { saveState } from '../globalState';
 import * as avatars from '../templates/avatars';
 
 const avatarCtrl = () => {
   const landingButton = document.getElementById('landing-button');
+  landingButton.addEventListener('click', expandButton);
   landingButton.addEventListener('click', () => {
     const avatarIndex = $('.active').index('.carousel_item');
     let avatar;
