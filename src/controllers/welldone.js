@@ -1,5 +1,6 @@
 import { welldoneToIntro, breathingToWelldone } from '../animations';
 import { granimInstance } from '../lib/background';
+import { getState } from '../globalState';
 
 const welldoneCtrl = () => {
   const startAgain = document.getElementById('start-again');
@@ -7,8 +8,8 @@ const welldoneCtrl = () => {
     granimInstance.changeState('default-state');
   });
 
-  const username = localStorage.getItem('username')
-  document.querySelector('.welldone-user').innerText = `${username}!`;
+  const { name } = getState();
+  document.querySelector('.welldone-user').innerText = `${name}!`;
 };
 
 export default welldoneCtrl;

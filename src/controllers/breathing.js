@@ -40,7 +40,7 @@ const breatheCtrl = () => {
   const breathingPageVisited = localStorage.getItem('hasVisited');
 
   feelingBetterBtn.addEventListener('click', () => {
-    granimInstance.changeState('dark-state');
+    granimInstance().changeState('dark-state');
   });
   feelingBetterBtn.addEventListener('click', clearTimers);
   settings.addEventListener('click', clearTimers);
