@@ -38,7 +38,7 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
-        'style', ['css-loader', 'sass'], { publicPath: '/' }
+        'style', ['css-loader', 'sass-loader'], { publicPath: '/' }
       ),
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
