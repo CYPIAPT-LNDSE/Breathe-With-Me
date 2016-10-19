@@ -81,7 +81,7 @@
   color: #1C6C89;
   position: fixed;
   opacity: 0;
-  top: 7%;
+  top: 8%;
   left: 0;
   right: 0;
   margin: auto;
@@ -113,7 +113,7 @@
   max-width: inherit;
   margin: 0 auto;
   will-change: transform;
-  top: 60px;
+  top: 70px;
   -webkit-transform: translate3d(0,0,0);
 
   svg, a {
@@ -132,6 +132,7 @@
   opacity: 0;
 }
 
+ // Are we using extra-breathing-instructions?
 @media screen and (min-height: 600px) {
   #extra-breathing-instructions {
     display: block;
@@ -145,6 +146,38 @@
   }
   .fading-message {
     top: 11%;
+  }
+}
+
+@media screen and (min-height: 650px) {
+  .cat {
+    top: 85px;
+  }
+  .fading-message {
+    top: 10%;
+  }
+}
+
+@media screen and (min-height: 680px) {
+  .cat {
+    transform: scale(1.1);
+    top: 100px;
+  }
+  .fading-message {
+    top: 11%;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  .cat {
+    transform: scale(1.2);
+    top: 100px;
+  }
+  .fading-message {
+    top: 15%;
+  }
+  #feel-good-button {
+    bottom: 20%;
   }
 }
 
