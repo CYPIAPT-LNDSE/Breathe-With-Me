@@ -138,9 +138,10 @@
   }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-width: 600px) {
   .cat {
-    top: 25px;
+    transform: scale(0.9);
+    top: 90px;
   }
 }
 
