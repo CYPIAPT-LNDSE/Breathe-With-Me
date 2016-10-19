@@ -1,6 +1,5 @@
 import Granim from 'granim';
 
-// FIXME
 const canvas = document.getElementById('bg');
 
 let instance;
@@ -19,6 +18,22 @@ export const granimInstance = () =>
         gradients: [
           ['#d1f3ef', '#6c9eb4'],
           ['#9ccdff', '#5ca1c2'],
+        ],
+        transitionSpeed: 9000,
+        loop: true,
+      },
+      'dog-state': {
+        gradients: [
+          ['#FDEDB3', '#FD9C9D'],
+          ['#F2D4D4', '#DFC4D8'],
+        ],
+        transitionSpeed: 9000,
+        loop: true,
+      },
+      'panda-state': {
+        gradients: [
+          ['#A685B4', '#9C90FF'],
+          ['#CFDCFF', '#4942A5'],
         ],
         transitionSpeed: 9000,
         loop: true,

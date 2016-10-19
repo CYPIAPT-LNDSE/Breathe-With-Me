@@ -3,9 +3,10 @@ import { granimInstance } from '../lib/background';
 import { getState } from '../globalState';
 
 const welldoneCtrl = () => {
+  const { granimState } = getState();
   const startAgain = document.getElementById('start-again');
   startAgain.addEventListener('click', () => {
-    granimInstance.changeState('default-state');
+    granimInstance().changeState(granimState);
   });
 
   const { name } = getState();
