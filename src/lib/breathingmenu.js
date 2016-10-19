@@ -28,12 +28,13 @@ const hideMenu = () => {
 };
 
 export const showMenu = (e) => {
-  // if (elementsThatWontTriggerMenu.includes(e.target.id)) {
-  //   return;
-  // } else if (document.getElementById('breathing-menu').style.height === '100%') {
-  //   return;
-  // } else
-  if (menuIsDisplayed === false) {
+  if (location.hash !== '#breathe') {
+    return;
+  } else if (elementsThatWontTriggerMenu.includes(e.target.id)) {
+    return;
+  } else if (document.getElementById('breathing-menu').style.height === '100%') {
+    return;
+  } else if (menuIsDisplayed === false) {
     displayMenu();
     resetHideMenuTimer();
   } else if (menuIsDisplayed === true && (elementsThatResetTimer.includes(e.target.id))) {
@@ -81,8 +82,6 @@ export const fadeoutMusic = (int) => {
       audio.volume = vol;
     } else {
       clearInterval(fadeout);
-      audio.pause();
-      audio.volume = 1;
     }
   }, interval);
 };
