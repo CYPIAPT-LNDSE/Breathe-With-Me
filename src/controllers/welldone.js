@@ -3,13 +3,11 @@ import { granimInstance } from '../lib/background';
 import { getState } from '../globalState';
 
 const welldoneCtrl = () => {
-  const { granimState } = getState();
+  const { granimState, name } = getState();
   const startAgain = document.getElementById('start-again');
   startAgain.addEventListener('click', () => {
     granimInstance().changeState(granimState);
   });
-
-  const { name } = getState();
   document.querySelector('.welldone-user').innerText = `${name}!`;
 };
 
