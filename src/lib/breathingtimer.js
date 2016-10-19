@@ -1,8 +1,16 @@
-import { TweenLite, TweenMax } from 'gsap';
+import { TweenMax, TimelineMax } from 'gsap';
 
-let timer1, timer2, timer3, timer4, timer5, timer6, timer7;
+let timer1;
+let timer2;
+let timer3;
+let timer4;
+let timer5;
+let timer6;
+let timer7;
+
 const intervals = [7000, 15000, 26000, 37000, 60000, 120000, 300000];
 const messages = ['#first-msg', '#second-msg', '#third-msg', '#fourth-msg', '#fifth-msg', '#after-two-min', '#after-five-min'];
+
 export const timers = [timer1, timer2, timer3, timer4, timer5, timer6, timer7];
 
 export const timeHasPassedNotification = (time, targetEl, timer) => {
@@ -11,7 +19,7 @@ export const timeHasPassedNotification = (time, targetEl, timer) => {
     tl
       .add(TweenMax.to(targetEl, 2, { display: 'block', opacity: 1 }))
       .add(TweenMax.delayedCall(3, () => {
-        TweenMax.to(targetEl, 2, { display: 'none', opacity: 0 })
+        TweenMax.to(targetEl, 2, { display: 'none', opacity: 0 });
       }));
   }, time);
 };
