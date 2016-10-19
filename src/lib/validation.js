@@ -9,8 +9,8 @@ const notifyUser = (notification) => {
 
 const isNameInvalid = (name) => {
   const nameIsEmpty = !name.length;
-  let nameIsBlacklisted = name.split(/\s/).some(word => !!blacklist[word]);
-  if (!nameIsBlacklisted) nameIsBlacklisted = [name].some(word => !!blacklist[word]);
+  let nameIsBlacklisted = [name].some(word => !!blacklist[word]);
+  if (!nameIsBlacklisted) nameIsBlacklisted = name.split(/\s/).some(word => !!blacklist[word]);
 
   if (name.length > 30) return notifyUser('Maximum 30 characters!');
   else if (nameIsEmpty) return notifyUser('Please enter a name!');
