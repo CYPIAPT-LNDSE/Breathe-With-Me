@@ -28,11 +28,12 @@ const hideMenu = () => {
 };
 
 export const showMenu = (e) => {
-  if (elementsThatWontTriggerMenu.includes(e.target.id)) {
-    return;
-  } else if (document.getElementById('breathing-menu').style.height === '100%') {
-    return;
-  } else if (menuIsDisplayed === false) {
+  // if (elementsThatWontTriggerMenu.includes(e.target.id)) {
+  //   return;
+  // } else if (document.getElementById('breathing-menu').style.height === '100%') {
+  //   return;
+  // } else
+  if (menuIsDisplayed === false) {
     displayMenu();
     resetHideMenuTimer();
   } else if (menuIsDisplayed === true && (elementsThatResetTimer.includes(e.target.id))) {

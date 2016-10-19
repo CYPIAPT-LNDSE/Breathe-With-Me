@@ -1,16 +1,16 @@
 import Granim from 'granim';
-import { granimInstance } from '../lib/background.js';
+import { granimInstance } from '../lib/background';
+import { getState } from '../globalState';
 import {
   timeHasPassedNotification,
   clearTimers,
   timers,
   startTimerFirstVisitOnly,
   startNotificationSequence,
-} from '../lib/breathingtimer.js';
+} from '../lib/breathingtimer';
 import {
    breathe,
    headMovement,
-  //  changeToFractalView,
   } from '../animations';
 import {
    showMenu,
@@ -19,11 +19,9 @@ import {
    hideModal,
    toggleAudio,
    fadeoutMusic,
-} from '../lib/breathingmenu.js';
+} from '../lib/breathingmenu';
 
 const breatheCtrl = () => {
-  // const hands = document.getElementById('hands');
-  // const belly = document.getElementById('belly');
   const feelingBetterBtn = document.getElementById('feel-good-button');
   const body = document.getElementsByTagName('body')[0];
   // const audio = document.getElementById('audio');
@@ -32,15 +30,10 @@ const breatheCtrl = () => {
   const exitModalButton = document.getElementById('exit-modal-button');
 
   const settings = document.getElementById('breathing-settings');
-
-
-  // hands.addEventListener('click', changeToFractalView);
-  // belly.addEventListener('click', changeToFractalView);
-
   const breathingPageVisited = localStorage.getItem('hasVisited');
 
   feelingBetterBtn.addEventListener('click', () => {
-    granimInstance.changeState('dark-state');
+    granimInstance().changeState('dark-state');
   });
   feelingBetterBtn.addEventListener('click', clearTimers);
   settings.addEventListener('click', clearTimers);

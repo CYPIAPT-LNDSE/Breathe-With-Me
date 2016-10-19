@@ -1,4 +1,5 @@
 import blacklist from '../lib/blacklist';
+import { saveState } from '../globalState';
 
 const landingCtrl = () => {
   const nameSubmitButton = document.getElementById('name-question-button');
@@ -21,6 +22,7 @@ const landingCtrl = () => {
       inputValidation.style.visibility = 'hidden';
       localStorage.setItem('username', name);
       location.hash = this.attributes.getNamedItem('href').value;
+      saveState({ name });
     }
   });
 };

@@ -81,7 +81,7 @@
   color: #1C6C89;
   position: fixed;
   opacity: 0;
-  top: 7%;
+  top: 8%;
   left: 0;
   right: 0;
   margin: auto;
@@ -108,22 +108,13 @@
   will-change: transform;
 }
 
-.cat {
+.character {
   position: relative;
   max-width: inherit;
   margin: 0 auto;
   will-change: transform;
-  top: 60px;
+  top: 70px;
   -webkit-transform: translate3d(0,0,0);
-
-  svg, a {
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    max-width: inherit;
-    margin: 0 auto;
-  }
 }
 
 .sync-breath-text {
@@ -132,15 +123,46 @@
   opacity: 0;
 }
 
-@media screen and (min-height: 600px) {
-  #extra-breathing-instructions {
-    display: block;
+
+@media screen and (max-height: 600px) {
+  .character {
+    transform: scale(0.9);
+    top: 90px;
+  }
+  .fading-message {
+    top: 11%;
   }
 }
 
-@media screen and (max-height: 530px) {
-  .cat {
-    top: 20px;
+@media screen and (min-height: 650px) {
+  .character {
+    top: 85px;
+  }
+  .fading-message {
+    top: 10%;
+  }
+}
+
+@media screen and (min-height: 680px) {
+  .character {
+    transform: scale(1.1);
+    top: 100px;
+  }
+  .fading-message {
+    top: 11%;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  .character {
+    transform: scale(1.2);
+    top: 100px;
+  }
+  .fading-message {
+    top: 15%;
+  }
+  #feel-good-button {
+    bottom: 20%;
   }
 }
 

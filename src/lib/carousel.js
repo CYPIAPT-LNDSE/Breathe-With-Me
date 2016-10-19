@@ -90,7 +90,7 @@ const carousel = function () {
 
     setupDraggable();
     setupDots();
-    showSlide(1, true);
+    showSlide(0, true);
   }
 
   return {

@@ -32,15 +32,20 @@ export const outOfLanding = () => {
 export const outOfAvatar = () => {
   const tl = new TimelineMax();
   tl
+    .add(TweenMax.to('.avatar', 0.2, { opacity: 0 }));
+
+  return promisify(tl);
+};
+
+export const expandButton = () => {
+  const tl = new TimelineMax();
+  tl
     .add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }))
     .add(TweenMax.fromTo(
       '#landing-button', 0.3,
       { scale: 1, backgroundColor: '#5CA1C2' },
       { scale: 30, backgroundColor: 'transparent', ease: Power1.easeIn }
-    ))
-    .add(TweenMax.to('.carousel_list', 0.2, { opacity: 0 }));
-
-  return promisify(tl);
+    ));
 };
 
 export const landingToInfo = () => {
