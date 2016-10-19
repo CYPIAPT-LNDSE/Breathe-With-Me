@@ -43,6 +43,13 @@
   z-index: -1;
 }
 
+#input-validation {
+  font-size: 10px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  visibility: hidden;
+}
+
 #start-breathing-cat-button {
   display: block;
   width: 110px;
@@ -56,4 +63,5 @@
 
 #input-username {
   border-bottom: 2px solid #ffffff;
+  margin-bottom: 0px !important;
 }
