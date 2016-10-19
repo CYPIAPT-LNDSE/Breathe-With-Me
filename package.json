@@ -33,6 +33,7 @@
     "browser-sync": "^2.15.0",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
+    "es6-template-render": "1.X",
     "eslint": "^3.7.1",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^2.0.0",

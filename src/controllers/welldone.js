@@ -1,14 +1,14 @@
 import { welldoneToIntro, breathingToWelldone } from '../animations';
 import { granimInstance } from '../lib/background';
+import { getState } from '../globalState';
 
 const welldoneCtrl = () => {
+  const { granimState, name } = getState();
   const startAgain = document.getElementById('start-again');
   startAgain.addEventListener('click', () => {
-    granimInstance.changeState('default-state');
+    granimInstance().changeState(granimState);
   });
-
-  const username = localStorage.getItem('username')
-  document.querySelector('.welldone-user').innerText = `${username}!`;
+  document.querySelector('.welldone-user').innerText = `${name}!`;
 };
 
 export default welldoneCtrl;
