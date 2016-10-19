@@ -92,7 +92,7 @@ export const outOfInfo = () => {
 export const infoToCatView = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.fromTo('.cat', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }))
+    .add(TweenMax.fromTo('.character', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }))
     .add(TweenMax.to('#feel-good-button', 1, { opacity: 1 }))
     .add(TweenMax.to('.sync-breath-text', 0.5, { opacity: 1 }))
     .add(TweenMax.to('#breathing-menu', 0.5, { opacity: 0.8 }));
@@ -113,32 +113,13 @@ export const fromBreathingToIntro = () => {
   return promisify(tl);
 };
 
-export const changeToFractalView = () => {
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('.breathing', 0.1, { css: { display: 'none' } }))
-    .add(TweenMax.fromTo('.fractal', 0.5, { scale: 0.8, css: { '-webkit-filter': 'blur(10px)', opacity: 0 } }, { scale: 1, css: { '-webkit-filter': 'blur(0px)', display: 'block', opacity: 1 } }));
-  return promisify(tl);
-};
-
-export const exitFractalView = () => {
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('.fractal', 0.2, { css: { display: 'none' } }))
-    .add(TweenMax.to('.breathing', 0.2, { css: { display: 'block' } }))
-    .add(TweenMax.fromTo('.cat', 0.5, { opacity: 0 }, { opacity: 1 }))
-    .add(TweenMax.to('#mountain3', 0.5, { y: -370, ease: Power2.easeOut }));
-
-  return promisify(tl);
-};
-
 export const outOfBreathing = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#feel-good-button', 1, { opacity: 0 }))
     .add(TweenMax.to('#breathing-menu', 0.2, { opacity: 0 }))
     .add(TweenMax.to('.sync-breath-text', 0.3, { css: { visibility: 'hidden', opacity: 0 } }))
-    .add(TweenMax.to('.cat', 0.5, { opacity: 0 }))
+    .add(TweenMax.to('.character', 0.5, { opacity: 0 }))
     .add(TweenMax.to('.breathing', 1, { visibility: 'hidden' }));
 
   return promisify(tl);

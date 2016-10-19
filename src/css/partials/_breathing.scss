@@ -115,6 +115,15 @@
   will-change: transform;
   top: 70px;
   -webkit-transform: translate3d(0,0,0);
+  
+    svg, a {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    max-width: inherit;
+    margin: 0 auto;
+  }
 }
 
 .sync-breath-text {
