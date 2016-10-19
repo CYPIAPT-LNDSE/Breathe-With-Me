@@ -1,6 +1,5 @@
 export default {
   '4r5e': 1,
-  '5h1t': 1,
   '5hit': 1,
   a55: 1,
   anal: 1,
@@ -209,7 +208,7 @@ export default {
   gaylord: 1,
   gaysex: 1,
   goatse: 1,
-  God: 1,
+  god: 1,
   'god-dam': 1,
   'god-damned': 1,
   goddamn: 1,

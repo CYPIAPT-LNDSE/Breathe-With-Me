@@ -1,20 +1,22 @@
 import blacklist from '../lib/blacklist';
 
-const isNameInvalid = (name) => {
+const notifyUser = (notification) => {
   const inputValidation = document.getElementById('input-validation');
-  const nameIsEmpty = !name.trim().length;
-  const nameIsBlacklisted = name.trim().split(/\s/).some(word => !!blacklist[word]);
+  inputValidation.textContent = notification;
+  inputValidation.style.visibility = 'visible';
+  return true;
+};
 
-  if (nameIsEmpty) {
-    inputValidation.textContent = 'Please enter a name!';
-    inputValidation.style.visibility = 'visible';
-    return true;
-  } else if (nameIsBlacklisted) {
-    inputValidation.textContent = 'Please enter a different name!';
-    inputValidation.style.visibility = 'visible';
-    return true;
-  } else {
-    inputValidation.style.visibility = 'hidden';
+const isNameInvalid = (name) => {
+  const nameIsEmpty = !name.length;
+  let nameIsBlacklisted = name.split(/\s/).some(word => !!blacklist[word]);
+  if (!nameIsBlacklisted) nameIsBlacklisted = [name].some(word => !!blacklist[word]);
+
+  if (name.length > 30) return notifyUser('Maximum 30 characters!');
+  else if (nameIsEmpty) return notifyUser('Please enter a name!');
+  else if (nameIsBlacklisted) return notifyUser('Please enter a different name!');
+  else {
+    document.getElementById('input-validation').style.visibility = 'hidden';
     return false;
   }
 };
