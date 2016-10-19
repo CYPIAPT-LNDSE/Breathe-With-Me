@@ -12,12 +12,12 @@ const avatarCtrl = () => {
     let granimState;
     switch (avatarIndex) {
       case 0:
-        avatar = avatars.dog;
-        granimState = 'dog-state';
-        break;
-      case 1:
         avatar = avatars.cat;
         granimState = 'default-state';
+        break;
+      case 1:
+        avatar = avatars.dog;
+        granimState = 'dog-state';
         break;
       case 2:
         avatar = avatars.panda;
