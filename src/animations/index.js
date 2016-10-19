@@ -1,4 +1,4 @@
-import { TweenMax, TimelineMax, Linear, Power1, Power2, Elastic } from 'gsap';
+import { TweenMax, TimelineMax, Power1 } from 'gsap';
 
 const promisify = tl =>
   new Promise(success => tl.addCallback(success));
@@ -132,7 +132,7 @@ export const breathingToWelldone = () => {
     .add(TweenMax.to('#breathing-menu', 0.2, { opacity: 1 }))
     .add(TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -370 }))
     .add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -390 }))
-    .add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -410 }));
+    .add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -419 }));
 
   return promisify(tl);
 };
