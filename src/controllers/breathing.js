@@ -2,9 +2,7 @@ import Granim from 'granim';
 import { granimInstance } from '../lib/background';
 import { getState } from '../globalState';
 import {
-  timeHasPassedNotification,
   clearTimers,
-  timers,
   startTimerFirstVisitOnly,
   startNotificationSequence,
 } from '../lib/breathingtimer';
@@ -28,7 +26,6 @@ const breatheCtrl = () => {
   // const audioControl = document.getElementById('audio-controls');
   const instructions = document.getElementById('breathing-info');
   const exitModalButton = document.getElementById('exit-modal-button');
-
   const settings = document.getElementById('breathing-settings');
   const breathingPageVisited = localStorage.getItem('hasVisited');
 
