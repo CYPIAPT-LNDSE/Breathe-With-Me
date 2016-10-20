@@ -1,10 +1,10 @@
-import 'materialize-loader';
 import render from 'es6-template-render';
 import * as controllers from './controllers';
 import * as views from './templates';
 import viewTransition from './lib/transitions';
 import { resizeCanvas } from './lib/background';
 import { getState } from './globalState';
+import screenfull from 'screenfull';
 
 //Hack to hopefully autohide the browser bar on load
 
@@ -29,8 +29,37 @@ const changeView = () => {
 
 window.addEventListener('hashchange', changeView);
 window.addEventListener('resize', resizeCanvas);
+
+const fullscreenHandler = () => {
+  if (!screenfull.isFullscreen) {
+    console.log('not fullscreen');
+    setTimeout(() => {
+      document.querySelector('#fullscreenBanner').style.display = 'none';
+    }, 10000);
+  }
+};
+
+['', 'webkit', 'moz', 'ms'].forEach(
+    prefix => document.addEventListener(`${prefix}fullscreenchange`, fullscreenHandler, false)
+);
+
 window.addEventListener('load', () => setTimeout(() => {
   const breathingPageVisited = localStorage.getItem('hasVisited');
+
+  if (!screenfull.enabled) {
+    // Hide fullscreen banner if fullscreen is not supported
+    document.querySelector('#fullscreenBanner').style.display = 'none';
+  } else {
+    // Hide fullscreen banner after 10 seconds
+    fullscreenHandler();
+  }
+
+  const fullscreenBtn = document.querySelector('#fullscreenBanner button');
+
+  fullscreenBtn.addEventListener('click', () => {
+    screenfull.request(document.body);
+  });
+
 
   if (breathingPageVisited && location.hash !== '#breathe') {
     location.hash = '#breathe';

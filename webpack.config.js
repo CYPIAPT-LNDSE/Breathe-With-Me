@@ -7,6 +7,8 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const AppCachePlugin = require('appcache-webpack-plugin');
 
 const entrypoints = [
+  'babel-polyfill',
+  'materialize-loader',
   './src/index.js',
   './src/css/style.scss',
 ];
