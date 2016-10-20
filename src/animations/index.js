@@ -46,6 +46,7 @@ export const expandButton = () => {
       { scale: 1, backgroundColor: '#5CA1C2' },
       { scale: 30, backgroundColor: 'transparent', ease: Power1.easeIn }
     ));
+  return promisify(tl);
 };
 
 export const landingToInfo = () => {

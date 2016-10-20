@@ -56,6 +56,42 @@ body {
   will-change: transform;
 }
 
+
+:-moz-full-screen #fullscreenBanner{
+  display: none;}
+:-ms-fullscreen #fullscreenBanner{
+  display: none;}
+:-webkit-full-screen #fullscreenBanner{
+  display: none;}
+:fullscreen #fullscreenBanner{
+  display: none;}
+
+#fullscreenBanner {
+  display: block;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  text-align: center;
+  i {
+    color: $main-text;
+    height: inherit;
+    width: inherit;
+  }
+}
+
+#overlay {
+  position: absolute;
+  z-index: 99999999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  &.show {
+    display: initial;
+  }
+}
+
 @media screen and (min-height: 900px) {
   #app {
     margin-top: 100px;
