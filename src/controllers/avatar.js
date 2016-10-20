@@ -1,6 +1,6 @@
 import carousel from '../lib/carousel';
 import { expandButton } from '../animations';
-import { saveState, getState } from '../globalState';
+import { saveState } from '../globalState';
 import * as avatars from '../templates/avatars';
 
 const avatarCtrl = () => {
@@ -36,7 +36,6 @@ const avatarCtrl = () => {
   });
   const car = carousel();
   car.init();
-
 };
 
 export default avatarCtrl;
