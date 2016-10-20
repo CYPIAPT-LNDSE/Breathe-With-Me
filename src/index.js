@@ -32,7 +32,6 @@ window.addEventListener('resize', resizeCanvas);
 
 const fullscreenHandler = () => {
   if (!screenfull.isFullscreen) {
-    console.log('not fullscreen');
     setTimeout(() => {
       document.querySelector('#fullscreenBanner').style.display = 'none';
     }, 10000);
@@ -54,7 +53,7 @@ window.addEventListener('load', () => setTimeout(() => {
     fullscreenHandler();
   }
 
-  const fullscreenBtn = document.querySelector('#fullscreenBanner button');
+  const fullscreenBtn = document.querySelector('#fullscreenBanner i');
 
   fullscreenBtn.addEventListener('click', () => {
     screenfull.request(document.body);

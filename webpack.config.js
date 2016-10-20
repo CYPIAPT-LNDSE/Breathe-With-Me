@@ -40,7 +40,7 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
-        'style', ['css-loader', 'sass-loader'], { publicPath: '/' }
+        'style', ['css-loader', 'postcss-loader', 'sass-loader'], { publicPath: '/' }
       ),
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -49,6 +49,9 @@ module.exports = {
       test: /\.(jpg|jpeg|gif|png|ttf|eot|svg|mp3)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: 'file',
     }],
+  },
+  postcss: function () {
+    return [require('autoprefixer')];
   },
   plugins: [
     new webpack.ProvidePlugin({
