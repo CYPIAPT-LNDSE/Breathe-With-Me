@@ -7,8 +7,8 @@ const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-option
 
 export const hideMenuTimer = () => {
   timer = setTimeout(() => {
-    TweenMax.to('#breathing-menu', 0.5, { y: -50 });
-    TweenMax.to('#feel-good-modal', 0.5, { y: 130 });
+    TweenMax.to('#breathing-menu', 0.5, { y: -75 });
+    TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
     menuIsDisplayed = false;
   }, 6000);
 };
@@ -25,8 +25,8 @@ const displayMenu = () => {
 };
 
 const hideMenu = () => {
-  TweenMax.to('#breathing-menu', 0.5, { y: -50 });
-  TweenMax.to('#feel-good-modal', 0.5, { y: 130 });
+  TweenMax.to('#breathing-menu', 0.5, { y: -75 });
+  TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
   menuIsDisplayed = false;
 };
 
