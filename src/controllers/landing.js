@@ -9,7 +9,6 @@ const landingCtrl = () => {
     const name = document.querySelector('#input-username').value;
     if (isNameInvalid(name.trim().toLowerCase())) return;
     else {
-      localStorage.setItem('username', name);
       location.hash = this.attributes.getNamedItem('href').value;
       saveState({ name });
     }
