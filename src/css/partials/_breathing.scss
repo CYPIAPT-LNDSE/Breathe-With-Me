@@ -1,11 +1,14 @@
 #breathing-menu {
   position: fixed;
   background-color: $modal-menu;
-  height: 7%;
+  height: 47px;
   width: 100%;
   z-index: 10;
   opacity: 0;
   max-width: inherit;
+  &.full-screen-modal {
+    height: 100%;
+  }
 }
 
 #feel-good-modal {
@@ -112,6 +115,8 @@
   margin: auto;
 }
 
+.modal {}
+
 .fading-message {
   display: none;
   color: #1C6C89;
@@ -123,7 +128,6 @@
   text-align: center;
   top: 13%;
 }
-
 
 .character {
   transform: scale(0.9);
