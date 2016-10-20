@@ -9,6 +9,7 @@ import {
 import {
    breathe,
    headMovement,
+   showFeelGoodModal,
   } from '../animations';
 import {
    showMenu,
@@ -54,6 +55,7 @@ const breatheCtrl = () => {
   if (!breathingPageVisited) {
     showModal();
   } else {
+    showFeelGoodModal();
     setTimeout(() => {
       hideMenuTimer();
     }, 2000);

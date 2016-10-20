@@ -7,7 +7,8 @@ const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-option
 
 export const hideMenuTimer = () => {
   timer = setTimeout(() => {
-    TweenMax.to('#breathing-menu', 0.5, { y: -50 });
+    TweenMax.to('#breathing-menu', 0.5, { y: -75 });
+    TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
     menuIsDisplayed = false;
   }, 6000);
 };
@@ -19,11 +20,13 @@ const resetHideMenuTimer = () => {
 
 const displayMenu = () => {
   TweenMax.to('#breathing-menu', 0.5, { y: 0 });
+  TweenMax.to('#feel-good-modal', 0.5, { y: 0 });
   menuIsDisplayed = true;
 };
 
 const hideMenu = () => {
-  TweenMax.to('#breathing-menu', 0.5, { y: -50 });
+  TweenMax.to('#breathing-menu', 0.5, { y: -75 });
+  TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
   menuIsDisplayed = false;
 };
 
@@ -58,7 +61,9 @@ export const hideModal = () => {
   tl
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
     .add(TweenMax.to('#breathing-menu', 0.4, { css: { height: '7%' } }))
-    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }));
+    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
+    .add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, display: 'block' }));
+
   hideMenuTimer();
 };
 

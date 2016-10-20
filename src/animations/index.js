@@ -90,13 +90,19 @@ export const outOfInfo = () => {
   return promisify(tl);
 };
 
+export const showFeelGoodModal= () => {
+  TweenMax.delayedCall(1.15, () => {
+  TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8 })
+  });
+};
+
 export const infoToCatView = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.fromTo('.character', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }))
-    .add(TweenMax.to('#feel-good-button', 1, { opacity: 1 }))
+    // .add(TweenMax.to('#feel-good-button', 1, { opacity: 1 }))
     .add(TweenMax.to('.sync-breath-text', 0.5, { opacity: 1 }))
-    .add(TweenMax.to('#breathing-menu', 0.5, { opacity: 0.8 }));
+    .add(TweenMax.to('#breathing-menu', 0.5, { opacity: 0.8 }))
 
   return promisify(tl);
 };

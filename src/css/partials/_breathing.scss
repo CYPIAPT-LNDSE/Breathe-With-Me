@@ -8,6 +8,42 @@
   max-width: inherit;
 }
 
+#feel-good-modal {
+  width: 100%;
+  max-width: inherit;
+  min-height: 100px;
+  bottom: 0px;
+  background-color: $modal-menu;
+  opacity: 0;
+  z-index: 10;
+  position: fixed;
+  text-align: center;
+}
+
+#feel-good-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 200px;
+  text-align: center;
+  border-radius: 23px;
+  border: 2px solid white;
+  color: white;
+  line-height: 40px;
+  height: 40px;
+  font-family: $Raleway;
+  will-change: transform;
+  transition: all 0.3s ease 0s;
+}
+
+#feel-good-button:active {
+  background-color: white;
+  color: $main-text;
+}
+
 #audio-controls {
   position: absolute;
   left: 0px;
@@ -88,25 +124,6 @@
   top: 13%;
 }
 
-#feel-good-button {
-  opacity: 0;
-  position: absolute;
-  left: 20%;
-  right: 20%;
-  text-align: center;
-  bottom: 5%;
-  border-radius: 23px!important;
-  background-color: transparent!important;
-  border: 2px solid $main-text!important;
-  color: $main-text!important;
-  margin: 0 auto;
-  line-height: 37px!important;
-  width: 200px;
-  height: 40px;
-  text-align: center;
-  font-family: $Raleway;
-  will-change: transform;
-}
 
 .character {
   transform: scale(0.9);
