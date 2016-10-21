@@ -1,6 +1,9 @@
 import { TimelineMax, TweenMax } from 'gsap';
+import { getState, saveState } from '../globalState';
 
 let menuIsDisplayed = true;
+const { hasVisited } = getState();
+let { modalActive } = getState();
 let timer;
 
 export const hideMenuTimer = () => {
@@ -32,7 +35,7 @@ export const toggleBreathingMenu = (e) => {
   const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-options', 'feel-good-modal'];
   const elementsThatWontTriggerMenu = ['breathing-settings', 'breathing-info', 'feel-good-button'];
   if (elementsThatWontTriggerMenu.includes(e.target.id)) return;
-  if (e.target.className.indexOf('modal-active') !== -1) return;
+  else if (e.target.className.indexOf('modal-active') !== -1) return;
   else if (menuIsDisplayed === false) {
     displayMenu();
     resetHideMenuTimer();
@@ -43,7 +46,13 @@ export const toggleBreathingMenu = (e) => {
   }
 };
 
+export const updateModalState = () => {
+  if (!getState().modalActive) saveState({ modalActive: true });
+  else saveState({ modalActive: false });
+};
+
 export const showModal = () => {
+  console.log(getState().modalActive);
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#feel-good-modal', 0.5, { y: 120 }))
@@ -54,12 +63,13 @@ export const showModal = () => {
 };
 
 export const hideModal = () => {
+  console.log(getState().modalActive);
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
     .add(TweenMax.to('#breathing-menu', 0.4, { css: { className: '' } }))
     .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
-  if (localStorage.getItem('hasVisited')) {
+  if (hasVisited) {
       tl.add(TweenMax.to('#feel-good-modal', 0.5, { y: 0 }));
   } else {
       tl.add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, y: 0, display: 'block' }));

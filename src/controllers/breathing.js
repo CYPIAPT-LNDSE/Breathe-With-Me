@@ -13,6 +13,7 @@ import {
   } from '../animations';
 import {
    toggleBreathingMenu,
+   updateModalState,
    hideMenuTimer,
    showModal,
    hideModal,
@@ -28,7 +29,7 @@ const breatheCtrl = () => {
   const instructions = document.getElementById('breathing-info');
   const exitModalButton = document.getElementById('exit-modal-button');
   const settings = document.getElementById('breathing-settings');
-  const breathingPageVisited = localStorage.getItem('hasVisited');
+  const { hasVisited } = getState();
 
   feelingBetterBtn.addEventListener('click', () => {
     granimInstance().changeState('dark-state');
@@ -43,16 +44,19 @@ const breatheCtrl = () => {
   // });
   // audioControl.addEventListener('click', toggleAudio);
   breathingPage.addEventListener('click', toggleBreathingMenu);
+  instructions.addEventListener('click', updateModalState);
   instructions.addEventListener('click', showModal);
+  exitModalButton.addEventListener('click', updateModalState);
   exitModalButton.addEventListener('click', hideModal);
   exitModalButton.addEventListener('click', () => {
-    startTimerFirstVisitOnly(breathingPageVisited);
+    startTimerFirstVisitOnly();
   });
 
   breathe();
   headMovement();
   // audio.play();
-  if (!breathingPageVisited) {
+  if (!hasVisited) {
+    updateModalState();
     showModal();
   } else {
     setTimeout(() => {

@@ -1,4 +1,5 @@
 import { TweenMax, TimelineMax } from 'gsap';
+import { saveState, getState } from '../globalState';
 
 let timer1;
 let timer2;
@@ -35,9 +36,9 @@ export const clearTimers = () => {
   });
 };
 
-export const startTimerFirstVisitOnly = (breathingPageVisited) => {
-  if (!breathingPageVisited) {
-    localStorage.setItem('hasVisited', true);
+export const startTimerFirstVisitOnly = () => {
+  if (!getState().hasVisited) {
+    saveState({ hasVisited: true });
     startNotificationSequence();
   }
 };

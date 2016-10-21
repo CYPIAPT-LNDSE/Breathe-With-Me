@@ -1,4 +1,7 @@
 import { TweenMax, TimelineMax, Power1 } from 'gsap';
+import { getState } from '../globalState';
+
+const { hasVisited } = getState();
 
 const promisify = tl =>
   new Promise(success => tl.addCallback(success));
@@ -92,7 +95,7 @@ export const outOfInfo = () => {
 
 const showFeelGoodModal = () => {
   TweenMax.to('#breathing-menu', 0.5, { opacity: 0.8 });
-  if (localStorage.getItem('hasVisited')) {
+  if (hasVisited) {
     TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8 });
   }
 };
