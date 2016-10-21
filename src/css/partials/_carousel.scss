@@ -46,6 +46,16 @@
   }
 }
 
+@media screen and (min-height: 720px) {
+  .carousel_container {
+    width: 320px;
+  }
+  .carousel_items, .carousel_item, .carousel_item img  {
+    width: 320px;
+    height: 320px;
+  }
+}
+
 .nav_dot:hover {
 	cursor: pointer;
 }
