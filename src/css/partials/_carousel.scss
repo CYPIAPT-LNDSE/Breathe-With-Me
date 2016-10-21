@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 11%;
+  top: 9%;
   width: 300px;
 	overflow: hidden;
 }
@@ -36,7 +36,6 @@
   margin-bottom: 50px;
 }
 
-// Note this changes the size of cat avatar circle so smaller on smaller screens
 @media screen and (max-height: 620px) {
   .carousel_container {
     width: 280px;
@@ -72,7 +71,6 @@
 	z-index: 5001;
   padding: 0px;
   margin-top: 20px;
-  // height: 20px;
   text-align: center;
 }
 
