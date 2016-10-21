@@ -97,11 +97,6 @@ const showFeelGoodModal = () => {
   }
 };
 
-const hideFeelGoodModal = () => {
-  TweenMax.to('#breathing-menu', 0.5, { y: -47 });
-  TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
-};
-
 export const infoToCatView = () => {
   const tl = new TimelineMax();
   tl
@@ -127,7 +122,8 @@ export const fromBreathingToIntro = () => {
 export const outOfBreathing = () => {
   const tl = new TimelineMax();
   tl
-    .add(hideFeelGoodModal)
+    .to('#breathing-menu', 0.5, { y: -47 }, 0)
+    .to('#feel-good-modal', 0.5, { y: 120 }, 0)
     .add(TweenMax.to('.sync-breath-text', 0.3, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.character', 0.5, { opacity: 0 }))
     .add(TweenMax.to('.breathing', 1, { visibility: 'hidden' }));
