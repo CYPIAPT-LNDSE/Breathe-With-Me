@@ -12,7 +12,7 @@ import {
    showFeelGoodModal,
   } from '../animations';
 import {
-   showMenu,
+   toggleBreathingMenu,
    hideMenuTimer,
    showModal,
    hideModal,
@@ -22,7 +22,7 @@ import {
 
 const breatheCtrl = () => {
   const feelingBetterBtn = document.getElementById('feel-good-button');
-  const body = document.getElementsByTagName('body')[0];
+  const breathingPage = document.getElementsByClassName('breathing')[0];
   // const audio = document.getElementById('audio');
   // const audioControl = document.getElementById('audio-controls');
   const instructions = document.getElementById('breathing-info');
@@ -42,7 +42,7 @@ const breatheCtrl = () => {
   //   fadeoutMusic(280);
   // });
   // audioControl.addEventListener('click', toggleAudio);
-  body.addEventListener('click', showMenu);
+  breathingPage.addEventListener('click', toggleBreathingMenu);
   instructions.addEventListener('click', showModal);
   exitModalButton.addEventListener('click', hideModal);
   exitModalButton.addEventListener('click', () => {
@@ -55,7 +55,6 @@ const breatheCtrl = () => {
   if (!breathingPageVisited) {
     showModal();
   } else {
-    showFeelGoodModal();
     setTimeout(() => {
       hideMenuTimer();
     }, 2000);

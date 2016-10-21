@@ -10,7 +10,6 @@ let timer7;
 
 const intervals = [7000, 15000, 26000, 37000, 60000, 120000, 300000];
 const messages = ['#first-msg', '#second-msg', '#third-msg', '#fourth-msg', '#fifth-msg', '#after-two-min', '#after-five-min'];
-
 const timers = [timer1, timer2, timer3, timer4, timer5, timer6, timer7];
 
 const timeHasPassedNotification = (time, targetEl, timer) => {

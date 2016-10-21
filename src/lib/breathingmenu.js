@@ -2,15 +2,13 @@ import { TimelineMax, TweenMax } from 'gsap';
 
 let menuIsDisplayed = true;
 let timer;
-const elementsThatWontTriggerMenu = ['feel-good-button', 'info', 'settings'];
-const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-options'];
 
 export const hideMenuTimer = () => {
   timer = setTimeout(() => {
     TweenMax.to('#breathing-menu', 0.5, { y: -75 });
     TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
     menuIsDisplayed = false;
-  }, 6000);
+  }, 5000);
 };
 
 const resetHideMenuTimer = () => {
@@ -25,19 +23,17 @@ const displayMenu = () => {
 };
 
 const hideMenu = () => {
-  TweenMax.to('#breathing-menu', 0.5, { y: -75 });
+  TweenMax.to('#breathing-menu', 0.5, { y: -47 });
   TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
   menuIsDisplayed = false;
 };
 
-export const showMenu = (e) => {
-  if (location.hash !== '#breathe') {
-    return;
-  } else if (elementsThatWontTriggerMenu.includes(e.target.id)) {
-    return;
-  } else if (document.getElementById('breathing-menu').style.height === '100%') {
-    return;
-  } else if (menuIsDisplayed === false) {
+export const toggleBreathingMenu = (e) => {
+  const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-options', 'feel-good-modal'];
+  const elementsThatWontTriggerMenu = ['breathing-settings', 'breathing-info', 'feel-good-button'];
+  if (elementsThatWontTriggerMenu.includes(e.target.id)) return;
+  if (e.target.className.indexOf('modal-active') !== -1) return;
+  else if (menuIsDisplayed === false) {
     displayMenu();
     resetHideMenuTimer();
   } else if (menuIsDisplayed === true && (elementsThatResetTimer.includes(e.target.id))) {
@@ -50,8 +46,9 @@ export const showMenu = (e) => {
 export const showModal = () => {
   const tl = new TimelineMax();
   tl
+    .add(TweenMax.to('#feel-good-modal', 0.5, { y: 120 }))
     .add(TweenMax.to('#menu-options', 0.5, { opacity: 0, display: 'none' }))
-    .add(TweenMax.to('#breathing-menu', 0.4, { css: { y: 0, height: '100%' } }))
+    .add(TweenMax.to('#breathing-menu', 0.4, { css: { y: 0, className: 'full-screen-modal modal-active' } }))
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'block', opacity: 1 }));
   clearTimeout(timer);
 };
@@ -60,10 +57,13 @@ export const hideModal = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
-    .add(TweenMax.to('#breathing-menu', 0.4, { css: { height: '7%' } }))
+    .add(TweenMax.to('#breathing-menu', 0.4, { css: { className: '' } }))
     .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
-    .add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, display: 'block' }));
-
+  if (localStorage.getItem('hasVisited')) {
+      tl.add(TweenMax.to('#feel-good-modal', 0.5, { y: 0 }));
+  } else {
+      tl.add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, y: 0, display: 'block' }));
+  }
   hideMenuTimer();
 };
 
@@ -87,6 +87,7 @@ export const fadeoutMusic = (int) => {
       audio.volume = vol;
     } else {
       clearInterval(fadeout);
+      audio.volume = 1;
     }
   }, interval);
 };
