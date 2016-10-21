@@ -1,8 +1,6 @@
 import { TweenMax, TimelineMax, Power1 } from 'gsap';
 import { getState } from '../globalState';
 
-const { hasVisited } = getState();
-
 const promisify = tl =>
   new Promise(success => tl.addCallback(success));
 
@@ -93,19 +91,12 @@ export const outOfInfo = () => {
   return promisify(tl);
 };
 
-const showFeelGoodModal = () => {
-  TweenMax.to('#breathing-menu', 0.5, { opacity: 0.8 });
-  if (hasVisited) {
-    TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8 });
-  }
-};
-
 export const infoToCatView = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.fromTo('.character', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }))
     .to('#breathing-menu', 0.5, { opacity: 0.8 }, 1);
-  if (localStorage.getItem('hasVisited')) {
+  if (getState().hasVisited) {
     tl.to('#feel-good-modal', 0.5, { opacity: 0.8 }, 1);
   }
   return promisify(tl);
