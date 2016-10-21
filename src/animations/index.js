@@ -90,20 +90,21 @@ export const outOfInfo = () => {
   return promisify(tl);
 };
 
-export const showFeelGoodModal= () => {
-  TweenMax.delayedCall(1.15, () => {
-  TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8 })
-  });
+const showFeelGoodModal = () => {
+  TweenMax.to('#breathing-menu', 0.5, { opacity: 0.8 });
+  if (localStorage.getItem('hasVisited')) {
+    TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8 });
+  }
 };
 
 export const infoToCatView = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.fromTo('.character', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }))
-    // .add(TweenMax.to('#feel-good-button', 1, { opacity: 1 }))
-    .add(TweenMax.to('.sync-breath-text', 0.5, { opacity: 1 }))
-    .add(TweenMax.to('#breathing-menu', 0.5, { opacity: 0.8 }))
-
+    .to('#breathing-menu', 0.5, { opacity: 0.8 }, 1);
+  if (localStorage.getItem('hasVisited')) {
+    tl.to('#feel-good-modal', 0.5, { opacity: 0.8 }, 1);
+  }
   return promisify(tl);
 };
 
@@ -123,8 +124,8 @@ export const fromBreathingToIntro = () => {
 export const outOfBreathing = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('#feel-good-button', 1, { opacity: 0 }))
-    .add(TweenMax.to('#breathing-menu', 0.2, { opacity: 0 }))
+    .to('#breathing-menu', 0.5, { y: -47 }, 0)
+    .to('#feel-good-modal', 0.5, { y: 120 }, 0)
     .add(TweenMax.to('.sync-breath-text', 0.3, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.character', 0.5, { opacity: 0 }))
     .add(TweenMax.to('.breathing', 1, { visibility: 'hidden' }));
