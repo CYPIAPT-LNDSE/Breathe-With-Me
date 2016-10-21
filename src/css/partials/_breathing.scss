@@ -126,12 +126,12 @@
   right: 0;
   margin: auto;
   text-align: center;
-  top: 13%;
+  top: 11%;
 }
 
 .character {
   transform: scale(0.9);
-  top: 15%;
+  top: 13%;
   position: absolute;
   left: 20%;
   right: 20%;
@@ -153,10 +153,10 @@
 @media screen and (min-height: 595px) {
   .character {
     transform: scale(1);
-    top: 10%;
+    top: 8%;
   }
   .fading-message {
-    top: 9%;
+    top: 7%;
   }
 }
 
@@ -164,100 +164,100 @@
 @media screen and (min-height: 620px) {
   .character {
     transform: scale(1.02);
-    top: 12%;
-  }
-  .fading-message {
     top: 10%;
-  }
-}
-
-@media screen and (min-height: 640px) {
-  .character {
-    transform: scale(1.04);
-    top: 13%;
-  }
-  .fading-message {
-    top: 9%;
-  }
-}
-
-@media screen and (min-height: 655px) {
-  .character {
-    transform: scale(1.1);
-    top: 12%;
-  }
-  .fading-message {
-    top: 9%;
-  }
-}
-
-@media screen and (min-height: 675px) {
-  .character {
-    transform: scale(1.12);
-    top: 13%;
-  }
-  .fading-message {
-    top: 8.5%;
-  }
-}
-
-@media screen and (min-height: 690px) {
-  .character {
-    transform: scale(1.15);
-    top: 13%;
   }
   .fading-message {
     top: 8%;
   }
 }
 
+@media screen and (min-height: 640px) {
+  .character {
+    transform: scale(1.04);
+    top: 11%;
+  }
+  .fading-message {
+    top: 7%;
+  }
+}
+
+@media screen and (min-height: 655px) {
+  .character {
+    transform: scale(1.1);
+    top: 10%;
+  }
+  .fading-message {
+    top: 7%;
+  }
+}
+
+@media screen and (min-height: 675px) {
+  .character {
+    transform: scale(1.12);
+    top: 11%;
+  }
+  .fading-message {
+    top: 6.5%;
+  }
+}
+
+@media screen and (min-height: 690px) {
+  .character {
+    transform: scale(1.15);
+    top: 11%;
+  }
+  .fading-message {
+    top: 6%;
+  }
+}
+
 @media screen and (min-height: 710px) {
   .character {
     transform: scale(1.19);
-    top: 12%;
+    top: 10%;
   }
   .fading-message {
-    top: 7.8%;
+    top: 5.8%;
   }
 }
 
 @media screen and (min-height: 730px) {
   .character {
     transform: scale(1.25);
-    top: 10%;
+    top: 8%;
   }
   .fading-message {
-    top: 7.7%;
+    top: 5.7%;
   }
 }
 
 @media screen and (min-height: 760px) {
   .character {
     transform: scale(1.3);
-    top: 11%;
+    top: 9%;
   }
   .fading-message {
-    top: 7.6%;
+    top: 5.6%;
   }
 }
 
 @media screen and (min-height: 790px) {
   .character {
     transform: scale(1.4);
-    top: 10%;
+    top: 8%;
   }
   .fading-message {
-    top: 7.4%;
+    top: 5.4%;
   }
 }
 
 @media screen and (min-height: 840px) {
   .character {
     transform: scale(1.5);
-    top: 9%;
+    top: 7%;
   }
   .fading-message {
-    top: 7.2%;
+    top: 5.2%;
   }
 }
 
