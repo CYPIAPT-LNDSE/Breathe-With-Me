@@ -287,25 +287,63 @@
   }
 }
 
-#head {
-  z-index: 10;
+.head {
   top: 33px;
+  z-index: 10;
   will-change: transform;
 }
 
-#belly {
-  top: 170px;
+.belly {
   z-index: 2;
   will-change: transform;
 }
 
-#legs {
-  top: 390px;
-  z-index: 1;
-
+.hands {
+  z-index: 30;
 }
 
-#hands {
+.legs {
+  z-index: 1;
+}
+
+// cat
+
+#cat-belly {
+  top: 178px;
+}
+
+#cat-legs {
+  top: 429px;
+}
+
+#cat-hands {
+  top: 251px;
+}
+
+// panda
+
+#panda-belly {
+  top: 170px;
+}
+
+#panda-legs {
+  top: 405px;
+}
+
+#panda-hands {
   top: 220px;
-  z-index: 30;
+}
+
+//dog
+
+#dog-belly {
+  top: 183px;
+}
+
+#dog-legs {
+  top: 430px;
+}
+
+#dog-hands {
+  top: 254px;
 }
