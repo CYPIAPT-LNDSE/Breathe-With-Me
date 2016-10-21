@@ -57,13 +57,12 @@ export const hideModal = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
-    .add(TweenMax.to('#breathing-menu', 0.4, { css: { className: '' } }));
+    .add(TweenMax.to('#breathing-menu', 0.4, { css: { className: '' } }))
+    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
   if (localStorage.getItem('hasVisited')) {
-    tl.add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
-      .add(TweenMax.to('#feel-good-modal', 0.5, { y: 0 }));
+      tl.add(TweenMax.to('#feel-good-modal', 0.5, { y: 0 }));
   } else {
-    tl.add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
-      .add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, y: 0, display: 'block' }));
+      tl.add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, y: 0, display: 'block' }));
   }
   hideMenuTimer();
 };
