@@ -176,3 +176,40 @@ export const breathe = () =>
 export const headMovement = () =>
   TweenMax.fromTo('#head', 5, { y: -0, delay: 2 },
     { y: -20, ease: Power1.easeInOut, repeat: -1, yoyo: true });
+
+export const showModal = () => {
+  const tl = new TimelineMax();
+  tl
+    .add(TweenMax.to('#feel-good-modal', 0.5, { y: 120 }))
+    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0, display: 'none' }))
+    .add(TweenMax.to('#breathing-menu', 0.4, { css: { y: 0, className: 'full-screen-modal modal-active' } }))
+    .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'block', opacity: 1 }));
+};
+
+export const hideModal = () => {
+  const tl = new TimelineMax();
+  tl
+    .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
+    .add(TweenMax.to('#breathing-menu', 0.4, { css: { className: '' } }))
+    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
+    .add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, y: 0, display: 'block' }));
+};
+
+export const hideModalFirstVisit = () => {
+  const tl = new TimelineMax();
+  tl
+    .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
+    .add(TweenMax.to('#breathing-menu', 0.4, { css: { className: '' } }))
+    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
+    .add(TweenMax.to('#feel-good-modal', 0.5, { y: 0 }));
+};
+
+export const displayMenu = () => {
+  TweenMax.to('#breathing-menu', 0.5, { y: 0 });
+  TweenMax.to('#feel-good-modal', 0.5, { y: 0 });
+};
+
+export const hideMenu = () => {
+  TweenMax.to('#breathing-menu', 0.5, { y: -47 });
+  TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
+};

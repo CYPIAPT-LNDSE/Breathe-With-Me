@@ -1,16 +1,24 @@
 import { TimelineMax, TweenMax } from 'gsap';
 import { getState, saveState } from '../globalState';
+import {
+  showModal,
+  hideModal,
+  hideModalFirstVisit,
+  displayMenu,
+  hideMenu,
+} from '../animations/index';
 
-let menuIsDisplayed = true;
-const { hasVisited } = getState();
-let { modalActive } = getState();
 let timer;
+
+const updateMenuState = () => {
+  if (getState().menuIsDisplayed) saveState({ menuIsDisplayed: false });
+  else saveState({ menuIsDisplayed: true });
+};
 
 export const hideMenuTimer = () => {
   timer = setTimeout(() => {
-    TweenMax.to('#breathing-menu', 0.5, { y: -75 });
-    TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
-    menuIsDisplayed = false;
+    hideMenu();
+    updateMenuState();
   }, 5000);
 };
 
@@ -19,85 +27,40 @@ const resetHideMenuTimer = () => {
   hideMenuTimer();
 };
 
-const displayMenu = () => {
-  TweenMax.to('#breathing-menu', 0.5, { y: 0 });
-  TweenMax.to('#feel-good-modal', 0.5, { y: 0 });
-  menuIsDisplayed = true;
-};
-
-const hideMenu = () => {
-  TweenMax.to('#breathing-menu', 0.5, { y: -47 });
-  TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
-  menuIsDisplayed = false;
-};
-
 export const toggleBreathingMenu = (e) => {
   const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-options', 'feel-good-modal'];
-  const elementsThatWontTriggerMenu = ['breathing-settings', 'breathing-info', 'feel-good-button'];
+  const elementsThatWontTriggerMenu = ['breathing-settings', 'breathing-info', 'feel-good-button', 'exit-modal-button'];
   if (elementsThatWontTriggerMenu.includes(e.target.id)) return;
-  else if (e.target.className.indexOf('modal-active') !== -1) return;
-  else if (menuIsDisplayed === false) {
+  else if (getState().modalActive) return;
+  else if (!getState().menuIsDisplayed) {
     displayMenu();
+    updateMenuState();
     resetHideMenuTimer();
-  } else if (menuIsDisplayed === true && (elementsThatResetTimer.includes(e.target.id))) {
+  } else if (getState().menuIsDisplayed && (elementsThatResetTimer.includes(e.target.id))) {
     resetHideMenuTimer();
-  } else if (menuIsDisplayed === true) {
+  } else if (getState().menuIsDisplayed) {
     hideMenu();
+    updateMenuState();
   }
 };
 
-export const updateModalState = () => {
-  if (!getState().modalActive) saveState({ modalActive: true });
-  else saveState({ modalActive: false });
+const updateModalState = () => {
+  if (getState().modalActive) saveState({ modalActive: false });
+  else saveState({ modalActive: true });
 };
 
-export const showModal = () => {
-  console.log(getState().modalActive);
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('#feel-good-modal', 0.5, { y: 120 }))
-    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0, display: 'none' }))
-    .add(TweenMax.to('#breathing-menu', 0.4, { css: { y: 0, className: 'full-screen-modal modal-active' } }))
-    .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'block', opacity: 1 }));
-  clearTimeout(timer);
-};
-
-export const hideModal = () => {
-  console.log(getState().modalActive);
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
-    .add(TweenMax.to('#breathing-menu', 0.4, { css: { className: '' } }))
-    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
-  if (hasVisited) {
-      tl.add(TweenMax.to('#feel-good-modal', 0.5, { y: 0 }));
-  } else {
-      tl.add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, y: 0, display: 'block' }));
+export const toggleModal = () => {
+  if (getState().modalActive && getState().hasVisited) {
+    hideModalFirstVisit();
+    hideMenuTimer();
+    updateModalState();
+  } else if (getState().modalActive) {
+    hideModal();
+    hideMenuTimer();
+    updateModalState();
+  } else if (!getState().modalActive) {
+    updateModalState();
+    showModal();
+    clearTimeout(timer);
   }
-  hideMenuTimer();
-};
-
-export const toggleAudio = (e) => {
-  if (e.target.textContent === 'volume_off') {
-    e.target.textContent = 'volume_up';
-    audio.play();
-  } else {
-    e.target.textContent = 'volume_off';
-    audio.pause();
-  }
-};
-
-export const fadeoutMusic = (int) => {
-  let vol = 1;
-  const interval = int;
-
-  const fadeout = setInterval(() => {
-    if (vol >= 0.05) {
-      vol -= 0.05;
-      audio.volume = vol;
-    } else {
-      clearInterval(fadeout);
-      audio.volume = 1;
-    }
-  }, interval);
 };
