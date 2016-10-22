@@ -52,13 +52,10 @@ const breatheCtrl = () => {
 
   breathe();
   headMovement();
-  // saveState({ menuIsDisplayed: true });
   // audio.play();
   if (!getState().hasVisited) breathingMenu.toggleModal();
   else {
-    setTimeout(() => {
-      breathingMenu.hideMenuTimer();
-    }, 2000);
+    breathingMenu.setHideMenuTimer(7000);
     startNotificationSequence();
   }
 };

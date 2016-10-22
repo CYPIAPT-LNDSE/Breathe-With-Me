@@ -39,16 +39,16 @@ breathingMenu.updateModalState = function () {
   else this.modalIsDisplayed = true;
 };
 
-breathingMenu.hideMenuTimer = function () {
+breathingMenu.setHideMenuTimer = function (time) {
   this.timer = setTimeout(() => {
     hideMenu();
     this.updateMenuState();
-  }, 5000);
+  }, time);
 };
 
 breathingMenu.resetHideMenuTimer = function () {
   clearTimeout(this.timer);
-  this.hideMenuTimer();
+  this.setHideMenuTimer(5000);
 };
 
 breathingMenu.toggleBreathingMenu = function (e) {
@@ -69,11 +69,11 @@ breathingMenu.toggleBreathingMenu = function (e) {
 breathingMenu.toggleModal = function () {
   if (this.modalIsDisplayed && getState().hasVisited) {
     hideModal();
-    this.hideMenuTimer();
+    this.setHideMenuTimer(5000);
     this.updateModalState();
   } else if (this.modalIsDisplayed) {
     hideModalFirstVisit();
-    this.hideMenuTimer();
+    this.setHideMenuTimer(5000);
     this.updateModalState();
   } else if (!this.modalIsDisplayed) {
     this.updateModalState();
