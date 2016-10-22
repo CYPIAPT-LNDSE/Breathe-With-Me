@@ -1,6 +1,6 @@
 import Granim from 'granim';
 import { granimInstance } from '../lib/background';
-import { getState, saveState } from '../globalState';
+import { getState } from '../globalState';
 import {
   clearTimers,
   startTimerFirstVisitOnly,
@@ -10,11 +10,7 @@ import {
    breathe,
    headMovement,
   } from '../animations';
-import {
-   toggleBreathingMenu,
-   hideMenuTimer,
-   toggleModal,
-} from '../lib/breathingmenu';
+import breathingMenu from '../lib/breathingmenu';
 // import {
 //   toggleAudio,
 //   fadeoutMusic,
@@ -41,21 +37,27 @@ const breatheCtrl = () => {
   //   fadeoutMusic(280);
   // });
   // audioControl.addEventListener('click', toggleAudio);
-  breathingPage.addEventListener('click', toggleBreathingMenu);
-  instructions.addEventListener('click', toggleModal);
-  exitModalButton.addEventListener('click', toggleModal);
+  breathingPage.addEventListener('click', (e) => {
+    breathingMenu.toggleBreathingMenu(e);
+  });
+  instructions.addEventListener('click', () => {
+    breathingMenu.toggleModal();
+  });
+  exitModalButton.addEventListener('click', () => {
+    breathingMenu.toggleModal();
+  });
   exitModalButton.addEventListener('click', () => {
     startTimerFirstVisitOnly();
   });
 
   breathe();
   headMovement();
-  saveState({ menuIsDisplayed: true });
+  // saveState({ menuIsDisplayed: true });
   // audio.play();
-  if (!getState().hasVisited) toggleModal();
+  if (!getState().hasVisited) breathingMenu.toggleModal();
   else {
     setTimeout(() => {
-      hideMenuTimer();
+      breathingMenu.hideMenuTimer();
     }, 2000);
     startNotificationSequence();
   }

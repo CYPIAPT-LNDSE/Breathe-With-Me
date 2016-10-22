@@ -96,9 +96,8 @@ export const infoToCatView = () => {
   tl
     .add(TweenMax.fromTo('.character', 0.75, { css: { opacity: 0 } }, { css: { opacity: 1 } }))
     .to('#breathing-menu', 0.5, { opacity: 0.8 }, 1);
-  if (getState().hasVisited) {
-    tl.to('#feel-good-modal', 0.5, { opacity: 0.8 }, 1);
-  }
+  if (getState().hasVisited) tl.to('#feel-good-modal', 0.5, { opacity: 0.8 }, 1);
+
   return promisify(tl);
 };
 
@@ -186,7 +185,7 @@ export const showModal = () => {
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'block', opacity: 1 }));
 };
 
-export const hideModal = () => {
+export const hideModalFirstVisit = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
@@ -195,7 +194,7 @@ export const hideModal = () => {
     .add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, y: 0, display: 'block' }));
 };
 
-export const hideModalFirstVisit = () => {
+export const hideModal = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))

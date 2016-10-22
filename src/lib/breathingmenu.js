@@ -1,66 +1,85 @@
-import { TimelineMax, TweenMax } from 'gsap';
-import { getState, saveState } from '../globalState';
+import { getState } from '../globalState';
 import {
-  showModal,
-  hideModal,
-  hideModalFirstVisit,
   displayMenu,
   hideMenu,
+  hideModal,
+  hideModalFirstVisit,
+  showModal,
 } from '../animations/index';
 
-let timer;
+const breathingMenu = {};
 
-const updateMenuState = () => {
-  if (getState().menuIsDisplayed) saveState({ menuIsDisplayed: false });
-  else saveState({ menuIsDisplayed: true });
+breathingMenu.timer = '';
+
+breathingMenu.menuIsDisplayed = true;
+
+breathingMenu.modalIsDisplayed = '';
+
+breathingMenu.elementsThatResetTimer = [
+  'audio-controls',
+  'breathing-menu',
+  'menu-options',
+  'feel-good-modal',
+];
+
+breathingMenu.elementsThatWontTriggerMenu = [
+  'breathing-settings',
+  'breathing-info',
+  'feel-good-button',
+  'exit-modal-button',
+];
+
+breathingMenu.updateMenuState = function () {
+  if (this.menuIsDisplayed) this.menuIsDisplayed = false;
+  else this.menuIsDisplayed = true;
 };
 
-export const hideMenuTimer = () => {
-  timer = setTimeout(() => {
+breathingMenu.updateModalState = function () {
+  if (this.modalIsDisplayed) this.modalIsDisplayed = false;
+  else this.modalIsDisplayed = true;
+};
+
+breathingMenu.hideMenuTimer = function () {
+  this.timer = setTimeout(() => {
     hideMenu();
-    updateMenuState();
+    this.updateMenuState();
   }, 5000);
 };
 
-const resetHideMenuTimer = () => {
-  clearTimeout(timer);
-  hideMenuTimer();
+breathingMenu.resetHideMenuTimer = function () {
+  clearTimeout(this.timer);
+  this.hideMenuTimer();
 };
 
-export const toggleBreathingMenu = (e) => {
-  const elementsThatResetTimer = ['audio-controls', 'breathing-menu', 'menu-options', 'feel-good-modal'];
-  const elementsThatWontTriggerMenu = ['breathing-settings', 'breathing-info', 'feel-good-button', 'exit-modal-button'];
-  if (elementsThatWontTriggerMenu.includes(e.target.id)) return;
-  else if (getState().modalActive) return;
-  else if (!getState().menuIsDisplayed) {
+breathingMenu.toggleBreathingMenu = function (e) {
+  if (this.elementsThatWontTriggerMenu.includes(e.target.id)) return;
+  else if (this.modalIsDisplayed) return;
+  else if (!this.menuIsDisplayed) {
     displayMenu();
-    updateMenuState();
-    resetHideMenuTimer();
-  } else if (getState().menuIsDisplayed && (elementsThatResetTimer.includes(e.target.id))) {
-    resetHideMenuTimer();
-  } else if (getState().menuIsDisplayed) {
+    this.updateMenuState();
+    this.resetHideMenuTimer();
+  } else if (this.menuIsDisplayed && (this.elementsThatResetTimer.includes(e.target.id))) {
+    this.resetHideMenuTimer();
+  } else if (this.menuIsDisplayed) {
     hideMenu();
-    updateMenuState();
+    this.updateMenuState();
   }
 };
 
-const updateModalState = () => {
-  if (getState().modalActive) saveState({ modalActive: false });
-  else saveState({ modalActive: true });
-};
-
-export const toggleModal = () => {
-  if (getState().modalActive && getState().hasVisited) {
-    hideModalFirstVisit();
-    hideMenuTimer();
-    updateModalState();
-  } else if (getState().modalActive) {
+breathingMenu.toggleModal = function () {
+  if (this.modalIsDisplayed && getState().hasVisited) {
     hideModal();
-    hideMenuTimer();
-    updateModalState();
-  } else if (!getState().modalActive) {
-    updateModalState();
+    this.hideMenuTimer();
+    this.updateModalState();
+  } else if (this.modalIsDisplayed) {
+    hideModalFirstVisit();
+    this.hideMenuTimer();
+    this.updateModalState();
+  } else if (!this.modalIsDisplayed) {
+    this.updateModalState();
     showModal();
-    clearTimeout(timer);
+    clearTimeout(this.timer);
   }
 };
+
+export default breathingMenu;
