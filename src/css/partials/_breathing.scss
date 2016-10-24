@@ -55,6 +55,8 @@
   transform: translateY(50%);
   padding-left: 3%;
   z-index: 20;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #breathing-settings {
@@ -65,6 +67,8 @@
   transform: translateY(50%);
   padding-right: 3%;
   z-index: 20;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #breathing-info {
@@ -76,7 +80,8 @@
   background: transparent;
   transform: translateY(50%);
   z-index: 15;
-
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #modal-breathing-instructions {
@@ -84,6 +89,7 @@
   opacity: 0;
   color: white;
   padding: 2.2em;
+  height: 100%;
   -webkit-transform: translate3d(0,0,0);
 
   p {
@@ -100,10 +106,10 @@
   bottom: 10px;
   left: 0;
   right: 0;
-  margin: auto;
   text-align: center;
-  vertical-align: bottom;
   font-size: 36px;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #modal-instructions {
