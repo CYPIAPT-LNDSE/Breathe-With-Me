@@ -10,11 +10,30 @@ const carousel = function () {
   const carouselCount = $('.carousel_item').length;
   const	$carouselItems = $('.carousel_items');
   const	$carouselItem = $('.carousel_item');
+  const landingButton = $('#landing-button');
   const $navDots = $('.nav_dots');
   const slideSpeed = 0.45;
   const slideMeth = Power2.EaseInOut;
   let swipeDir;
   let $navDot;
+
+  function buttonColourChange(id) {
+    const activeAvatar = id;
+
+    switch (activeAvatar) {
+      case 0:
+        landingButton.css('background-color', '#1C6C86');
+        break;
+      case 1:
+        landingButton.css('background-color', '#FF9C9C');
+        break;
+      case 2:
+        landingButton.css('background-color', '#4942A5');
+        break;
+      default:
+        landingButton.css('background-color', '#1C6C86');
+    }
+  }
 
   function slideDone(id) {
     activeID = id;
@@ -25,6 +44,8 @@ const carousel = function () {
     $navDot.css({ backgroundColor: '#1C6C89' });
     TweenMax.to($navDot, 0.35, { scale: 1, color: '#1C6C89' });
     TweenMax.to($(`#dot_${activeID}`), 0.35, { scale: 1.5, backgroundColor: 'transparent', color: '#1C6C89' });
+
+    buttonColourChange(activeID);
   }
 
   function showSlide(id, skipAnimation = false) {
