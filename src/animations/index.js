@@ -44,8 +44,8 @@ export const expandButton = () => {
     .add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }))
     .add(TweenMax.fromTo(
       '#landing-button', 0.5,
-      { scale: 1, backgroundColor: '#5CA1C2' },
-      { scale: 30, backgroundColor: 'transparent', ease: Power1.easeIn }
+      { scale: 1 },
+      { scale: 30, ease: Power1.easeIn }
     ));
   return promisify(tl);
 };
