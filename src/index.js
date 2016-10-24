@@ -10,6 +10,10 @@ import screenfull from 'screenfull';
 
 window.scrollTo(0, 1);
 
+//Hack to prevent select default on IOS
+
+document.addEventListener('touchstart', function () {}, true);
+
 const router = (route) => {
   const view = views[route] || views.landing;
   const controller = controllers[route] || controllers.landing;
