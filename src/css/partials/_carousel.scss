@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 9%;
+  top: 3%;
   width: 300px;
 	overflow: hidden;
 }
@@ -43,6 +43,16 @@
   .carousel_items, .carousel_item, .carousel_item img  {
     width: 280px;
     height: 280px;
+  }
+}
+
+@media screen and (min-height: 720px) {
+  .carousel_container {
+    width: 320px;
+  }
+  .carousel_items, .carousel_item, .carousel_item img  {
+    width: 320px;
+    height: 320px;
   }
 }
 
