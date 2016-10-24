@@ -109,7 +109,7 @@ export const fromBreathingToIntro = () => {
     .add(TweenMax.to('#feel-good-button', 0.2, { opacity: 0 }))
     .add(TweenMax.to('.mountain1', 0.5, { y: -170 }))
     .add(TweenMax.to('.mountain2', 0.5, { y: -300 }))
-    .add(TweenMax.to('.breathing-information', 0.2, { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
+    .add(TweenMax.to('.breathing-information', 0.2, { opacity: 1 }));
 
   return promisify(tl);
 };
@@ -145,9 +145,9 @@ export const welldoneToIntro = () => {
     .add(TweenMax.to('#welldone-stars', 0.3, { opacity: 0 }))
     .add(TweenMax.to('#welldone-banner', 0.3, { y: -200 }))
     .add(TweenMax.to('.welldone-user', 0.3, { opacity: 0 }))
-    .add(TweenMax.to('.welldone-mountain3', 0.4, { y: 250 }))
-    .add(TweenMax.to('.welldone-mountain2', 0.3, { y: 250 }))
-    .add(TweenMax.to('.welldone-mountain1', 0.2, { y: 250 }))
+    .add(TweenMax.to('.welldone-mountain3', 0.5, { y: 250 }))
+    .add(TweenMax.to('.welldone-mountain2', 0.5, { y: 250 }))
+    .add(TweenMax.to('.welldone-mountain1', 0.5, { y: 250 }))
     .add(TweenMax.to('.mountain1', 0.5, { y: -170 }))
     .add(TweenMax.to('.mountain2', 0.5, { y: -300 }))
     .add(TweenMax.to('.breathing-information', 0.2,
