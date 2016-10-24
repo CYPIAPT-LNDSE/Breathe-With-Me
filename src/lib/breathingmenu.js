@@ -13,7 +13,7 @@ breathingMenu.timer = '';
 
 breathingMenu.menuIsDisplayed = true;
 
-breathingMenu.modalIsDisplayed = '';
+breathingMenu.modalIsDisplayed = false;
 
 breathingMenu.elementsThatResetTimer = [
   'audio-controls',
