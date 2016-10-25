@@ -150,10 +150,10 @@
   }
 }
 
-@media screen and (min-height: 595px) {
+@media screen and (max-height: 595px) {
   .character {
-    transform: scale(1);
-    top: 3%;
+    transform: scale(0.96);
+    top: 7%;
   }
   .fading-message {
     top: 2%;
