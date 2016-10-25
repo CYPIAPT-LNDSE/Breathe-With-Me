@@ -5,18 +5,19 @@ const promisify = tl =>
   new Promise(success => tl.addCallback(success));
 
 export const landingAnimation = () => {
+  const activeAvatar = document.querySelector('.carousel_item.active');
   const tl = new TimelineMax();
+  tl
+  .add(TweenMax.to('#avatar-header', 0.3, { opacity: 1 }))
+  .add(TweenMax.fromTo('.nav_dots', 0.5, { delay: 1, scale: 1.2 }, { scale: 1 }));
 
-  tl.add(
-    TweenMax.to('.avatar', 1, {
-      css: { opacity: 1 },
-      onComplete: () => {
-        TweenMax.to('#landing-button', 0.5, { css: { opacity: 1 } });
-        TweenMax.to('#landing-text', 0.5, { css: { opacity: 1 } });
-        TweenMax.to('#landing-stars', 0.6, { opacity: 1 });
-      },
-    })
-  );
+  TweenMax.to('.avatar', 0.2, { opacity: 1 });
+  TweenMax.from(activeAvatar, 1,
+    { delay: 0.2, opacity: 1, y: -350, ease: Elastic.easeOut.config(1, 1) });
+  TweenMax.to(
+    '#landing-button', 0.8,
+    { opacity: 1 });
+
   return promisify(tl);
 };
 
@@ -31,28 +32,15 @@ export const outOfLanding = () => {
 };
 
 export const outOfAvatar = () => {
-  // const activeAvatar = document.querySelector('.carousel_item.active');
-
+  const activeAvatar = document.querySelector('.carousel_item.active');
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('.avatar', 1, { delay: 0.1, opacity: 0 }));
-  return promisify(tl);
-};
-
-export const expandButton = () => {
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }))
-    .add(TweenMax.fromTo(
-      '#landing-button', 0.6,
-      { scale: 1, rotation: 2 },
-      { scale: 30, rotation: 2, ease: Power1.easeIn }
-    ))
-    .add(TweenMax.to(
-      '#landing-button', 0.2,
-      { delay: 0.1, rotation: 2 }
-    ));
-
+  .add(TweenMax.to('.avatar', 0.3, { delay: 1, opacity: 0 }));
+  TweenMax.to('#avatar-header', 0.3, { opacity: 0 });
+  TweenMax.to(activeAvatar, 1, { y: -400, ease: Elastic.easeIn.config(1, 1) });
+  TweenMax.to(
+    '#landing-button', 0.8,
+    { y: 300, ease: Elastic.easeIn.config(1, 1) });
   return promisify(tl);
 };
 

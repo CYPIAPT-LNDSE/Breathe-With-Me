@@ -22,6 +22,7 @@
 }
 
 #landing-button {
+  opacity: 0;
   z-index: 9999;
   position: absolute;
   left: 0;
@@ -29,18 +30,11 @@
   margin: 0 auto;
   bottom: 15%;
   background-color: $main-text;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1) rotate(0.02deg);
 }
 
-.landing-button-large {
-  background-color: inherit;
-  -webkit-transform: scale(30) rotate(0.02deg);
-  -moz-transform: scale(30) rotate(0.02deg);
-}
 
 @media screen and (max-height: 600px) {
   #landing-button {
-    bottom: 10%;
+    bottom: 6%;
   }
 }
