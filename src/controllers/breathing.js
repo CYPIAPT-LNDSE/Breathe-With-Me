@@ -17,6 +17,13 @@ import breathingMenu from '../lib/breathingmenu';
 // } from '../lib/audio';
 
 const breatheCtrl = () => {
+  if (window.navigator.standalone) {
+      // The app is running in standalone mode.
+      const character = document.getElementsByClassName('character')[0];
+      const fadingMessage = document.getElementsByClassName('fading-message')[0];
+      character.className += " standalone";
+      fadingMessage.className += " standalone";
+  }
   const feelingBetterBtn = document.getElementById('feel-good-button');
   const breathingPage = document.getElementsByClassName('breathing')[0];
   // const audio = document.getElementById('audio');
