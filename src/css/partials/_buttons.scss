@@ -29,6 +29,14 @@
   margin: 0 auto;
   bottom: 15%;
   background-color: $main-text;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1) rotate(0.02deg);
+}
+
+.landing-button-large {
+  background-color: inherit;
+  -webkit-transform: scale(30) rotate(0.02deg);
+  -moz-transform: scale(30) rotate(0.02deg);
 }
 
 @media screen and (max-height: 600px) {

@@ -31,10 +31,11 @@ export const outOfLanding = () => {
 };
 
 export const outOfAvatar = () => {
+  // const activeAvatar = document.querySelector('.carousel_item.active');
+
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('.avatar', 0.2, { opacity: 0 }));
-
+    .add(TweenMax.to('.avatar', 1, { delay: 0.1, opacity: 0 }));
   return promisify(tl);
 };
 
@@ -43,10 +44,15 @@ export const expandButton = () => {
   tl
     .add(TweenMax.to('#landing-material-icon', 0.2, { css: { display: 'none' } }))
     .add(TweenMax.fromTo(
-      '#landing-button', 0.5,
-      { scale: 1 },
-      { scale: 30, ease: Power1.easeIn }
+      '#landing-button', 0.6,
+      { scale: 1, rotation: 2 },
+      { scale: 30, rotation: 2, ease: Power1.easeIn }
+    ))
+    .add(TweenMax.to(
+      '#landing-button', 0.2,
+      { delay: 0.1, rotation: 2 }
     ));
+
   return promisify(tl);
 };
 
@@ -56,8 +62,6 @@ export const landingToInfo = () => {
   TweenMax.from('#mountain3', 1.2, { delay: 0.8, y: 440, ease: Elastic.easeOut.config(0.7, 0.7) });
   const tl = new TimelineMax();
   tl.add(TweenMax.from('.text-box', 0.6, { visibility: 'visible' }));
-
-
 
   return promisify(tl);
 };
@@ -133,7 +137,7 @@ export const outOfBreathing = () => {
 export const breathingToWelldone = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }))
+    .add(TweenMax.to('#welldone-stars', 0.5, { scale: 1, opacity: 1 }))
     .add(TweenMax.to('#welldone-banner', 0.3, { y: 60, opacity: 1 }))
     .add(TweenMax.to('.welldone-user', 0.2, { opacity: 1 }));
 
