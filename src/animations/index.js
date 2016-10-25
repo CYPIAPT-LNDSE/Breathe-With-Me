@@ -51,11 +51,13 @@ export const expandButton = () => {
 };
 
 export const landingToInfo = () => {
+  TweenMax.from('#mountain1', 1.2, { delay: 0.1, y: 340, ease: Elastic.easeOut.config(0.7, 0.7) });
+  TweenMax.from('#mountain2', 1.2, { delay: 0.4, y: 400, ease: Elastic.easeOut.config(0.7, 0.7) });
+  TweenMax.from('#mountain3', 1.2, { delay: 0.8, y: 440, ease: Elastic.easeOut.config(0.7, 0.7) });
   const tl = new TimelineMax();
-  tl
-    .add(TweenMax.from('#mountain1', 0.5, { y: 340 }))
-    .add(TweenMax.from('#mountain2', 0.5, { y: 400 }))
-    .add(TweenMax.from('#mountain3', 0.5, { y: 440 }));
+  tl.add(TweenMax.from('.text-box', 0.6, { visibility: 'visible' }));
+
+
 
   return promisify(tl);
 };
@@ -135,9 +137,9 @@ export const breathingToWelldone = () => {
     .add(TweenMax.to('#welldone-banner', 0.3, { y: 60, opacity: 1 }))
     .add(TweenMax.to('.welldone-user', 0.2, { opacity: 1 }));
 
-  TweenMax.to('.welldone-mountain1', 1.2, { delay: 0.3, opacity: 1, y: -370, ease: Elastic.easeOut.config(1, 0.6) });
-  TweenMax.to('.welldone-mountain2', 1.2, { delay: 0.5, opacity: 1, y: -390, ease: Elastic.easeOut.config(1, 0.6) });
-  TweenMax.to('.welldone-mountain3', 1.2, { delay: 0.7, opacity: 1, y: -419, ease: Elastic.easeOut.config(1, 0.6) });
+  TweenMax.to('.welldone-mountain1', 1.2, { delay: 0.1, opacity: 1, y: -370, ease: Elastic.easeOut.config(0.7, 0.7) });
+  TweenMax.to('.welldone-mountain2', 1.2, { delay: 0.4, opacity: 1, y: -390, ease: Elastic.easeOut.config(0.7, 0.7) });
+  TweenMax.to('.welldone-mountain3', 1.2, { delay: 0.8, opacity: 1, y: -419, ease: Elastic.easeOut.config(0.7, 0.7) });
 
   return promisify(tl);
 };
