@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+	<title>Playlist</title>
+	<trackList>
+		<track>
+			<location>file:///C:/Users/Cbarrett/Downloads/Kevin_MacLeod_-_Tranquility.mp3</location>
+			<title>Tranquility</title>
+			<creator>Kevin MacLeod</creator>
+			<album>Calming</album>
+			<annotation>URL: http://freemusicarchive.org/music/Kevin_MacLeod/Calming/Tranquility
+Comments: http://freemusicarchive.org/
+Curator: 
+Copyright: </annotation>
+			<image>file:///C:/Users/Cbarrett/AppData/Roaming/vlc/art/artistalbum/Kevin%20MacLeod/Calming/art.jpg</image>
+			<duration>987065</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>0</vlc:id>
+			</extension>
+		</track>
+	</trackList>
+	<extension application="http://www.videolan.org/vlc/playlist/0">
+			<vlc:item tid="0"/>
+	</extension>
+</playlist>
