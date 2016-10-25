@@ -1,4 +1,4 @@
-import { TweenMax, TimelineMax, Power1 } from 'gsap';
+import { TweenMax, TimelineMax, Power1, Elastic, Back } from 'gsap';
 import { getState } from '../globalState';
 
 const promisify = tl =>
@@ -79,11 +79,13 @@ export const nameToInfoSwitch = () => {
 };
 
 export const outOfInfo = () => {
+  TweenMax.to('#mountain1', 1.2, { delay: 0.1, opacity: 1, y: 340, ease: Back.easeIn.config(1, 0.6) });
+  TweenMax.to('#mountain2', 1.2, { delay: 0.2, opacity: 1, y: 400, ease: Back.easeIn.config(1, 0.6) });
+  TweenMax.to('#mountain3', 1.2, { delay: 0.3, opacity: 1, y: 440, ease: Back.easeIn.config(1, 0.6) });
+
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('#mountain1', 0.5, { y: 340 }))
-    .add(TweenMax.to('#mountain2', 0.5, { y: 400 }))
-    .add(TweenMax.to('#mountain3', 0.5, { y: 440 }))
+
     .add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('#alt-info-box', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
     .add(TweenMax.to('.alt-intro', 1, { visibility: 'hidden' }));
@@ -130,28 +132,28 @@ export const breathingToWelldone = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#welldone-stars', 0.3, { opacity: 1 }))
-    .add(TweenMax.to('#breathing-menu', 0.2, { opacity: 1 }))
-    .add(TweenMax.to('.welldone-mountain1', 0.5, { opacity: 1, y: -370 }))
-    .add(TweenMax.to('.welldone-mountain2', 0.5, { opacity: 1, y: -390 }))
-    .add(TweenMax.to('.welldone-mountain3', 0.5, { opacity: 1, y: -419 }));
+    .add(TweenMax.to('#welldone-banner', 0.3, { y: 60, opacity: 1 }))
+    .add(TweenMax.to('.welldone-user', 0.2, { opacity: 1 }));
+
+  TweenMax.to('.welldone-mountain1', 1.2, { delay: 0.3, opacity: 1, y: -370, ease: Elastic.easeOut.config(1, 0.6) });
+  TweenMax.to('.welldone-mountain2', 1.2, { delay: 0.5, opacity: 1, y: -390, ease: Elastic.easeOut.config(1, 0.6) });
+  TweenMax.to('.welldone-mountain3', 1.2, { delay: 0.7, opacity: 1, y: -419, ease: Elastic.easeOut.config(1, 0.6) });
 
   return promisify(tl);
 };
 
 export const welldoneToIntro = () => {
+  TweenMax.to('.welldone-mountain1', 1.2, { delay: 0.1, opacity: 1, y: 370, ease: Back.easeIn.config(1, 0.6) });
+  TweenMax.to('.welldone-mountain2', 1.2, { delay: 0.2, opacity: 1, y: 390, ease: Back.easeIn.config(1, 0.6) });
+  TweenMax.to('.welldone-mountain3', 1.2, { delay: 0.3, opacity: 1, y: 419, ease: Back.easeIn.config(1, 0.6) });
+
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.to('#start-again', 0.2, { opacity: 0 }))
-    .add(TweenMax.to('#welldone-stars', 0.3, { opacity: 0 }))
-    .add(TweenMax.to('#welldone-banner', 0.3, { y: -200 }))
-    .add(TweenMax.to('.welldone-user', 0.3, { opacity: 0 }))
-    .add(TweenMax.to('.welldone-mountain3', 0.5, { y: 250 }))
-    .add(TweenMax.to('.welldone-mountain2', 0.5, { y: 250 }))
-    .add(TweenMax.to('.welldone-mountain1', 0.5, { y: 250 }))
-    .add(TweenMax.to('.mountain1', 0.5, { y: -170 }))
-    .add(TweenMax.to('.mountain2', 0.5, { y: -300 }))
-    .add(TweenMax.to('.breathing-information', 0.2,
-      { css: { display: 'flex', opacity: 1, visibility: 'visible' } }));
+    .add(TweenMax.to('#start-again', 0.5, { opacity: 0 }))
+    .add(TweenMax.to('#welldone-stars', 0.3, { scale: 0 }))
+    .add(TweenMax.to('#welldone-banner', 0.3, { y: -60, opacity: 0 }))
+    .add(TweenMax.to('.welldone-user', 0.2, { opacity: 0 }))
+    .add(TweenMax.fromTo('.breathing', 1, { opacity: 0 }, { opacity: 1 }));
 
   return promisify(tl);
 };
