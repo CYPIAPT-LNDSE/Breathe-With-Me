@@ -57,7 +57,7 @@ const breatheCtrl = () => {
   else {
     breathingMenu.setHideMenuTimer(7000);
     startNotificationSequence();
-    localStorage.setItem('hasVisited', 'true');
+    // localStorage.setItem('hasVisited', 'true');
   }
 };
 
