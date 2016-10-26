@@ -47,8 +47,7 @@ const fullscreenHandler = () => {
 );
 
 window.addEventListener('load', () => setTimeout(() => {
-  const breathingPageVisited = localStorage.getItem('hasVisited');
-
+  const breathingPageVisited = localStorage.getItem('state'); 
   if (!screenfull.enabled) {
     // Hide fullscreen banner if fullscreen is not supported
     document.querySelector('#fullscreenBanner').style.display = 'none';
@@ -63,9 +62,8 @@ window.addEventListener('load', () => setTimeout(() => {
     screenfull.request(document.body);
   });
 
-
-  if (breathingPageVisited && location.hash !== '#breathe') {
-    location.hash = '#breathe';
+  if (breathingPageVisited && location.hash !== '#avatar') {
+    location.hash = '#avatar';
   } else {
     changeView();
   }
