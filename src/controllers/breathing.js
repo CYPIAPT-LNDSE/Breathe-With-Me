@@ -11,16 +11,16 @@ import {
    headMovement,
   } from '../animations';
 import breathingMenu from '../lib/breathingmenu';
-// import {
-//   toggleAudio,
-//   fadeoutMusic,
-// } from '../lib/audio';
+import {
+  toggleAudio,
+  fadeoutMusic,
+} from '../lib/audio';
 
 const breatheCtrl = () => {
   const feelingBetterBtn = document.getElementById('feel-good-button');
   const breathingPage = document.getElementsByClassName('breathing')[0];
-  // const audio = document.getElementById('audio');
-  // const audioControl = document.getElementById('audio-controls');
+  const audio = document.getElementById('audio');
+  const audioControl = document.getElementById('audio-controls');
   const instructions = document.getElementById('breathing-info');
   const exitModalButton = document.getElementById('exit-modal-button');
   const settings = document.getElementById('breathing-settings');
@@ -30,13 +30,13 @@ const breatheCtrl = () => {
   });
   feelingBetterBtn.addEventListener('click', clearTimers);
   settings.addEventListener('click', clearTimers);
-  // feelingBetterBtn.addEventListener('click', () => {
-  //   fadeoutMusic(260);
-  // });
-  // settings.addEventListener('click', () => {
-  //   fadeoutMusic(280);
-  // });
-  // audioControl.addEventListener('click', toggleAudio);
+  feelingBetterBtn.addEventListener('click', () => {
+    fadeoutMusic(260);
+  });
+  settings.addEventListener('click', () => {
+    fadeoutMusic(280);
+  });
+  audioControl.addEventListener('click', toggleAudio);
   breathingPage.addEventListener('click', (e) => {
     breathingMenu.toggleBreathingMenu(e);
   });
@@ -52,7 +52,8 @@ const breatheCtrl = () => {
 
   breathe();
   headMovement();
-  // audio.play();
+  audio.play();
+  audio.volume = 1;
   if (!getState().hasVisited) breathingMenu.toggleModal();
   else {
     breathingMenu.setHideMenuTimer(7000);

@@ -64,7 +64,7 @@ module.exports = {
         'breathe.appcache',
         'manifest.json',
         'catLanding.png',
-        'music.mp3',
+        'Podington_Bear_-_Floating_In_Space.mp3',
         'https://fonts.googleapis.com/css?family=Lato',
         'https://fonts.googleapis.com/icon?family=Material+Icons',
       ],
@@ -79,7 +79,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: 'src/assets/images/catLanding.png' },
-      { from: 'src/assets/sounds/music.mp3' },
+      { from: 'src/assets/sounds/Podington_Bear_-_Floating_In_Space.mp3' },
       { from: 'src/manifest.json' },
     ]),
     new SWPrecacheWebpackPlugin({

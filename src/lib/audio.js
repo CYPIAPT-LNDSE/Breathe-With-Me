@@ -18,7 +18,7 @@ export const fadeoutMusic = (int) => {
       audio.volume = vol;
     } else {
       clearInterval(fadeout);
-      audio.volume = 1;
+      audio.volume = 0;
     }
   }, interval);
 };
