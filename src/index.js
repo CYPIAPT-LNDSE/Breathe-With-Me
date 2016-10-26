@@ -65,7 +65,8 @@ window.addEventListener('load', () => setTimeout(() => {
   });
 
   if (!breathingPageVisited) {
-    location.hash = '';
+    location.hash = '#landing';
+    changeView();
   } else {
     changeView();
   }
