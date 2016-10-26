@@ -14,12 +14,12 @@ import breathingMenu from '../lib/breathingmenu';
 import {
   toggleAudio,
   fadeoutMusic,
+  startAudio,
 } from '../lib/audio';
 
 const breatheCtrl = () => {
   const feelingBetterBtn = document.getElementById('feel-good-button');
   const breathingPage = document.getElementsByClassName('breathing')[0];
-  const audio = document.getElementById('audio');
   const audioControl = document.getElementById('audio-controls');
   const instructions = document.getElementById('breathing-info');
   const exitModalButton = document.getElementById('exit-modal-button');
@@ -52,8 +52,7 @@ const breatheCtrl = () => {
 
   breathe();
   headMovement();
-  audio.play();
-  audio.volume = 1;
+  startAudio();
   if (!getState().hasVisited) breathingMenu.toggleModal();
   else {
     breathingMenu.setHideMenuTimer(7000);

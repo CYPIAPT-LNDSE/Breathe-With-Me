@@ -1,3 +1,10 @@
+const audio = document.getElementById('audio');
+
+export const startAudio = () => {
+  audio.play();
+  audio.volume = 1;
+};
+
 export const toggleAudio = (e) => {
   if (e.target.textContent === 'volume_off') {
     e.target.textContent = 'volume_up';
