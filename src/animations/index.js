@@ -154,8 +154,7 @@ export const welldoneToIntro = () => {
     .add(TweenMax.to('#start-again', 0.5, { opacity: 0 }))
     .add(TweenMax.to('#welldone-stars', 0.3, { scale: 0 }))
     .add(TweenMax.to('#welldone-banner', 0.3, { y: -60, opacity: 0 }))
-    .add(TweenMax.to('.welldone-user', 0.2, { opacity: 0 }))
-    .add(TweenMax.fromTo('.breathing', 1, { opacity: 0 }, { opacity: 1 }));
+    .add(TweenMax.to('.welldone-user', 0.2, { opacity: 0 }));
 
   return promisify(tl);
 };
