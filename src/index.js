@@ -48,7 +48,7 @@ const fullscreenHandler = () => {
 
 window.addEventListener('load', () => setTimeout(() => {
 
-  const breathingPageVisited = getState().hasVisited; //changed from 'hasVisited'
+  const breathingPageVisited = getState().hasVisited;
 
   if (!screenfull.enabled) {
     // Hide fullscreen banner if fullscreen is not supported
