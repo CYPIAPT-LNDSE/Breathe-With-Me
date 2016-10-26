@@ -1,4 +1,5 @@
 import { getState } from '../globalState';
+import { startTimerFirstVisitOnly } from './breathingtimer';
 import {
   displayMenu,
   hideMenu,
@@ -53,8 +54,10 @@ breathingMenu.resetHideMenuTimer = function () {
 
 breathingMenu.toggleBreathingMenu = function (e) {
   if (this.elementsThatWontTriggerMenu.includes(e.target.id)) return;
-  else if (this.modalIsDisplayed) this.toggleModal();
-  else if (!this.menuIsDisplayed) {
+  else if (this.modalIsDisplayed) {
+    this.toggleModal();
+    startTimerFirstVisitOnly();
+  } else if (!this.menuIsDisplayed) {
     displayMenu();
     this.updateMenuState();
     this.resetHideMenuTimer();
