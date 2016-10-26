@@ -48,7 +48,7 @@ const fullscreenHandler = () => {
 
 window.addEventListener('load', () => setTimeout(() => {
 
-  const breathingPageVisited = localStorage.getItem('hasVisited');
+  const breathingPageVisited = getState().hasVisited; //changed from 'hasVisited'
 
   if (!screenfull.enabled) {
     // Hide fullscreen banner if fullscreen is not supported
@@ -64,9 +64,8 @@ window.addEventListener('load', () => setTimeout(() => {
     screenfull.request(document.body);
   });
 
-
-  if (breathingPageVisited && location.hash !== '#breathe') {
-    location.hash = '#breathe';
+  if (!breathingPageVisited) {
+    location.hash = '';
   } else {
     changeView();
   }
