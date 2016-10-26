@@ -80,6 +80,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: 'src/assets/images/catLanding.png' },
+      { from: 'src/assets/images/splash.png' },
       { from: 'src/assets/sounds/music.mp3' },
       { from: 'src/manifest.json' },
     ]),
