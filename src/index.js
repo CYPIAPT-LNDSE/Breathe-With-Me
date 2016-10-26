@@ -63,9 +63,8 @@ window.addEventListener('load', () => setTimeout(() => {
     screenfull.request(document.body);
   });
 
-
-  if (breathingPageVisited && location.hash !== '#breathe') {
-    location.hash = '#breathe';
+  if (breathingPageVisited && location.hash !== '#avatar') {
+    location.hash = '#avatar';
   } else {
     changeView();
   }
