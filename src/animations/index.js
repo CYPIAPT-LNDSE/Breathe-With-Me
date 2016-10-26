@@ -207,3 +207,19 @@ export const hideMenu = () => {
   TweenMax.to('#breathing-menu', 0.5, { y: -47 });
   TweenMax.to('#feel-good-modal', 0.5, { y: 120 });
 };
+
+export const intoCredits = () => {
+  const tl = new TimelineMax();
+  tl
+    .add(TweenMax.fromTo('.credits', 0.3, { opacity: 0 }, { opacity: 1 }));
+
+  return promisify(tl);
+};
+
+export const outOfCredits = () => {
+  const tl = new TimelineMax();
+  tl
+    .add(TweenMax.fromTo('.credits', 0.3, { opacity: 1 }, { opacity: 0 }));
+
+  return promisify(tl);
+};
