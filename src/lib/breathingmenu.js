@@ -53,7 +53,7 @@ breathingMenu.resetHideMenuTimer = function () {
 
 breathingMenu.toggleBreathingMenu = function (e) {
   if (this.elementsThatWontTriggerMenu.includes(e.target.id)) return;
-  else if (this.modalIsDisplayed) return;
+  else if (this.modalIsDisplayed) this.toggleModal();
   else if (!this.menuIsDisplayed) {
     displayMenu();
     this.updateMenuState();
