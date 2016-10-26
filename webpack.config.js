@@ -64,6 +64,7 @@ module.exports = {
         'breathe.appcache',
         'manifest.json',
         'catLanding.png',
+        'splash.png',
         'music.mp3',
         'https://fonts.googleapis.com/css?family=Lato',
         'https://fonts.googleapis.com/icon?family=Material+Icons',
