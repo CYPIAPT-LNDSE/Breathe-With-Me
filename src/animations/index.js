@@ -211,7 +211,7 @@ export const hideMenu = () => {
 export const intoCredits = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.fromTo('.credits', 0.3, { opacity: 0 }, { opacity: 1 }));
+    .add(TweenMax.to('.credits', 0.3, { opacity: 1, display: 'block' }));
 
   return promisify(tl);
 };
@@ -219,7 +219,7 @@ export const intoCredits = () => {
 export const outOfCredits = () => {
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.fromTo('.credits', 0.3, { opacity: 1 }, { opacity: 0 }));
+    .add(TweenMax.to('.credits', 0.3, { opacity: 0, display: 'none' }));
 
   return promisify(tl);
 };
