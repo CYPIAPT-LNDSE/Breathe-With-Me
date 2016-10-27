@@ -21,6 +21,8 @@ notifications.onInhale = function () {
 
   notifications.breathingTick += 1;
 
+  console.log(notifications.breathingTick);
+
   switch (notifications.breathingTick) {
     case 1:
       notifications.updateNotification('place one hand on your belly..');
