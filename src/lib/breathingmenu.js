@@ -64,6 +64,7 @@ breathingMenu.toggleBreathingMenu = function (e) {
   } else if (this.menuIsDisplayed && (this.elementsThatResetTimer.includes(e.target.id))) {
     this.resetHideMenuTimer();
   } else if (this.menuIsDisplayed) {
+    clearTimeout(this.timer);
     hideMenu();
     this.updateMenuState();
   }

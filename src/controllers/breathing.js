@@ -4,7 +4,7 @@ import { getState } from '../globalState';
 import {
   clearTimers,
   startTimerFirstVisitOnly,
-  startNotificationSequence,
+  // startNotificationSequence,
 } from '../lib/breathingtimer';
 import {
    breathe,
@@ -56,7 +56,7 @@ const breatheCtrl = () => {
   if (!getState().hasVisited) breathingMenu.toggleModal();
   else {
     breathingMenu.setHideMenuTimer(7000);
-    startNotificationSequence();
+    // startNotificationSequence();
   }
 };
 
