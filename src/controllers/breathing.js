@@ -2,7 +2,7 @@ import Granim from 'granim';
 import { granimInstance } from '../lib/background';
 import { getState } from '../globalState';
 import {
-  clearTimers,
+  notifications,
   saveStateHasVisited,
 } from '../lib/breathingtimer';
 import {
@@ -27,8 +27,12 @@ const breatheCtrl = () => {
   feelingBetterBtn.addEventListener('click', () => {
     granimInstance().changeState('dark-state');
   });
-  feelingBetterBtn.addEventListener('click', clearTimers);
-  settings.addEventListener('click', clearTimers);
+  feelingBetterBtn.addEventListener('click', () => {
+    notifications.resetTick();
+  });
+  settings.addEventListener('click', () => {
+    notifications.resetTick();
+  });
   feelingBetterBtn.addEventListener('click', () => {
     fadeoutMusic(260);
   });

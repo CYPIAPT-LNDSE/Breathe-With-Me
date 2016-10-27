@@ -7,6 +7,10 @@ export const notifications = {};
 
 notifications.breathingTick = 0;
 
+notifications.resetTick = function () {
+  notifications.breathingTick = 0;
+};
+
 notifications.updateNotification = function (notification) {
   const message = document.getElementById('fading-message');
   message.textContent = notification;
