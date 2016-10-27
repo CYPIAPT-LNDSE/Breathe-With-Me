@@ -66,11 +66,6 @@ breathingMenu.toggleBreathingMenu = function (e) {
 };
 
 breathingMenu.toggleModal = function () {
-  // if (this.modalIsDisplayed && getState().hasVisited) {
-  //   hideModal();
-  //   this.setHideMenuTimer(5000);
-  //   this.updateModalState();
-  // } else
   if (this.modalIsDisplayed) {
     hideModal();
     this.setHideMenuTimer(5000);
