@@ -1,0 +1,24 @@
+#credits-icon {
+  color: $main-text;
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+  z-index: 9999;
+  opacity: 0.8;
+}
+
+.credits {
+  opacity: 0;
+  display: none;
+  text-align: center;
+  color: white;
+}
+
+#back-icon {
+  color: white;
+  top: 5px;
+  left: 5px;
+  position: absolute;
+  z-index: 9999;
+  opacity: 0.8;
+}

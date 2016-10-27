@@ -4,5 +4,6 @@ import narration from './narration.html';
 import breathe from './breathing.html';
 import fractal from './fractal.html';
 import welldone from './welldone.html';
+import credits from './credits.html';
 
-export { landing, avatar, narration, breathe, fractal, welldone };
+export { landing, avatar, narration, breathe, fractal, welldone, credits };
