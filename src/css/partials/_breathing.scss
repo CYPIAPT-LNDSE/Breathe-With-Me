@@ -117,7 +117,7 @@
   margin: auto;
 }
 
-.fading-message {
+#fading-message {
   display: none;
   color: #1C6C89;
   position: fixed;
@@ -159,7 +159,6 @@
     top: 2%;
   }
 }
-
 
 @media screen and (min-height: 620px) {
   .character {

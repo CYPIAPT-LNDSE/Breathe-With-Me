@@ -1,4 +1,5 @@
 import { getState } from '../globalState';
+import { saveStateHasVisited } from './breathingtimer';
 import {
   displayMenu,
   hideMenu,
@@ -52,14 +53,17 @@ breathingMenu.resetHideMenuTimer = function () {
 
 breathingMenu.toggleBreathingMenu = function (e) {
   if (this.elementsThatWontTriggerMenu.includes(e.target.id)) return;
-  else if (this.modalIsDisplayed) hideModal();
-  else if (!this.menuIsDisplayed) {
+  else if (this.modalIsDisplayed) {
+    this.toggleModal();
+    saveStateHasVisited();
+  } else if (!this.menuIsDisplayed) {
     displayMenu();
     this.updateMenuState();
     this.resetHideMenuTimer();
   } else if (this.menuIsDisplayed && (this.elementsThatResetTimer.includes(e.target.id))) {
     this.resetHideMenuTimer();
   } else if (this.menuIsDisplayed) {
+    clearTimeout(this.timer);
     hideMenu();
     this.updateMenuState();
   }

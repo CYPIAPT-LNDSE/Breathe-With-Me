@@ -1,3 +1,10 @@
+const audio = document.getElementById('audio');
+
+export const startAudio = () => {
+  audio.play();
+  audio.volume = 1;
+};
+
 export const toggleAudio = (e) => {
   if (e.target.textContent === 'volume_off') {
     e.target.textContent = 'volume_up';
@@ -18,7 +25,7 @@ export const fadeoutMusic = (int) => {
       audio.volume = vol;
     } else {
       clearInterval(fadeout);
-      audio.volume = 1;
+      audio.volume = 0;
     }
   }, interval);
 };

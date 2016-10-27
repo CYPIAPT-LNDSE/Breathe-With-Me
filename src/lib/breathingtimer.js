@@ -1,44 +1,92 @@
 import { TweenMax, TimelineMax } from 'gsap';
+import { displayNotification } from '../animations/index';
 import { saveState, getState } from '../globalState';
+import breathingMenu from './breathingmenu';
 
-let timer1;
-let timer2;
-let timer3;
-let timer4;
-let timer5;
-let timer6;
-let timer7;
+export const notifications = {};
 
-const intervals = [7000, 15000, 26000, 37000, 60000, 120000, 300000];
-const messages = ['#first-msg', '#second-msg', '#third-msg', '#fourth-msg', '#fifth-msg', '#after-two-min', '#after-five-min'];
-const timers = [timer1, timer2, timer3, timer4, timer5, timer6, timer7];
+notifications.breathingTick = 0;
 
-const timeHasPassedNotification = (time, targetEl, timer) => {
-  timers[timer] = setTimeout(() => {
-    const tl = new TimelineMax();
-    tl
-      .add(TweenMax.to(targetEl, 2, { display: 'block', opacity: 1 }))
-      .add(TweenMax.delayedCall(3, () => {
-        TweenMax.to(targetEl, 2, { display: 'none', opacity: 0 });
-      }));
-  }, time);
+notifications.resetTick = function () {
+  notifications.breathingTick = 0;
 };
 
-export const startNotificationSequence = () => {
-  timers.forEach((item, i) => {
-    timeHasPassedNotification(intervals[i], messages[i], i);
-  });
+notifications.updateNotification = function (notification) {
+  const message = document.getElementById('fading-message');
+  message.textContent = notification;
 };
 
-export const clearTimers = () => {
-  timers.forEach((el) => {
-    clearTimeout(el);
-  });
+notifications.onInhale = function () {
+  if (breathingMenu.menuIsDisplayed || breathingMenu.modalIsDisplayed) return;
+
+  notifications.breathingTick += 1;
+
+  switch (notifications.breathingTick) {
+    case 1:
+      notifications.updateNotification('place one hand on your belly..');
+      displayNotification();
+      break;
+    case 2:
+      notifications.updateNotification('..and follow me..');
+      displayNotification();
+      break;
+    case 3:
+      notifications.updateNotification('breathe deeply and slowly..');
+      displayNotification();
+      break;
+    case 5:
+      notifications.updateNotification('as I grow, gently breathe in through your nose..');
+      displayNotification();
+      break;
+    case 8:
+      notifications.updateNotification('on inhale, feel your belly shrink as your chest expands..');
+      displayNotification();
+      break;
+    case 11:
+      notifications.updateNotification('this is how we practice deep breathing');
+      displayNotification();
+      break;
+    case 12:
+      notifications.updateNotification('..one continuous motion without pause..');
+      displayNotification();
+      break;
+    case 13:
+      notifications.updateNotification('..deeply and slowly..');
+      displayNotification();
+      break;
+    case 14:
+      notifications.updateNotification('..that\'s two minutes \n welldone ' + getState().name + '!');
+      displayNotification();
+      break;
+    case 15:
+      notifications.updateNotification('..continue for as long as you like..');
+      displayNotification();
+      break;
+    case 30:
+      notifications.updateNotification('it\'s been 5 minutes \nwelldone!');
+      displayNotification();
+      break;
+    default: break;
+  }
 };
 
-export const startTimerFirstVisitOnly = () => {
+notifications.onExhale = function () {
+  if (breathingMenu.menuIsDisplayed || breathingMenu.modalIsDisplayed) return;
+  switch (notifications.breathingTick) {
+    case 6:
+      notifications.updateNotification('..and breathe out, without pause, as I shrink');
+      displayNotification();
+      break;
+    case 9:
+      notifications.updateNotification('..and grow again as you exhale');
+      displayNotification();
+      break;
+    default: break;
+  }
+};
+
+export const saveStateHasVisited = () => {
   if (!getState().hasVisited) {
     saveState({ hasVisited: true });
-    startNotificationSequence();
   }
 };

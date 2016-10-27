@@ -1,4 +1,5 @@
 import { TweenMax, TimelineMax, Power1, Elastic, Back } from 'gsap';
+import { notifications } from '../lib/breathingtimer';
 import { getState } from '../globalState';
 
 const promisify = tl =>
@@ -145,25 +146,25 @@ export const welldoneToIntro = () => {
   return promisify(tl);
 };
 
-export const breatheOut = {
-  visibility: true,
-  scale: 1,
-  delay: 2,
+export const breathe = () => {
+  const tl = new TimelineMax({ repeat: -1 });
+  tl
+    .add(TweenMax.to('.belly', 5, { scale: 1.2, ease: Power1.easeInOut, visibility: true, onComplete: notifications.onExhale }))
+    .add(TweenMax.to('.belly', 5, { scale: 1, ease: Power1.easeInOut, onComplete: notifications.onInhale }));
 };
-
-export const breatheIn = {
-  scale: 1.2,
-  ease: Power1.easeInOut,
-  yoyo: true,
-  repeat: -1,
-};
-
-export const breathe = () =>
-  TweenMax.fromTo('.belly', 5, breatheOut, breatheIn);
 
 export const headMovement = () =>
-  TweenMax.fromTo('.head', 5, { y: -0, delay: 2 },
+  TweenMax.fromTo('.head', 5, { y: -0 },
     { y: -20, ease: Power1.easeInOut, repeat: -1, yoyo: true });
+
+export const displayNotification = () => {
+  const tl = new TimelineMax();
+  tl
+    .add(TweenMax.to('#fading-message', 2, { display: 'block', opacity: 1 }))
+    .add(TweenMax.delayedCall(3, () => {
+      TweenMax.to('#fading-message', 2, { display: 'none', opacity: 0 });
+    }));
+};
 
 export const showModal = () => {
   const tl = new TimelineMax();
