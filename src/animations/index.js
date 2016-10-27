@@ -4,7 +4,7 @@ import { getState } from '../globalState';
 const promisify = tl =>
   new Promise(success => tl.addCallback(success));
 
-export const landingAnimation = () => {
+export const intoAvatar = () => {
   const activeAvatar = document.querySelector('.carousel_item.active');
   const tl = new TimelineMax();
   tl
@@ -44,35 +44,42 @@ export const outOfAvatar = () => {
   return promisify(tl);
 };
 
-export const landingToInfo = () => {
+export const startLanding = () => {
+  TweenMax.from('#mountain1', 1.2, { delay: 0.3, y: 340, ease: Elastic.easeOut.config(0.5, 0.6) });
+  TweenMax.from('#mountain2', 1.2, { delay: 0.5, y: 400, ease: Elastic.easeOut.config(0.5, 0.6) });
+  TweenMax.from('#mountain3', 1.2, { delay: 0.9, y: 440, ease: Elastic.easeOut.config(0.5, 0.6) });
+  const tl = new TimelineMax();
+  tl.add(TweenMax.to('.text-box', 0.6, { delay: 1, opacity: 1 }));
+
+  return promisify(tl);
+};
+
+export const statNarration = () => {
   TweenMax.from('#mountain1', 1.2, { delay: 0.1, y: 340, ease: Elastic.easeOut.config(0.7, 0.7) });
   TweenMax.from('#mountain2', 1.2, { delay: 0.4, y: 400, ease: Elastic.easeOut.config(0.7, 0.7) });
   TweenMax.from('#mountain3', 1.2, { delay: 0.8, y: 440, ease: Elastic.easeOut.config(0.7, 0.7) });
   const tl = new TimelineMax();
-  tl.add(TweenMax.from('.text-box', 0.6, { visibility: 'visible' }));
+  tl.add(TweenMax.to('.text-box', 0.6, { opacity: 1 }));
 
   return promisify(tl);
 };
 
-export const askNameToBreathingInfo = () => {
+export const exitLanding = () => {
+  TweenMax.to('#mountain1', 1.2, { delay: 0.1, opacity: 1, y: 340, ease: Back.easeIn.config(1, 0.6) });
+  TweenMax.to('#mountain2', 1.2, { delay: 0.2, opacity: 1, y: 400, ease: Back.easeIn.config(1, 0.6) });
+  TweenMax.to('#mountain3', 1.2, { delay: 0.3, opacity: 1, y: 440, ease: Back.easeIn.config(1, 0.6) });
+
   const tl = new TimelineMax();
   tl
-    .add(TweenMax.from('.alt-info-box', 0.5, { y: -300, opacity: 1 }));
+
+    .add(TweenMax.to('.breathing-information', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
+    .add(TweenMax.to('#alt-info-box', 0.5, { css: { visibility: 'hidden', opacity: 0 } }))
+    .add(TweenMax.to('.alt-intro', 1, { visibility: 'hidden' }));
 
   return promisify(tl);
 };
 
-export const nameToInfoSwitch = () => {
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('#alt-info-box', 0.2, { css: { visibility: 'hidden', opacity: 0 } }))
-    .add(TweenMax.to('.breathing-information', 0.2,
-    { css: { visibility: 'visible', opacity: 1 } }));
-
-  return promisify(tl);
-};
-
-export const outOfInfo = () => {
+export const exitNarration = () => {
   TweenMax.to('#mountain1', 1.2, { delay: 0.1, opacity: 1, y: 340, ease: Back.easeIn.config(1, 0.6) });
   TweenMax.to('#mountain2', 1.2, { delay: 0.2, opacity: 1, y: 400, ease: Back.easeIn.config(1, 0.6) });
   TweenMax.to('#mountain3', 1.2, { delay: 0.3, opacity: 1, y: 440, ease: Back.easeIn.config(1, 0.6) });
@@ -97,19 +104,6 @@ export const infoToCatView = () => {
   return promisify(tl);
 };
 
-export const fromBreathingToIntro = () => {
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('.alt-intro', 0.2, { css: { display: 'block' } }))
-    .add(TweenMax.to('#breathing-menu', 0.2, { opacity: 0 }))
-    .add(TweenMax.to('#feel-good-button', 0.2, { opacity: 0 }))
-    .add(TweenMax.to('.mountain1', 0.5, { y: -170 }))
-    .add(TweenMax.to('.mountain2', 0.5, { y: -300 }))
-    .add(TweenMax.to('.breathing-information', 0.2, { opacity: 1 }));
-
-  return promisify(tl);
-};
-
 export const outOfBreathing = () => {
   const tl = new TimelineMax();
   tl
@@ -126,7 +120,7 @@ export const breathingToWelldone = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#welldone-stars', 0.5, { scale: 1, opacity: 1 }))
-    .add(TweenMax.to('#welldone-banner', 0.3, { y: 60, opacity: 1 }))
+    .add(TweenMax.to('#welldone-banner', 0.6, { delay: 0.4, y: 60, opacity: 1, ease: Back.easeOut.config(2) }))
     .add(TweenMax.to('.welldone-user', 0.2, { opacity: 1 }));
 
   TweenMax.to('.welldone-mountain1', 1.2, { delay: 0.1, opacity: 1, y: -370, ease: Elastic.easeOut.config(0.7, 0.7) });
