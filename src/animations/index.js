@@ -174,22 +174,13 @@ export const showModal = () => {
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'block', opacity: 1 }));
 };
 
-export const hideModalFirstVisit = () => {
-  const tl = new TimelineMax();
-  tl
-    .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
-    .add(TweenMax.to('#breathing-menu', 0.4, { css: { className: '' } }))
-    .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
-    .add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, y: 0, display: 'block' }));
-};
-
 export const hideModal = () => {
   const tl = new TimelineMax();
   tl
     .add(TweenMax.to('#modal-breathing-instructions', 1, { display: 'none', opacity: 0 }))
     .add(TweenMax.to('#breathing-menu', 0.4, { css: { className: '' } }))
     .add(TweenMax.to('#menu-options', 0.5, { opacity: 0.8, display: 'block' }))
-    .add(TweenMax.to('#feel-good-modal', 0.5, { y: 0 }));
+    .add(TweenMax.to('#feel-good-modal', 0.5, { opacity: 0.8, y: 0, display: 'block' }));
 };
 
 export const displayMenu = () => {

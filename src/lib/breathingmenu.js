@@ -3,7 +3,6 @@ import {
   displayMenu,
   hideMenu,
   hideModal,
-  hideModalFirstVisit,
   showModal,
 } from '../animations/index';
 
@@ -53,7 +52,7 @@ breathingMenu.resetHideMenuTimer = function () {
 
 breathingMenu.toggleBreathingMenu = function (e) {
   if (this.elementsThatWontTriggerMenu.includes(e.target.id)) return;
-  else if (this.modalIsDisplayed) return;
+  else if (this.modalIsDisplayed) hideModal();
   else if (!this.menuIsDisplayed) {
     displayMenu();
     this.updateMenuState();
@@ -67,12 +66,8 @@ breathingMenu.toggleBreathingMenu = function (e) {
 };
 
 breathingMenu.toggleModal = function () {
-  if (this.modalIsDisplayed && getState().hasVisited) {
+  if (this.modalIsDisplayed) {
     hideModal();
-    this.setHideMenuTimer(5000);
-    this.updateModalState();
-  } else if (this.modalIsDisplayed) {
-    hideModalFirstVisit();
     this.setHideMenuTimer(5000);
     this.updateModalState();
   } else if (!this.modalIsDisplayed) {
