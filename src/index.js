@@ -15,6 +15,7 @@ const router = (route) => {
   return { view, controller };
 };
 
+
 const App = document.querySelector('#app');
 
 const changeView = () => {
@@ -31,13 +32,13 @@ window.addEventListener('resize', resizeCanvas);
 
 
 window.addEventListener('load', () => setTimeout(() => {
+  const { hasVisited } = getState();
 
-  const breathingPageVisited = getState().hasVisited;
-
-  if (!breathingPageVisited) {
+  if (!hasVisited) {
     location.hash = '#landing';
     changeView();
   } else {
+    location.hash = '#avatar';
     changeView();
   }
   resizeCanvas();
