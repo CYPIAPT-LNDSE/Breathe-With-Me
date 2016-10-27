@@ -147,10 +147,20 @@ export const welldoneToIntro = () => {
 };
 
 export const breathe = () => {
+  const feelingBetterBtn = document.getElementById('feel-good-button');
+  const settings = document.getElementById('breathing-settings');
+
   const tl = new TimelineMax({ repeat: -1 });
   tl
     .add(TweenMax.to('.belly', 5, { scale: 1.2, ease: Power1.easeInOut, visibility: true, onComplete: notifications.onExhale }))
     .add(TweenMax.to('.belly', 5, { scale: 1, ease: Power1.easeInOut, onComplete: notifications.onInhale }));
+
+  feelingBetterBtn.addEventListener('click', () => {
+    tl.pause();
+  });
+  settings.addEventListener('click', () => {
+    tl.pause();
+  });
 };
 
 export const headMovement = () =>

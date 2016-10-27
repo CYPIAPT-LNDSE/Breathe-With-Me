@@ -25,21 +25,16 @@ const breatheCtrl = () => {
   const settings = document.getElementById('breathing-settings');
 
   feelingBetterBtn.addEventListener('click', () => {
+    notifications.resetTick();
+    clearTimeout(breathingMenu.timer);
     granimInstance().changeState('dark-state');
-  });
-  feelingBetterBtn.addEventListener('click', () => {
-    notifications.resetTick();
-  });
-  settings.addEventListener('click', () => {
-    notifications.resetTick();
-  });
-  feelingBetterBtn.addEventListener('click', () => {
     fadeoutMusic(260);
   });
   settings.addEventListener('click', () => {
+    notifications.resetTick();
+    clearTimeout(breathingMenu.timer);
     fadeoutMusic(280);
   });
-  audioControl.addEventListener('click', toggleAudio);
   breathingPage.addEventListener('click', (e) => {
     breathingMenu.toggleBreathingMenu(e);
   });
@@ -48,10 +43,9 @@ const breatheCtrl = () => {
   });
   exitModalButton.addEventListener('click', () => {
     breathingMenu.toggleModal();
-  });
-  exitModalButton.addEventListener('click', () => {
     saveStateHasVisited();
   });
+  audioControl.addEventListener('click', toggleAudio);
 
   breathe();
   headMovement();
