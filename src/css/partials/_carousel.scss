@@ -36,6 +36,16 @@
   margin-bottom: 50px;
 }
 
+@media screen and (max-height: 450px) {
+  .carousel_container {
+    width: 260px;
+  }
+  .carousel_items, .carousel_item, .carousel_item img  {
+    width: 260px;
+    height: 260px;
+  }
+}
+
 @media screen and (max-height: 620px) {
   .carousel_container {
     width: 280px;

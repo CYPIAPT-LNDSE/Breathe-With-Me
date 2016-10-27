@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 474531e8277c2fec36f2
+# bc72ee4a2ff6747cae12
 
 bc540e50b175a23a39a1b3bffc6e0785.png
 ecdd509cadbf1ea78b8d2e31ec52328c.eot
@@ -41,6 +41,10 @@ breathe.appcache
 manifest.json
 catLanding.png
 Podington_Bear_-_Floating_In_Space.mp3
+splash.png
+splash_iphone6.png
+splash_iphone6plus.png
+splash_ipad.png
 https://fonts.googleapis.com/css?family=Lato
 https://fonts.googleapis.com/icon?family=Material+Icons
 

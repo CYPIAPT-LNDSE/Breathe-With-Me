@@ -65,6 +65,10 @@ module.exports = {
         'manifest.json',
         'catLanding.png',
         'Podington_Bear_-_Floating_In_Space.mp3',
+        'splash.png',
+        'splash_iphone6.png',
+        'splash_iphone6plus.png',
+        'splash_ipad.png',
         'https://fonts.googleapis.com/css?family=Lato',
         'https://fonts.googleapis.com/icon?family=Material+Icons',
       ],
@@ -80,6 +84,10 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'src/assets/images/catLanding.png' },
       { from: 'src/assets/sounds/Podington_Bear_-_Floating_In_Space.mp3' },
+      { from: 'src/assets/images/splash.png' },
+      { from: 'src/assets/images/splash_iphone6.png' },
+      { from: 'src/assets/images/splash_iphone6plus.png' },
+      { from: 'src/assets/images/splash_ipad.png' },
       { from: 'src/manifest.json' },
     ]),
     new SWPrecacheWebpackPlugin({
