@@ -3,8 +3,7 @@ import { granimInstance } from '../lib/background';
 import { getState } from '../globalState';
 import {
   clearTimers,
-  startTimerFirstVisitOnly,
-  // startNotificationSequence,
+  saveStateHasVisited,
 } from '../lib/breathingtimer';
 import {
    breathe,
@@ -47,7 +46,7 @@ const breatheCtrl = () => {
     breathingMenu.toggleModal();
   });
   exitModalButton.addEventListener('click', () => {
-    startTimerFirstVisitOnly();
+    saveStateHasVisited();
   });
 
   breathe();
@@ -56,7 +55,6 @@ const breatheCtrl = () => {
   if (!getState().hasVisited) breathingMenu.toggleModal();
   else {
     breathingMenu.setHideMenuTimer(7000);
-    // startNotificationSequence();
   }
 };
 

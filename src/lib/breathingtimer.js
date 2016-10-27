@@ -81,7 +81,7 @@ notifications.onExhale = function () {
   }
 };
 
-export const startTimerFirstVisitOnly = () => {
+export const saveStateHasVisited = () => {
   if (!getState().hasVisited) {
     saveState({ hasVisited: true });
   }
