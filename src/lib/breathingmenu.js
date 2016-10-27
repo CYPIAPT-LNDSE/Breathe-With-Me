@@ -30,8 +30,13 @@ breathingMenu.elementsThatWontTriggerMenu = [
 ];
 
 breathingMenu.updateMenuState = function () {
-  if (this.menuIsDisplayed) this.menuIsDisplayed = false;
-  else this.menuIsDisplayed = true;
+  if (this.menuIsDisplayed) {
+    this.menuIsDisplayed = false;
+    console.log(this.menuIsDisplayed);
+  } else {
+    this.menuIsDisplayed = true;
+    console.log(this.menuIsDisplayed);
+  }
 };
 
 breathingMenu.updateModalState = function () {
