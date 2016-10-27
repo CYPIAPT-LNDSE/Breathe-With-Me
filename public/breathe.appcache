@@ -42,6 +42,10 @@ CACHE:
 breathe.appcache
 manifest.json
 catLanding.png
+splash.png
+splash_iphone6.png
+splash_iphone6plus.png
+splash_ipad.png
 music.mp3
 https://fonts.googleapis.com/css?family=Lato
 https://fonts.googleapis.com/icon?family=Material+Icons

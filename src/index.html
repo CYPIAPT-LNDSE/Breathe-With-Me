@@ -15,7 +15,18 @@
   <meta name="msapplication-TileColor" content="#6AABD0">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!--iPhone and iPad Web App Startup Images -->
+  <!-- Do NOT use width=device width because it will letterbox viewport. -->
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- STARTUP IMAGES -->
+  <!-- iPhone 5 Retina -->
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="splash.png">
+  <!-- iOS 8 iPhone 6 (portrait) -->
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="splash_iphone6.png">
+  <!-- iOS 8 iPhone 6 Plus (portrait) -->
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="splash_iphone6plus.png">
+  <!-- iPad Retina Portrait -->
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash_ipad.png">
   <link rel="stylesheet" href="./bundle.css">
   <title>Breathe with me</title>
 </head>
