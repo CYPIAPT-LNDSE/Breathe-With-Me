@@ -35,11 +35,11 @@ notifications.onInhale = function () {
       displayNotification();
       break;
     case 5:
-      notifications.updateNotification('as I grow, gently breathe in through your nose..');
+      notifications.updateNotification('as I grow, gently breathe in..');
       displayNotification();
       break;
     case 8:
-      notifications.updateNotification('on inhale, feel your belly shrink as your chest expands..');
+      notifications.updateNotification('let your belly shrink as your chest expands');
       displayNotification();
       break;
     case 11:
@@ -55,7 +55,7 @@ notifications.onInhale = function () {
       displayNotification();
       break;
     case 14:
-      notifications.updateNotification('..that\'s two minutes \n welldone ' + getState().name + '!');
+      notifications.updateNotification('..that\'s two minutes \n welldone, ' + getState().name + '!');
       displayNotification();
       break;
     case 15:
@@ -74,7 +74,7 @@ notifications.onExhale = function () {
   if (breathingMenu.menuIsDisplayed || breathingMenu.modalIsDisplayed) return;
   switch (notifications.breathingTick) {
     case 6:
-      notifications.updateNotification('..and breathe out, without pause, as I shrink');
+      notifications.updateNotification('and out, without pause, as I shrink');
       displayNotification();
       break;
     case 9:
