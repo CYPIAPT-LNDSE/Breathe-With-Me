@@ -32,37 +32,37 @@
 </head>
 <body>
   <audio id="audio" src="Podington_Bear_-_Floating_In_Space.mp3" loop="true"></audio>
-  <canvas id="bg"></canvas>
+  <canvas class="animated" id="bg"></canvas>
   <div id="app"></div>
   <div id="overlay"></div>
   <script>
-    // (function() {
-    //   'use strict';
-    //
-    //   if(!('serviceWorker' in navigator)) {
-    //     console.log('ServiceWorker not supported');
-    //     return;
-    //   }
-    //   navigator.serviceWorker.register('service-worker.js')
-    //   .then(function(registration) {
-    //     console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    //   })
-    //   .catch(function(error) {
-    //     console.log('ServiceWorker registration failed:', error);
-    //   });
-    //
-    //   window.addEventListener('beforeinstallprompt', function(e) {
-    //     e.userChoice.then(function(choiceResult) {
-    //       console.log(choiceResult.outcome);
-    //       if(choiceResult.outcome == 'dismissed') {
-    //         console.log('User cancelled home screen install');
-    //       }
-    //       else {
-    //         console.log('User added to home screen');
-    //       }
-    //     });
-    //   });
-    // })();
+    (function() {
+      'use strict';
+
+      if(!('serviceWorker' in navigator)) {
+        console.log('ServiceWorker not supported');
+        return;
+      }
+      navigator.serviceWorker.register('service-worker.js')
+      .then(function(registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('ServiceWorker registration failed:', error);
+      });
+
+      window.addEventListener('beforeinstallprompt', function(e) {
+        e.userChoice.then(function(choiceResult) {
+          console.log(choiceResult.outcome);
+          if(choiceResult.outcome == 'dismissed') {
+            console.log('User cancelled home screen install');
+          }
+          else {
+            console.log('User added to home screen');
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>

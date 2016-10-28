@@ -10,7 +10,7 @@ export const intoAvatar = () => {
   const tl = new TimelineMax();
   tl
   .add(TweenMax.to('#avatar-header', 0.3, { opacity: 1 }))
-  .add(TweenMax.fromTo('.nav_dots', 0.5, { delay: 1, scale: 1.2 }, { scale: 1 }));
+  .add(TweenMax.fromTo('.nav_dots', 1, { x: -300, delay: 1 }, { x: 0, scale: 1.2, ease: Elastic.easeOut.config(0.5, 0.6) }));
 
   TweenMax.to('.avatar', 0.2, { opacity: 1 });
   TweenMax.from(activeAvatar, 1,
@@ -141,7 +141,8 @@ export const welldoneToIntro = () => {
     .add(TweenMax.to('#start-again', 0.5, { opacity: 0 }))
     .add(TweenMax.to('#welldone-stars', 0.3, { scale: 0 }))
     .add(TweenMax.to('#welldone-banner', 0.3, { y: -60, opacity: 0 }))
-    .add(TweenMax.to('.welldone-user', 0.2, { opacity: 0 }));
+    .add(TweenMax.to('.welldone-user', 0.2, { opacity: 0 }))
+    .add(TweenMax.to('#credits-icon', 0.5, { opacity: 0 }));
 
   return promisify(tl);
 };

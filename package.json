@@ -2,7 +2,7 @@
   "name": "breathing-with-kitty",
   "version": "1.0.0",
   "description": "App for kids to help reduce anxiety",
-  "main": "gulpfile.js",
+  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --host 0.0.0.0 --content-base public",
     "prebuild": "rm -rf public/*",
@@ -18,7 +18,7 @@
     "pwa",
     "animation"
   ],
-  "author": "Sofia Pohjalainen, Bradley Reeder, Noga Inbar, Kara de la Marck",
+  "author": "Sofia Pohjalainen, Bradley Reeder, Noga Inbar, Gabriel Perales, Kara de la Marck",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/FAC8/breathing-with-kitty/issues"
