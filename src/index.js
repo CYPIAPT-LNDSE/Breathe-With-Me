@@ -32,9 +32,9 @@ window.addEventListener('resize', resizeCanvas);
 
 
 window.addEventListener('load', () => setTimeout(() => {
-  const breathingPageVisited = localStorage.getItem('state');
+  const { hasVisited } = getState();
 
-  if (breathingPageVisited && location.hash !== '#avatar') {
+  if (hasVisited && location.hash !== '#avatar') {
     location.hash = '#avatar';
   } else {
     changeView();
