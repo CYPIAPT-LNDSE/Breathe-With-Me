@@ -2,9 +2,7 @@
 @import 'partials/fonts.scss';
 @import 'partials/_mountain-color.scss';
 @import 'partials/_avatar.scss';
-@import 'partials/_intro.scss';
 @import 'partials/_breathing.scss';
-@import 'partials/_gifinfo.scss';
 @import 'partials/_landing.scss';
 @import 'partials/_buttons.scss';
 @import 'partials/_welldone.scss';
@@ -28,7 +26,7 @@ font-family: 'Raleway', sans-serif;
 }
 
 body {
-  font-family: $Lato;
+  font-family: 'Raleway', sans-serif;
   color: $main-text;
   overflow: hidden;
   height: 100%;
@@ -63,7 +61,6 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  will-change: transform;
 }
 
 #overlay {

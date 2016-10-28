@@ -139,6 +139,7 @@
   right: 0;
   max-width: inherit;
   margin: 0 auto;
+  will-change: transform;
 
   svg {
     display: block;
