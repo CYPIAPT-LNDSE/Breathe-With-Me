@@ -22,12 +22,12 @@ module.exports = {
   resolve: {
     root: path.resolve('./node_modules'),
     alias: {
-      TweenLite: path.resolve('node_modules', 'gsap/src/minified/TweenLite.js'),
-      TweenMax: path.resolve('node_modules', 'gsap/src/minified/TweenMax.js'),
-      TimelineLite: path.resolve('node_modules', 'gsap/src/minified/TimelineLite.js'),
-      TimelineMax: path.resolve('node_modules', 'gsap/src/minified/TimelineMax.js'),
-      CSSPlugin: path.resolve('node_modules', 'gsap/src/minified/plugins/CSSPlugin.js'),
-      Draggable: path.resolve('node_modules', 'gsap/src/minified/utils/Draggable.js'),
+      TweenLite: path.resolve('node_modules', 'gsap/src/minified/TweenLite.min.js'),
+      TweenMax: path.resolve('node_modules', 'gsap/src/minified/TweenMax.min.js'),
+      TimelineLite: path.resolve('node_modules', 'gsap/src/minified/TimelineLite.min.js'),
+      TimelineMax: path.resolve('node_modules', 'gsap/src/minified/TimelineMax.min.js'),
+      CSSPlugin: path.resolve('node_modules', 'gsap/src/minified/plugins/CSSPlugin.min.js'),
+      Draggable: path.resolve('node_modules', 'gsap/src/minified/utils/Draggable.min.js'),
     },
   },
   module: {

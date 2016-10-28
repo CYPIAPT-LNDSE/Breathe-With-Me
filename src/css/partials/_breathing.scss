@@ -82,6 +82,8 @@
 }
 
 #modal-breathing-instructions {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
   display: none;
   opacity: 0;
   color: white;
@@ -137,8 +139,6 @@
   right: 0;
   max-width: inherit;
   margin: 0 auto;
-  will-change: transform;
-  -webkit-transform: translate3d(0,0,0);
 
   svg {
     display: block;
