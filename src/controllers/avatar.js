@@ -1,12 +1,10 @@
 import carousel from '../lib/carousel';
-import { expandButton } from '../animations';
 import { saveState } from '../globalState';
 import * as avatars from '../templates/avatars';
 
 const avatarCtrl = () => {
   const landingButton = document.getElementById('landing-button');
-  landingButton.addEventListener('click', (e) => {
-    // e.preventDefault();
+  landingButton.addEventListener('click', () => {
     const avatarIndex = $('.active').index('.carousel_item');
     let avatar;
     let granimState;
@@ -29,10 +27,6 @@ const avatarCtrl = () => {
         break;
     }
     saveState({ avatar, granimState });
-    // expandButton()
-    //   .then(() => {
-    //     location.hash = landingButton.attributes.getNamedItem('href').value;
-    //   });
   });
   const car = carousel();
   car.init();
