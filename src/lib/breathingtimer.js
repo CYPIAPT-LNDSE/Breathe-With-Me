@@ -35,11 +35,11 @@ notifications.onInhale = function () {
       displayNotification();
       break;
     case 5:
-      notifications.updateNotification('as I grow, gently breathe in and let your belly balloon out..');
+      notifications.updateNotification('as I grow, gently breathe in..');
       displayNotification();
       break;
     case 8:
-      notifications.updateNotification('..and shrink again as you exhale');
+      notifications.updateNotification('on inhale, feel your belly balloon out');
       displayNotification();
       break;
     case 11:
@@ -78,7 +78,7 @@ notifications.onExhale = function () {
       displayNotification();
       break;
     case 9:
-      notifications.updateNotification('..and grow again as you exhale');
+      notifications.updateNotification('..and shrink again as you exhale..');
       displayNotification();
       break;
     default: break;
