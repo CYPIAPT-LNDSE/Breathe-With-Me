@@ -1,4 +1,4 @@
-# Breath With Me
+# Breathe With Me
 
 
 This app helps young people to manage anxiety, offers them support, and builds their resilience through the breathing techniques that appear as interactive animations. Children and young people will have the tools at their fingertips to reduce anxiety, monitor their wellbeing, and manage their mental state in between appointments and away from services.
