@@ -63,5 +63,8 @@
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1",
     "webpack-sass-loader": "^2.1.1"
+  },
+  "dependencies": {
+    "sw-offline-google-analytics": "1.1.1"
   }
 }

@@ -36,6 +36,10 @@
 /* eslint-env worker, serviceworker */
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
+//import offline GA package
+importScripts('path/to/offline-google-analytics-import.js');
+//initialise offline GA
+goog.offlineGoogleAnalytics.initialize();
 
 var precacheConfig = [["0bffba416891219267efcf4e59c3c015.svg","0bffba416891219267efcf4e59c3c015"],["2751ee43015f9884c3642f103b7f70c9.woff2","2751ee43015f9884c3642f103b7f70c9"],["30799efa5bf74129468ad4e257551dc3.eot","30799efa5bf74129468ad4e257551dc3"],["39b2c3031be6b4ea96e2e3e95d307814.woff2","39b2c3031be6b4ea96e2e3e95d307814"],["3b813c2ae0d04909a33a18d792912ee7.woff","3b813c2ae0d04909a33a18d792912ee7"],["3c546bf7e955aeaf180bca3d2743e204.svg","3c546bf7e955aeaf180bca3d2743e204"],["4567056d902c51f86d61770d9d60f59f.svg","4567056d902c51f86d61770d9d60f59f"],["46e48ce0628835f68a7369d0254e4283.ttf","46e48ce0628835f68a7369d0254e4283"],["4d9f3f9e5195e7b074bb63ba4ce42208.eot","4d9f3f9e5195e7b074bb63ba4ce42208"],["4ef2d0f486deef23b3928cab2430e55b.svg","4ef2d0f486deef23b3928cab2430e55b"],["574fd0b50367f886d359e8264938fc37.woff2","574fd0b50367f886d359e8264938fc37"],["69f8a0617ac472f78e45841323a3df9e.woff2","69f8a0617ac472f78e45841323a3df9e"],["7500519de3d82e33d1587f8042e2afcb.woff","7500519de3d82e33d1587f8042e2afcb"],["7d0026955ab24fa892b84b6df7cc6935.svg","7d0026955ab24fa892b84b6df7cc6935"],["7ef525e40bfdaf62100e47dd4be50351.svg","7ef525e40bfdaf62100e47dd4be50351"],["7ef9009b51f2e3ced613809250f98a30.svg","7ef9009b51f2e3ced613809250f98a30"],["894a2ede85a483bf9bedefd4db45cdb9.ttf","894a2ede85a483bf9bedefd4db45cdb9"],["91a5bede829a01dc1e936a82b6b58c00.svg","91a5bede829a01dc1e936a82b6b58c00"],["94998475f6aea65f558494802416c1cf.ttf","94998475f6aea65f558494802416c1cf"],["954bbdeb86483e4ffea00c4591530ece.woff2","954bbdeb86483e4ffea00c4591530ece"],["Podington_Bear_-_Floating_In_Space.mp3","307dfc321e52e06682068147e04e3992"],["a50883a468e8135225246c36c66e3ae9.svg","a50883a468e8135225246c36c66e3ae9"],["a990f611f2305dc12965f186c2ef2690.eot","a990f611f2305dc12965f186c2ef2690"],["ba3dcd8903e3d0af5de7792777f8ae0d.woff","ba3dcd8903e3d0af5de7792777f8ae0d"],["bc540e50b175a23a39a1b3bffc6e0785.png","bc540e50b175a23a39a1b3bffc6e0785"],["breathe.appcache","fae86258093233a3c952240a729e8431"],["bundle.css","b6f6322e28a16ab2142e5bd955433bd4"],["bundle.js","b35c0b5a93dae382cb681857e2249f18"],["catLanding.png","b77ca0f4a64698b5aeeef24ed9b5b05e"],["dc81817def276b4f21395f7ea5e88dcd.woff","dc81817def276b4f21395f7ea5e88dcd"],["df7b648ce5356ea1ebce435b3459fd60.ttf","df7b648ce5356ea1ebce435b3459fd60"],["dfe56a876d0282555d1e2458e278060f.eot","dfe56a876d0282555d1e2458e278060f"],["e31fcf1885e371e19f5786c2bdfeae1b.ttf","e31fcf1885e371e19f5786c2bdfeae1b"],["ea463d8bf1904b3cece6052283b04971.svg","ea463d8bf1904b3cece6052283b04971"],["ecdd509cadbf1ea78b8d2e31ec52328c.eot","ecdd509cadbf1ea78b8d2e31ec52328c"],["f079d603854bcd795eaabf2ef7ae723b.svg","f079d603854bcd795eaabf2ef7ae723b"],["fc78759e93a6cac50458610e3d9d63a0.woff","fc78759e93a6cac50458610e3d9d63a0"],["index.html","d5a3b9ce9f1f7a3eeed34d111ce7583c"],["manifest.json","c73490e73e2695caabd92690381df188"],["splash.png","12fcf1414d24338bafbf0841e85d1566"],["splash_ipad.png","fa3e3cae8cdfe24cca97a666e73791f9"],["splash_iphone6.png","63e595cbbbe5e7447e16eaa68cadcd5f"],["splash_iphone6plus.png","842bf771be28ea87f814d9daa0d427ef"]];
 var cacheName = 'sw-precache-v2-pages-cache-v1-' + (self.registration ? self.registration.scope : '');
@@ -140,10 +144,10 @@ self.addEventListener('install', function(event) {
         );
       });
     }).then(function() {
-      
+
       // Force the SW to transition from installing -> active state
       return self.skipWaiting();
-      
+
     })
   );
 });
@@ -163,9 +167,9 @@ self.addEventListener('activate', function(event) {
         );
       });
     }).then(function() {
-      
+
       return self.clients.claim();
-      
+
     })
   );
 });
@@ -226,7 +230,7 @@ self.addEventListener('fetch', function(event) {
 
 
 // *** Start of auto-included sw-toolbox code. ***
-/* 
+/*
  Copyright 2016 Google Inc. All Rights Reserved.
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -251,7 +255,3 @@ self.addEventListener('fetch', function(event) {
 
 toolbox.router.get(/[.](mp3|json|png|js)$/, toolbox.cacheFirst, {});
 toolbox.router.get(/^https:\/\/fonts\.googleapis\.com/, toolbox.cacheFirst, {});
-
-
-
-
